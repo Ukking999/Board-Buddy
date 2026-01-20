@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Arithmetic Progressions MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "An Arithmetic Progression (AP) is a sequence where:",
+    "options": ["Each term is multiplied by a constant", "The difference between consecutive terms is constant", "Terms are added constantly", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The constant difference in an AP is called:",
+    "options": ["Common ratio", "Common difference (d)", "First term", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The first term of an AP is denoted by:",
+    "options": ["d", "a", "n", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The nth term of an AP is given by:",
+    "options": ["a + (n-1)d", "a + n d", "a - (n-1)d", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a = 5, d = 3, the 10th term is:",
+    "options": ["32", "35", "30", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The sum of the first n terms of an AP is:",
+    "options": ["n/2 [2a + (n-1)d]", "n/2 (a + l)", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Here l is the:",
+    "options": ["First term", "Last term", "Common difference", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If the nth term is given as a_n = 3 + 4n, the common difference is:",
+    "options": ["3", "4", "7", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For a_n = 3n - 5, first term a =",
+    "options": ["-2", "3", "-5", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Three numbers in AP can be taken as:",
+    "options": ["a-d, a, a+d", "a, a+d, a+2d", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Four numbers in AP: a-3d, a-d, a+d, a+3d",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The sum of n terms S_n =",
+    "options": ["n/2 (first + last term)", "n (first + last)/2", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If number of terms n is odd, the middle term is:",
+    "options": ["(n+1)/2 th term", "n/2 th term", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If n is even, arithmetic mean of middle terms is:",
+    "options": ["Mean of AP", "Sum/n", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The AP with a = 7, d = -4, 5th term =",
+    "options": ["-9", "-5", "11", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Which term of AP 3, 8, 13, ... is 78?",
+    "options": ["16th", "15th", "17th", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sum of first 20 terms of AP 5, 10, 15, ... is:",
+    "options": ["1050", "1000", "1100", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If sum of n terms is 3n² + 5n, the AP is:",
+    "options": ["11, 17, 23, ...", "First term 8, d=6", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The common difference d can be:",
+    "options": ["Positive", "Negative", "Zero", "All"],
+    "answer": 3
+  },
+  {
+    "q": "If d = 0, the AP is:",
+    "options": ["Constant sequence", "Increasing", "Decreasing", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If d > 0, AP is:",
+    "options": ["Increasing", "Decreasing", "Constant", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If d < 0, AP is:",
+    "options": ["Increasing", "Decreasing", "Constant", "None"],
+    "answer": 1
+  },
+  {
+    "q": "To find number of terms when a, d, l given:",
+    "options": ["n = [(l - a)/d] + 1", "n = (l - a)/d", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The three terms a, b, c are in AP if:",
+    "options": ["2b = a + c", "b = a + c", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The sum of first n natural numbers is:",
+    "options": ["n(n+1)/2", "n(n-1)/2", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Natural numbers form AP with a=1, d=1",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Even numbers: 2, 4, 6, ... a=2, d=2",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Odd numbers: 1, 3, 5, ... a=1, d=2",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The AP 20, 18, 16, ... has d=",
+    "options": ["2", "-2", "20", "None"],
+    "answer": 1
+  },
+  {
+    "q": "To find a if nth term and sum given, use:",
+    "options": ["Two equations", "One equation", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Arithmetic Progressions' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "AP is a special case of:",
+    "options": ["Linear sequence", "Geometric", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The nth term a_n can be used to find:",
+    "options": ["Any term", "Sum", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "S_n formula uses:",
+    "options": ["a and d", "a and l", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If last term not known, use:",
+    "options": ["S_n = n/2 [2a + (n-1)d]", "S_n = n/2 (a + l)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To find d when a, n, a_n given:",
+    "options": ["d = (a_n - a)/(n-1)", "d = a_n - a", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The sum S_n is a:",
+    "options": ["Linear in n", "Quadratic in n", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If three numbers in AP, their sum is 21, middle is 7, numbers:",
+    "options": ["5, 7, 9", "6, 7, 8", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If four terms in AP sum 28, common difference 3, possible terms:",
+    "options": ["4, 7, 10, 13", "5, 8, 11, 14", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The number of multiples of 3 between 10 and 250 is:",
+    "options": ["AP with a=12, d=3, l=249", "Count using formula", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "AP applications include:",
+    "options": ["Savings, salaries, etc.", "Only maths", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter introduces:",
+    "options": ["nth term, sum of n terms", "Only nth term", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To find which term is given number, set:",
+    "options": ["a + (n-1)d = given term", "Solve for n", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "n must be:",
+    "options": ["Natural number", "Integer", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If n not integer, term not in AP",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The sum of first n odd numbers is:",
+    "options": ["n²", "n(n+1)/2", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sum of first n even numbers is:",
+    "options": ["n(n+1)", "n²", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The AP can have:",
+    "options": ["Finite or infinite terms", "Only finite", "Only infinite", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For infinite AP, sum:",
+    "options": ["May converge or diverge", "Always finite", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter focuses on:",
+    "options": ["Finite AP", "Infinite", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Arithmetic mean of two numbers a and b is:",
+    "options": ["(a+b)/2", "The middle term in AP", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "To insert k arithmetic means between a and b:",
+    "options": ["k+2 terms in AP", "First a, last b", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The common difference d =",
+    "options": ["(b - a)/(k+1)", "b - a", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is important for:",
+    "options": ["Sequences, series, higher maths", "Only class 10", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

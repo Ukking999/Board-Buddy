@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Polynomials MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Statistic's MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Statistics primarily deals with:",
+    "options": ["Collection of data", "Organization of data", "Analysis and interpretation of data", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "The number of times a particular observation occurs is called its:",
+    "options": ["Range", "Mean", "Frequency", "Median"],
+    "answer": 2
+  },
+  {
+    "q": "Data collected by the investigator himself is called:",
+    "options": ["Secondary data", "Primary data", "Grouped data", "Raw data"],
+    "answer": 1
+  },
+  {
+    "q": "Data collected from sources like census reports is called:",
+    "options": ["Primary data", "Secondary data", "Ungrouped data", "Discrete data"],
+    "answer": 1
+  },
+  {
+    "q": "The difference between the highest and lowest values in a data set is:",
+    "options": ["Mean", "Median", "Mode", "Range"],
+    "answer": 3
+  },
+  {
+    "q": "In ungrouped data, the middle value when arranged in order is:",
+    "options": ["Mean", "Median", "Mode", "Range"],
+    "answer": 1
+  },
+  {
+    "q": "The most frequently occurring value in a data set is:",
+    "options": ["Mean", "Median", "Mode", "Range"],
+    "answer": 2
+  },
+  {
+    "q": "For data: 3, 5, 7, 7, 9, the mode is:",
+    "options": ["No mode", "7", "5", "3"],
+    "answer": 1
+  },
+  {
+    "q": "For data with two modes, it is called:",
+    "options": ["Unimodal", "Bimodal", "Trimodal", "Multimodal"],
+    "answer": 1
+  },
+  {
+    "q": "The arithmetic mean of a data set is calculated as:",
+    "options": ["Sum of observations / Number of observations", "Middle value", "Most frequent value", "Highest - lowest"],
+    "answer": 0
+  },
+  {
+    "q": "For grouped data, the class interval with maximum frequency is:",
+    "options": ["Modal class", "Median class", "Mean class", "Range class"],
+    "answer": 0
+  },
+  {
+    "q": "The formula for mode in grouped data is:",
+    "options": ["l + (f1 - f0)/(2f1 - f0 - f2) × h", "l + (f1 - f0)/(f1 - f2) × h", "Sum / n", "Middle value"],
+    "answer": 0
+  },
+  {
+    "q": "The median class is the class where:",
+    "options": ["Maximum frequency", "Cumulative frequency ≥ n/2", "Minimum frequency", "Class with mean"],
+    "answer": 1
+  },
+  {
+    "q": "The formula for median in grouped data is:",
+    "options": ["l + (n/2 - cf)/f × h", "l + (n - cf)/f × h", "Sum / n", "Mode formula"],
+    "answer": 0
+  },
+  {
+    "q": "The mean for grouped data is calculated using:",
+    "options": ["Direct method", "Assumed mean method", "Step deviation method", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "In assumed mean method, mean =",
+    "options": ["A + Σfd / Σf", "A + Σfi xi / Σfi", "Σxi / n", "l + h"],
+    "answer": 0
+  },
+  {
+    "q": "In step deviation method, mean =",
+    "options": ["A + (Σfd / Σf) × h", "A + Σd / n", "Σxi / n", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A frequency distribution with equal class intervals is:",
+    "options": ["Inclusive", "Exclusive", "Continuous", "Discrete"],
+    "answer": 2
+  },
+  {
+    "q": "In inclusive series, to make continuous, we subtract/add:",
+    "options": ["0.5 from lower/upper", "1 from both", "0 from limits", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The graphical representation of cumulative frequency is:",
+    "options": ["Histogram", "Bar graph", "Ogive", "Frequency polygon"],
+    "answer": 2
+  },
+  {
+    "q": "Less than ogive is drawn by plotting:",
+    "options": ["Upper limit vs cumulative frequency", "Lower limit vs frequency", "Midpoint vs frequency", "Class vs cumulative"],
+    "answer": 0
+  },
+  {
+    "q": "More than ogive is drawn by plotting:",
+    "options": ["Lower limit vs cumulative frequency", "Upper limit vs cumulative frequency starting from highest", "Midpoint vs frequency", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Median from ogive can be found at:",
+    "options": ["n/2 on y-axis", "n on y-axis", "Maximum frequency", "Zero"],
+    "answer": 0
+  },
+  {
+    "q": "A histogram is a graphical representation of:",
+    "options": ["Ungrouped data", "Grouped frequency distribution", "Cumulative frequency", "Individual data"],
+    "answer": 1
+  },
+  {
+    "q": "In histogram, bars are drawn with:",
+    "options": ["Gaps", "No gaps (for continuous)", "Equal width only", "Different heights"],
+    "answer": 1
+  },
+  {
+    "q": "Frequency polygon is obtained by joining:",
+    "options": ["Midpoints of histogram tops", "Class limits", "Cumulative points", "Bars"],
+    "answer": 0
+  },
+  {
+    "q": "For frequency polygon of continuous data, we add classes:",
+    "options": ["At both ends with zero frequency", "Only at start", "Only at end", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The class mark is:",
+    "options": ["(Lower + Upper)/2", "Lower limit", "Upper limit", "Frequency"],
+    "answer": 0
+  },
+  {
+    "q": "Class size h =",
+    "options": ["Upper - lower limit", "Lower limit", "Frequency", "Cumulative frequency"],
+    "answer": 0
+  },
+  {
+    "q": "For data 10, 20, 20, 30, 40, mean =",
+    "options": ["20", "24", "30", "25"],
+    "answer": 1
+  },
+  {
+    "q": "For data 10, 20, 20, 30, 40, median =",
+    "options": ["20", "24", "30", "25"],
+    "answer": 0
+  },
+  {
+    "q": "For data 10, 20, 20, 30, 40, mode =",
+    "options": ["20", "No mode", "30", "40"],
+    "answer": 0
+  },
+  {
+    "q": "If all observations are increased by 5, mean:",
+    "options": ["Remains same", "Increases by 5", "Decreases by 5", "Becomes zero"],
+    "answer": 1
+  },
+  {
+    "q": "If all observations are multiplied by 2, mean:",
+    "options": ["Remains same", "Doubled", "Halved", "Multiplied by 4"],
+    "answer": 1
+  },
+  {
+    "q": "The empirical relationship between mean, median, mode is:",
+    "options": ["Mode = 3 Median - 2 Mean", "Mean = 3 Median - 2 Mode", "Median = 3 Mean - 2 Mode", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In a moderately skewed distribution, the correct order is:",
+    "options": ["Mean = Median = Mode", "Mean > Median > Mode", "Mode > Median > Mean", "Mean < Median < Mode"],
+    "answer": 1
+  },
+  {
+    "q": "For symmetrical distribution:",
+    "options": ["Mean ≠ Median ≠ Mode", "Mean = Median = Mode", "Mean > Mode", "Median > Mode"],
+    "answer": 1
+  },
+  {
+    "q": "The median divides the data into:",
+    "options": ["Two equal parts", "Three equal parts", "Four equal parts", "Unequal parts"],
+    "answer": 0
+  },
+  {
+    "q": "For even number of observations, median is:",
+    "options": ["Average of two middle terms", "One middle term", "Highest term", "Lowest term"],
+    "answer": 0
+  },
+  {
+    "q": "For odd number of observations, median is:",
+    "options": ["Middle term", "Average of two middle", "First term", "Last term"],
+    "answer": 0
+  },
+  {
+    "q": "In grouped data, cumulative frequency is used for:",
+    "options": ["Mean", "Mode", "Median", "Range"],
+    "answer": 2
+  },
+  {
+    "q": "The modal class has:",
+    "options": ["Highest frequency", "Lowest frequency", "Zero frequency", "Middle frequency"],
+    "answer": 0
+  },
+  {
+    "q": "In step deviation method, d =",
+    "options": ["(x - A)/h", "(x + A)/h", "x - h", "A - x"],
+    "answer": 0
+  },
+  {
+    "q": "Ogive is also called:",
+    "options": ["Cumulative frequency curve", "Histogram", "Bar graph", "Pie chart"],
+    "answer": 0
+  },
+  {
+    "q": "Intersection point of less than and more than ogives gives:",
+    "options": ["Mean", "Median", "Mode", "Range"],
+    "answer": 1
+  },
+  {
+    "q": "Histogram and frequency polygon can be drawn for:",
+    "options": ["Discrete data only", "Continuous data only", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Bar graph is used for:",
+    "options": ["Continuous data", "Discrete/categorical data", "Cumulative frequency", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Pie chart represents data in:",
+    "options": ["Degrees", "Percentages", "Frequencies", "All"],
+    "answer": 3
+  },
+  {
+    "q": "Central angle for a component =",
+    "options": ["(Component value / Total) × 360°", "(Component / Total) × 180°", "Component value", "360° / Components"],
+    "answer": 0
+  },
+  {
+    "q": "Raw data is:",
+    "options": ["Organized data", "Data as collected", "Grouped data", "Graphical data"],
+    "answer": 1
+  },
+  {
+    "q": "Tally marks are used for:",
+    "options": ["Counting frequency", "Calculating mean", "Finding median", "Drawing graph"],
+    "answer": 0
+  },
+  {
+    "q": "Class interval 10-20 means:",
+    "options": ["Inclusive", "Exclusive", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For continuous data, class intervals like 10-19, 20-29 are:",
+    "options": ["Inclusive", "Exclusive", "Open", "None"],
+    "answer": 1
+  },
+  {
+    "q": "To convert inclusive to exclusive, adjust by:",
+    "options": ["0.5", "1", "0", "5"],
+    "answer": 0
+  },
+  {
+    "q": "If frequencies are 5, 10, 15, 20, 10, modal class is:",
+    "options": ["First", "Second", "Third", "Fourth"],
+    "answer": 3
+  },
+  {
+    "q": "The mean is affected by:",
+    "options": ["Extreme values", "Middle values", "Mode", "Median"],
+    "answer": 0
+  },
+  {
+    "q": "The median is not affected by:",
+    "options": ["Extreme values", "All values", "Middle values", "Frequency"],
+    "answer": 0
+  },
+  {
+    "q": "Mode is useful for:",
+    "options": ["Quantitative data", "Qualitative data (most common)", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "In a frequency distribution, Σf =",
+    "options": ["Number of observations n", "Sum of xi", "Mean", "Zero"],
+    "answer": 0
+  },
+  {
+    "q": "For data 2, 4, 6, 8, 10, mean = median = mode =",
+    "options": ["5", "6", "4", "10"],
+    "answer": 1
+  },
+  {
+    "q": "In positively skewed distribution:",
+    "options": ["Mean > Median > Mode", "Mean < Median < Mode", "Mean = Median = Mode", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In negatively skewed:",
+    "options": ["Mean > Median > Mode", "Mean < Median < Mode", "Symmetric", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For class 20-30, class mark =",
+    "options": ["25", "20", "30", "10"],
+    "answer": 0
+  },
+  {
+    "q": "For class 20-30, width h =",
+    "options": ["10", "20", "30", "50"],
+    "answer": 0
+  },
+  {
+    "q": "If n is even, median is average of:",
+    "options": ["n/2 and (n/2)+1 th terms", "n th term", "First term", "Last term"],
+    "answer": 0
+  },
+  {
+    "q": "If n is odd, median is:",
+    "options": ["(n+1)/2 th term", "n/2 th term", "First", "Last"],
+    "answer": 0
+  },
+  {
+    "q": "In grouped data, for median, cf is:",
+    "options": ["Cumulative frequency of previous class", "Current class frequency", "Total frequency", "None"],
+    "answer": 0
+  },
+  {
+    "q": "l in median/mode formula is:",
+    "options": ["Lower limit of class", "Upper limit", "Class mark", "Frequency"],
+    "answer": 0
+  },
+  {
+    "q": "f in mode formula is:",
+    "options": ["Frequency of modal class", "Previous frequency", "Next frequency", "Total"],
+    "answer": 0
+  },
+  {
+    "q": "f0 in mode formula is:",
+    "options": ["Frequency before modal class", "After", "Modal", "Total"],
+    "answer": 0
+  },
+  {
+    "q": "f2 in mode formula is:",
+    "options": ["Frequency after modal class", "Before", "Modal", "Total"],
+    "answer": 0
+  },
+  {
+    "q": "In assumed mean method, A is:",
+    "options": ["Any assumed value", "Actual mean", "Median", "Mode"],
+    "answer": 0
+  },
+  {
+    "q": "Step deviation simplifies when classes are:",
+    "options": ["Unequal", "Equal", "Inclusive", "Discrete"],
+    "answer": 1
+  },
+  {
+    "q": "Frequency polygon and histogram together form:",
+    "options": ["Ogive", "Bar graph", "Frequency curve", "Pie chart"],
+    "answer": 2
+  },
+  {
+    "q": "Ogive curves are:",
+    "options": ["Increasing", "Decreasing", "Both possible", "Constant"],
+    "answer": 0
+  },
+  {
+    "q": "Less than ogive is:",
+    "options": ["Increasing upwards", "Decreasing", "S shaped", "None"],
+    "answer": 0
+  },
+  {
+    "q": "More than ogive is:",
+    "options": ["Increasing", "Decreasing downwards", "S shaped", "None"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

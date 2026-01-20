@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Linear Equations MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Linear Equations MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The standard form of a linear equation in one variable is:",
+    "options": ["ax + b = 0 (a ≠ 0)", "ax² + bx + c = 0", "ax + by = c", "ax + by + cz = 0"],
+    "answer": 0
+  },
+  {
+    "q": "The solution of the equation 5x - 7 = 13 is:",
+    "options": ["x = 4", "x = 20/5", "x = 2", "x = 6"],
+    "answer": 0
+  },
+  {
+    "q": "If 4x + 9 = 25, then x =",
+    "options": ["4", "16/4", "34/4", "6"],
+    "answer": 0
+  },
+  {
+    "q": "Solving 3(x + 5) = 24 gives:",
+    "options": ["x = 3", "x = 8", "x = -3", "x = 9"],
+    "answer": 0
+  },
+  {
+    "q": "The equation 7 - 4x = -5 has solution:",
+    "options": ["x = 3", "x = 12/4", "x = -3", "x = 2"],
+    "answer": 0
+  },
+  {
+    "q": "If 2x/5 + 3 = 7, then x =",
+    "options": ["10", "20", "5", "15"],
+    "answer": 0
+  },
+  {
+    "q": "The root of 8p - 12 = 4 is:",
+    "options": ["p = 2", "p = 16/8", "p = 1", "p = 4"],
+    "answer": 0
+  },
+  {
+    "q": "Solving 0.3y + 1.2 = 3.6 gives y =",
+    "options": ["8", "12", "4", "6"],
+    "answer": 0
+  },
+  {
+    "q": "The solution of 9 - 5x = -1 is:",
+    "options": ["x = 2", "x = 10/5", "x = -2", "x = 4"],
+    "answer": 0
+  },
+  {
+    "q": "If 6(y - 2) = 18, then y =",
+    "options": ["5", "3", "8", "1"],
+    "answer": 0
+  },
+  {
+    "q": "The equation 4x - 3 = 2x + 7 has solution:",
+    "options": ["x = 5", "x = 10/2", "x = 3", "x = -5"],
+    "answer": 0
+  },
+  {
+    "q": "Solving x/4 + 7 = 10 gives x =",
+    "options": ["12", "3", "28", "40"],
+    "answer": 0
+  },
+  {
+    "q": "If 15 - 3x = 6, then x =",
+    "options": ["3", "9/3", "5", "1"],
+    "answer": 0
+  },
+  {
+    "q": "The solution of 2(3x + 1) = 14 is:",
+    "options": ["x = 2", "x = 3", "x = 6", "x = 4"],
+    "answer": 0
+  },
+  {
+    "q": "If 5x + 8 = 3x + 20, then x =",
+    "options": ["6", "12/2", "4", "8"],
+    "answer": 0
+  },
+  {
+    "q": "A linear equation in one variable has:",
+    "options": ["No solution", "Unique solution", "Two solutions", "Infinitely many solutions"],
+    "answer": 1
+  },
+  {
+    "q": "Transposing -4 in 5x - 4 = 11 becomes:",
+    "options": ["5x = 11 + 4", "5x = 11 - 4", "5x = 4 - 11", "x = 11 + 4"],
+    "answer": 0
+  },
+  {
+    "q": "The equation for 'twice a number added to 5 is 17' is:",
+    "options": ["2x + 5 = 17", "x + 2 = 17", "5x + 2 = 17", "2(x + 5) = 17"],
+    "answer": 0
+  },
+  {
+    "q": "If a number is increased by 7 and the result is 20, the equation is:",
+    "options": ["x + 7 = 20", "7 - x = 20", "x - 7 = 20", "x/7 = 20"],
+    "answer": 0
+  },
+  {
+    "q": "The cost of 4 pens is ₹60. The equation for cost of one pen x is:",
+    "options": ["4x = 60", "x + 4 = 60", "60x = 4", "x/4 = 60"],
+    "answer": 0
+  },
+  {
+    "q": "Father's age is 5 times son's age. If son's age is y, father's age is:",
+    "options": ["5y", "y + 5", "y/5", "5 - y"],
+    "answer": 0
+  },
+  {
+    "q": "Sum of two consecutive numbers is 45. If smaller is z, equation is:",
+    "options": ["z + (z + 1) = 45", "z + z = 45", "2z + 1 = 45", "z - 1 = 45"],
+    "answer": 0
+  },
+  {
+    "q": "Perimeter of a square is 48 cm. Equation for side length s is:",
+    "options": ["4s = 48", "s + 4 = 48", "s² = 48", "s/4 = 48"],
+    "answer": 0
+  },
+  {
+    "q": "A number divided by 6 gives 8. The equation is:",
+    "options": ["x/6 = 8", "6x = 8", "x + 6 = 8", "x - 6 = 8"],
+    "answer": 0
+  },
+  {
+    "q": "The standard form of a linear equation in two variables is:",
+    "options": ["ax + by = c", "ax² + by = c", "ax + by² = c", "a/x + b/y = c"],
+    "answer": 0
+  },
+  {
+    "q": "A linear equation in two variables has:",
+    "options": ["One solution", "Two solutions", "Infinitely many solutions", "No solution"],
+    "answer": 2
+  },
+  {
+    "q": "The graph of a linear equation in two variables is a:",
+    "options": ["Straight line", "Parabola", "Circle", "Curve"],
+    "answer": 0
+  },
+  {
+    "q": "Which point satisfies the equation 3x + 2y = 12?",
+    "options": ["(4, 0)", "(0, 6)", "(2, 3)", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "The equation x = 5 represents a line:",
+    "options": ["Parallel to y-axis", "Parallel to x-axis", "Passing through origin", "At 45°"],
+    "answer": 0
+  },
+  {
+    "q": "The equation y = -4 represents a line:",
+    "options": ["Parallel to x-axis", "Parallel to y-axis", "Vertical", "Horizontal"],
+    "answer": 0
+  },
+  {
+    "q": "Any point of the form (0, k) lies on the line:",
+    "options": ["x = 0 (y-axis)", "y = 0 (x-axis)", "x + y = 0", "x - y = 0"],
+    "answer": 0
+  },
+  {
+    "q": "Which ordered pair does NOT satisfy 2x - y = 5?",
+    "options": ["(3, 1)", "(0, -5)", "(4, 3)", "(1, -3)"],
+    "answer": 3
+  },
+  {
+    "q": "If (2, k) lies on 4x + 3y = 17, then k =",
+    "options": ["3", "17/3", "9/3", "5"],
+    "answer": 0
+  },
+  {
+    "q": "The point (5, 0) lies on the line:",
+    "options": ["y = 0", "x = 5", "x + y = 5", "Both a and b"],
+    "answer": 1
+  },
+  {
+    "q": "How many points are needed to uniquely determine a straight line?",
+    "options": ["One", "Two", "Three", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "The solution set of ax + by = c is represented graphically by:",
+    "options": ["A point", "A straight line", "A region", "A parabola"],
+    "answer": 1
+  },
+  {
+    "q": "If x = 3, y = 4 satisfies kx - 2y = 2, then k =",
+    "options": ["10/3", "2", "14/3", "5"],
+    "answer": 0
+  },
+  {
+    "q": "The equation 5x + 7y = 35 has solution (7, 0):",
+    "options": ["True", "False", "Only if y=0", "Cannot say"],
+    "answer": 0
+  },
+  {
+    "q": "Points on the x-axis have coordinates:",
+    "options": ["(a, 0)", "(0, b)", "(a, a)", "(0, 0)"],
+    "answer": 0
+  },
+  {
+    "q": "Points on the y-axis have coordinates:",
+    "options": ["(a, 0)", "(0, b)", "(a, b)", "(a, a)"],
+    "answer": 1
+  },
+  {
+    "q": "The equation 2x + 5y = 10 intersects x-axis at:",
+    "options": ["(5, 0)", "(0, 2)", "(10/2, 0)", "(0, 10/5)"],
+    "answer": 0
+  },
+  {
+    "q": "The equation 3x - 4y = 12 intersects y-axis at:",
+    "options": ["(0, -3)", "(0, 3)", "(4, 0)", "( -4, 0)"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following is a linear equation in two variables?",
+    "options": ["x² + y = 5", "x + 1/x = 2", "3x + 4y = 7", "xy = 10"],
+    "answer": 2
+  },
+  {
+    "q": "The pair (1, -1) satisfies:",
+    "options": ["x + y = 0", "x - y = 0", "x + y = 2", "x - y = 2"],
+    "answer": 0
+  },
+  {
+    "q": "Solving 7x - 5 = 3x + 11 gives x =",
+    "options": ["4", "16/4", "2", "8"],
+    "answer": 0
+  },
+  {
+    "q": "If 9 - 2x = x + 3, then x =",
+    "options": ["2", "6/3", "12/3", "4"],
+    "answer": 0
+  },
+  {
+    "q": "Solving 4(2x - 3) = 5(x + 1) gives x =",
+    "options": ["-17", "17", "7", "-7"],
+    "answer": 0
+  },
+  {
+    "q": "The equation 0·x + 5 = 3 has:",
+    "options": ["Unique solution", "No solution", "Infinitely many solutions", "Two solutions"],
+    "answer": 1
+  },
+  {
+    "q": "The equation 4x + 6 = 4(x + 1) + 2 has:",
+    "options": ["Unique solution", "No solution", "Infinitely many solutions", "Cannot say"],
+    "answer": 2
+  },
+  {
+    "q": "If 3x + 5(x - 2) = 2(x + 10), then x =",
+    "options": ["5", "10", "0", "8"],
+    "answer": 0
+  },
+  {
+    "q": "Solving (x + 3)/2 = 7 gives x =",
+    "options": ["11", "14 - 3", "10", "4"],
+    "answer": 0
+  },
+  {
+    "q": "If 1.5x + 2.5 = 6.5, then x =",
+    "options": ["4/1.5", "9/1.5", "2.67", "8/3"],
+    "answer": 0
+  },
+  {
+    "q": "The equation for 'a number subtracted from 20 gives 8' is:",
+    "options": ["20 - x = 8", "x - 20 = 8", "20 + x = 8", "x/20 = 8"],
+    "answer": 0
+  },
+  {
+    "q": "Thrice a number decreased by 5 is 16. The equation is:",
+    "options": ["3x - 5 = 16", "5 - 3x = 16", "3(x - 5) = 16", "3x + 5 = 16"],
+    "answer": 0
+  },
+  {
+    "q": "The length of a rectangle is 5 cm more than breadth b. Perimeter 46 cm. Equation is:",
+    "options": ["2(b + 5 + b) = 46", "2(b + b + 5) = 46", "Both a and b", "b + 5 = 46"],
+    "answer": 2
+  },
+  {
+    "q": "A man is thrice as old as his son. After 5 years, he will be 2.5 times. Let son's age = x. Equation:",
+    "options": ["3x + 5 = 2.5(x + 5)", "3x = 2.5x + 5", "3(x + 5) = 2.5x", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Two numbers differ by 7 and their sum is 25. Equations are:",
+    "options": ["x + y = 25, x - y = 7", "x + y = 25, y - x = 7", "Both possible", "x - y = 25"],
+    "answer": 0
+  },
+  {
+    "q": "The point where the line 2x + 3y = 12 meets x-axis is:",
+    "options": ["(6, 0)", "(0, 4)", "(4, 0)", "(0, 6)"],
+    "answer": 0
+  },
+  {
+    "q": "The point where the line 5x - 2y = 10 meets y-axis is:",
+    "options": ["(0, -5)", "(0, 5)", "(2, 0)", "( -2, 0)"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following points lies on 4x - 3y + 12 = 0?",
+    "options": ["(3, 8)", "(0, 4)", "(-3, 0)", "(6, 12)"],
+    "answer": 0
+  },
+  {
+    "q": "The line x + y = 0 passes through:",
+    "options": ["(1, -1)", "(2, 3)", "(0, 5)", "(4, 0)"],
+    "answer": 0
+  },
+  {
+    "q": "If (k, 3) lies on x + 2y = 7, then k =",
+    "options": ["1", "7 - 6", "4", "13/2"],
+    "answer": 0
+  },
+  {
+    "q": "The equation x - 3 = 0 represents:",
+    "options": ["Line parallel to y-axis", "Line parallel to x-axis", "x-axis", "y-axis"],
+    "answer": 0
+  },
+  {
+    "q": "The equation y + 4 = 0 represents:",
+    "options": ["Line parallel to x-axis", "Line parallel to y-axis", "x-axis", "y-axis"],
+    "answer": 0
+  },
+  {
+    "q": "Solving 8x - 3(2x + 4) = 10 gives x =",
+    "options": ["11", "22/2", "4", "7"],
+    "answer": 0
+  },
+  {
+    "q": "If 0.5x - 1.5 = 3.5, then x =",
+    "options": ["10", "5", "7", "2"],
+    "answer": 0
+  },
+  {
+    "q": "The solution of 12 - 7x = -9 is:",
+    "options": ["x = 3", "x = 21/7", "x = -3", "x = 9"],
+    "answer": 0
+  },
+  {
+    "q": "If 5 + 4(x - 1) = 17, then x =",
+    "options": ["4", "3", "8/4", "5"],
+    "answer": 0
+  },
+  {
+    "q": "The equation formed when a number is multiplied by 8 and 12 is added to get 44:",
+    "options": ["8x + 12 = 44", "8(x + 12) = 44", "8x - 12 = 44", "x/8 + 12 = 44"],
+    "answer": 0
+  },
+  {
+    "q": "Solving 2x/3 - 1/3 = 5/3 gives x =",
+    "options": ["3", "2", "6/2", "9/3"],
+    "answer": 0
+  },
+  {
+    "q": "If 3x - 2 = 5x - 8, then x =",
+    "options": ["3", "6/2", "5", "8"],
+    "answer": 0
+  },
+  {
+    "q": "The value of x in 10 - 3(4 - x) = 19 is:",
+    "options": ["3", "9", "1", "7"],
+    "answer": 0
+  },
+  {
+    "q": "Which equation has no solution?",
+    "options": ["2x + 3 = 5", "0x + 4 = 4", "0x + 4 = 7", "x = x + 1"],
+    "answer": 2
+  },
+  {
+    "q": "Which equation has infinitely many solutions?",
+    "options": ["3x - 5 = 8", "5(x + 1) = 5x + 5", "2x + 1 = 2x + 3", "4x = 10"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

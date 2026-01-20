@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Statistics MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Statistics is the branch of mathematics dealing with:",
+    "options": ["Collection, organization, analysis, interpretation of data", "Only collection of data", "Only graphs", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The raw facts and figures are called:",
+    "options": ["Information", "Data", "Statistics", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Data collected for the first time is:",
+    "options": ["Secondary data", "Primary data", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Data obtained from published sources is:",
+    "options": ["Primary data", "Secondary data", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Frequency is the:",
+    "options": ["Number of times an observation occurs", "Total observations", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Class interval is the:",
+    "options": ["Difference between upper and lower limit", "Mid value", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Class size h =",
+    "options": ["Upper limit - lower limit", "Lower limit", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Class mark =",
+    "options": ["(Upper + lower)/2", "Upper limit", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In inclusive class intervals, to convert to exclusive, adjust by:",
+    "options": ["0.5", "1", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The graphical representation with rectangles for frequency is:",
+    "options": ["Bar graph", "Histogram", "Frequency polygon", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Histogram is used for:",
+    "options": ["Continuous grouped data", "Discrete data", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Frequency polygon is obtained by joining:",
+    "options": ["Midpoints of histogram rectangles", "Class limits", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cumulative frequency graph is:",
+    "options": ["Ogive", "Histogram", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Less than ogive is plotted using:",
+    "options": ["Upper limit vs cumulative frequency", "Lower limit", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "More than ogive uses:",
+    "options": ["Lower limit vs cumulative frequency (decreasing)", "Upper limit", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Median from ogives is at intersection or from n/2.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The measure of central tendency that divides data into two equal parts is:",
+    "options": ["Mean", "Median", "Mode", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The most frequent value is:",
+    "options": ["Mean", "Median", "Mode", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Arithmetic mean for ungrouped data =",
+    "options": ["Sum of observations / n", "Middle value", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For grouped data, mean by direct method =",
+    "options": ["Σ f_i x_i / Σ f_i", "Assumed mean method", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Assumed mean method: mean = A +",
+    "options": ["Σ f_i d_i / Σ f_i", "Σ f_i x_i / Σ f_i", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Step deviation method: mean = A +",
+    "options": ["(Σ f_i u_i / Σ f_i) × h", "Direct", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Median for grouped data =",
+    "options": ["l + [(n/2 - cf)/f] × h", "Mode formula", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Mode for grouped data =",
+    "options": ["l + [(f1 - f0)/(2f1 - f0 - f2)] × h", "Median", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The modal class is the class with:",
+    "options": ["Highest frequency", "Lowest", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Empirical relation: mode =",
+    "options": ["3 median - 2 mean", "3 mean - 2 median", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In symmetrical distribution:",
+    "options": ["Mean = median = mode", "Different", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In positively skewed:",
+    "options": ["Mean > median > mode", "Mean < median < mode", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In negatively skewed:",
+    "options": ["Mean < median < mode", "Mean > median > mode", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The mean is affected by:",
+    "options": ["Extreme values", "Not by extremes", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Median is:",
+    "options": ["Not affected by extremes", "Affected", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Mode may not exist or multiple.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For even n, median is average of:",
+    "options": ["n/2 and (n/2 +1) terms", "Middle one", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For odd n, median is:",
+    "options": ["(n+1)/2 th term", "n/2 th", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cumulative frequency is used for:",
+    "options": ["Median", "Mean", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cf just greater than or equal to n/2 gives median class.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Statistics' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Bar graphs are for:",
+    "options": ["Discrete/categorical data", "Continuous", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pie chart shows:",
+    "options": ["Parts of whole", "Frequency", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Central angle in pie =",
+    "options": ["(component/total) × 360°", "180°", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Tally marks help in:",
+    "options": ["Frequency counting", "Mean", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Frequency distribution is:",
+    "options": ["Organised data", "Raw data", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Class limits are boundaries.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Exclusive classes no overlap.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inclusive classes have overlap at boundaries.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To make inclusive continuous, subtract/add 0.5.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Assumed mean A is chosen near:",
+    "options": ["Middle", "Highest frequency", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Step deviation simplifies calculation when h common.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "f1 in mode formula is frequency of:",
+    "options": ["Modal class", "Previous", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "f0 previous, f2 next.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "l lower limit of modal class.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For no mode, all frequencies equal.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Bimodal: two modes.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter covers mean, median, mode for grouped and ungrouped data.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Graphical representations: histogram, frequency polygon, ogive.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No measure of dispersion in class 10 statistics.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Focus on central tendency and graphs.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Statistics helps in:",
+    "options": ["Decision making", "Presentation", "Both", "None"],
+    "answer": 2
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

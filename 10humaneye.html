@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - The Human Eye and the Colourful World MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The least distance of distinct vision for a normal human eye is:",
+    "options": ["25 cm", "50 cm", "100 cm", "Infinity"],
+    "answer": 0
+  },
+  {
+    "q": "The far point of a normal human eye is:",
+    "options": ["25 cm", "50 cm", "100 cm", "At infinity"],
+    "answer": 3
+  },
+  {
+    "q": "The human eye forms the image of an object on its:",
+    "options": ["Cornea", "Iris", "Pupil", "Retina"],
+    "answer": 3
+  },
+  {
+    "q": "The change in focal length of the eye lens is caused by the action of:",
+    "options": ["Pupil", "Retina", "Ciliary muscles", "Iris"],
+    "answer": 2
+  },
+  {
+    "q": "The ability of the eye lens to adjust its focal length is called:",
+    "options": ["Accommodation", "Power of accommodation", "Persistence of vision", "Binocular vision"],
+    "answer": 0
+  },
+  {
+    "q": "Myopia can be corrected by using a:",
+    "options": ["Convex lens", "Concave lens", "Cylindrical lens", "Plano-convex lens"],
+    "answer": 1
+  },
+  {
+    "q": "Hypermetropia can be corrected by using a:",
+    "options": ["Concave lens", "Convex lens", "Cylindrical lens", "Bifocal lens"],
+    "answer": 1
+  },
+  {
+    "q": "Presbyopia is corrected by using:",
+    "options": ["Concave lens", "Convex lens", "Bifocal lens", "Cylindrical lens"],
+    "answer": 2
+  },
+  {
+    "q": "The defect of vision in which a person cannot see distant objects clearly is:",
+    "options": ["Myopia", "Hypermetropia", "Presbyopia", "Astigmatism"],
+    "answer": 0
+  },
+  {
+    "q": "The defect of vision in which a person cannot see nearby objects clearly is:",
+    "options": ["Myopia", "Hypermetropia", "Presbyopia", "Astigmatism"],
+    "answer": 1
+  },
+  {
+    "q": "Astigmatism is corrected by using:",
+    "options": ["Convex lens", "Concave lens", "Cylindrical lens", "Bifocal lens"],
+    "answer": 2
+  },
+  {
+    "q": "The splitting of white light into its component colours is called:",
+    "options": ["Reflection", "Refraction", "Dispersion", "Interference"],
+    "answer": 2
+  },
+  {
+    "q": "The phenomenon of splitting of light into seven colours is observed in:",
+    "options": ["Rainbow", "Mirage", "Twinkling of stars", "Tyndall effect"],
+    "answer": 0
+  },
+  {
+    "q": "Rainbow is formed due to:",
+    "options": ["Reflection only", "Refraction only", "Dispersion, refraction and total internal reflection", "Scattering only"],
+    "answer": 2
+  },
+  {
+    "q": "The cause of atmospheric refraction is:",
+    "options": ["Change in refractive index of air layers", "Scattering of light", "Dispersion of light", "Total internal reflection"],
+    "answer": 0
+  },
+  {
+    "q": "Twinkling of stars is due to:",
+    "options": ["Atmospheric refraction", "Dispersion", "Scattering", "Reflection"],
+    "answer": 0
+  },
+  {
+    "q": "The sun appears reddish at sunrise and sunset due to:",
+    "options": ["Scattering of light", "Dispersion of light", "Refraction of light", "Reflection of light"],
+    "answer": 0
+  },
+  {
+    "q": "Blue colour of the sky is due to:",
+    "options": ["Scattering of light", "Dispersion of light", "Refraction of light", "Reflection of light"],
+    "answer": 0
+  },
+  {
+    "q": "The scattering of light by particles in its path is called:",
+    "options": ["Tyndall effect", "Dispersion", "Refraction", "Reflection"],
+    "answer": 0
+  },
+  {
+    "q": "Red light is used as danger signal because it:",
+    "options": ["Has highest wavelength and is scattered least", "Has lowest wavelength", "Is pleasant to eye", "Causes fatigue"],
+    "answer": 0
+  },
+  {
+    "q": "The focal length of the eye lens is changed by:",
+    "options": ["Iris", "Pupil", "Ciliary muscles", "Cornea"],
+    "answer": 2
+  },
+  {
+    "q": "The black opening in the centre of the eye is:",
+    "options": ["Cornea", "Pupil", "Iris", "Retina"],
+    "answer": 1
+  },
+  {
+    "q": "The coloured part of the eye is:",
+    "options": ["Cornea", "Iris", "Pupil", "Retina"],
+    "answer": 1
+  },
+  {
+    "q": "The transparent front part of the eye is:",
+    "options": ["Cornea", "Iris", "Pupil", "Sclera"],
+    "answer": 0
+  },
+  {
+    "q": "The screen on which image is formed in the eye is:",
+    "options": ["Cornea", "Iris", "Retina", "Lens"],
+    "answer": 2
+  },
+  {
+    "q": "In myopia, the image is formed:",
+    "options": ["On the retina", "In front of the retina", "Behind the retina", "On the blind spot"],
+    "answer": 1
+  },
+  {
+    "q": "In hypermetropia, the image is formed:",
+    "options": ["On the retina", "In front of the retina", "Behind the retina", "On the cornea"],
+    "answer": 2
+  },
+  {
+    "q": "The power of accommodation of the eye is due to:",
+    "options": ["Change in curvature of lens", "Change in size of pupil", "Change in position of retina", "Change in colour of iris"],
+    "answer": 0
+  },
+  {
+    "q": "The phenomenon responsible for the formation of a rainbow is:",
+    "options": ["Dispersion", "Total internal reflection", "Refraction", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "A primary rainbow has:",
+    "options": ["Seven colours with red on the outer side", "Seven colours with violet on the outer side", "Only red colour", "Only violet colour"],
+    "answer": 0
+  },
+  {
+    "q": "A secondary rainbow is formed due to:",
+    "options": ["Single internal reflection", "Double internal reflection", "No reflection", "Dispersion only"],
+    "answer": 1
+  },
+  {
+    "q": "In a secondary rainbow, the order of colours is:",
+    "options": ["Same as primary rainbow", "Reversed compared to primary rainbow", "Only three colours", "No colours"],
+    "answer": 1
+  },
+  {
+    "q": "The sun appears oval at sunrise and sunset due to:",
+    "options": ["Atmospheric refraction", "Scattering", "Dispersion", "Reflection"],
+    "answer": 0
+  },
+  {
+    "q": "Advance sunrise and delayed sunset occur due to:",
+    "options": ["Atmospheric refraction", "Scattering", "Dispersion", "Total internal reflection"],
+    "answer": 0
+  },
+  {
+    "q": "The sky appears blue because:",
+    "options": ["Blue light is scattered more than other colours", "Red light is scattered more", "All colours are scattered equally", "No scattering occurs"],
+    "answer": 0
+  },
+  {
+    "q": "Clouds appear white because:",
+    "options": ["They scatter all wavelengths equally", "They scatter blue light more", "They absorb light", "They reflect light"],
+    "answer": 0
+  },
+  {
+    "q": "The danger signals are red because red light:",
+    "options": ["Is scattered the most", "Is scattered the least", "Has highest frequency", "Has lowest frequency"],
+    "answer": 1
+  },
+  {
+    "q": "The human eye can focus objects at different distances by adjusting the focal length of the eye lens. This is due to:",
+    "options": ["Presbyopia", "Accommodation", "Near-sightedness", "Far-sightedness"],
+    "answer": 1
+  },
+  {
+    "q": "A person with myopia can see:",
+    "options": ["Distant objects clearly", "Nearby objects clearly", "Both clearly", "None clearly"],
+    "answer": 1
+  },
+  {
+    "q": "A person with hypermetropia can see:",
+    "options": ["Nearby objects clearly", "Distant objects clearly", "Both clearly", "None clearly"],
+    "answer": 1
+  },
+  {
+    "q": "Presbyopia occurs due to:",
+    "options": ["Weakening of ciliary muscles", "Increase in focal length", "Both a and b", "Decrease in focal length"],
+    "answer": 2
+  },
+  {
+    "q": "Cataract is a condition where:",
+    "options": ["Eye lens becomes cloudy", "Cornea becomes opaque", "Retina is damaged", "Pupil enlarges"],
+    "answer": 0
+  },
+  {
+    "q": "The angle of a primary rainbow is approximately:",
+    "options": ["42°", "52°", "60°", "90°"],
+    "answer": 0
+  },
+  {
+    "q": "The angle of a secondary rainbow is approximately:",
+    "options": ["42°", "52°", "60°", "90°"],
+    "answer": 1
+  },
+  {
+    "q": "Tyndall effect is shown by:",
+    "options": ["True solution", "Colloidal solution", "Suspension", "Both b and c"],
+    "answer": 1
+  },
+  {
+    "q": "The persistence of vision is:",
+    "options": ["1/10 second", "1/16 second", "1/25 second", "1 second"],
+    "answer": 1
+  },
+  {
+    "q": "The blind spot in the eye is the region where:",
+    "options": ["Image is formed", "No image is formed", "Optic nerve leaves the eye", "Lens is present"],
+    "answer": 2
+  },
+  {
+    "q": "The amount of light entering the eye is controlled by:",
+    "options": ["Cornea", "Iris", "Ciliary muscles", "Retina"],
+    "answer": 1
+  },
+  {
+    "q": "The eye lens is made up of:",
+    "options": ["Fibrous jelly-like material", "Glass", "Plastic", "Metal"],
+    "answer": 0
+  },
+  {
+    "q": "The refractive index of the eye lens is:",
+    "options": ["Less than air", "Equal to water", "Greater than air", "Equal to glass"],
+    "answer": 2
+  },
+  {
+    "q": "In a normal eye, the near point is:",
+    "options": ["25 cm", "Infinity", "50 cm", "100 cm"],
+    "answer": 0
+  },
+  {
+    "q": "The maximum power of accommodation of a normal eye is for objects at:",
+    "options": ["Infinity", "25 cm", "50 cm", "100 cm"],
+    "answer": 1
+  },
+  {
+    "q": "The phenomenon of atmospheric refraction causes:",
+    "options": ["Mirage", "Twinkling of stars", "Advance sunrise", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "Mirage is observed in:",
+    "options": ["Cold regions", "Hot deserts", "Rainy days", "Hill stations"],
+    "answer": 1
+  },
+  {
+    "q": "The reddish appearance of the sun at sunrise and sunset is due to:",
+    "options": ["Least scattering of red light", "Most scattering of red light", "Dispersion of red light", "Reflection of red light"],
+    "answer": 0
+  },
+  {
+    "q": "The white light consists of:",
+    "options": ["Three colours", "Five colours", "Seven colours", "Infinite colours"],
+    "answer": 2
+  },
+  {
+    "q": "VIBGYOR represents:",
+    "options": ["Colours of rainbow", "Colours of spectrum", "Both a and b", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The prism used for dispersion of light is usually:",
+    "options": ["Triangular", "Rectangular", "Cylindrical", "Spherical"],
+    "answer": 0
+  },
+  {
+    "q": "The splitting of light by a prism is due to:",
+    "options": ["Different speeds of colours in glass", "Same speed of all colours", "Reflection", "Total internal reflection"],
+    "answer": 0
+  },
+  {
+    "q": "The colour that deviates the least in a prism is:",
+    "options": ["Violet", "Red", "Blue", "Green"],
+    "answer": 1
+  },
+  {
+    "q": "The colour that deviates the most in a prism is:",
+    "options": ["Red", "Violet", "Yellow", "Green"],
+    "answer": 1
+  },
+  {
+    "q": "The power of a normal eye to see clearly from 25 cm to infinity is due to:",
+    "options": ["Accommodation", "Persistence of vision", "Binocular vision", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The range of accommodation decreases with:",
+    "options": ["Age", "Exercise", "Diet", "Sleep"],
+    "answer": 0
+  },
+  {
+    "q": "The defect in which the eye cannot focus on both near and distant objects is:",
+    "options": ["Myopia", "Hypermetropia", "Presbyopia", "Astigmatism"],
+    "answer": 2
+  },
+  {
+    "q": "The unit of power of a lens is:",
+    "options": ["Metre", "Dioptre", "Watt", "Joule"],
+    "answer": 1
+  },
+  {
+    "q": "A concave lens has:",
+    "options": ["Positive power", "Negative power", "Zero power", "Infinite power"],
+    "answer": 1
+  },
+  {
+    "q": "A convex lens has:",
+    "options": ["Negative power", "Positive power", "Zero power", "Variable power"],
+    "answer": 1
+  },
+  {
+    "q": "The phenomenon of scattering is more for:",
+    "options": ["Longer wavelengths", "Shorter wavelengths", "All wavelengths equally", "Infrared"],
+    "answer": 1
+  },
+  {
+    "q": "At noon, the sun appears white because:",
+    "options": ["Less scattering", "More scattering of blue light", "No scattering", "All colours reach equally"],
+    "answer": 3
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

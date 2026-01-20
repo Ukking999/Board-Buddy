@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body {background:#0b0f1a; color:#fff; font-family:'Poppins',sans-serif; padding:20px;}
+h1 {text-align:center; margin-bottom:20px;}
+.quiz-container {max-width:800px; margin:0 auto; background:#11162a; padding:30px; border-radius:16px;}
+.question {margin-bottom:15px; font-weight:600;}
+.options label {display:block; margin:5px 0; padding:8px 12px; background:#222; border-radius:8px; cursor:pointer; transition:0.3s;}
+.options label:hover {background:#4da3ff; color:#000;}
+button {margin-top:20px; padding:10px 20px; border:none; border-radius:8px; background:#4da3ff; color:#000; font-weight:600; cursor:pointer; transition:0.3s;}
+button:hover {opacity:0.85;}
+.result {margin-top:20px; font-size:18px; text-align:center; font-weight:600;}
+</style>
+</head>
+<body>
+
+<h1>Class 9 Science - FORCE AND LAWS OF MOTION MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Force is a:",
+    "options": ["Push only", "Pull only", "Push or pull", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Force can change the:",
+    "options": ["State of motion", "Direction of motion", "Shape of body", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "A body continues in its state of rest or uniform motion unless acted upon by an external force. This is:",
+    "options": ["Newton's first law", "Newton's second law", "Newton's third law", "Law of inertia"],
+    "answer": 0
+  },
+  {
+    "q": "Newton's first law is also known as:",
+    "options": ["Law of inertia", "Law of momentum", "Law of action-reaction", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inertia is the property of a body to:",
+    "options": ["Change motion easily", "Resist change in its state of motion", "Move forever", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The inertia of a body depends on its:",
+    "options": ["Velocity", "Acceleration", "Mass", "Force"],
+    "answer": 2
+  },
+  {
+    "q": "Greater the mass, greater the:",
+    "options": ["Inertia", "Velocity", "Acceleration", "Force"],
+    "answer": 0
+  },
+  {
+    "q": "The tendency of a body to oppose any change in its state of rest or uniform motion is called:",
+    "options": ["Force", "Momentum", "Inertia", "Acceleration"],
+    "answer": 2
+  },
+  {
+    "q": "Balanced forces acting on a body:",
+    "options": ["Change motion", "Do not change motion", "Always accelerate", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Unbalanced forces acting on a body:",
+    "options": ["Do not change motion", "Change motion", "Cancel each other", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The quantitative measure of inertia is:",
+    "options": ["Force", "Momentum", "Mass", "Weight"],
+    "answer": 2
+  },
+  {
+    "q": "Momentum is defined as:",
+    "options": ["Mass × velocity", "Force × time", "Mass × acceleration", "Force × distance"],
+    "answer": 0
+  },
+  {
+    "q": "The SI unit of momentum is:",
+    "options": ["kg m/s", "Newton", "kg m/s²", "Joule"],
+    "answer": 0
+  },
+  {
+    "q": "Newton's second law states that the rate of change of momentum is proportional to:",
+    "options": ["Applied force", "Mass", "Velocity", "Inertia"],
+    "answer": 0
+  },
+  {
+    "q": "Mathematically, Newton's second law is:",
+    "options": ["F = m a", "F = m v", "F = p/t", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The SI unit of force is:",
+    "options": ["Dyad", "Newton", "Joule", "Watt"],
+    "answer": 1
+  },
+  {
+    "q": "One Newton is the force that produces acceleration of:",
+    "options": ["1 m/s² in 1 kg mass", "1 m/s in 1 kg", "10 m/s² in 1 kg", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Newton's third law states:",
+    "options": ["Inertia", "F = ma", "Every action has equal and opposite reaction", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Action and reaction forces act on:",
+    "options": ["Same body", "Different bodies", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Action and reaction are:",
+    "options": ["Equal in magnitude, opposite in direction", "Equal in direction", "Unequal", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The law of conservation of momentum is derived from:",
+    "options": ["First law", "Second law", "Third law", "All"],
+    "answer": 2
+  },
+  {
+    "q": "In an isolated system, total momentum:",
+    "options": ["Changes", "Remains constant", "Increases", "Decreases"],
+    "answer": 1
+  },
+  {
+    "q": "When a bullet is fired from a gun, the gun recoils due to:",
+    "options": ["Conservation of energy", "Conservation of momentum", "Newton's first law", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Galileo concluded that objects move with constant speed when no force acts. This supports:",
+    "options": ["Second law", "First law", "Third law", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A passenger in a moving bus tends to fall forward when brakes are applied due to:",
+    "options": ["Inertia of motion", "Inertia of rest", "Friction", "Gravity"],
+    "answer": 0
+  },
+  {
+    "q": "When walking, we push the ground backward and ground pushes us forward due to:",
+    "options": ["First law", "Second law", "Third law", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Swimming is possible due to:",
+    "options": ["Third law", "First law", "Second law", "Buoyancy"],
+    "answer": 0
+  },
+  {
+    "q": "Rocket propulsion is based on:",
+    "options": ["Conservation of momentum", "Newton's first law", "Gravity", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If net external force on a system is zero, momentum:",
+    "options": ["Changes", "Remains conserved", "Increases", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In elastic collision, both momentum and kinetic energy are:",
+    "options": ["Conserved", "Not conserved", "Only momentum conserved", "Only KE conserved"],
+    "answer": 0
+  },
+  {
+    "q": "In inelastic collision:",
+    "options": ["Momentum conserved, KE not", "KE conserved, momentum not", "Both conserved", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If force F acts for time t, the change in momentum is:",
+    "options": ["F t (impulse)", "F/t", "m a", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Impulse =",
+    "options": ["Force × time", "Mass × velocity", "Change in momentum", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The quantity of motion in a body is:",
+    "options": ["Force", "Inertia", "Momentum", "Acceleration"],
+    "answer": 2
+  },
+  {
+    "q": "A heavier body has:",
+    "options": ["Less inertia", "More inertia", "Same inertia", "None"],
+    "answer": 1
+  },
+  {
+    "q": "When a force is applied, acceleration is:",
+    "options": ["Directly proportional to force", "Inversely proportional to mass", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "F = ma shows that acceleration is:",
+    "options": ["Inversely proportional to force", "Directly proportional to force", "Independent of mass", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For same force, lighter body has:",
+    "options": ["Less acceleration", "More acceleration", "Same", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Newton's laws are valid in:",
+    "options": ["Inertial frames", "Non-inertial frames", "All frames", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In non-inertial frame, we introduce:",
+    "options": ["Real force", "Pseudo force", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Example of balanced force:",
+    "options": ["Book on table", "Falling apple", "Moving car with constant speed", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "Example of unbalanced force:",
+    "options": ["Stationary object", "Object accelerating", "Uniform motion", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The chapter 'Force and Laws of Motion' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Aristotle believed that force is needed to:",
+    "options": ["Keep body at rest", "Maintain motion", "Stop motion", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Galileo's experiment with inclined planes showed:",
+    "options": ["Force needed to maintain motion", "No force needed for constant motion on horizontal", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Friction opposes:",
+    "options": ["Motion", "Rest", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "When a gun is fired, bullet moves forward and gun recoils backward due to:",
+    "options": ["Third law", "Second law", "First law", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Jet planes and rockets work on principle of:",
+    "options": ["Conservation of momentum", "Newton's first law", "Gravity", "None"],
+    "answer": 0
+  },
+  {
+    "q": "When two bodies collide, total momentum before and after collision is:",
+    "options": ["Different", "Same", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If no external force acts, velocity:",
+    "options": ["Changes", "Remains constant", "Becomes zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Force = rate of change of:",
+    "options": ["Velocity", "Momentum", "Speed", "Distance"],
+    "answer": 1
+  },
+  {
+    "q": "For constant mass, F =",
+    "options": ["m v", "m a", "p t", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The product of force and time is:",
+    "options": ["Power", "Impulse", "Work", "Energy"],
+    "answer": 1
+  },
+  {
+    "q": "Impulse causes change in:",
+    "options": ["Velocity", "Momentum", "Acceleration", "Force"],
+    "answer": 1
+  },
+  {
+    "q": "To reduce impulse for same change in momentum, we:",
+    "options": ["Increase time", "Decrease time", "Increase force", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Air bags in cars increase time of impact to:",
+    "options": ["Reduce force", "Increase force", "No effect", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Crumple zones in cars:",
+    "options": ["Increase time of collision", "Decrease time", "No effect", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Seat belts prevent:",
+    "options": ["Inertia of motion", "Sudden change", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A karate player breaks brick by:",
+    "options": ["Large force in short time", "Small force long time", "No force", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Catchers move hands back while catching ball to:",
+    "options": ["Increase time, reduce force", "Decrease time", "Increase force", "None"],
+    "answer": 0
+  },
+  {
+    "q": "China pots break easily due to:",
+    "options": ["Less inertia", "Small force large impulse", "Cannot withstand force", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The three laws of motion were given by:",
+    "options": ["Galileo", "Newton", "Aristotle", "Einstein"],
+    "answer": 1
+  },
+  {
+    "q": "Newton formulated laws in:",
+    "options": ["1687", "1905", "1600", "1800"],
+    "answer": 0
+  },
+  {
+    "q": "The book is:",
+    "options": ["Philosophiae Naturalis Principia Mathematica", "Relativity", "Optics", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inertia of rest example:",
+    "options": ["Dust from carpet", "Passenger falling forward", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inertia of motion example:",
+    "options": ["Passenger falling forward on braking", "Dust from carpet", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inertia of direction example:",
+    "options": ["Passenger leaning outward in curve", "Falling forward", "Dust", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Mass is measure of:",
+    "options": ["Inertia", "Force", "Weight", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Weight is:",
+    "options": ["Mass × g", "Inertia", "Force", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "On moon, weight is less but mass:",
+    "options": ["Less", "Same", "More", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "The concept of inertia was first introduced by:",
+    "options": ["Newton", "Galileo", "Aristotle", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Aristotle's fallacy was corrected by:",
+    "options": ["Newton", "Galileo", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Force has:",
+    "options": ["Magnitude only", "Direction only", "Both magnitude and direction", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Force is a:",
+    "options": ["Scalar", "Vector", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Momentum is a:",
+    "options": ["Scalar", "Vector", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The direction of momentum is same as:",
+    "options": ["Force", "Velocity", "Acceleration", "None"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

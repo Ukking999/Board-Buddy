@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body {background:#0b0f1a; color:#fff; font-family:'Poppins',sans-serif; padding:20px;}
+h1 {text-align:center; margin-bottom:20px;}
+.quiz-container {max-width:800px; margin:0 auto; background:#11162a; padding:30px; border-radius:16px;}
+.question {margin-bottom:15px; font-weight:600;}
+.options label {display:block; margin:5px 0; padding:8px 12px; background:#222; border-radius:8px; cursor:pointer; transition:0.3s;}
+.options label:hover {background:#4da3ff; color:#000;}
+button {margin-top:20px; padding:10px 20px; border:none; border-radius:8px; background:#4da3ff; color:#000; font-weight:600; cursor:pointer; transition:0.3s;}
+button:hover {opacity:0.85;}
+.result {margin-top:20px; font-size:18px; text-align:center; font-weight:600;}
+</style>
+</head>
+<body>
+
+<h1>Class 9 Science - Gravitation MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Gravitation is the force of attraction between:",
+    "options": ["Any two bodies in the universe", "Only Earth and objects", "Charged bodies", "Magnetic bodies"],
+    "answer": 0
+  },
+  {
+    "q": "The universal law of gravitation was proposed by:",
+    "options": ["Galileo", "Newton", "Kepler", "Einstein"],
+    "answer": 1
+  },
+  {
+    "q": "According to Newton's law, gravitational force is proportional to:",
+    "options": ["Product of masses", "Sum of masses", "Difference of masses", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Gravitational force is inversely proportional to:",
+    "options": ["Square of distance between centres", "Distance", "Product of masses", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The mathematical form of universal law of gravitation is:",
+    "options": ["F = G m1 m2 / r²", "F = G m1 m2 / r", "F = G m1 + m2 / r²", "F = m1 m2 / r²"],
+    "answer": 0
+  },
+  {
+    "q": "G is called:",
+    "options": ["Gravitational constant", "Universal constant", "Acceleration due to gravity", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The value of G is:",
+    "options": ["6.67 × 10^{-11} Nm²/kg²", "9.8 m/s²", "6.67 × 10^{11} Nm²/kg²", "3 × 10^8 m/s"],
+    "answer": 0
+  },
+  {
+    "q": "The force with which Earth attracts a body is called:",
+    "options": ["Weight", "Mass", "Gravity", "Thrust"],
+    "answer": 0
+  },
+  {
+    "q": "Mass is a measure of:",
+    "options": ["Inertia", "Weight", "Force", "Acceleration"],
+    "answer": 0
+  },
+  {
+    "q": "Weight is:",
+    "options": ["Mass × g", "Mass × G", "Force due to gravity", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The SI unit of weight is:",
+    "options": ["kg", "Newton", "g", "m/s²"],
+    "answer": 1
+  },
+  {
+    "q": "Mass is:",
+    "options": ["Constant everywhere", "Changes with location", "Zero on moon", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Weight on moon is:",
+    "options": ["Same as Earth", "Less than Earth", "More than Earth", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "Acceleration due to gravity (g) is:",
+    "options": ["Same everywhere", "Varies with location", "Constant on Earth", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "Value of g on Earth is approximately:",
+    "options": ["9.8 m/s²", "10 m/s²", "8 m/s²", "Both a and b (approx)"],
+    "answer": 3
+  },
+  {
+    "q": "g is maximum at:",
+    "options": ["Poles", "Equator", "Mountains", "Centre of Earth"],
+    "answer": 0
+  },
+  {
+    "q": "g is minimum at:",
+    "options": ["Poles", "Equator", "High altitudes", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "At the centre of Earth, g is:",
+    "options": ["Maximum", "Zero", "9.8 m/s²", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "Free fall means motion under:",
+    "options": ["Air resistance", "Only gravity", "Friction", "Thrust"],
+    "answer": 1
+  },
+  {
+    "q": "In free fall, acceleration is:",
+    "options": ["Zero", "g", "Variable", "None"],
+    "answer": 1
+  },
+  {
+    "q": "All bodies in free fall near Earth have same acceleration:",
+    "options": ["True", "False", "Only heavy bodies", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Weightlessness is experienced in:",
+    "options": ["Free fall", "Orbiting satellite", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Thrust is the force acting:",
+    "options": ["Downward", "Upward (opposite to weight)", "Sideways", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Pressure is:",
+    "options": ["Force / Area", "Force × Area", "Mass / Volume", "Weight / Volume"],
+    "answer": 0
+  },
+  {
+    "q": "The SI unit of pressure is:",
+    "options": ["Newton", "Pascal", "kg/m³", "N/m"],
+    "answer": 1
+  },
+  {
+    "q": "Pressure in fluids depends on:",
+    "options": ["Depth", "Density", "g", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Buoyancy is the:",
+    "options": ["Upward force by fluid", "Downward force", "Weight", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Archimedes' principle states that buoyant force equals:",
+    "options": ["Weight of object", "Weight of displaced fluid", "Volume displaced", "Density"],
+    "answer": 1
+  },
+  {
+    "q": "An object floats if buoyant force is:",
+    "options": ["Less than weight", "Equal to weight", "Greater than weight", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "An object sinks if:",
+    "options": ["Buoyant force > weight", "Buoyant force = weight", "Buoyant force < weight", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Density =",
+    "options": ["Mass / Volume", "Volume / Mass", "Weight / Volume", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Relative density =",
+    "options": ["Density of substance / Density of water", "Mass / Volume of water", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Objects with relative density < 1:",
+    "options": ["Sink", "Float", "Dissolve", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Kepler's laws are for:",
+    "options": ["Motion of planets", "Falling bodies", "Circular motion", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Kepler's first law: Planets move in:",
+    "options": ["Circles", "Ellipses with sun at one focus", "Straight lines", "Parabola"],
+    "answer": 1
+  },
+  {
+    "q": "Kepler's second law: Equal areas in equal times (law of:",
+    "options": ["Areas", "Periods", "Harmonic", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Kepler's third law: T² ∝",
+    "options": ["r", "r²", "r³", "1/r³"],
+    "answer": 2
+  },
+  {
+    "q": "The gravitational force between two bodies is:",
+    "options": ["Repulsive", "Attractive", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Gravitational force is a:",
+    "options": ["Contact force", "Non-contact force", "Muscular force", "Friction"],
+    "answer": 1
+  },
+  {
+    "q": "The chapter 'Gravitation' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Newton's inspiration for gravity came from:",
+    "options": ["Falling apple", "Moon's motion", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Universal gravitation means force acts between:",
+    "options": ["Only Earth and bodies", "Any two bodies", "Only planets", "None"],
+    "answer": 1
+  },
+  {
+    "q": "G is very small, so gravitational force is significant only for:",
+    "options": ["Large masses", "Small masses", "Charged bodies", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Weight W =",
+    "options": ["m g", "m / g", "G M m / r²", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "g =",
+    "options": ["G M / R²", "G m / r²", "G M m / R²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "g on moon is about:",
+    "options": ["g/6", "6g", "g", "Zero"],
+    "answer": 0
+  },
+  {
+    "q": "Weight on moon is:",
+    "options": ["Same", "1/6th of Earth", "6 times", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "Mass on moon is:",
+    "options": ["1/6th", "Same as Earth", "6 times", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "In orbiting satellite, astronauts feel weightless because:",
+    "options": ["No gravity", "In free fall", "Far from Earth", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The upward force on object in fluid is:",
+    "options": ["Weight", "Buoyant force", "Thrust", "Pressure"],
+    "answer": 1
+  },
+  {
+    "q": "Lactometer measures:",
+    "options": ["Density of milk", "Purity of milk", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Hydrometer measures:",
+    "options": ["Density/relative density of liquids", "Pressure", "Volume", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ships float because:",
+    "options": ["Density less than water", "Large volume displaces water equal to weight", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Submarines control buoyancy by:",
+    "options": ["Changing volume", "Ballast tanks", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Ice floats on water because:",
+    "options": ["Density less than water", "Density more", "Same density", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The anomalous expansion of water is between:",
+    "options": ["0°C to 4°C", "4°C to 100°C", "Below 0°C", "None"],
+    "answer": 0
+  },
+  {
+    "q": "At 4°C, water has:",
+    "options": ["Maximum density", "Minimum density", "Zero density", "None"],
+    "answer": 0
+  },
+  {
+    "q": "This helps aquatic life in winter because:",
+    "options": ["Ice floats, insulates water below", "Water freezes completely", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pressure in liquid increases with:",
+    "options": ["Depth", "Area", "Volume", "Temperature"],
+    "answer": 0
+  },
+  {
+    "q": "Pressure at same depth is:",
+    "options": ["Same in all directions", "Different", "Only downward", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pascal's law is about:",
+    "options": ["Transmission of pressure in fluids", "Buoyancy", "Gravity", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Hydraulic machines work on:",
+    "options": ["Pascal's law", "Archimedes", "Bernoulli", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The gravitational pull of moon causes:",
+    "options": ["Tides", "Earthquakes", "Rain", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Kepler's laws were empirically found from:",
+    "options": ["Tycho Brahe's observations", "Newton's calculations", "Galileo's telescope", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Newton generalised Kepler's laws into:",
+    "options": ["Universal gravitation", "Motion laws", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The force keeping planets in orbit is:",
+    "options": ["Gravitational", "Magnetic", "Nuclear", "Friction"],
+    "answer": 0
+  },
+  {
+    "q": "Artificial satellites orbit due to:",
+    "options": ["Earth's gravity", "No gravity", "Thrust", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Geostationary satellites have period:",
+    "options": ["24 hours", "1 hour", "90 minutes", "12 hours"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter includes:",
+    "options": ["Universal gravitation, free fall, weight, buoyancy", "Only motion", "Only force", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

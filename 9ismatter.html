@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Is Matter Around Us Pure? MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A mixture contains:",
+    "options": ["One kind of substance", "Two or more substances", "Only elements", "Only compounds"],
+    "answer": 1
+  },
+  {
+    "q": "A pure substance has:",
+    "options": ["Variable composition", "Fixed composition", "Mixed properties", "Variable properties"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is a pure substance?",
+    "options": ["Air", "Milk", "Distilled water", "Soil"],
+    "answer": 2
+  },
+  {
+    "q": "Pure substances are classified into:",
+    "options": ["Mixtures and solutions", "Elements and compounds", "Homogeneous and heterogeneous", "Solids and liquids"],
+    "answer": 1
+  },
+  {
+    "q": "An element is made up of:",
+    "options": ["Different kinds of atoms", "Same kind of atoms", "Molecules only", "Ions"],
+    "answer": 1
+  },
+  {
+    "q": "A compound is made up of:",
+    "options": ["Same kind of atoms", "Different kinds of atoms in fixed ratio", "Variable atoms", "Only one atom"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is an element?",
+    "options": ["Water", "Carbon dioxide", "Gold", "Salt"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a compound?",
+    "options": ["Oxygen", "Iron", "Water", "Air"],
+    "answer": 2
+  },
+  {
+    "q": "Mixtures are classified into:",
+    "options": ["Elements and compounds", "Homogeneous and heterogeneous", "Pure and impure", "Solid and liquid"],
+    "answer": 1
+  },
+  {
+    "q": "A mixture with uniform composition throughout is:",
+    "options": ["Heterogeneous", "Homogeneous", "Compound", "Element"],
+    "answer": 1
+  },
+  {
+    "q": "A mixture with non-uniform composition is:",
+    "options": ["Homogeneous", "Heterogeneous", "Solution", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "Example of homogeneous mixture:",
+    "options": ["Sand and water", "Oil and water", "Salt solution", "Soil"],
+    "answer": 2
+  },
+  {
+    "q": "Example of heterogeneous mixture:",
+    "options": ["Salt in water", "Sugar solution", "Oil and water", "Air"],
+    "answer": 2
+  },
+  {
+    "q": "A solution is a:",
+    "options": ["Heterogeneous mixture", "Homogeneous mixture", "Compound", "Element"],
+    "answer": 1
+  },
+  {
+    "q": "In a solution, the substance present in larger amount is:",
+    "options": ["Solute", "Solvent", "Mixture", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "In a solution, the substance dissolved is:",
+    "options": ["Solvent", "Solute", "Solution", "Suspension"],
+    "answer": 1
+  },
+  {
+    "q": "Example of solid in liquid solution:",
+    "options": ["Salt in water", "Fog", "Smoke", "Milk"],
+    "answer": 0
+  },
+  {
+    "q": "Example of gas in liquid solution:",
+    "options": ["Aerated drinks (CO2 in water)", "Salt water", "Smoke", "Alloy"],
+    "answer": 0
+  },
+  {
+    "q": "Example of liquid in liquid solution:",
+    "options": ["Vinegar (acetic acid in water)", "Milk", "Smoke", "Fog"],
+    "answer": 0
+  },
+  {
+    "q": "Alloys are examples of:",
+    "options": ["Solid in liquid", "Solid in solid solution", "Gas in solid", "Liquid in solid"],
+    "answer": 1
+  },
+  {
+    "q": "Brass is an alloy of:",
+    "options": ["Copper and zinc", "Iron and carbon", "Copper and tin", "Iron and nickel"],
+    "answer": 0
+  },
+  {
+    "q": "Bronze is an alloy of:",
+    "options": ["Copper and zinc", "Copper and tin", "Iron and carbon", "Gold and silver"],
+    "answer": 1
+  },
+  {
+    "q": "Steel is an alloy of:",
+    "options": ["Iron and carbon", "Copper and zinc", "Copper and tin", "Aluminium and copper"],
+    "answer": 0
+  },
+  {
+    "q": "A suspension is a:",
+    "options": ["Homogeneous mixture", "Heterogeneous mixture", "Solution", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "In suspension, particles are:",
+    "options": ["Invisible", "Visible to naked eye", "Visible under microscope only", "Dissolved"],
+    "answer": 1
+  },
+  {
+    "q": "Example of suspension:",
+    "options": ["Salt solution", "Muddy water", "Air", "Milk of magnesia (some consider suspension)"],
+    "answer": 1
+  },
+  {
+    "q": "A colloidal solution is a:",
+    "options": ["Homogeneous mixture", "Heterogeneous mixture", "True solution", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "In colloid, particle size is:",
+    "options": ["Smaller than suspension but larger than true solution", "Same as solution", "Larger than suspension", "Same as compound"],
+    "answer": 0
+  },
+  {
+    "q": "Example of colloid:",
+    "options": ["Salt water", "Muddy water", "Milk", "Air"],
+    "answer": 2
+  },
+  {
+    "q": "Tyndall effect is shown by:",
+    "options": ["True solution", "Colloidal solution", "Both", "Suspension only"],
+    "answer": 1
+  },
+  {
+    "q": "Tyndall effect is:",
+    "options": ["Scattering of light by particles", "Absorption of light", "Reflection", "Refraction"],
+    "answer": 0
+  },
+  {
+    "q": "True solutions do not show:",
+    "options": ["Tyndall effect", "Scattering", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Suspensions show Tyndall effect:",
+    "options": ["No", "Yes", "Sometimes", "Only in dark"],
+    "answer": 1
+  },
+  {
+    "q": "Particles in suspension:",
+    "options": ["Settle down on standing", "Do not settle", "Dissolve", "Float"],
+    "answer": 0
+  },
+  {
+    "q": "Particles in colloid:",
+    "options": ["Settle down", "Do not settle", "Dissolve completely", "Visible"],
+    "answer": 1
+  },
+  {
+    "q": "Milk is a:",
+    "options": ["True solution", "Colloid (emulsion)", "Suspension", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "Fog is a:",
+    "options": ["Liquid in gas (aerosol)", "Gas in liquid", "Solid in gas", "Solution"],
+    "answer": 0
+  },
+  {
+    "q": "Smoke is a:",
+    "options": ["Solid in gas (aerosol)", "Gas in solid", "Liquid in gas", "Solution"],
+    "answer": 0
+  },
+  {
+    "q": "Properties of a compound are:",
+    "options": ["Same as elements", "Different from constituent elements", "Variable", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Properties of a mixture are:",
+    "options": ["Different from components", "Same as components", "Fixed ratio", "Fixed properties"],
+    "answer": 1
+  },
+  {
+    "q": "In a compound, elements are present in:",
+    "options": ["Variable ratio", "Fixed ratio by mass", "Any ratio", "No fixed ratio"],
+    "answer": 1
+  },
+  {
+    "q": "In a mixture, components are present in:",
+    "options": ["Fixed ratio", "Any ratio", "By mass only", "By volume only"],
+    "answer": 1
+  },
+  {
+    "q": "Components of a mixture can be separated by:",
+    "options": ["Chemical methods", "Physical methods", "Both", "Cannot be separated"],
+    "answer": 1
+  },
+  {
+    "q": "Elements in a compound can be separated by:",
+    "options": ["Physical methods", "Chemical methods", "Both", "Cannot"],
+    "answer": 1
+  },
+  {
+    "q": "Air is a:",
+    "options": ["Compound", "Element", "Mixture", "Pure substance"],
+    "answer": 2
+  },
+  {
+    "q": "Air is a homogeneous mixture of:",
+    "options": ["Nitrogen, oxygen, etc.", "Only oxygen", "Only nitrogen", "Carbon dioxide only"],
+    "answer": 0
+  },
+  {
+    "q": "Sea water is a:",
+    "options": ["Compound", "Mixture (solution)", "Element", "Pure"],
+    "answer": 1
+  },
+  {
+    "q": "Soda water is:",
+    "options": ["Gas in liquid solution", "Liquid in gas", "Solid in liquid", "Compound"],
+    "answer": 0
+  },
+  {
+    "q": "22 carat gold is:",
+    "options": ["Pure gold", "Alloy (gold + copper/silver)", "Compound", "Element"],
+    "answer": 1
+  },
+  {
+    "q": "Distilled water is:",
+    "options": ["Mixture", "Pure substance (compound)", "Solution", "Suspension"],
+    "answer": 1
+  },
+  {
+    "q": "Diamond is a pure form of:",
+    "options": ["Carbon", "Silicon", "Graphite", "Coal"],
+    "answer": 0
+  },
+  {
+    "q": "Graphite is a pure form of:",
+    "options": ["Carbon", "Silicon", "Diamond", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Carbon dioxide is a:",
+    "options": ["Element", "Compound", "Mixture", "Alloy"],
+    "answer": 1
+  },
+  {
+    "q": "Sodium chloride (table salt) is a:",
+    "options": ["Element", "Compound", "Mixture", "Alloy"],
+    "answer": 1
+  },
+  {
+    "q": "Iron sulphide is a:",
+    "options": ["Mixture", "Compound", "Element", "Alloy"],
+    "answer": 1
+  },
+  {
+    "q": "Iron filings + sulphur mixture can be separated by:",
+    "options": ["Magnet", "Chemical reaction only", "Dissolving", "Heating only"],
+    "answer": 0
+  },
+  {
+    "q": "Iron sulphide cannot be separated by:",
+    "options": ["Magnet", "Chemical methods only", "Physical methods", "Heating"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Is Matter Around Us Pure' deals with:",
+    "options": ["States of matter", "Pure substances and mixtures", "Particles", "Change of state"],
+    "answer": 1
+  },
+  {
+    "q": "Pure substances have:",
+    "options": ["Fixed melting/boiling points", "Variable melting/boiling points", "No melting point", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Mixtures have:",
+    "options": ["Fixed melting/boiling points", "Variable/range of melting/boiling points", "Same as elements", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A true solution is:",
+    "options": ["Heterogeneous", "Homogeneous", "Visible particles", "Settles down"],
+    "answer": 1
+  },
+  {
+    "q": "Particle size in true solution is:",
+    "options": ["> 100 nm", "< 1 nm", "1-100 nm", "Visible"],
+    "answer": 1
+  },
+  {
+    "q": "Particle size in colloid is:",
+    "options": ["< 1 nm", "1 nm to 1000 nm", "> 1000 nm", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Particle size in suspension is:",
+    "options": ["< 1 nm", "1-1000 nm", "> 1000 nm", "Dissolved"],
+    "answer": 2
+  },
+  {
+    "q": "Starch solution is a:",
+    "options": ["True solution", "Colloid", "Suspension", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "Paint is a:",
+    "options": ["Solution", "Colloid", "Suspension", "Pure"],
+    "answer": 2
+  },
+  {
+    "q": "Gemstones are:",
+    "options": ["Mixtures", "Pure substances", "Solutions", "Suspensions"],
+    "answer": 1
+  },
+  {
+    "q": "Ink is a:",
+    "options": ["True solution", "Colloid", "Suspension", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "Blood is a:",
+    "options": ["True solution", "Colloid", "Suspension", "Compound"],
+    "answer": 1
+  },
+  {
+    "q": "Cloud is a:",
+    "options": ["Liquid in gas", "Gas in liquid", "Solid in gas", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Butter is an example of:",
+    "options": ["Gel", "Emulsion", "Foam", "Sol"],
+    "answer": 1
+  },
+  {
+    "q": "Whipped cream is:",
+    "options": ["Foam", "Gel", "Emulsion", "Aerosol"],
+    "answer": 0
+  },
+  {
+    "q": "The dispersed phase in milk is:",
+    "options": ["Water", "Fat globules", "Protein", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The dispersion medium in milk is:",
+    "options": ["Fat", "Water", "Air", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Pure gold is:",
+    "options": ["24 carat", "22 carat", "18 carat", "14 carat"],
+    "answer": 0
+  },
+  {
+    "q": "To make jewellery, gold is alloyed with:",
+    "options": ["Copper or silver", "Iron", "Carbon", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A substance that cannot be separated into simpler substances by chemical means is:",
+    "options": ["Compound", "Mixture", "Element", "Solution"],
+    "answer": 2
+  },
+  {
+    "q": "Water is a compound of:",
+    "options": ["Hydrogen and oxygen in 1:8 by mass", "Hydrogen and oxygen in 1:1", "Carbon and oxygen", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The law of constant proportions applies to:",
+    "options": ["Mixtures", "Compounds", "Elements", "Solutions"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

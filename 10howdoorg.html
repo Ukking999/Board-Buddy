@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - How do Organisms Reproduce MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Asexual reproduction involves:",
+    "options": ["Only one parent", "Two parents", "Gamete formation", "Fertilisation"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following is an example of asexual reproduction?",
+    "options": ["Binary fission in Amoeba", "Fertilisation in humans", "Pollination in flowers", "Seed formation in mango"],
+    "answer": 0
+  },
+  {
+    "q": "Budding is commonly seen in:",
+    "options": ["Amoeba", "Hydra", "Planaria", "Paramecium"],
+    "answer": 1
+  },
+  {
+    "q": "Fragmentation is a mode of asexual reproduction in:",
+    "options": ["Yeast", "Spirogyra", "Hydra", "Amoeba"],
+    "answer": 1
+  },
+  {
+    "q": "The type of reproduction in which offspring are produced from unfertilised eggs is called:",
+    "options": ["Parthenogenesis", "Binary fission", "Budding", "Vegetative propagation"],
+    "answer": 0
+  },
+  {
+    "q": "Vegetative propagation is commonly used in:",
+    "options": ["Rose and sugarcane", "Amoeba", "Hydra", "Yeast"],
+    "answer": 0
+  },
+  {
+    "q": "Spore formation occurs in:",
+    "options": ["Rhizopus (bread mould)", "Hydra", "Planaria", "Amoeba"],
+    "answer": 0
+  },
+  {
+    "q": "Sexual reproduction involves:",
+    "options": ["One parent only", "Two parents", "No gametes", "Identical offspring"],
+    "answer": 1
+  },
+  {
+    "q": "The male gamete in humans is called:",
+    "options": ["Ovum", "Sperm", "Zygote", "Embryo"],
+    "answer": 1
+  },
+  {
+    "q": "The female gamete in flowering plants is found in:",
+    "options": ["Pollen grain", "Ovule", "Stigma", "Anther"],
+    "answer": 1
+  },
+  {
+    "q": "Fertilisation in flowering plants occurs in:",
+    "options": ["Stigma", "Ovary", "Anther", "Style"],
+    "answer": 1
+  },
+  {
+    "q": "The process of transfer of pollen grains from anther to stigma is called:",
+    "options": ["Fertilisation", "Pollination", "Germination", "Dispersion"],
+    "answer": 1
+  },
+  {
+    "q": "Self-pollination occurs:",
+    "options": ["Between different flowers of the same plant", "Within the same flower", "Between flowers of different plants", "By wind only"],
+    "answer": 1
+  },
+  {
+    "q": "Cross-pollination requires:",
+    "options": ["Same flower", "Two different flowers of same plant", "Flowers of two different plants", "No agent"],
+    "answer": 2
+  },
+  {
+    "q": "The zygote is formed after:",
+    "options": ["Pollination", "Fertilisation", "Germination", "Dispersion"],
+    "answer": 1
+  },
+  {
+    "q": "In humans, fertilisation occurs in:",
+    "options": ["Ovary", "Uterus", "Fallopian tube", "Vagina"],
+    "answer": 2
+  },
+  {
+    "q": "The embryo gets nourishment from the mother through:",
+    "options": ["Umbilical cord", "Ovary", "Fallopian tube", "Cervix"],
+    "answer": 0
+  },
+  {
+    "q": "The structure that provides protection and nourishment to the embryo is:",
+    "options": ["Placenta", "Amnion", "Uterus", "Ovary"],
+    "answer": 0
+  },
+  {
+    "q": "Puberty in boys is characterised by:",
+    "options": ["Growth of facial hair", "Menstruation", "Development of breasts", "Ovulation"],
+    "answer": 0
+  },
+  {
+    "q": "Menstruation occurs if:",
+    "options": ["Fertilisation takes place", "The egg is not fertilised", "Implantation occurs", "Zygote forms"],
+    "answer": 1
+  },
+  {
+    "q": "The primary sex organ in males is:",
+    "options": ["Penis", "Testis", "Prostate gland", "Seminal vesicle"],
+    "answer": 1
+  },
+  {
+    "q": "The primary sex organ in females is:",
+    "options": ["Uterus", "Ovary", "Vagina", "Fallopian tube"],
+    "answer": 1
+  },
+  {
+    "q": "The hormone responsible for secondary sexual characteristics in males is:",
+    "options": ["Estrogen", "Progesterone", "Testosterone", "FSH"],
+    "answer": 2
+  },
+  {
+    "q": "The surgical method of birth control in males is:",
+    "options": ["Tubectomy", "Vasectomy", "Copper-T", "Oral pills"],
+    "answer": 1
+  },
+  {
+    "q": "The surgical method of birth control in females is:",
+    "options": ["Vasectomy", "Tubectomy", "Condom", "Diaphragm"],
+    "answer": 1
+  },
+  {
+    "q": "Copper-T is a:",
+    "options": ["Barrier method", "Hormonal method", "Intrauterine device", "Surgical method"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a sexually transmitted disease?",
+    "options": ["AIDS", "Diabetes", "Hypertension", "Malaria"],
+    "answer": 0
+  },
+  {
+    "q": "HIV is transmitted through:",
+    "options": ["Air", "Water", "Unprotected sexual contact", "Hand shake"],
+    "answer": 2
+  },
+  {
+    "q": "The process by which seeds develop into new plants is:",
+    "options": ["Pollination", "Fertilisation", "Germination", "Dispersion"],
+    "answer": 2
+  },
+  {
+    "q": "The part of the flower that develops into fruit is:",
+    "options": ["Ovary", "Stigma", "Anther", "Petals"],
+    "answer": 0
+  },
+  {
+    "q": "The part of the seed that develops into the root is:",
+    "options": ["Plumule", "Radicle", "Cotyledon", "Seed coat"],
+    "answer": 1
+  },
+  {
+    "q": "Binary fission is seen in:",
+    "options": ["Hydra", "Amoeba", "Planaria", "Yeast"],
+    "answer": 1
+  },
+  {
+    "q": "Regeneration is best seen in:",
+    "options": ["Hydra", "Planaria", "Amoeba", "Yeast"],
+    "answer": 1
+  },
+  {
+    "q": "The advantage of sexual reproduction over asexual reproduction is:",
+    "options": ["Faster", "More offspring", "Variation in offspring", "No need of mate"],
+    "answer": 2
+  },
+  {
+    "q": "The fusion of male and female gametes is called:",
+    "options": ["Pollination", "Fertilisation", "Germination", "Implantation"],
+    "answer": 1
+  },
+  {
+    "q": "In flowering plants, the male gamete is produced in:",
+    "options": ["Ovary", "Stigma", "Pollen grain", "Ovule"],
+    "answer": 2
+  },
+  {
+    "q": "Double fertilisation is unique to:",
+    "options": ["Animals", "Algae", "Flowering plants", "Fungi"],
+    "answer": 2
+  },
+  {
+    "q": "The embryonic stage after zygote is:",
+    "options": ["Foetus", "Embryo", "Blastocyst", "Morula"],
+    "answer": 1
+  },
+  {
+    "q": "Gestation period in humans is approximately:",
+    "options": ["6 months", "9 months", "12 months", "3 months"],
+    "answer": 1
+  },
+  {
+    "q": "The first menstrual flow is called:",
+    "options": ["Menopause", "Menarche", "Ovulation", "Implantation"],
+    "answer": 1
+  },
+  {
+    "q": "The stopping of menstruation in females is called:",
+    "options": ["Menarche", "Menopause", "Puberty", "Ovulation"],
+    "answer": 1
+  },
+  {
+    "q": "Condom is a:",
+    "options": ["Barrier method", "Chemical method", "Surgical method", "Intrauterine device"],
+    "answer": 0
+  },
+  {
+    "q": "Oral contraceptive pills contain:",
+    "options": ["Hormones", "Antibiotics", "Vitamins", "Minerals"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following prevents pregnancy as well as STDs?",
+    "options": ["Copper-T", "Oral pills", "Condom", "Tubectomy"],
+    "answer": 2
+  },
+  {
+    "q": "The pollen tube grows through:",
+    "options": ["Stigma", "Style", "Ovary", "Anther"],
+    "answer": 1
+  },
+  {
+    "q": "The endosperm in seeds is formed by:",
+    "options": ["One fertilisation event", "Double fertilisation", "Triple fusion only", "No fertilisation"],
+    "answer": 1
+  },
+  {
+    "q": "The cotyledons store food in:",
+    "options": ["Seeds", "Fruits", "Flowers", "Leaves"],
+    "answer": 0
+  },
+  {
+    "q": "The process of release of ovum from ovary is called:",
+    "options": ["Menstruation", "Ovulation", "Fertilisation", "Implantation"],
+    "answer": 1
+  },
+  {
+    "q": "The hormone that prepares the uterus for implantation is:",
+    "options": ["Estrogen", "Progesterone", "Testosterone", "FSH"],
+    "answer": 1
+  },
+  {
+    "q": "In vitro fertilisation (IVF) is also known as:",
+    "options": ["Test tube baby", "Cloning", "Vegetative propagation", "Budding"],
+    "answer": 0
+  },
+  {
+    "q": "The agent of pollination by wind is:",
+    "options": ["Insect", "Water", "Wind", "Bird"],
+    "answer": 2
+  },
+  {
+    "q": "Flowers that are pollinated by insects are usually:",
+    "options": ["Brightly coloured and scented", "Dull and odourless", "Small and inconspicuous", "Produced in winter"],
+    "answer": 0
+  },
+  {
+    "q": "The disadvantage of asexual reproduction is:",
+    "options": ["No variation", "Faster process", "Less energy required", "More offspring"],
+    "answer": 0
+  },
+  {
+    "q": "The structure that protects the developing embryo in humans is:",
+    "options": ["Placenta", "Amniotic sac", "Umbilical cord", "Uterus"],
+    "answer": 1
+  },
+  {
+    "q": "The number of chromosomes in human gametes is:",
+    "options": ["46", "23", "92", "44"],
+    "answer": 1
+  },
+  {
+    "q": "Meiosis occurs during:",
+    "options": ["Gamete formation", "Zygote formation", "Growth of body", "Asexual reproduction"],
+    "answer": 0
+  },
+  {
+    "q": "The part of the flower that becomes the seed is:",
+    "options": ["Ovule", "Ovary", "Style", "Stigma"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following is a unisexual flower?",
+    "options": ["Hibiscus", "Papaya", "Mustard", "Pea"],
+    "answer": 1
+  },
+  {
+    "q": "The reproductive phase in human females generally ends at:",
+    "options": ["Around 50 years", "Around 30 years", "Around 20 years", "At birth"],
+    "answer": 0
+  },
+  {
+    "q": "The embryo implants in:",
+    "options": ["Ovary", "Fallopian tube", "Uterus", "Cervix"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is not a contraceptive?",
+    "options": ["Condom", "Copper-T", "Antibiotic", "Oral pill"],
+    "answer": 2
+  },
+  {
+    "q": "Syphilis and gonorrhoea are caused by:",
+    "options": ["Virus", "Bacteria", "Fungi", "Protozoa"],
+    "answer": 1
+  },
+  {
+    "q": "The mode of reproduction in Plasmodium is:",
+    "options": ["Binary fission", "Multiple fission", "Budding", "Sexual"],
+    "answer": 1
+  },
+  {
+    "q": "Tissue culture is a type of:",
+    "options": ["Sexual reproduction", "Asexual reproduction", "Parthenogenesis", "Fertilisation"],
+    "answer": 1
+  },
+  {
+    "q": "The pollen grains are produced in:",
+    "options": ["Ovary", "Anther", "Stigma", "Style"],
+    "answer": 1
+  },
+  {
+    "q": "The menstrual cycle is controlled by:",
+    "options": ["Hormones", "Nervous system", "Enzymes", "Vitamins"],
+    "answer": 0
+  },
+  {
+    "q": "The average duration of the human menstrual cycle is:",
+    "options": ["28 days", "14 days", "7 days", "1 year"],
+    "answer": 0
+  },
+  {
+    "q": "The first sign of puberty in girls is:",
+    "options": ["Growth of facial hair", "Menarche", "Deepening of voice", "Broadening of shoulders"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is a mechanical barrier?",
+    "options": ["Diaphragm", "Oral pill", "Copper-T", "Vasectomy"],
+    "answer": 0
+  },
+  {
+    "q": "The zygote divides repeatedly to form:",
+    "options": ["Gametes", "Embryo", "Seed", "Spore"],
+    "answer": 1
+  },
+  {
+    "q": "In humans, the sex of the baby is determined by:",
+    "options": ["Mother", "Father", "Both parents equally", "Environment"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

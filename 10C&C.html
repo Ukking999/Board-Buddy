@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Control and Coordination MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Which of the following is the structural and functional unit of the nervous system?",
+    "options": ["Nephron", "Neuron", "Alveoli", "Osteon"],
+    "answer": 1
+  },
+  {
+    "q": "The gap between two adjacent neurons is called:",
+    "options": ["Synapse", "Dendrite", "Axon", "Node of Ranvier"],
+    "answer": 0
+  },
+  {
+    "q": "Reflex actions are controlled by:",
+    "options": ["Brain", "Spinal cord", "Peripheral nerves", "Autonomic nervous system"],
+    "answer": 1
+  },
+  {
+    "q": "Which part of the brain controls posture and balance of the body?",
+    "options": ["Cerebrum", "Cerebellum", "Medulla oblongata", "Hypothalamus"],
+    "answer": 1
+  },
+  {
+    "q": "The movement of plant parts in response to touch is called:",
+    "options": ["Phototropism", "Geotropism", "Thigmotropism", "Hydrotropism"],
+    "answer": 2
+  },
+  {
+    "q": "Which hormone is responsible for the 'fight or flight' response?",
+    "options": ["Insulin", "Adrenaline", "Thyroxine", "Growth hormone"],
+    "answer": 1
+  },
+  {
+    "q": "The chemical substances secreted by endocrine glands are called:",
+    "options": ["Enzymes", "Hormones", "Neurotransmitters", "Vitamins"],
+    "answer": 1
+  },
+  {
+    "q": "Which gland is known as the master gland?",
+    "options": ["Thyroid gland", "Adrenal gland", "Pituitary gland", "Pancreas"],
+    "answer": 2
+  },
+  {
+    "q": "Diabetes mellitus is caused due to deficiency of:",
+    "options": ["Thyroxine", "Insulin", "Adrenaline", "Growth hormone"],
+    "answer": 1
+  },
+  {
+    "q": "The hormone that regulates the basal metabolic rate is:",
+    "options": ["Adrenaline", "Insulin", "Thyroxine", "Testosterone"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a plant growth inhibitor?",
+    "options": ["Auxin", "Gibberellin", "Cytokinin", "Abscisic acid"],
+    "answer": 3
+  },
+  {
+    "q": "The movement of sunflower towards sunlight is an example of:",
+    "options": ["Thigmotropism", "Phototropism", "Chemotropism", "Hydrotropism"],
+    "answer": 1
+  },
+  {
+    "q": "Iodine is essential for the synthesis of:",
+    "options": ["Insulin", "Adrenaline", "Thyroxine", "Growth hormone"],
+    "answer": 2
+  },
+  {
+    "q": "The part of the brain responsible for thinking and memory is:",
+    "options": ["Cerebellum", "Medulla oblongata", "Cerebrum", "Hypothalamus"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a tropic movement?",
+    "options": ["Movement of leaves in Mimosa", "Growth of pollen tube towards ovule", "Opening and closing of stomata", "All of the above"],
+    "answer": 1
+  },
+  {
+    "q": "Goitre is caused due to deficiency of:",
+    "options": ["Iron", "Calcium", "Iodine", "Vitamin D"],
+    "answer": 2
+  },
+  {
+    "q": "The receptors for touch are located in:",
+    "options": ["Eyes", "Skin", "Nose", "Tongue"],
+    "answer": 1
+  },
+  {
+    "q": "Which hormone promotes cell division in plants?",
+    "options": ["Auxin", "Gibberellin", "Cytokinin", "Ethylene"],
+    "answer": 2
+  },
+  {
+    "q": "The autonomic nervous system controls:",
+    "options": ["Voluntary actions", "Involuntary actions", "Reflex actions", "Both b and c"],
+    "answer": 1
+  },
+  {
+    "q": "Cretinism is caused due to deficiency of:",
+    "options": ["Insulin", "Thyroxine", "Adrenaline", "Testosterone"],
+    "answer": 1
+  },
+  {
+    "q": "The growth of roots towards water is called:",
+    "options": ["Phototropism", "Geotropism", "Hydrotropism", "Thigmotropism"],
+    "answer": 2
+  },
+  {
+    "q": "Which part of the neuron carries impulses away from the cell body?",
+    "options": ["Dendrite", "Axon", "Synapse", "Myelin sheath"],
+    "answer": 1
+  },
+  {
+    "q": "The hormone responsible for fruit ripening is:",
+    "options": ["Auxin", "Gibberellin", "Cytokinin", "Ethylene"],
+    "answer": 3
+  },
+  {
+    "q": "Which gland secretes insulin?",
+    "options": ["Thyroid", "Adrenal", "Pituitary", "Pancreas"],
+    "answer": 3
+  },
+  {
+    "q": "The brain and spinal cord together form:",
+    "options": ["Peripheral nervous system", "Central nervous system", "Autonomic nervous system", "Somatic nervous system"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not an endocrine gland?",
+    "options": ["Pituitary", "Thyroid", "Salivary gland", "Adrenal"],
+    "answer": 2
+  },
+  {
+    "q": "The chemical messengers in animals are:",
+    "options": ["Enzymes", "Hormones", "Vitamins", "Neurotransmitters"],
+    "answer": 1
+  },
+  {
+    "q": "In plants, coordination is brought about by:",
+    "options": ["Nervous system", "Hormones", "Both a and b", "None of the above"],
+    "answer": 1
+  },
+  {
+    "q": "The growth movement of a plant part in response to gravity is:",
+    "options": ["Phototropism", "Geotropism", "Hydrotropism", "Thigmotropism"],
+    "answer": 1
+  },
+  {
+    "q": "Which hormone is secreted during emergency situations?",
+    "options": ["Thyroxine", "Insulin", "Adrenaline", "Growth hormone"],
+    "answer": 2
+  },
+  {
+    "q": "The largest part of the human brain is:",
+    "options": ["Cerebrum", "Cerebellum", "Medulla", "Pons"],
+    "answer": 0
+  },
+  {
+    "q": "Feedback mechanism in hormone regulation is mainly controlled by:",
+    "options": ["Brain", "Pituitary gland", "Target organ", "Hypothalamus"],
+    "answer": 3
+  },
+  {
+    "q": "Which plant hormone promotes stem elongation?",
+    "options": ["Auxin", "Gibberellin", "Cytokinin", "Abscisic acid"],
+    "answer": 1
+  },
+  {
+    "q": "The receptors for smell are located in:",
+    "options": ["Nose", "Tongue", "Skin", "Eyes"],
+    "answer": 0
+  },
+  {
+    "q": "Dwarfism is caused due to deficiency of:",
+    "options": ["Thyroxine", "Insulin", "Growth hormone", "Adrenaline"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a nastic movement?",
+    "options": ["Growth of roots downward", "Movement of leaves in touch-me-not plant", "Growth of shoot towards light", "Growth of pollen tube"],
+    "answer": 1
+  },
+  {
+    "q": "The medulla oblongata controls:",
+    "options": ["Thinking", "Breathing and heartbeat", "Balance", "Memory"],
+    "answer": 1
+  },
+  {
+    "q": "Which hormone regulates blood sugar level?",
+    "options": ["Adrenaline", "Thyroxine", "Insulin", "Testosterone"],
+    "answer": 2
+  },
+  {
+    "q": "Auxins are responsible for:",
+    "options": ["Cell division", "Phototropism", "Fruit ripening", "Stem elongation"],
+    "answer": 1
+  },
+  {
+    "q": "The impulse travels from one neuron to another through:",
+    "options": ["Dendrite", "Axon", "Synapse", "Cell body"],
+    "answer": 2
+  },
+  {
+    "q": "Which gland is located above the kidneys?",
+    "options": ["Thyroid", "Pituitary", "Adrenal", "Pancreas"],
+    "answer": 2
+  },
+  {
+    "q": "Abscisic acid is responsible for:",
+    "options": ["Stem elongation", "Cell division", "Closing of stomata", "Phototropism"],
+    "answer": 2
+  },
+  {
+    "q": "The part of the brain that connects cerebrum and cerebellum is:",
+    "options": ["Medulla", "Pons", "Hypothalamus", "Midbrain"],
+    "answer": 1
+  },
+  {
+    "q": "Exophthalmic goitre is caused due to:",
+    "options": ["Deficiency of iodine", "Excess of thyroxine", "Deficiency of insulin", "Excess of growth hormone"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not a tropism?",
+    "options": ["Phototropism", "Geotropism", "Seismonasty", "Hydrotropism"],
+    "answer": 2
+  },
+  {
+    "q": "The hormone that prepares the body for emergency is secreted by:",
+    "options": ["Thyroid gland", "Pancreas", "Adrenal gland", "Pituitary gland"],
+    "answer": 2
+  },
+  {
+    "q": "Cytokinins are mainly produced in:",
+    "options": ["Shoot tips", "Root tips", "Leaves", "Fruits"],
+    "answer": 1
+  },
+  {
+    "q": "The cranial nerves arise from:",
+    "options": ["Spinal cord", "Brain", "Both a and b", "None of the above"],
+    "answer": 1
+  },
+  {
+    "q": "Which hormone is responsible for metamorphosis in frogs?",
+    "options": ["Thyroxine", "Adrenaline", "Insulin", "Growth hormone"],
+    "answer": 0
+  },
+  {
+    "q": "The receptors for taste are located on:",
+    "options": ["Tongue", "Nose", "Skin", "Eyes"],
+    "answer": 0
+  },
+  {
+    "q": "The growth of tendrils around a support is an example of:",
+    "options": ["Thigmotropism", "Phototropism", "Geotropism", "Hydrotropism"],
+    "answer": 0
+  },
+  {
+    "q": "Acromegaly is caused due to excess secretion of:",
+    "options": ["Insulin", "Thyroxine", "Growth hormone", "Adrenaline"],
+    "answer": 2
+  },
+  {
+    "q": "Which part of the neuron receives impulses?",
+    "options": ["Axon", "Dendrite", "Cell body", "Synapse"],
+    "answer": 1
+  },
+  {
+    "q": "Ethylene is responsible for:",
+    "options": ["Stem elongation", "Cell division", "Fruit ripening", "Closing of stomata"],
+    "answer": 2
+  },
+  {
+    "q": "The hypothalamus controls:",
+    "options": ["Body temperature", "Balance", "Breathing", "Memory"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following is a ductless gland?",
+    "options": ["Salivary gland", "Liver", "Pancreas (exocrine part)", "Thyroid gland"],
+    "answer": 3
+  },
+  {
+    "q": "The reflex arc involves:",
+    "options": ["Receptor → Sensory neuron → Brain → Motor neuron → Effector", "Receptor → Sensory neuron → Spinal cord → Motor neuron → Effector", "Brain → Sensory neuron → Effector", "Receptor → Effector directly"],
+    "answer": 1
+  },
+  {
+    "q": "Gibberellins help in:",
+    "options": ["Fruit ripening", "Stem elongation", "Closing of stomata", "Leaf fall"],
+    "answer": 1
+  },
+  {
+    "q": "The peripheral nervous system consists of:",
+    "options": ["Brain and spinal cord", "Cranial and spinal nerves", "Autonomic nerves only", "None of the above"],
+    "answer": 1
+  },
+  {
+    "q": "Simple goitre is due to:",
+    "options": ["Excess thyroxine", "Deficiency of iodine", "Excess insulin", "Deficiency of calcium"],
+    "answer": 1
+  },
+  {
+    "q": "Which hormone promotes apical dominance?",
+    "options": ["Cytokinin", "Auxin", "Gibberellin", "Abscisic acid"],
+    "answer": 1
+  },
+  {
+    "q": "The forebrain consists of:",
+    "options": ["Cerebrum only", "Cerebrum, thalamus, hypothalamus", "Cerebellum", "Medulla"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is a neurotransmitter?",
+    "options": ["Insulin", "Adrenaline", "Acetylcholine", "Thyroxine"],
+    "answer": 2
+  },
+  {
+    "q": "Abscisic acid promotes:",
+    "options": ["Seed germination", "Stem growth", "Dormancy in seeds", "Fruit development"],
+    "answer": 2
+  },
+  {
+    "q": "The midbrain controls:",
+    "options": ["Reflexes of sight and hearing", "Breathing", "Balance", "Thinking"],
+    "answer": 0
+  },
+  {
+    "q": "Which gland secretes melatonin?",
+    "options": ["Thyroid", "Pituitary", "Pineal", "Adrenal"],
+    "answer": 2
+  },
+  {
+    "q": "Chemotropism is seen in:",
+    "options": ["Growth of pollen tube", "Movement of leaves", "Growth of roots", "Movement of shoot"],
+    "answer": 0
+  },
+  {
+    "q": "The hindbrain consists of:",
+    "options": ["Cerebrum and hypothalamus", "Pons, cerebellum, medulla", "Thalamus and midbrain", "None of the above"],
+    "answer": 1
+  },
+  {
+    "q": "Which hormone regulates sleep-wake cycle?",
+    "options": ["Thyroxine", "Melatonin", "Adrenaline", "Insulin"],
+    "answer": 1
+  },
+  {
+    "q": "Nastic movements are:",
+    "options": ["Directional", "Non-directional", "Growth independent", "Both b and c"],
+    "answer": 1
+  },
+  {
+    "q": "The somatic nervous system controls:",
+    "options": ["Involuntary actions", "Voluntary actions", "Heart beat", "Digestion"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not a plant hormone?",
+    "options": ["Auxin", "Cytokinin", "Adrenaline", "Gibberellin"],
+    "answer": 2
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

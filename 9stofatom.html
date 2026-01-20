@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Structure of Atom</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The scientist who discovered the electron is:",
+    "options": ["J.J. Thomson", "E. Goldstein", "Chadwick", "Rutherford"],
+    "answer": 0
+  },
+  {
+    "q": "The scientist who discovered the proton is:",
+    "options": ["J.J. Thomson", "E. Goldstein", "Chadwick", "Rutherford"],
+    "answer": 1
+  },
+  {
+    "q": "The scientist who discovered the neutron is:",
+    "options": ["J.J. Thomson", "E. Goldstein", "James Chadwick", "Rutherford"],
+    "answer": 2
+  },
+  {
+    "q": "In Thomson's plum pudding model, the atom is:",
+    "options": ["A solid positive sphere", "Positive sphere with embedded electrons", "Nucleus with orbiting electrons", "Empty space"],
+    "answer": 1
+  },
+  {
+    "q": "Rutherford's alpha particle scattering experiment led to the discovery of:",
+    "options": ["Electron", "Proton", "Atomic nucleus", "Neutron"],
+    "answer": 2
+  },
+  {
+    "q": "In Rutherford's model, most of the mass of the atom is concentrated in:",
+    "options": ["Electrons", "Nucleus", "Orbit", "Empty space"],
+    "answer": 1
+  },
+  {
+    "q": "Rutherford's model could not explain:",
+    "options": ["Stability of atom", "Scattering of alpha particles", "Positive charge", "Mass concentration"],
+    "answer": 0
+  },
+  {
+    "q": "Bohr's model of atom was proposed in:",
+    "options": ["1913", "1904", "1920", "1897"],
+    "answer": 0
+  },
+  {
+    "q": "According to Bohr, electrons revolve around the nucleus in:",
+    "options": ["Any path", "Fixed orbits/shells", "Spiral path", "Random paths"],
+    "answer": 1
+  },
+  {
+    "q": "In Bohr's model, the orbits are also called:",
+    "options": ["Energy levels", "Electron clouds", "Proton shells", "Neutron orbits"],
+    "answer": 0
+  },
+  {
+    "q": "The maximum number of electrons in the first shell (K shell) is:",
+    "options": ["2", "8", "18", "32"],
+    "answer": 0
+  },
+  {
+    "q": "The maximum number of electrons in the second shell (L shell) is:",
+    "options": ["2", "8", "18", "32"],
+    "answer": 1
+  },
+  {
+    "q": "The maximum number of electrons in the third shell (M shell) is:",
+    "options": ["2", "8", "18", "32"],
+    "answer": 2
+  },
+  {
+    "q": "The formula for maximum electrons in a shell is:",
+    "options": ["n²", "2n²", "2n", "n"],
+    "answer": 1
+  },
+  {
+    "q": "The outermost shell of an atom is called:",
+    "options": ["Valence shell", "Inner shell", "K shell", "Nuclear shell"],
+    "answer": 0
+  },
+  {
+    "q": "The number of valence electrons determines:",
+    "options": ["Atomic mass", "Valency", "Atomic number", "Mass number"],
+    "answer": 1
+  },
+  {
+    "q": "The atomic number (Z) of an element is:",
+    "options": ["Number of protons", "Number of neutrons", "Number of electrons in neutral atom", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The mass number (A) of an element is:",
+    "options": ["Protons + Neutrons", "Protons + Electrons", "Neutrons only", "Electrons only"],
+    "answer": 0
+  },
+  {
+    "q": "The number of neutrons =",
+    "options": ["A - Z", "Z - A", "A + Z", "A"],
+    "answer": 0
+  },
+  {
+    "q": "Isotopes have:",
+    "options": ["Same atomic number, different mass number", "Different atomic number, same mass number", "Same protons and neutrons", "Different electrons"],
+    "answer": 0
+  },
+  {
+    "q": "Isobars have:",
+    "options": ["Same atomic number, different mass number", "Different atomic number, same mass number", "Same neutrons", "Same electrons"],
+    "answer": 1
+  },
+  {
+    "q": "Example of isotopes:",
+    "options": ["¹H and ²H", "¹⁴C and ¹²C", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The electron distribution in sodium (Na, Z=11) is:",
+    "options": ["2, 8, 1", "2, 8, 8", "2, 9", "8, 2, 1"],
+    "answer": 0
+  },
+  {
+    "q": "The electron distribution in magnesium (Mg, Z=12) is:",
+    "options": ["2, 8, 2", "2, 8, 1", "2, 10", "8, 4"],
+    "answer": 0
+  },
+  {
+    "q": "The valency of elements with 1 valence electron is:",
+    "options": ["1", "2", "3", "0"],
+    "answer": 0
+  },
+  {
+    "q": "The valency of elements with 8 valence electrons (except He) is:",
+    "options": ["8", "0", "2", "1"],
+    "answer": 1
+  },
+  {
+    "q": "Helium has valency:",
+    "options": ["2", "0", "1", "8"],
+    "answer": 1
+  },
+  {
+    "q": "The charge of an electron is:",
+    "options": ["+1.6 × 10⁻¹⁹ C", "-1.6 × 10⁻¹⁹ C", "0", "+1"],
+    "answer": 1
+  },
+  {
+    "q": "The charge of a proton is:",
+    "options": ["-1.6 × 10⁻¹⁹ C", "+1.6 × 10⁻¹⁹ C", "0", "-1"],
+    "answer": 1
+  },
+  {
+    "q": "Neutron has:",
+    "options": ["Positive charge", "Negative charge", "No charge", "Variable charge"],
+    "answer": 2
+  },
+  {
+    "q": "The mass of electron is:",
+    "options": ["Same as proton", "Negligible compared to proton", "Twice proton", "Half proton"],
+    "answer": 1
+  },
+  {
+    "q": "Mass of proton and neutron is approximately:",
+    "options": ["1 u each", "0 u", "1836 u", "1/1836 u"],
+    "answer": 0
+  },
+  {
+    "q": "In a neutral atom, number of protons equals:",
+    "options": ["Neutrons", "Electrons", "Mass number", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The nucleus contains:",
+    "options": ["Protons and electrons", "Protons and neutrons", "Electrons and neutrons", "Only electrons"],
+    "answer": 1
+  },
+  {
+    "q": "Electrons revolve around the nucleus in:",
+    "options": ["Fixed paths (Bohr)", "Random paths", "Cloud (modern)", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The K shell is the:",
+    "options": ["Outermost shell", "Innermost shell", "Second shell", "Valence shell"],
+    "answer": 1
+  },
+  {
+    "q": "The atomic number of carbon is:",
+    "options": ["6", "12", "14", "8"],
+    "answer": 0
+  },
+  {
+    "q": "The mass number of carbon-14 is:",
+    "options": ["6", "12", "14", "8"],
+    "answer": 2
+  },
+  {
+    "q": "Number of neutrons in carbon-14 is:",
+    "options": ["6", "8", "14", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Chlorine has atomic number 17, mass number 35, number of neutrons:",
+    "options": ["17", "18", "35", "52"],
+    "answer": 1
+  },
+  {
+    "q": "The electron configuration of oxygen (Z=8) is:",
+    "options": ["2,6", "2,8", "8", "2,8,6"],
+    "answer": 0
+  },
+  {
+    "q": "The valency of oxygen is:",
+    "options": ["2", "8", "6", "0"],
+    "answer": 0
+  },
+  {
+    "q": "The valency of neon (Ne, Z=10) is:",
+    "options": ["0", "2", "8", "10"],
+    "answer": 0
+  },
+  {
+    "q": "Elements with completely filled shells are:",
+    "options": ["Reactive", "Inert (noble gases)", "Metals", "Non-metals"],
+    "answer": 1
+  },
+  {
+    "q": "In Rutherford's experiment, most alpha particles:",
+    "options": ["Deflected", "Passed straight", "Absorbed", "Rebounded"],
+    "answer": 1
+  },
+  {
+    "q": "Few alpha particles deflected at large angles showing:",
+    "options": ["Positive charge spread", "Positive charge concentrated in nucleus", "Electrons heavy", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Very few alpha particles rebounded showing:",
+    "options": ["Nucleus small", "Nucleus large", "Electrons repel", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The size of nucleus is:",
+    "options": ["Very large", "Very small compared to atom", "Same as atom", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Most of the atom is:",
+    "options": ["Filled", "Empty space", "Nucleus", "Electrons"],
+    "answer": 1
+  },
+  {
+    "q": "Bohr's model explained:",
+    "options": ["Atomic spectra", "Stability of atom", "Both", "Scattering"],
+    "answer": 2
+  },
+  {
+    "q": "Electrons do not fall into nucleus because:",
+    "options": ["They are heavy", "Orbits are fixed (quantized)", "No attraction", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The first shell is denoted by:",
+    "options": ["K", "L", "M", "N"],
+    "answer": 0
+  },
+  {
+    "q": "The fourth shell can hold maximum:",
+    "options": ["8 electrons", "18 electrons", "32 electrons", "2 electrons"],
+    "answer": 2
+  },
+  {
+    "q": "The element with atomic number 20 has electron configuration:",
+    "options": ["2,8,8,2", "2,8,10", "2,8,2,8", "2,10,8"],
+    "answer": 0
+  },
+  {
+    "q": "Isotopes are used in:",
+    "options": ["Medicine, dating, etc.", "Only nuclear reactions", "No use", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Carbon-14 is used for:",
+    "options": ["Dating archaeological samples", "Nuclear bombs", "Fuel", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Uranium isotopes are used in:",
+    "options": ["Nuclear energy", "Dating", "Medicine", "All"],
+    "answer": 3
+  },
+  {
+    "q": "The chapter 'Structure of the Atom' covers models by:",
+    "options": ["Thomson, Rutherford, Bohr", "Dalton only", "Modern quantum", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The modern model involves:",
+    "options": ["Fixed orbits", "Electron clouds/orbitals", "Plum pudding", "Solid sphere"],
+    "answer": 1
+  },
+  {
+    "q": "Subatomic particles are:",
+    "options": ["Proton, neutron, electron", "Only proton", "Only electron", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Canal rays are:",
+    "options": ["Electrons", "Protons", "Neutrons", "Alpha particles"],
+    "answer": 1
+  },
+  {
+    "q": "Cathode rays are:",
+    "options": ["Protons", "Electrons", "Neutrons", "Positive rays"],
+    "answer": 1
+  },
+  {
+    "q": "The charge to mass ratio (e/m) for electron was determined by:",
+    "options": ["Rutherford", "J.J. Thomson", "Goldstein", "Chadwick"],
+    "answer": 1
+  },
+  {
+    "q": "Neutrons were discovered using:",
+    "options": ["Alpha particles on beryllium", "Cathode rays", "Canal rays", "Gold foil"],
+    "answer": 0
+  },
+  {
+    "q": "The atomicity of argon is:",
+    "options": ["1 (monoatomic)", "2", "3", "4"],
+    "answer": 0
+  },
+  {
+    "q": "Elements in the same group have:",
+    "options": ["Same valence electrons", "Same atomic number", "Same mass", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The number of electrons in N shell (n=4) maximum is:",
+    "options": ["18", "32", "8", "2"],
+    "answer": 1
+  },
+  {
+    "q": "The atomic number represents:",
+    "options": ["Position in periodic table", "Number of neutrons", "Mass", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Isotopes have:",
+    "options": ["Same chemical properties", "Different chemical properties", "Same physical only", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Isobars have:",
+    "options": ["Different chemical properties", "Same chemical properties", "Both same", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example of isobars:",
+    "options": ["⁴⁰Ar and ⁴⁰Ca", "¹²C and ¹⁴C", "¹H and ²H", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The nucleus is:",
+    "options": ["Negatively charged", "Positively charged", "Neutral", "Variable"],
+    "answer": 1
+  },
+  {
+    "q": "Electrons are:",
+    "options": ["Inside nucleus", "Outside nucleus", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The chapter is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

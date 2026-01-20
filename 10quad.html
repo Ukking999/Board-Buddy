@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Quadratic Equations MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A quadratic equation in x is of the form:",
+    "options": ["ax + b = 0", "ax² + bx + c = 0 (a ≠ 0)", "ax³ + bx² + cx + d = 0", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The degree of a quadratic equation is:",
+    "options": ["1", "2", "3", "0"],
+    "answer": 1
+  },
+  {
+    "q": "A quadratic equation has:",
+    "options": ["One root", "Two roots", "Three roots", "Infinite roots"],
+    "answer": 1
+  },
+  {
+    "q": "The roots of ax² + bx + c = 0 are given by:",
+    "options": ["[-b ± √(b² - 4ac)] / 2a", "[-b ± √(b² + 4ac)] / 2a", "b ± √(b² - 4ac) / 2a", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The expression b² - 4ac is called:",
+    "options": ["Discriminant (D)", "Determinant", "Delta", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If D > 0, the roots are:",
+    "options": ["Real and equal", "Real and distinct", "No real roots", "Complex"],
+    "answer": 1
+  },
+  {
+    "q": "If D = 0, the roots are:",
+    "options": ["Real and distinct", "Real and equal", "No real roots", "Complex"],
+    "answer": 1
+  },
+  {
+    "q": "If D < 0, the roots are:",
+    "options": ["Real and distinct", "Real and equal", "No real roots (complex)", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The nature of roots depends on:",
+    "options": ["Sign of discriminant", "Value of a", "Value of b", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sum of roots of ax² + bx + c = 0 is:",
+    "options": ["-b/a", "b/a", "c/a", "-c/a"],
+    "answer": 0
+  },
+  {
+    "q": "Product of roots of ax² + bx + c = 0 is:",
+    "options": ["b/a", "-b/a", "c/a", "-c/a"],
+    "answer": 2
+  },
+  {
+    "q": "To form a quadratic equation with roots α and β:",
+    "options": ["x² - (α+β)x + αβ = 0", "x² + (α+β)x + αβ = 0", "x² - (αβ)x + (α+β) = 0", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If roots are 3 and -2, the equation is:",
+    "options": ["x² - x - 6 = 0", "x² + x - 6 = 0", "x² - x + 6 = 0", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If sum of roots is 5 and product is 6, equation is:",
+    "options": ["x² - 5x + 6 = 0", "x² + 5x + 6 = 0", "x² - 5x - 6 = 0", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The graph of a quadratic equation ax² + bx + c = 0 is:",
+    "options": ["Straight line", "Parabola", "Circle", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If a > 0, parabola opens:",
+    "options": ["Downwards", "Upwards", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If a < 0, parabola opens:",
+    "options": ["Upwards", "Downwards", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The vertex of parabola y = ax² + bx + c is at x =",
+    "options": ["-b/2a", "b/2a", "-b/a", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Methods to solve quadratic equations include:",
+    "options": ["Factorisation, quadratic formula, completing square", "Only formula", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Factorisation is possible when:",
+    "options": ["D is perfect square", "Always", "Never", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Completing the square method converts to:",
+    "options": ["(x + p)² = q", "(x - p)² = q", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Quadratic formula is derived from:",
+    "options": ["Completing the square", "Factorisation", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For x² + 6x + 5 = 0, roots are:",
+    "options": ["-1, -5", "-2, -3", "1, 5", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For x² - 7x + 12 = 0, roots are:",
+    "options": ["3, 4", "2, 5", "1, 6", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For x² + 4x + 4 = 0, roots are:",
+    "options": ["-2, -2", "-4, 0", "2, 2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For x² + 2x + 5 = 0, D =",
+    "options": ["4 - 20 = -16 < 0", "Positive", "Zero", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Roots are real if:",
+    "options": ["D ≥ 0", "D < 0", "D = 0", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Roots are equal if:",
+    "options": ["D > 0", "D = 0", "D < 0", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Roots are distinct real if:",
+    "options": ["D > 0", "D = 0", "D < 0", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No real roots if:",
+    "options": ["D > 0", "D = 0", "D < 0", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The quadratic equation with roots 5 and -3 is:",
+    "options": ["x² - 2x - 15 = 0", "x² + 2x - 15 = 0", "x² - 2x + 15 = 0", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If one root is 4 and sum of roots is 7, other root is:",
+    "options": ["3", "11", "1", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Equation: x² - 7x + 12 = 0",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If product of roots is 8 and one root is 2, other is:",
+    "options": ["4", "10", "6", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To solve by completing square: x² + 6x + 5 = 0 →",
+    "options": ["(x+3)² = 4", "(x+3)² = -4", "(x+3)² = 9", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Roots: x+3 = ±2 → x = -1, -5",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For x² + 5x + 8 = 0, D =",
+    "options": ["25 - 32 = -7 < 0", "Positive", "Zero", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No real roots",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Word problems on quadratic equations involve:",
+    "options": ["Numbers, ages, speed, area, etc.", "Only numbers", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example: Product of two consecutive numbers is 72, equation:",
+    "options": ["x(x+1) = 72 → x² + x - 72 = 0", "x(x-1) = 72", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Roots 8 and 9 (positive)",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Quadratic Equations' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Standard form requires:",
+    "options": ["a ≠ 0", "a = 0", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a = 0, equation becomes:",
+    "options": ["Linear", "Cubic", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The quadratic formula works for:",
+    "options": ["All quadratic equations", "Only when factorisation easy", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Factorisation is quick when:",
+    "options": ["Roots obvious", "D perfect square", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Completing square is useful for:",
+    "options": ["Deriving formula", "Graphing", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The axis of symmetry of parabola is:",
+    "options": ["x = -b/2a", "y = -b/2a", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Minimum/maximum value at vertex for:",
+    "options": ["a > 0 minimum, a < 0 maximum", "Opposite", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If roots are complex, graph:",
+    "options": ["Intersects x-axis", "Does not intersect x-axis", "Touches", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If roots equal, graph:",
+    "options": ["Intersects at two points", "Touches at one point", "No intersection", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If roots distinct real, graph:",
+    "options": ["Crosses x-axis at two points", "Touches", "No cross", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter covers:",
+    "options": ["Nature of roots, methods of solution, word problems", "Only formula", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Quadratic equations appear in:",
+    "options": ["Physics (motion), geometry", "Only maths", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example physics: s = ut + ½at² leads to quadratic in t",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The discriminant tells:",
+    "options": ["Nature of roots", "Value of roots", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For real roots, D ≥",
+    "options": ["0", "Positive only", "Negative", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is important for:",
+    "options": ["Higher mathematics, coordinate geometry", "Only algebra", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Matter in our surrounding MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Anything that occupies space and has mass is called:",
+    "options": ["Energy", "Force", "Matter", "Light"],
+    "answer": 2
+  },
+  {
+    "q": "Matter is made up of tiny particles called:",
+    "options": ["Atoms", "Cells", "Molecules", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "Which of the following is not a state of matter?",
+    "options": ["Solid", "Liquid", "Gas", "Heat"],
+    "answer": 3
+  },
+  {
+    "q": "In solids, particles are:",
+    "options": ["Far apart", "Loosely packed", "Closely packed", "Moving freely"],
+    "answer": 2
+  },
+  {
+    "q": "In liquids, particles are:",
+    "options": ["Very closely packed", "Far apart", "Less closely packed than solids", "Fixed in position"],
+    "answer": 2
+  },
+  {
+    "q": "In gases, particles are:",
+    "options": ["Closely packed", "Loosely packed", "Very far apart", "In fixed positions"],
+    "answer": 2
+  },
+  {
+    "q": "Solids have:",
+    "options": ["Definite shape and definite volume", "No definite shape but definite volume", "Definite shape but no definite volume", "No definite shape or volume"],
+    "answer": 0
+  },
+  {
+    "q": "Liquids have:",
+    "options": ["Definite shape and volume", "No definite shape but definite volume", "Definite shape but no definite volume", "No definite shape or volume"],
+    "answer": 1
+  },
+  {
+    "q": "Gases have:",
+    "options": ["Definite shape and volume", "Definite volume but no shape", "No definite shape or volume", "Definite shape but no volume"],
+    "answer": 2
+  },
+  {
+    "q": "The force of attraction between particles is maximum in:",
+    "options": ["Gases", "Liquids", "Solids", "Plasma"],
+    "answer": 2
+  },
+  {
+    "q": "The force of attraction between particles is minimum in:",
+    "options": ["Solids", "Liquids", "Gases", "All same"],
+    "answer": 2
+  },
+  {
+    "q": "The movement of particles is highest in:",
+    "options": ["Solids", "Liquids", "Gases", "All same"],
+    "answer": 2
+  },
+  {
+    "q": "Solids are:",
+    "options": ["Compressible", "Highly compressible", "Incompressible", "Flow easily"],
+    "answer": 2
+  },
+  {
+    "q": "Gases are:",
+    "options": ["Incompressible", "Rigid", "Highly compressible", "Have definite shape"],
+    "answer": 2
+  },
+  {
+    "q": "Liquids are:",
+    "options": ["Rigid", "Highly compressible", "Slightly compressible", "No fluidity"],
+    "answer": 2
+  },
+  {
+    "q": "The process of conversion of gas into liquid is called:",
+    "options": ["Melting", "Condensation", "Evaporation", "Sublimation"],
+    "answer": 1
+  },
+  {
+    "q": "The process of conversion of solid into liquid is called:",
+    "options": ["Fusion/Melting", "Condensation", "Evaporation", "Sublimation"],
+    "answer": 0
+  },
+  {
+    "q": "The process of conversion of liquid into gas is called:",
+    "options": ["Condensation", "Evaporation/Vaporisation", "Sublimation", "Freezing"],
+    "answer": 1
+  },
+  {
+    "q": "The process of direct conversion of solid into gas is called:",
+    "options": ["Evaporation", "Condensation", "Sublimation", "Deposition"],
+    "answer": 2
+  },
+  {
+    "q": "The process of direct conversion of gas into solid is called:",
+    "options": ["Sublimation", "Deposition", "Evaporation", "Melting"],
+    "answer": 1
+  },
+  {
+    "q": "The temperature at which solid changes into liquid is called:",
+    "options": ["Boiling point", "Melting point", "Freezing point", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "The temperature at which liquid changes into gas is called:",
+    "options": ["Melting point", "Boiling point", "Freezing point", "Sublimation point"],
+    "answer": 1
+  },
+  {
+    "q": "The latent heat absorbed during melting is called:",
+    "options": ["Latent heat of vaporisation", "Latent heat of fusion", "Specific heat", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The latent heat absorbed during vaporisation is called:",
+    "options": ["Latent heat of fusion", "Latent heat of vaporisation", "Latent heat of sublimation", "None"],
+    "answer": 1
+  },
+  {
+    "q": "During change of state, temperature:",
+    "options": ["Increases", "Decreases", "Remains constant", "First increases then constant"],
+    "answer": 2
+  },
+  {
+    "q": "Evaporation causes:",
+    "options": ["Heating", "Cooling", "No effect", "Boiling"],
+    "answer": 1
+  },
+  {
+    "q": "Evaporation occurs at:",
+    "options": ["Boiling point only", "Any temperature below boiling point", "Above boiling point", "Fixed temperature"],
+    "answer": 1
+  },
+  {
+    "q": "Boiling occurs at:",
+    "options": ["Any temperature", "Fixed temperature (boiling point)", "Below melting point", "Surface only"],
+    "answer": 1
+  },
+  {
+    "q": "Evaporation is a:",
+    "options": ["Bulk phenomenon", "Surface phenomenon", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Boiling is a:",
+    "options": ["Surface phenomenon", "Bulk phenomenon", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Rate of evaporation increases with:",
+    "options": ["Increase in temperature", "Increase in surface area", "Decrease in humidity", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Rate of evaporation decreases with:",
+    "options": ["Increase in wind speed", "Increase in humidity", "Decrease in temperature", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "The SI unit of temperature is:",
+    "options": ["°C", "°F", "Kelvin", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Plasma is considered the:",
+    "options": ["Fourth state of matter", "Fifth state", "Not a state", "Liquid state"],
+    "answer": 0
+  },
+  {
+    "q": "Bose-Einstein Condensate is the:",
+    "options": ["Fourth state", "Fifth state", "Solid state", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Matter exists in ___ main states.",
+    "options": ["2", "3", "4", "5"],
+    "answer": 1
+  },
+  {
+    "q": "Example of sublimation is:",
+    "options": ["Camphor", "Ice", "Water", "Oil"],
+    "answer": 0
+  },
+  {
+    "q": "Dry ice is solid:",
+    "options": ["Water", "Carbon dioxide", "Oxygen", "Nitrogen"],
+    "answer": 1
+  },
+  {
+    "q": "During melting, heat is:",
+    "options": ["Released", "Absorbed", "No change", "Converted to kinetic energy only"],
+    "answer": 1
+  },
+  {
+    "q": "During freezing, heat is:",
+    "options": ["Absorbed", "Released", "No change", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The melting point of ice is:",
+    "options": ["0°C", "100°C", "273 K", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The boiling point of water is:",
+    "options": ["0°C", "100°C", "273 K", "373 K"],
+    "answer": 1
+  },
+  {
+    "q": "At high altitudes, boiling point of water:",
+    "options": ["Increases", "Decreases", "Remains same", "Becomes 0°C"],
+    "answer": 1
+  },
+  {
+    "q": "Reason for lower boiling point at hills is:",
+    "options": ["High pressure", "Low atmospheric pressure", "High temperature", "Low humidity"],
+    "answer": 1
+  },
+  {
+    "q": "Sweating causes cooling because:",
+    "options": ["Evaporation of sweat absorbs heat", "Sweat releases heat", "Body temperature increases", "None"],
+    "answer": 0
+  },
+  {
+    "q": "We wear cotton clothes in summer because:",
+    "options": ["They absorb sweat and evaporate causing cooling", "They are thick", "They are dark", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Diffusion is fastest in:",
+    "options": ["Solids", "Liquids", "Gases", "All same"],
+    "answer": 2
+  },
+  {
+    "q": "Example of diffusion in gases:",
+    "options": ["Smell of incense stick", "Mixing sugar in water", "Dissolving salt", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Particles in matter are:",
+    "options": ["Stationary", "In continuous motion", "Only vibrate", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Kinetic energy of particles is maximum in:",
+    "options": ["Solids", "Liquids", "Gases", "All same"],
+    "answer": 2
+  },
+  {
+    "q": "The change of state from solid to liquid is due to:",
+    "options": ["Increase in kinetic energy", "Decrease in intermolecular force", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Intermolecular space is least in:",
+    "options": ["Gases", "Liquids", "Solids", "Plasma"],
+    "answer": 2
+  },
+  {
+    "q": "Rigidity is the property of:",
+    "options": ["Gases", "Liquids", "Solids", "All"],
+    "answer": 2
+  },
+  {
+    "q": "Fluidity is shown by:",
+    "options": ["Solids", "Liquids and gases", "Only gases", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Liquids take the shape of:",
+    "options": ["Container", "No shape", "Fixed shape", "Sphere"],
+    "answer": 0
+  },
+  {
+    "q": "Gases completely fill the:",
+    "options": ["Bottom of container", "Container", "Fixed volume", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The amount of heat required to change state without change in temperature is:",
+    "options": ["Specific heat", "Latent heat", "Kinetic heat", "None"],
+    "answer": 1
+  },
+  {
+    "q": "During evaporation, the particles that escape are:",
+    "options": ["Slow moving", "Fast moving (high kinetic energy)", "All particles", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Cooling is caused by evaporation because:",
+    "options": ["Fast particles escape taking energy", "Slow particles remain", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Water kept in an earthen pot (matka) becomes cool because:",
+    "options": ["Pot is porous, water evaporates causing cooling", "Pot is thick", "Water freezes", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The state of matter with definite volume but no definite shape is:",
+    "options": ["Solid", "Liquid", "Gas", "Plasma"],
+    "answer": 1
+  },
+  {
+    "q": "The process by which wet clothes dry is:",
+    "options": ["Condensation", "Evaporation", "Sublimation", "Melting"],
+    "answer": 1
+  },
+  {
+    "q": "Naphthalene balls disappear with time due to:",
+    "options": ["Evaporation", "Sublimation", "Condensation", "Melting"],
+    "answer": 1
+  },
+  {
+    "q": "The melting point of wax is:",
+    "options": ["Above room temperature", "Below room temperature", "0°C", "100°C"],
+    "answer": 0
+  },
+  {
+    "q": "The boiling point of alcohol is:",
+    "options": ["78°C", "100°C", "0°C", "373 K"],
+    "answer": 0
+  },
+  {
+    "q": "At room temperature, oxygen is in:",
+    "options": ["Solid state", "Liquid state", "Gaseous state", "Plasma state"],
+    "answer": 2
+  },
+  {
+    "q": "Mercury at room temperature is:",
+    "options": ["Solid", "Liquid", "Gas", "Plasma"],
+    "answer": 1
+  },
+  {
+    "q": "The conversion of gas to liquid by cooling is:",
+    "options": ["Condensation", "Evaporation", "Sublimation", "Fusion"],
+    "answer": 0
+  },
+  {
+    "q": "Fog and mist are examples of:",
+    "options": ["Solid in gas", "Liquid in gas", "Gas in liquid", "Gas in gas"],
+    "answer": 1
+  },
+  {
+    "q": "Smoke is:",
+    "options": ["Liquid in gas", "Solid in gas", "Gas in solid", "Gas in liquid"],
+    "answer": 1
+  },
+  {
+    "q": "The smell of perfume spreads due to:",
+    "options": ["Diffusion", "Evaporation", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Increasing pressure on gas leads to:",
+    "options": ["Liquefaction", "Expansion", "No change", "Sublimation"],
+    "answer": 0
+  },
+  {
+    "q": "LPG and CNG are stored under pressure as:",
+    "options": ["Gas", "Liquid", "Solid", "Plasma"],
+    "answer": 1
+  },
+  {
+    "q": "The intermolecular forces are strongest in:",
+    "options": ["Gases", "Liquids", "Solids", "All same"],
+    "answer": 2
+  },
+  {
+    "q": "The change in state is due to change in:",
+    "options": ["Temperature only", "Pressure only", "Both temperature and pressure", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The fourth state of matter is:",
+    "options": ["Liquid crystal", "Plasma", "BEC", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In plasma, matter is in:",
+    "options": ["Ionised state", "Neutral state", "Solid state", "Liquid state"],
+    "answer": 0
+  },
+  {
+    "q": "Stars including sun are in:",
+    "options": ["Solid state", "Liquid state", "Gaseous state", "Plasma state"],
+    "answer": 3
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

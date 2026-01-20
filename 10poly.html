@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Polynomials MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A polynomial in x of degree n has the general form:",
+    "options": ["a_n x^n + a_{n-1} x^{n-1} + ... + a_0", "a x + b", "a x^2 + b x + c", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The highest power of the variable in a polynomial is called its:",
+    "options": ["Coefficient", "Constant term", "Degree", "Zero"],
+    "answer": 2
+  },
+  {
+    "q": "A polynomial with degree 1 is called:",
+    "options": ["Constant", "Linear", "Quadratic", "Cubic"],
+    "answer": 1
+  },
+  {
+    "q": "A polynomial with degree 2 is called:",
+    "options": ["Linear", "Quadratic", "Cubic", "Biquadratic"],
+    "answer": 1
+  },
+  {
+    "q": "A polynomial with degree 3 is called:",
+    "options": ["Quadratic", "Cubic", "Linear", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A constant polynomial has degree:",
+    "options": ["1", "0", "Infinite", "Undefined"],
+    "answer": 1
+  },
+  {
+    "q": "The zero polynomial has degree:",
+    "options": ["0", "1", "Undefined", "Infinite"],
+    "answer": 2
+  },
+  {
+    "q": "The number of zeroes of a polynomial is at most equal to its:",
+    "options": ["Degree", "Coefficient", "Constant term", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If p(x) = 0 at x = a, then a is called a:",
+    "options": ["Coefficient", "Zero/root of p(x)", "Factor", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For a linear polynomial ax + b = 0, the zero is:",
+    "options": ["-b/a", "b/a", "a/b", "-a/b"],
+    "answer": 0
+  },
+  {
+    "q": "The remainder theorem states that if p(x) is divided by (x - c), remainder is:",
+    "options": ["p(c)", "p(-c)", "c", "0"],
+    "answer": 0
+  },
+  {
+    "q": "If (x - k) is a factor of p(x), then:",
+    "options": ["p(k) ≠ 0", "p(k) = 0", "p(-k) = 0", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Factor theorem is the converse of:",
+    "options": ["Division algorithm", "Remainder theorem", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A quadratic polynomial can have at most:",
+    "options": ["1 zero", "2 zeroes", "3 zeroes", "Infinite zeroes"],
+    "answer": 1
+  },
+  {
+    "q": "A cubic polynomial can have at most:",
+    "options": ["2 zeroes", "3 zeroes", "4 zeroes", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The sum of zeroes of quadratic ax² + bx + c = 0 is:",
+    "options": ["-b/a", "b/a", "c/a", "-c/a"],
+    "answer": 0
+  },
+  {
+    "q": "The product of zeroes of quadratic ax² + bx + c = 0 is:",
+    "options": ["b/a", "-b/a", "c/a", "-c/a"],
+    "answer": 2
+  },
+  {
+    "q": "For cubic polynomial ax³ + bx² + cx + d = 0, sum of zeroes =",
+    "options": ["-b/a", "b/a", "-d/a", "c/a"],
+    "answer": 0
+  },
+  {
+    "q": "Sum of product of zeroes taken two at a time for cubic =",
+    "options": ["b/a", "c/a", "-c/a", "d/a"],
+    "answer": 1
+  },
+  {
+    "q": "Product of zeroes for cubic ax³ + bx² + cx + d = 0 is:",
+    "options": ["d/a", "-d/a", "c/a", "-c/a"],
+    "answer": 1
+  },
+  {
+    "q": "To form a quadratic polynomial with zeroes α and β:",
+    "options": ["x² - (α+β)x + αβ", "x² + (α+β)x + αβ", "x² - (αβ)x + (α+β)", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If zeroes of a quadratic are 2 and 3, the polynomial is:",
+    "options": ["x² - 5x + 6", "x² + 5x + 6", "x² - 5x - 6", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If sum of zeroes is 4 and product is -5, quadratic is:",
+    "options": ["x² - 4x - 5", "x² + 4x - 5", "x² - 4x + 5", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The graph of a quadratic polynomial is a:",
+    "options": ["Straight line", "Parabola", "Circle", "Hyperbola"],
+    "answer": 1
+  },
+  {
+    "q": "The graph of linear polynomial is:",
+    "options": ["Parabola", "Straight line", "Curve", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The zeroes of polynomial are the points where graph:",
+    "options": ["Touches x-axis", "Intersects x-axis", "Parallel to x-axis", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If a quadratic has two distinct zeroes, graph:",
+    "options": ["Touches x-axis at one point", "Intersects at two points", "Does not intersect", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If discriminant D > 0, quadratic has:",
+    "options": ["No real zeroes", "One real zero", "Two distinct real zeroes", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If D = 0, quadratic has:",
+    "options": ["Two distinct real zeroes", "One real zero (repeated)", "No real zeroes", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If D < 0, quadratic has:",
+    "options": ["Two distinct real zeroes", "One real zero", "No real zeroes", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Discriminant D of ax² + bx + c = 0 is:",
+    "options": ["b² - 4ac", "b² + 4ac", "4ac - b²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The polynomial x² + 4x + 4 has zeroes:",
+    "options": ["-2, -2", "2, 2", "-4, -1", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The polynomial x² - 5x + 6 has zeroes:",
+    "options": ["2, 3", "1, 6", "-2, -3", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If p(x) = x² - 2x - 8, p(4) =",
+    "options": ["0", "8", "16", "-8"],
+    "answer": 0
+  },
+  {
+    "q": "If (x + 2) is a factor of p(x), then p(-2) =",
+    "options": ["Positive", "Negative", "0", "None"],
+    "answer": 2
+  },
+  {
+    "q": "To divide p(x) by (x - c), we use:",
+    "options": ["Remainder theorem", "Factor theorem", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Algebraic identities are used to:",
+    "options": ["Factorise polynomials", "Find zeroes", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "(a + b)² =",
+    "options": ["a² + b² + 2ab", "a² + b² - 2ab", "a² - b²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "(a - b)² =",
+    "options": ["a² + b² - 2ab", "a² - b² + 2ab", "a² - 2ab + b²", "None"],
+    "answer": 2
+  },
+  {
+    "q": "a² - b² =",
+    "options": ["(a + b)(a - b)", "(a - b)²", "(a + b)²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "(a + b + c)² =",
+    "options": ["a² + b² + c² + 2ab + 2bc + 2ca", "a² + b² + c²", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "x³ + y³ + z³ - 3xyz =",
+    "options": ["(x + y + z)(x² + y² + z² - xy - yz - zx)", "(x + y + z)³", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If x + y + z = 0, then x³ + y³ + z³ =",
+    "options": ["3xyz", "0", "x³ + y³ + z³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The factorisation of x² + 8x + 15 is:",
+    "options": ["(x + 3)(x + 5)", "(x - 3)(x - 5)", "(x + 4)(x + 4)", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The factorisation of 9x² - 6x + 1 is:",
+    "options": ["(3x - 1)²", "(3x + 1)²", "(9x - 1)(x - 1)", "None"],
+    "answer": 0
+  },
+  {
+    "q": "25x² - 10x + 1 =",
+    "options": ["(5x - 1)²", "(5x + 1)²", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The zeroes of x² - 4 are:",
+    "options": ["2, -2", "4, -4", "2, 2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The sum of zeroes of 2x² - 5x + 3 = 0 is:",
+    "options": ["5/2", "-5/2", "3/2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The product of zeroes of 3x² + 5x - 2 = 0 is:",
+    "options": ["-2/3", "2/3", "5/3", "-5/3"],
+    "answer": 0
+  },
+  {
+    "q": "If one zero of x² - 4x + k is 2, then k =",
+    "options": ["4", "0", "2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For p(x) = x³ - 6x² + 11x - 6, possible rational zeroes are factors of:",
+    "options": ["6 over factors of 1", "1 over factors of 6", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Polynomials' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "A polynomial of degree n can have at most:",
+    "options": ["n zeroes", "n+1 zeroes", "2n zeroes", "Infinite"],
+    "answer": 0
+  },
+  {
+    "q": "If α, β, γ are zeroes of cubic, then α + β + γ =",
+    "options": ["-b/a", "b/a", "c/a", "-d/a"],
+    "answer": 0
+  },
+  {
+    "q": "αβ + βγ + γα =",
+    "options": ["b/a", "c/a", "-c/a", "None"],
+    "answer": 1
+  },
+  {
+    "q": "αβγ =",
+    "options": ["d/a", "-d/a", "c/a", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The shape of graph of cubic polynomial is generally:",
+    "options": ["Parabola", "S-shaped or wavy", "Straight line", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The graph of y = p(x) where p(x) is polynomial of degree n crosses x-axis at most:",
+    "options": ["n times", "n+1 times", "n-1 times", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For quadratic with positive a, parabola opens:",
+    "options": ["Downwards", "Upwards", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For quadratic with negative a, parabola opens:",
+    "options": ["Upwards", "Downwards", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The vertex of parabola is at x =",
+    "options": ["-b/2a", "b/2a", "-b/a", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If the graph touches x-axis at one point, zeroes are:",
+    "options": ["Distinct", "Equal/repeated", "No real", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If graph does not touch x-axis, zeroes are:",
+    "options": ["Real and distinct", "Real and equal", "No real zeroes", "None"],
+    "answer": 2
+  },
+  {
+    "q": "To factorise x² + x - 12:",
+    "options": ["(x + 4)(x - 3)", "(x - 4)(x + 3)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "x² - 10x + 25 =",
+    "options": ["(x - 5)²", "(x + 5)²", "(x - 10)²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "4x² - 9 =",
+    "options": ["(2x - 3)(2x + 3)", "(4x - 3)(x + 3)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The identity x³ + y³ =",
+    "options": ["(x + y)(x² - xy + y²)", "(x - y)(x² + xy + y²)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "x³ - y³ =",
+    "options": ["(x - y)(x² + xy + y²)", "(x + y)(x² - xy + y²)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "27x³ + 125y³ =",
+    "options": ["(3x + 5y)(9x² - 15xy + 25y²)", "Sum of cubes", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The degree of zero polynomial is:",
+    "options": ["0", "1", "Undefined", "None"],
+    "answer": 2
+  },
+  {
+    "q": "p(x) = 5x - πx² + 3 is polynomial of degree:",
+    "options": ["1", "2", "3", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A polynomial can have:",
+    "options": ["Fractional exponents", "Negative exponents", "Only non-negative integer exponents", "None"],
+    "answer": 2
+  },
+  {
+    "q": "√x + 5 is:",
+    "options": ["Polynomial", "Not a polynomial", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "1/x + x is:",
+    "options": ["Polynomial", "Not a polynomial", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The number of terms in a polynomial defines it as monomial, binomial, etc.",
+    "options": ["True", "False", "Sometimes", "None"],
+    "answer": 0
+  },
+  {
+    "q": "x² + 5x + 6 is:",
+    "options": ["Monomial", "Binomial", "Trinomial", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The leading coefficient of 3x⁴ - 5x² + 7 is:",
+    "options": ["3", "-5", "7", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To find if (x-1) is factor of x³ - 1:",
+    "options": ["p(1) = 0", "Yes, since 1³ - 1 = 0", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "x³ - 1 =",
+    "options": ["(x - 1)(x² + x + 1)", "(x + 1)(x² - x + 1)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter covers:",
+    "options": ["Degree, zeroes, factorisation, algebraic identities", "Only quadratic", "Only linear", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

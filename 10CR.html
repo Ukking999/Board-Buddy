@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Chemical Reactions and Equations MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A change in which a substance loses its own identity and forms a new substance with different properties is called:",
+    "options": ["Physical change", "Chemical change", "Reversible change", "Temporary change"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is an example of a chemical change?",
+    "options": ["Melting of ice", "Burning of magnesium ribbon", "Dissolving sugar in water", "Evaporation of water"],
+    "answer": 1
+  },
+  {
+    "q": "A word equation represents a chemical reaction using:",
+    "options": ["Symbols", "Names of substances", "Numbers", "Formulas only"],
+    "answer": 1
+  },
+  {
+    "q": "In a chemical equation, reactants are written on the:",
+    "options": ["Right side", "Left side", "Either side", "Top"],
+    "answer": 1
+  },
+  {
+    "q": "The arrow in a chemical equation points towards:",
+    "options": ["Reactants", "Products", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A balanced chemical equation obeys the law of:",
+    "options": ["Conservation of energy", "Conservation of mass", "Definite proportions", "Multiple proportions"],
+    "answer": 1
+  },
+  {
+    "q": "In the reaction 2H₂ + O₂ → 2H₂O, the number of oxygen atoms on both sides is:",
+    "options": ["2", "4", "1", "3"],
+    "answer": 0
+  },
+  {
+    "q": "The reaction in which heat is absorbed is called:",
+    "options": ["Exothermic", "Endothermic", "Combination", "Decomposition"],
+    "answer": 1
+  },
+  {
+    "q": "Burning of coal is an example of:",
+    "options": ["Endothermic reaction", "Exothermic reaction", "Displacement reaction", "Double displacement reaction"],
+    "answer": 1
+  },
+  {
+    "q": "Photosynthesis is an example of:",
+    "options": ["Exothermic reaction", "Endothermic reaction", "Displacement reaction", "Neutralisation"],
+    "answer": 1
+  },
+  {
+    "q": "A reaction in which two or more substances combine to form a single product is called:",
+    "options": ["Decomposition reaction", "Combination reaction", "Displacement reaction", "Double displacement reaction"],
+    "answer": 1
+  },
+  {
+    "q": "The reaction CaO + H₂O → Ca(OH)₂ is a:",
+    "options": ["Decomposition reaction", "Combination reaction", "Displacement reaction", "Double displacement reaction"],
+    "answer": 1
+  },
+  {
+    "q": "A reaction in which a single compound breaks down into two or more simpler substances is called:",
+    "options": ["Combination reaction", "Decomposition reaction", "Displacement reaction", "Double displacement reaction"],
+    "answer": 1
+  },
+  {
+    "q": "Thermal decomposition of calcium carbonate produces:",
+    "options": ["CaO and CO₂", "Ca and CO₂", "Ca(OH)₂ and CO", "Ca and O₂"],
+    "answer": 0
+  },
+  {
+    "q": "Electrolysis of water is an example of:",
+    "options": ["Combination reaction", "Thermal decomposition", "Electrolytic decomposition", "Displacement reaction"],
+    "answer": 2
+  },
+  {
+    "q": "Photodecomposition of silver chloride is used in:",
+    "options": ["Photography", "Electroplating", "Rusting", "Rancidity"],
+    "answer": 0
+  },
+  {
+    "q": "A more reactive element displaces a less reactive element from its compound in:",
+    "options": ["Combination reaction", "Decomposition reaction", "Displacement reaction", "Double displacement reaction"],
+    "answer": 2
+  },
+  {
+    "q": "Zn + CuSO₄ → ZnSO₄ + Cu is an example of:",
+    "options": ["Combination", "Decomposition", "Displacement", "Double displacement"],
+    "answer": 2
+  },
+  {
+    "q": "An exchange of ions between two compounds is called:",
+    "options": ["Displacement reaction", "Double displacement reaction", "Combination reaction", "Decomposition reaction"],
+    "answer": 1
+  },
+  {
+    "q": "Na₂SO₄ + BaCl₂ → BaSO₄ ↓ + 2NaCl is an example of:",
+    "options": ["Displacement", "Combination", "Decomposition", "Double displacement with precipitation"],
+    "answer": 3
+  },
+  {
+    "q": "The reaction between an acid and a base to form salt and water is called:",
+    "options": ["Displacement", "Double displacement", "Neutralisation", "Combination"],
+    "answer": 2
+  },
+  {
+    "q": "Rusting of iron occurs in the presence of:",
+    "options": ["Only oxygen", "Only moisture", "Both oxygen and moisture", "Carbon dioxide only"],
+    "answer": 2
+  },
+  {
+    "q": "Rancidity is the oxidation of:",
+    "options": ["Fats and oils", "Proteins", "Carbohydrates", "Vitamins"],
+    "answer": 0
+  },
+  {
+    "q": "To prevent rancidity, food packets are flushed with:",
+    "options": ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"],
+    "answer": 2
+  },
+  {
+    "q": "Corrosion of iron is commonly known as:",
+    "options": ["Galvanisation", "Rusting", "Rancidity", "Crystallisation"],
+    "answer": 1
+  },
+  {
+    "q": "Painting and galvanisation are methods to prevent:",
+    "options": ["Rancidity", "Corrosion", "Decomposition", "Combination"],
+    "answer": 1
+  },
+  {
+    "q": "The chemical formula for rust is:",
+    "options": ["FeO", "Fe₂O₃", "Fe₃O₄", "Fe₂O₃·xH₂O"],
+    "answer": 3
+  },
+  {
+    "q": "Evolution of gas is observed in the reaction:",
+    "options": ["Zn + H₂SO₄ → ZnSO₄ + H₂ ↑", "NaCl + AgNO₃ → AgCl ↓ + NaNO₃", "CaCO₃ → CaO + CO₂ ↑ (on heating)", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "Change in colour is observed in:",
+    "options": ["Burning of magnesium", "Lead nitrate on heating", "Silver chloride on exposure to sunlight", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Precipitate formation is a characteristic of:",
+    "options": ["Displacement reaction", "Double displacement reaction", "Combination reaction", "Decomposition reaction"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is a physical change?",
+    "options": ["Rusting of iron", "Burning of candle", "Glow of electric bulb", "Digestion of food"],
+    "answer": 2
+  },
+  {
+    "q": "A skeletal equation is one which is:",
+    "options": ["Balanced", "Unbalanced", "With state symbols", "With conditions"],
+    "answer": 1
+  },
+  {
+    "q": "In a balanced equation, the number of atoms of each element on both sides is:",
+    "options": ["Different", "Equal", "Zero", "Multiple of 2"],
+    "answer": 1
+  },
+  {
+    "q": "The reaction 2Mg + O₂ → 2MgO is a:",
+    "options": ["Decomposition", "Displacement", "Combination", "Double displacement"],
+    "answer": 2
+  },
+  {
+    "q": "Fe + CuSO₄ → FeSO₄ + Cu shows:",
+    "options": ["Iron is more reactive than copper", "Copper is more reactive than iron", "Both equally reactive", "No reaction"],
+    "answer": 0
+  },
+  {
+    "q": "The reaction in which heat is evolved is:",
+    "options": ["Photosynthesis", "Respiration", "Electrolysis of water", "Decomposition of silver bromide"],
+    "answer": 1
+  },
+  {
+    "q": "Antioxidants are added to prevent:",
+    "options": ["Corrosion", "Rancidity", "Rusting", "Galvanisation"],
+    "answer": 1
+  },
+  {
+    "q": "The process of depositing a layer of zinc on iron is called:",
+    "options": ["Painting", "Galvanisation", "Electroplating", "Alloying"],
+    "answer": 1
+  },
+  {
+    "q": "Which gas is evolved when dilute HCl reacts with zinc?",
+    "options": ["Oxygen", "Hydrogen", "Carbon dioxide", "Chlorine"],
+    "answer": 1
+  },
+  {
+    "q": "The reaction 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂ is:",
+    "options": ["Combination", "Decomposition", "Displacement", "Double displacement"],
+    "answer": 1
+  },
+  {
+    "q": "The brown gas evolved on heating lead nitrate is:",
+    "options": ["NO", "NO₂", "O₂", "N₂"],
+    "answer": 1
+  },
+  {
+    "q": "Magnesium ribbon burns with a:",
+    "options": ["Blue flame", "Dazzling white flame", "Yellow flame", "Green flame"],
+    "answer": 1
+  },
+  {
+    "q": "The product formed when magnesium burns in air is:",
+    "options": ["MgO", "Mg(OH)₂", "MgCO₃", "Mg₃N₂"],
+    "answer": 0
+  },
+  {
+    "q": "The reaction HCl + NaOH → NaCl + H₂O is:",
+    "options": ["Combination", "Decomposition", "Displacement", "Neutralisation"],
+    "answer": 3
+  },
+  {
+    "q": "Which of the following is an exothermic reaction?",
+    "options": ["Evaporation of water", "Dissolving ammonium chloride in water", "Burning of natural gas", "Melting of ice"],
+    "answer": 2
+  },
+  {
+    "q": "Decomposition of ferrous sulphate gives:",
+    "options": ["FeO + SO₂ + SO₃", "Fe₂O₃ + SO₂ + SO₃", "Fe + SO₂ + O₂", "FeSO₄ only"],
+    "answer": 1
+  },
+  {
+    "q": "The colour of ferrous sulphate crystals is:",
+    "options": ["White", "Blue", "Green", "Colourless"],
+    "answer": 2
+  },
+  {
+    "q": "Silver articles turn black due to formation of:",
+    "options": ["Ag₂O", "Ag₂S", "AgCl", "AgNO₃"],
+    "answer": 1
+  },
+  {
+    "q": "Corrosion of copper gives a:",
+    "options": ["Green coating", "Black coating", "Brown coating", "Red coating"],
+    "answer": 0
+  },
+  {
+    "q": "The green coating on copper is:",
+    "options": ["CuO", "CuCO₃", "Cu(OH)₂", "Basic copper carbonate"],
+    "answer": 3
+  },
+  {
+    "q": "Chips manufacturers flush bags with nitrogen to prevent:",
+    "options": ["Rusting", "Rancidity", "Corrosion", "Decomposition"],
+    "answer": 1
+  },
+  {
+    "q": "Which reaction requires light energy?",
+    "options": ["Burning of coal", "Photosynthesis", "Respiration", "Combustion of LPG"],
+    "answer": 1
+  },
+  {
+    "q": "The balanced equation for rusting is:",
+    "options": ["4Fe + 3O₂ → 2Fe₂O₃", "Fe + O₂ → FeO", "2Fe + O₂ → 2FeO", "4Fe + 3O₂ + 6H₂O → 2Fe₂O₃·3H₂O"],
+    "answer": 3
+  },
+  {
+    "q": "The reaction between vinegar and baking soda produces:",
+    "options": ["Oxygen gas", "Hydrogen gas", "Carbon dioxide gas", "Nitrogen gas"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a redox reaction?",
+    "options": ["NaCl + AgNO₃ → AgCl + NaNO₃", "HCl + NaOH → NaCl + H₂O", "Zn + 2HCl → ZnCl₂ + H₂", "CaCO₃ → CaO + CO₂"],
+    "answer": 2
+  },
+  {
+    "q": "In the reaction CuO + H₂ → Cu + H₂O, H₂ acts as:",
+    "options": ["Oxidising agent", "Reducing agent", "Catalyst", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Oxidation involves:",
+    "options": ["Gain of electrons", "Loss of electrons", "Gain of hydrogen", "Loss of oxygen"],
+    "answer": 1
+  },
+  {
+    "q": "Reduction involves:",
+    "options": ["Loss of electrons", "Gain of electrons", "Loss of hydrogen", "Gain of oxygen"],
+    "answer": 1
+  },
+  {
+    "q": "The substance that is oxidised is called:",
+    "options": ["Oxidising agent", "Reducing agent", "Catalyst", "Product"],
+    "answer": 1
+  },
+  {
+    "q": "In the reaction MnO₂ + 4HCl → MnCl₂ + Cl₂ + 2H₂O, HCl is:",
+    "options": ["Oxidised", "Reduced", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following prevents corrosion?",
+    "options": ["Painting", "Greasing", "Galvanisation", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "The reaction 2AgBr → 2Ag + Br₂ is:",
+    "options": ["Thermal decomposition", "Photodecomposition", "Electrolytic decomposition", "Displacement"],
+    "answer": 1
+  },
+  {
+    "q": "The balanced equation for combustion of methane is:",
+    "options": ["CH₄ + O₂ → CO₂ + 2H₂O", "CH₄ + 2O₂ → CO₂ + 2H₂O", "2CH₄ + O₂ → 2CO₂ + H₂O", "CH₄ + O₂ → C + 2H₂O"],
+    "answer": 1
+  },
+  {
+    "q": "Quicklime reacts vigorously with water to form:",
+    "options": ["Slaked lime", "Lime water", "Milk of lime", "All of these"],
+    "answer": 0
+  },
+  {
+    "q": "The gas evolved when zinc reacts with dilute sulphuric acid is:",
+    "options": ["Oxygen", "Hydrogen", "Sulphur dioxide", "Carbon dioxide"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not a characteristic of a chemical reaction?",
+    "options": ["Evolution of gas", "Change in colour", "Change in state", "Formation of precipitate"],
+    "answer": 2
+  },
+  {
+    "q": "The reaction in which energy is released in the form of heat and light is:",
+    "options": ["Endothermic", "Exothermic", "Combustion", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "A chemical equation must be balanced to satisfy:",
+    "options": ["Law of conservation of energy", "Law of conservation of mass", "Law of constant proportion", "All of these"],
+    "answer": 1
+  },
+  {
+    "q": "The number of oxygen molecules required for complete combustion of one methane molecule is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 1
+  },
+  {
+    "q": "Which reaction is used in black and white photography?",
+    "options": ["Decomposition of AgCl", "Decomposition of AgBr", "Both a and b", "Decomposition of AgNO₃"],
+    "answer": 2
+  },
+  {
+    "q": "The process of corrosion can be prevented by:",
+    "options": ["Painting only", "Galvanisation only", "Applying oil or grease", "All of these"],
+    "answer": 3
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

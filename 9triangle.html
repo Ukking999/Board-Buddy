@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Linear Equations MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Triangle's MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A triangle has:",
+    "options": ["2 sides", "3 sides", "4 sides", "Infinite sides"],
+    "answer": 1
+  },
+  {
+    "q": "The sum of the angles in any triangle is:",
+    "options": ["90°", "180°", "360°", "270°"],
+    "answer": 1
+  },
+  {
+    "q": "A triangle with all three sides equal is called:",
+    "options": ["Scalene", "Isosceles", "Equilateral", "Right-angled"],
+    "answer": 2
+  },
+  {
+    "q": "A triangle with all three angles acute is called:",
+    "options": ["Right-angled", "Obtuse", "Acute", "Equilateral"],
+    "answer": 2
+  },
+  {
+    "q": "A triangle with one angle greater than 90° is called:",
+    "options": ["Acute", "Right-angled", "Obtuse", "Equilateral"],
+    "answer": 2
+  },
+  {
+    "q": "A triangle with one right angle is called:",
+    "options": ["Acute", "Obtuse", "Right-angled", "Isosceles"],
+    "answer": 2
+  },
+  {
+    "q": "A triangle with no sides equal is called:",
+    "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+    "answer": 2
+  },
+  {
+    "q": "In a triangle, the longest side is opposite the:",
+    "options": ["Smallest angle", "Largest angle", "Right angle", "Acute angle"],
+    "answer": 1
+  },
+  {
+    "q": "The exterior angle of a triangle is equal to:",
+    "options": ["Sum of two remote interior angles", "One interior angle", "Difference of interior angles", "90°"],
+    "answer": 0
+  },
+  {
+    "q": "In an equilateral triangle, each angle measures:",
+    "options": ["45°", "60°", "90°", "120°"],
+    "answer": 1
+  },
+  {
+    "q": "In a right-angled triangle, the side opposite the right angle is called:",
+    "options": ["Base", "Leg", "Hypotenuse", "Altitude"],
+    "answer": 2
+  },
+  {
+    "q": "Pythagoras theorem states that in a right-angled triangle:",
+    "options": ["Hypotenuse² = Sum of other two sides²", "Hypotenuse² = Difference of other two sides²", "One leg² = Hypotenuse² + other leg²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In △ABC, if ∠A = ∠B, then the triangle is:",
+    "options": ["Scalene", "Isosceles", "Equilateral", "Right-angled"],
+    "answer": 1
+  },
+  {
+    "q": "The side opposite ∠A in △ABC is:",
+    "options": ["AB", "BC", "AC", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If two sides of a triangle are equal, the angles opposite them are:",
+    "options": ["Different", "Equal", "Supplementary", "Complementary"],
+    "answer": 1
+  },
+  {
+    "q": "The triangle inequality theorem states that the sum of any two sides must be:",
+    "options": ["Equal to the third side", "Less than the third side", "Greater than the third side", "None"],
+    "answer": 2
+  },
+  {
+    "q": "In △ABC, if AB = AC, then:",
+    "options": ["∠B = ∠C", "∠A = ∠B", "∠A = ∠C", "All angles equal"],
+    "answer": 0
+  },
+  {
+    "q": "A triangle with sides 3 cm, 4 cm, 5 cm is:",
+    "options": ["Acute", "Obtuse", "Right-angled", "Impossible"],
+    "answer": 2
+  },
+  {
+    "q": "The altitude to the hypotenuse in a right-angled triangle creates:",
+    "options": ["One similar triangle", "Two similar triangles", "Three similar triangles", "No similar triangles"],
+    "answer": 2
+  },
+  {
+    "q": "In a right-angled triangle, the median to the hypotenuse is:",
+    "options": ["Equal to hypotenuse", "Half the hypotenuse", "Twice the hypotenuse", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Congruent triangles have:",
+    "options": ["Same size only", "Same shape only", "Same size and shape", "Different size and shape"],
+    "answer": 2
+  },
+  {
+    "q": "SSS congruence criterion means:",
+    "options": ["Side-Angle-Side", "Side-Side-Side", "Angle-Side-Angle", "Angle-Angle-Side"],
+    "answer": 1
+  },
+  {
+    "q": "SAS congruence criterion is:",
+    "options": ["Side-Angle-Side", "Side-Side-Side", "Angle-Side-Angle", "Angle-Angle-Side"],
+    "answer": 0
+  },
+  {
+    "q": "ASA congruence criterion is:",
+    "options": ["Angle-Side-Angle", "Side-Angle-Side", "Angle-Angle-Side", "Side-Side-Side"],
+    "answer": 0
+  },
+  {
+    "q": "AAS congruence criterion is:",
+    "options": ["Angle-Angle-Side", "Angle-Side-Angle", "Side-Angle-Side", "Right-Angle-Hypotenuse-Side"],
+    "answer": 0
+  },
+  {
+    "q": "RHS congruence is for:",
+    "options": ["Any triangle", "Right-angled triangles", "Isosceles triangles", "Equilateral triangles"],
+    "answer": 1
+  },
+  {
+    "q": "If two triangles are congruent, their corresponding parts are:",
+    "options": ["Different", "Equal", "Proportional", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Similar triangles have:",
+    "options": ["Same size and shape", "Same shape but not necessarily same size", "Same size but different shape", "Neither same size nor shape"],
+    "answer": 1
+  },
+  {
+    "q": "The ratio of corresponding sides of similar triangles is called:",
+    "options": ["Scale factor", "Area ratio", "Perimeter ratio", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The ratio of areas of two similar triangles is equal to:",
+    "options": ["Ratio of sides", "Square of ratio of sides", "Cube of ratio of sides", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Basic proportionality theorem (Thales' theorem) states that if a line parallel to one side intersects the other two sides, then it divides them:",
+    "options": ["Unequally", "Proportionally", "Equally", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The converse of basic proportionality theorem is also:",
+    "options": ["False", "True", "Sometimes true", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In △ABC, if DE ∥ BC, then by BPT:",
+    "options": ["AD/DB = AE/EC", "AD/AE = DB/EC", "AB/AC = DE/BC", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The point where the three medians of a triangle meet is called:",
+    "options": ["Centroid", "Orthocenter", "Incenter", "Circumcenter"],
+    "answer": 0
+  },
+  {
+    "q": "The centroid divides each median in the ratio:",
+    "options": ["1:1", "2:1", "3:1", "1:2"],
+    "answer": 1
+  },
+  {
+    "q": "The point where the altitudes meet is:",
+    "options": ["Centroid", "Orthocenter", "Incenter", "Circumcenter"],
+    "answer": 1
+  },
+  {
+    "q": "The incenter is the centre of:",
+    "options": ["Circumcircle", "Incircle", "Excircle", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The circumcenter is the centre of:",
+    "options": ["Incircle", "Circumcircle", "Medians", "Altitudes"],
+    "answer": 1
+  },
+  {
+    "q": "In an equilateral triangle, all centres (centroid, orthocenter, incenter, circumcenter):",
+    "options": ["Are different", "Coincide", "Form a line", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The area of a triangle is:",
+    "options": ["Base × Height", "(1/2) × Base × Height", "Base + Height", "Base × Height × 2"],
+    "answer": 1
+  },
+  {
+    "q": "Heron's formula for area of triangle with sides a, b, c is:",
+    "options": ["√[s(s-a)(s-b)(s-c)] where s = (a+b+c)/2", "s(s-a)(s-b)(s-c)", "(a+b+c)/2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In a right-angled triangle with legs 6 cm and 8 cm, hypotenuse is:",
+    "options": ["10 cm", "14 cm", "2 cm", "48 cm"],
+    "answer": 0
+  },
+  {
+    "q": "Triangles on the same base and between same parallels have:",
+    "options": ["Different areas", "Equal areas", "Proportional areas", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The median in a triangle divides it into two triangles of:",
+    "options": ["Different areas", "Equal areas", "Proportional areas", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If two triangles have the same height, their areas are proportional to:",
+    "options": ["Heights", "Bases", "Perimeters", "Angles"],
+    "answer": 1
+  },
+  {
+    "q": "An isosceles triangle has:",
+    "options": ["Two equal sides", "All sides equal", "No equal sides", "One right angle"],
+    "answer": 0
+  },
+  {
+    "q": "In △ABC, if AB = BC = CA, then it is:",
+    "options": ["Isosceles", "Scalene", "Equilateral", "Right-angled"],
+    "answer": 2
+  },
+  {
+    "q": "The angle opposite the longest side is the:",
+    "options": ["Smallest angle", "Largest angle", "Right angle", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following cannot be sides of a triangle?",
+    "options": ["3, 4, 5", "5, 12, 13", "1, 1, 3", "7, 8, 9"],
+    "answer": 2
+  },
+  {
+    "q": "In △ABC, ∠A = 40°, ∠B = 60°, then ∠C =",
+    "options": ["80°", "100°", "90°", "70°"],
+    "answer": 0
+  },
+  {
+    "q": "If one angle of a triangle is 90°, the other two angles are:",
+    "options": ["Both acute", "One acute one obtuse", "Both obtuse", "Both right"],
+    "answer": 0
+  },
+  {
+    "q": "The exterior angle at vertex A is 110°, one remote interior angle is 50°, the other is:",
+    "options": ["60°", "50°", "110°", "70°"],
+    "answer": 0
+  },
+  {
+    "q": "In △ABC, if DE ∥ BC with D on AB, E on AC, then △ADE ~",
+    "options": ["△ABC", "△ACB", "△BAC", "△CBA"],
+    "answer": 0
+  },
+  {
+    "q": "Criteria not sufficient for congruence of two triangles is:",
+    "options": ["SSS", "SAS", "AAA", "RHS"],
+    "answer": 2
+  },
+  {
+    "q": "AAA is a criterion for:",
+    "options": ["Congruence", "Similarity", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If △ABC ~ △DEF, then corresponding angles are:",
+    "options": ["∠A = ∠D, ∠B = ∠E, ∠C = ∠F", "∠A = ∠E, ∠B = ∠F, ∠C = ∠D", "Any order", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The orthocenter of a right-angled triangle lies at:",
+    "options": ["Centroid", "Right-angled vertex", "Midpoint of hypotenuse", "Incenter"],
+    "answer": 1
+  },
+  {
+    "q": "The circumcenter of a right-angled triangle is at:",
+    "options": ["Right-angled vertex", "Midpoint of hypotenuse", "Centroid", "Incenter"],
+    "answer": 1
+  },
+  {
+    "q": "Area of equilateral triangle with side a is:",
+    "options": ["(√3/4) a²", "(√3/2) a²", "a²", "(1/2) a²"],
+    "answer": 0
+  },
+  {
+    "q": "Perimeter of triangle with sides 5 cm, 12 cm, 13 cm is:",
+    "options": ["30 cm", "25 cm", "13 cm", "17 cm"],
+    "answer": 0
+  },
+  {
+    "q": "Semi-perimeter of triangle with sides 7, 8, 9 is:",
+    "options": ["12", "24", "15", "18"],
+    "answer": 0
+  },
+  {
+    "q": "In △ABC, altitude from A to BC is h, base BC = b, area =",
+    "options": ["(1/2) b h", "b h", "2 b h", "b + h"],
+    "answer": 0
+  },
+  {
+    "q": "Triangles with equal corresponding angles are:",
+    "options": ["Congruent", "Similar", "Equal area", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If two triangles have equal areas and same base, then their heights are:",
+    "options": ["Different", "Equal", "Proportional to bases", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The incentre is the intersection point of:",
+    "options": ["Medians", "Altitudes", "Angle bisectors", "Perpendicular bisectors"],
+    "answer": 2
+  },
+  {
+    "q": "The perpendicular bisectors of sides meet at:",
+    "options": ["Centroid", "Orthocenter", "Incenter", "Circumcenter"],
+    "answer": 3
+  },
+  {
+    "q": "In an obtuse triangle, the orthocenter lies:",
+    "options": ["Inside", "Outside", "On a vertex", "On a side"],
+    "answer": 1
+  },
+  {
+    "q": "In an acute triangle, all centres lie:",
+    "options": ["Outside", "Inside the triangle", "On vertices", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A triangle can have at most one:",
+    "options": ["Acute angle", "Right angle", "Obtuse angle", "Reflex angle"],
+    "answer": 2
+  },
+  {
+    "q": "The number of medians in a triangle is:",
+    "options": ["2", "3", "4", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "The number of altitudes in a triangle is:",
+    "options": ["2", "3", "4", "1"],
+    "answer": 1
+  },
+  {
+    "q": "An equilateral triangle is also:",
+    "options": ["Isosceles only", "Scalene", "Isosceles and acute", "Right-angled"],
+    "answer": 2
+  },
+  {
+    "q": "Which set of angles can form a triangle?",
+    "options": ["30°, 60°, 100°", "20°, 30°, 130°", "50°, 60°, 70°", "90°, 90°, 90°"],
+    "answer": 2
+  },
+  {
+    "q": "If sides are in ratio 1:1:1, the triangle is:",
+    "options": ["Scalene", "Isosceles", "Equilateral", "Right-angled"],
+    "answer": 2
+  },
+  {
+    "q": "In △ABC, if ∠B = 90°, then hypotenuse is:",
+    "options": ["AB", "BC", "AC", "Any"],
+    "answer": 2
+  },
+  {
+    "q": "The angle bisectors divide opposite sides in the ratio of:",
+    "options": ["Adjacent sides", "All sides equal", "No specific ratio", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

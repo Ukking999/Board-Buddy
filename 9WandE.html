@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Work & Energy MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Work is done when a force:",
+    "options": ["Acts on a body", "Produces displacement in the body", "Changes velocity", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The scientific unit of work is:",
+    "options": ["Newton", "Joule", "Watt", "Erg"],
+    "answer": 1
+  },
+  {
+    "q": "1 Joule =",
+    "options": ["1 Newton × 1 metre", "1 Newton × 1 second", "1 kg × 1 m/s²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Work done W =",
+    "options": ["F × s × cosθ", "F × s", "m a s", "F / s"],
+    "answer": 0
+  },
+  {
+    "q": "If force and displacement are perpendicular, work done is:",
+    "options": ["Maximum", "Zero", "Negative", "Positive"],
+    "answer": 1
+  },
+  {
+    "q": "If force and displacement are in the same direction, work done is:",
+    "options": ["Zero", "Negative", "Positive (maximum)", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Negative work is done when:",
+    "options": ["Force and displacement opposite", "Force and displacement same", "Perpendicular", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Energy is the:",
+    "options": ["Ability to do work", "Force applied", "Displacement", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The SI unit of energy is:",
+    "options": ["Newton", "Joule", "Watt", "Pascal"],
+    "answer": 1
+  },
+  {
+    "q": "1 kWh =",
+    "options": ["3.6 × 10^6 J", "3.6 × 10^5 J", "3600 J", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Kinetic energy of a body is:",
+    "options": ["½ m v²", "m g h", "m v", "½ m v"],
+    "answer": 0
+  },
+  {
+    "q": "Potential energy due to position (gravitational) is:",
+    "options": ["½ m v²", "m g h", "F s", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Kinetic energy depends on:",
+    "options": ["Mass and velocity", "Height", "Position", "Force"],
+    "answer": 0
+  },
+  {
+    "q": "Gravitational potential energy depends on:",
+    "options": ["Mass, g and height", "Velocity", "Speed", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The law of conservation of energy states that energy can:",
+    "options": ["Be created", "Be destroyed", "Neither be created nor destroyed, only transformed", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Total mechanical energy =",
+    "options": ["KE + PE", "KE only", "PE only", "Work done"],
+    "answer": 0
+  },
+  {
+    "q": "In the absence of external forces, total mechanical energy:",
+    "options": ["Increases", "Decreases", "Remains constant", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Power is the rate of doing:",
+    "options": ["Force", "Work", "Displacement", "Acceleration"],
+    "answer": 1
+  },
+  {
+    "q": "The SI unit of power is:",
+    "options": ["Joule", "Newton", "Watt", "J/s"],
+    "answer": 2
+  },
+  {
+    "q": "1 Watt =",
+    "options": ["1 J/s", "1 N/m", "1 J/m", "None"],
+    "answer": 0
+  },
+  {
+    "q": "1 horsepower =",
+    "options": ["746 W", "700 W", "1000 W", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Power P =",
+    "options": ["W / t", "F × v", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "When a body falls freely, its PE is converted to:",
+    "options": ["KE", "Heat", "Sound", "None"],
+    "answer": 0
+  },
+  {
+    "q": "At the highest point of projection, energy is:",
+    "options": ["All KE", "All PE", "Mix of KE and PE", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In a simple pendulum, at extreme position energy is:",
+    "options": ["All KE", "All PE", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In a simple pendulum, at mean position energy is:",
+    "options": ["All PE", "All KE", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Work done by gravity is:",
+    "options": ["Positive when falling", "Negative when lifting", "Both possible", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Work done against gravity is stored as:",
+    "options": ["KE", "PE", "Heat", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If no external force does work, mechanical energy:",
+    "options": ["Increases", "Decreases", "Conserved", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Friction does:",
+    "options": ["Positive work", "Negative work (dissipative)", "No work", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In presence of friction, mechanical energy:",
+    "options": ["Conserved", "Not conserved (converted to heat)", "Increases", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The commercial unit of energy is:",
+    "options": ["Joule", "Watt", "kWh", "None"],
+    "answer": 2
+  },
+  {
+    "q": "1 kWh =",
+    "options": ["3600 J", "3.6 MJ", "3600 kJ", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If velocity is doubled, KE becomes:",
+    "options": ["Doubled", "Halved", "4 times", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If mass is doubled, KE becomes:",
+    "options": ["Doubled", "Halved", "4 times", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If height is doubled, PE becomes:",
+    "options": ["Doubled", "Halved", "4 times", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If velocity becomes zero, KE =",
+    "options": ["Maximum", "Zero", "Negative", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Work done by a constant force is maximum when angle θ =",
+    "options": ["90°", "180°", "0°", "45°"],
+    "answer": 2
+  },
+  {
+    "q": "Work done is zero when θ =",
+    "options": ["0°", "90°", "180°", "45°"],
+    "answer": 1
+  },
+  {
+    "q": "Work done is negative when θ is:",
+    "options": ["Acute", "Obtuse", "90°", "0°"],
+    "answer": 1
+  },
+  {
+    "q": "A body of mass 2 kg moving with 5 m/s has KE =",
+    "options": ["25 J", "50 J", "10 J", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A body of mass 1 kg at height 10 m (g=10 m/s²) has PE =",
+    "options": ["100 J", "10 J", "1000 J", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a machine does 100 J work in 10 s, power =",
+    "options": ["10 W", "1000 W", "100 W", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A pump lifts 500 kg water to 10 m height in 50 s (g=10 m/s²), power =",
+    "options": ["1000 W", "10000 W", "500 W", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The ability to do work is:",
+    "options": ["Force", "Power", "Energy", "Momentum"],
+    "answer": 2
+  },
+  {
+    "q": "Forms of energy include:",
+    "options": ["Kinetic, potential, heat, light, sound", "Only kinetic", "Only potential", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Energy can be converted from one form to another but total energy:",
+    "options": ["Increases", "Decreases", "Remains constant", "None"],
+    "answer": 2
+  },
+  {
+    "q": "In a hydroelectric plant, PE of water is converted to:",
+    "options": ["KE then electrical energy", "Directly electrical", "Heat", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In a bulb, electrical energy is converted to:",
+    "options": ["Light and heat", "Sound", "Mechanical", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Work and Energy' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Work is a:",
+    "options": ["Scalar", "Vector", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Energy is a:",
+    "options": ["Vector", "Scalar", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Power is a:",
+    "options": ["Scalar", "Vector", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If work done is positive, energy:",
+    "options": ["Decreases", "Increases", "Same", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If work done is negative, energy:",
+    "options": ["Increases", "Decreases", "Same", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Work-energy theorem: Work done =",
+    "options": ["Change in KE", "Change in PE", "Total energy", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For conservative forces like gravity:",
+    "options": ["Work independent of path", "Depends on path", "Zero", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For non-conservative forces like friction:",
+    "options": ["Work independent of path", "Work depends on path", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Potential energy is defined for:",
+    "options": ["Conservative forces", "Non-conservative", "All forces", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Gravitational PE is zero at:",
+    "options": ["Infinity", "Ground level (reference)", "Highest point", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Elastic PE is stored in:",
+    "options": ["Stretched/compressed spring", "Falling body", "Moving car", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The constant k in spring PE = ½ k x² is:",
+    "options": ["Spring constant", "Force", "Displacement", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Mechanical energy is:",
+    "options": ["KE + PE", "Work", "Power", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In ideal cases (no friction), mechanical energy is:",
+    "options": ["Conserved", "Lost", "Gained", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In real cases with friction, mechanical energy:",
+    "options": ["Conserved", "Converted to heat/sound", "Increases", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Average power =",
+    "options": ["Total work / Total time", "Force × velocity", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Instantaneous power =",
+    "options": ["F × v", "W / t", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A crane lifts 1000 kg to 10 m in 20 s (g=10 m/s²), power =",
+    "options": ["5000 W", "500 W", "10000 W", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If velocity is constant, power of engine is used to overcome:",
+    "options": ["Gravity", "Friction", "Inertia", "None"],
+    "answer": 1
+  },
+  {
+    "q": "More powerful engine means:",
+    "options": ["More work in same time", "Same work faster", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Energy is measured in:",
+    "options": ["Joule", "Watt", "Newton", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Power is measured in:",
+    "options": ["Joule", "Watt", "Newton", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Work has same unit as:",
+    "options": ["Power", "Energy", "Force", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The work done by centripetal force in circular motion is:",
+    "options": ["Positive", "Negative", "Zero", "None"],
+    "answer": 2
+  },
+  {
+    "q": "In uniform circular motion, KE is:",
+    "options": ["Changing", "Constant", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A body at rest has:",
+    "options": ["KE only", "PE only", "Both zero", "None"],
+    "answer": 2
+  },
+  {
+    "q": "A moving body has:",
+    "options": ["KE", "PE", "Both possible", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Lifting a book increases its:",
+    "options": ["KE", "PE", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Dropping a book converts PE to:",
+    "options": ["KE", "Heat", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The transformation of energy follows:",
+    "options": ["Conservation law", "Creation", "Destruction", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

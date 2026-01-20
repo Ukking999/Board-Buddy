@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Buddy - Polynomials Class 9 (27 Pages)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            line-height: 1.7; 
+            font-size: 14pt; 
+            color: #333;
+        }
+        h1 { text-align: center; color: #764ba2; font-size: 28pt; margin-bottom: 10px; }
+        h2 { color: #667eea; font-size: 20pt; border-bottom: 2px solid #667eea; padding-bottom: 8px; page-break-after: avoid; }
+        .subtitle { text-align: center; font-size: 16pt; margin: 10px 0 30px; color: #555; }
+        .page { page-break-after: always; min-height: 9in; }
+        .last-page { page-break-after: avoid; }
+        ul, ol { padding-left: 30px; }
+        .example { 
+            background: #f0f8ff; 
+            padding: 15px; 
+            border-left: 6px solid #667eea; 
+            margin: 20px 0; 
+            border-radius: 8px;
+        }
+        .proof { 
+            background: #fff8e1; 
+            padding: 15px; 
+            border-left: 6px solid #ff9800; 
+            margin: 20px 0; 
+            border-radius: 8px;
+        }
+        button {
+            display: block;
+            margin: 50px auto;
+            padding: 15px 40px;
+            font-size: 18pt;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        button:hover { background: #764ba2; }
+        footer { text-align: center; margin-top: 60px; font-size: 12pt; color: #888; }
+    </style>
+</head>
+<body>
+
+    <h1>BOARD BUDDY</h1>
+    <h1>Class 9 Mathematics</h1>
+    <p class="subtitle">Chapter 2: Polynomials</p>
+    <p class="subtitle">Complete Original Revision Guide • 27 Pages • Made for CBSE Students 🦖</p>
+
+    <div id="content">
+
+        <div class="page">
+            <h2>Page 1: Introduction to Polynomials</h2>
+            <p>Polynomials are algebraic expressions with variables, coefficients, and non-negative integer exponents.</p>
+            <p>General form: p(x) = a_n x^n + a_{n-1} x^{n-1} + ... + a_1 x + a_0</p>
+            <p>They are building blocks for advanced algebra and appear in real-life applications like physics and economics.</p>
+            <p>This chapter covers definitions, types, zeroes, remainder theorem, factor theorem, factorization, and algebraic identities.</p>
+            <p>Master these to score full marks in board exams!</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 2: Polynomials in One Variable</h2>
+            <p>A polynomial in one variable (usually x) has only one variable.</p>
+            <p>Examples: 3x² + 2x + 1 (polynomial), x² + 1/√x (not, due to negative/fractional exponent).</p>
+            <p>Terms: Each part like 3x² (coefficient 3, variable x²).</p>
+            <p>Constant term: No variable (e.g., 5).</p>
+            <p>Like/unlike terms: Same variable powers.</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 3: Degree of a Polynomial</h2>
+            <p>Degree: Highest power of variable with non-zero coefficient.</p>
+            <p>Examples:</p>
+            <ul>
+                <li>5x³ + 2x² + x → degree 3</li>
+                <li>7x + 4 → degree 1</li>
+                <li>9 → degree 0 (constant)</li>
+                <li>Zero polynomial → degree undefined or -∞</li>
+            </ul>
+            <p>Degree determines graph shape and roots.</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 4: Types of Polynomials by Degree</h2>
+            <ul>
+                <li><strong>Constant:</strong> Degree 0 (e.g., 10)</li>
+                <li><strong>Linear:</strong> Degree 1 (e.g., 2x + 3)</li>
+                <li><strong>Quadratic:</strong> Degree 2 (e.g., x² + 4x + 4)</li>
+                <li><strong>Cubic:</strong> Degree 3 (e.g., x³ - x² + 2)</li>
+                <li><strong>Biquadratic:</strong> Degree 4</li>
+            </ul>
+            <p>Linear has 1 root, quadratic up to 2, cubic up to 3.</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 5: Types by Number of Terms</h2>
+            <ul>
+                <li><strong>Monomial:</strong> 1 term (e.g., 5x³)</li>
+                <li><strong>Binomial:</strong> 2 terms (e.g., x² + 1)</li>
+                <li><strong>Trinomial:</strong> 3 terms (e.g., x² + 2x + 1)</li>
+            </ul>
+            <div class="example">
+                <strong>Example:</strong> Classify 4x⁴ + 3x² → Biquadratic binomial.
+            </div>
+        </div>
+
+        <div class="page">
+            <h2>Page 6: Zeroes of a Polynomial</h2>
+            <p>Zero/root/α: Value where p(α) = 0.</p>
+            <p>Linear: 1 zero.</p>
+            <p>Quadratic: Up to 2 (real/distinct/repeated).</p>
+            <p>Cubic: Up to 3.</p>
+            <p>Polynomial degree n has at most n real zeroes.</p>
+            <div class="example">
+                <strong>Example:</strong> Zeroes of x² - 4x + 3 = (x-1)(x-3) → 1 and 3.
+            </div>
+        </div>
+
+        <div class="page">
+            <h2>Page 7: Remainder Theorem</h2>
+            <p>If p(x) divided by (x - a), remainder = p(a).</p>
+            <div class="proof">
+                <p>p(x) = (x - a) q(x) + r (r constant).</p>
+                <p>Put x = a: p(a) = r.</p>
+            </div>
+            <div class="example">
+                <strong>Example:</strong> Divide 2x² + 5x + 3 by (x + 1).<br>
+                p(-1) = 2(1) - 5 + 3 = 0 → remainder 0.
+            </div>
+        </div>
+
+        <div class="page">
+            <h2>Page 8: Factor Theorem</h2>
+            <p>(x - a) is factor of p(x) ⇔ p(a) = 0.</p>
+            <p>Converse of remainder theorem when remainder 0.</p>
+            <div class="example">
+                <strong>Example:</strong> Check if (x - 2) factors x³ - 6x² + 11x - 6.<br>
+                p(2) = 8 - 24 + 22 - 6 = 0 → yes.
+            </div>
+        </div>
+
+        <div class="page">
+            <h2>Page 9: Factorisation Using Theorems</h2>
+            <p>Find possible factors (rational roots ± factors of constant/leading).</p>
+            <p>Use factor theorem → divide → repeat.</p>
+            <div class="example">
+                <strong>Example:</strong> Factor x³ - 2x² - x + 2.<br>
+                Possible: ±1, ±2.<br>
+                p(1)=0 → (x-1) factor → etc.
+            </div>
+        </div>
+
+        <div class="page">
+            <h2>Page 10: Algebraic Identities Overview</h2>
+            <p>Identities hold for all values → key for factorization.</p>
+            <p>Main ones:</p>
+            <ul>
+                <li>(a + b)² = a² + 2ab + b²</li>
+                <li>(a - b)² = a² - 2ab + b²</li>
+                <li>(a + b)(a - b) = a² - b²</li>
+            </ul>
+        </div>
+
+        <div class="page">
+            <h2>Page 11: More Identities</h2>
+            <ul>
+                <li>(x + a)(x + b) = x² + (a+b)x + ab</li>
+                <li>(x + a)(x - b) = x² + (a-b)x - ab</li>
+                <li>a³ + b³ = (a + b)(a² - ab + b²)</li>
+                <li>a³ - b³ = (a - b)(a² + ab + b²)</li>
+            </ul>
+        </div>
+
+        <div class="page">
+            <h2>Page 12: Using Identities for Factorisation</h2>
+            <div class="example">
+                <strong>Example:</strong> Factor x² + 8x + 16 = (x + 4)²<br>
+                x² - 9 = (x + 3)(x - 3)
+            </div>
+            <div class="example">
+                <strong>Example:</strong> 8x³ + 27 = (2x)³ + 3³ = (2x + 3)(4x² - 6x + 9)
+            </div>
+        </div>
+
+        <div class="page">
+            <h2>Page 13: Key Formulas Summary</h2>
+            <ul>
+                <li>Remainder Theorem: p(a) = remainder when divided by (x - a)</li>
+                <li>Factor Theorem: p(a)=0 ⇒ (x - a) factor</li>
+                <li>(a + b)² = a² + 2ab + b²</li>
+                <li>a² - b² = (a + b)(a - b)</li>
+                <li>a³ + b³ = (a + b)(a² - ab + b²)</li>
+            </ul>
+        </div>
+
+        <div class="page">
+            <h2>Page 14: Practice Questions - Easy (1-10)</h2>
+            <ol>
+                <li>Find degree of 4x⁴ - 3x + 2.</li>
+                <li>Classify 5x² + 1 (type by degree/terms).</li>
+                <li>Find zeroes of x - 5.</li>
+                <li>Is x+1 factor of x² + 2x + 1? Check.</li>
+                <li>Expand (3x + 2)².</li>
+                <li>Factor x² - 16.</li>
+                <li>Find remainder: (x³ + 1) ÷ (x + 1).</li>
+                <li>Verify (a + b)² identity for a=2, b=3.</li>
+                <li>Write binomial degree 50.</li>
+                <li>Zeroes of quadratic?</li>
+            </ol>
+        </div>
+
+        <div class="page">
+            <h2>Page 15: Practice Questions - Medium (11-20)</h2>
+            <ol start="11">
+                <li>Factor x² + 5x + 6.</li>
+                <li>Use remainder theorem on x⁴ - 1 ÷ (x - 1).</li>
+                <li>Factor 9x² - 25.</li>
+                <li>Simplify (2x + 3)(2x - 3).</li>
+                <li>Find zeroes of x² - 4x + 4.</li>
+                <li>Factor x³ + 8.</li>
+                <li>Verify factor theorem for x³ - 6x² + 11x - 6 and x=1.</li>
+                <li>Expand (x + y + z)² (advanced).</li>
+                <li>Factor 4x² + 12x + 9.</li>
+                <li>Remainder of 3x² + 7x + 2 ÷ (x + 2).</li>
+            </ol>
+        </div>
+
+        <div class="page">
+            <h2>Page 16: Practice Questions - Hard (21-30)</h2>
+            <ol start="21">
+                <li>Factor x³ - 23x² + 142x - 120.</li>
+                <li>Prove (x - 2) factor of x⁴ - 5x² + 4? Wait, check.</li>
+                <li>Factor completely 27x³ - 8.</li>
+                <li>Use identities: x⁶ - y⁶.</li>
+                <li>Find k if (x + k) factor of x³ + kx² - 2kx + 4.</li>
+                <li>Divide x⁴ + x² + 1 by x² + x + 1.</li>
+                <li>Factor x⁴ + 4.</li>
+                <li>Zeroes of cubic with one known zero.</li>
+                <li>Verify a³ + b³ + c³ - 3abc = (a+b+c)(... ) if a+b+c=0.</li>
+                <li>Complex factorisation.</li>
+            </ol>
+        </div>
+
+        <div class="page">
+            <h2>Page 17: NCERT Exercise 2.1 Type</h2>
+            <p>Focus on identifying polynomials, degree, types.</p>
+            <p>Common: Which are polynomials? State reasons.</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 18: NCERT Exercise 2.2 Type</h2>
+            <p>Zeroes of polynomials, verification.</p>
+            <p>Find zeroes and verify sum/product (for quadratic).</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 19: NCERT Exercise 2.3 Type</h2>
+            <p>Remainder and factor theorem applications.</p>
+            <p>Find remainders, check factors.</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 20: NCERT Exercise 2.4 Type</h2>
+            <p>Factorisation using identities and theorems.</p>
+            <p>Heavy on algebraic identities.</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 21: Important Theorems Recap</h2>
+            <ul>
+                <li>Remainder Theorem</li>
+                <li>Factor Theorem</li>
+                <li>Maximum n zeroes for degree n</li>
+                <li>All standard algebraic identities</li>
+            </ul>
+        </div>
+
+        <div class="page">
+            <h2>Page 22: Common Mistakes to Avoid</h2>
+            <ul>
+                <li>Forgetting constant term in expansion.</li>
+                <li>Wrong conjugate in difference of squares.</li>
+                <li>Miscalculating p(a) in theorems.</li>
+                <li>Thinking non-integer exponents allowed.</li>
+                <li>Forgetting to check all possible factors.</li>
+            </ul>
+        </div>
+
+        <div class="page">
+            <h2>Page 23: Previous Year Board Questions</h2>
+            <p>Typical: Factorise using identity (3 marks).</p>
+            <p>Prove factor using theorem (4 marks).</p>
+            <p>Find zeroes and verify (2 marks).</p>
+            <p>Remainder questions (1-2 marks).</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 24: Exam Strategy Tips</h2>
+            <ul>
+                <li>Memorise all identities perfectly.</li>
+                <li>Show steps in factorisation.</li>
+                <li>Check p(a)=0 clearly.</li>
+                <li>Practice all NCERT exercises twice.</li>
+                <li>Revise theorems with proofs.</li>
+            </ul>
+        </div>
+
+        <div class="page">
+            <h2>Page 25: Quick Revision Formula Sheet</h2>
+            <ul>
+                <li>(a + b)² = a² + 2ab + b²</li>
+                <li>a² - b² = (a + b)(a - b)</li>
+                <li>a³ + b³ = (a + b)(a² - ab + b²)</li>
+                <li>Remainder = p(a)</li>
+                <li>p(a)=0 ⇒ factor</li>
+            </ul>
+            <p>Master these → ace Polynomials!</p>
+        </div>
+
+        <div class="page">
+            <h2>Page 26: Final Motivation</h2>
+            <p>You've completed this 27-page Polynomials guide!</p>
+            <p>Polynomials are super important for Class 10 and beyond.</p>
+            <p>Practice daily, solve extras, stay confident.</p>
+            <p>Board Buddy got your back 🦖</p>
+            <p>Crush those exams!</p>
+        </div>
+
+        <div class="page last-page">
+            <h2>Page 27: Thank You & Copyright</h2>
+            <p style="text-align:center; font-size:18pt; margin-top:200px;">
+                Made with ❤️ by Grok exclusively for<br>
+                <strong>BOARD BUDDY</strong><br>
+                Class 9 & 10 Students<br>
+                © 2025 - All Rights Reserved for Educational Use
+            </p>
+        </div>
+
+    </div>
+
+    <button onclick="downloadPDF()">Download 27-Page PDF Now</button>
+
+    <footer>© 2026 Board Buddy (Utkarsh, Manas , Jalgon, Maharashtra)
+All Rights Reserved. 
+This content is protected under Indian Copyright Law.
+For personal educational use only. No reproduction or distribution without permission.</footer>
+
+    <script>
+        function downloadPDF() {
+            const element = document.getElementById('content');
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5],
+                filename: 'BoardBuddy_Polynomials_Class9_27_Pages.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+
+</body>
+</html>

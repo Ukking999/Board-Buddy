@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Heron's Formula MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Surface Area & Volume MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The surface area of a cuboid is given by:",
+    "options": ["lb + bh + hl", "2(lb + bh + hl)", "l × b × h", "6a²"],
+    "answer": 1
+  },
+  {
+    "q": "The volume of a cuboid is:",
+    "options": ["2(lb + bh + hl)", "lbh", "6a²", "4/3 πr³"],
+    "answer": 1
+  },
+  {
+    "q": "The total surface area of a cube with side a is:",
+    "options": ["a²", "4a²", "6a²", "8a²"],
+    "answer": 2
+  },
+  {
+    "q": "The volume of a cube with side a is:",
+    "options": ["a²", "a³", "6a²", "4a²"],
+    "answer": 1
+  },
+  {
+    "q": "The lateral surface area of a cube is:",
+    "options": ["a²", "4a²", "6a²", "8a²"],
+    "answer": 1
+  },
+  {
+    "q": "The total surface area of a cylinder is:",
+    "options": ["2πr h", "πr² h", "2πr(r + h)", "2πr²"],
+    "answer": 2
+  },
+  {
+    "q": "The curved (lateral) surface area of a cylinder is:",
+    "options": ["2πr h", "πr² h", "2πr(r + h)", "πr l"],
+    "answer": 0
+  },
+  {
+    "q": "The volume of a cylinder is:",
+    "options": ["πr² h", "2πr h", "4/3 πr³", "πr l"],
+    "answer": 0
+  },
+  {
+    "q": "The total surface area of a right circular cone is:",
+    "options": ["πr l + πr²", "πr l", "πr² h", "1/3 πr² h"],
+    "answer": 0
+  },
+  {
+    "q": "The curved surface area of a cone is:",
+    "options": ["πr l", "πr²", "πr(r + l)", "1/3 πr² h"],
+    "answer": 0
+  },
+  {
+    "q": "The volume of a cone is:",
+    "options": ["πr² h", "1/3 πr² h", "4/3 πr³", "πr l"],
+    "answer": 1
+  },
+  {
+    "q": "The slant height l of a cone is given by:",
+    "options": ["√(r² + h²)", "r + h", "r² + h²", "r/h"],
+    "answer": 0
+  },
+  {
+    "q": "The total surface area of a sphere is:",
+    "options": ["4πr²", "4/3 πr³", "πr²", "2πr"],
+    "answer": 0
+  },
+  {
+    "q": "The volume of a sphere is:",
+    "options": ["4πr²", "4/3 πr³", "πr²", "2πr²"],
+    "answer": 1
+  },
+  {
+    "q": "The surface area of a hemisphere (total, including base) is:",
+    "options": ["2πr²", "3πr²", "4πr²", "πr²"],
+    "answer": 1
+  },
+  {
+    "q": "The curved surface area of a hemisphere is:",
+    "options": ["πr²", "2πr²", "3πr²", "4πr²"],
+    "answer": 1
+  },
+  {
+    "q": "The volume of a hemisphere is:",
+    "options": ["2/3 πr³", "4/3 πr³", "πr³", "1/3 πr³"],
+    "answer": 0
+  },
+  {
+    "q": "If the edge of a cube is doubled, its volume becomes:",
+    "options": ["Doubled", "Tripled", "4 times", "8 times"],
+    "answer": 3
+  },
+  {
+    "q": "If the radius of a sphere is halved, its volume becomes:",
+    "options": ["Half", "1/4", "1/8", "1/2"],
+    "answer": 2
+  },
+  {
+    "q": "If the radius of a cylinder is doubled and height halved, volume:",
+    "options": ["Remains same", "Doubled", "Halved", "Quadrupled"],
+    "answer": 1
+  },
+  {
+    "q": "The unit of surface area is:",
+    "options": ["Cubic unit", "Square unit", "Unit", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The unit of volume is:",
+    "options": ["Square unit", "Cubic unit", "Unit", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A cube has ___ faces, ___ edges and ___ vertices.",
+    "options": ["4, 6, 8", "6, 12, 8", "8, 12, 6", "6, 8, 12"],
+    "answer": 1
+  },
+  {
+    "q": "A cuboid has ___ faces, all rectangular.",
+    "options": ["4", "6", "8", "12"],
+    "answer": 1
+  },
+  {
+    "q": "A cylinder has ___ curved surface and ___ circular bases.",
+    "options": ["1, 1", "1, 2", "2, 1", "2, 2"],
+    "answer": 1
+  },
+  {
+    "q": "A cone has ___ vertex, ___ circular base and ___ curved surface.",
+    "options": ["1, 1, 1", "1, 2, 1", "2, 1, 1", "1, 1, 2"],
+    "answer": 0
+  },
+  {
+    "q": "A sphere has:",
+    "options": ["No edges, no vertices", "Edges and vertices", "Flat faces", "Base"],
+    "answer": 0
+  },
+  {
+    "q": "If side of cube is 5 cm, volume =",
+    "options": ["25 cm³", "125 cm³", "30 cm³", "75 cm³"],
+    "answer": 1
+  },
+  {
+    "q": "If side of cube is 5 cm, total surface area =",
+    "options": ["25 cm²", "125 cm²", "150 cm²", "30 cm²"],
+    "answer": 2
+  },
+  {
+    "q": "Cylinder with r = 7 cm, h = 10 cm, volume =",
+    "options": ["440 cm³", "1540 cm³", "700 cm³", "220 cm³"],
+    "answer": 1
+  },
+  {
+    "q": "Cylinder with r = 7 cm, h = 10 cm, curved surface area =",
+    "options": ["440 cm²", "154 cm²", "220 cm²", "700 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "Cone with r = 6 cm, h = 8 cm, slant height l =",
+    "options": ["10 cm", "14 cm", "48 cm", "2 cm"],
+    "answer": 0
+  },
+  {
+    "q": "Cone with r = 6 cm, h = 8 cm, volume =",
+    "options": ["96π cm³", "288π cm³", "192π cm³", "301.71 cm³"],
+    "answer": 2
+  },
+  {
+    "q": "Sphere with r = 3 cm, surface area =",
+    "options": ["36π cm²", "12π cm²", "18π cm²", "4π cm²"],
+    "answer": 0
+  },
+  {
+    "q": "Sphere with r = 3 cm, volume =",
+    "options": ["36π cm³", "108π cm³", "27π cm³", "12π cm³"],
+    "answer": 2
+  },
+  {
+    "q": "Hemisphere with r = 7 cm, total surface area =",
+    "options": ["154π cm²", "308π cm²", "147π cm²", "98π cm²"],
+    "answer": 1
+  },
+  {
+    "q": "Hemisphere with r = 7 cm, volume =",
+    "options": ["343π/3 cm³", "1372π/3 cm³", "686π/3 cm³", "1078π cm³"],
+    "answer": 0
+  },
+  {
+    "q": "If edge of cube is tripled, surface area becomes:",
+    "options": ["3 times", "6 times", "9 times", "27 times"],
+    "answer": 2
+  },
+  {
+    "q": "If radius of sphere is doubled, surface area becomes:",
+    "options": ["2 times", "4 times", "8 times", "16 times"],
+    "answer": 1
+  },
+  {
+    "q": "If height and radius of cylinder are doubled, volume becomes:",
+    "options": ["2 times", "4 times", "8 times", "16 times"],
+    "answer": 2
+  },
+  {
+    "q": "The number of faces in a cylinder (including bases) is:",
+    "options": ["1", "2", "3", "Infinite"],
+    "answer": 2
+  },
+  {
+    "q": "A cube is a special case of:",
+    "options": ["Cuboid", "Cylinder", "Cone", "Sphere"],
+    "answer": 0
+  },
+  {
+    "q": "A square is the base of:",
+    "options": ["Cube", "Cuboid", "Cylinder", "Cone"],
+    "answer": 0
+  },
+  {
+    "q": "The diagonal on the face of a cube with side a is:",
+    "options": ["a", "a√2", "a√3", "2a"],
+    "answer": 1
+  },
+  {
+    "q": "The space diagonal of a cube with side a is:",
+    "options": ["a√2", "a√3", "2a", "a"],
+    "answer": 1
+  },
+  {
+    "q": "Volume of cuboid with l=5, b=4, h=3 cm is:",
+    "options": ["60 cm³", "12 cm³", "50 cm³", "36 cm³"],
+    "answer": 0
+  },
+  {
+    "q": "Surface area of cuboid l=5, b=4, h=3 cm is:",
+    "options": ["60 cm²", "94 cm²", "120 cm²", "47 cm²"],
+    "answer": 1
+  },
+  {
+    "q": "Cone with r=12 cm, l=13 cm, height h =",
+    "options": ["5 cm", "25 cm", "1 cm", "12 cm"],
+    "answer": 0
+  },
+  {
+    "q": "Cone with r=5 cm, h=12 cm, curved surface area =",
+    "options": ["60π cm²", "65π cm²", "13π cm²", "17π cm²"],
+    "answer": 1
+  },
+  {
+    "q": "If all dimensions of a cuboid are doubled, volume becomes:",
+    "options": ["2 times", "4 times", "8 times", "16 times"],
+    "answer": 2
+  },
+  {
+    "q": "If all dimensions of a cuboid are doubled, surface area becomes:",
+    "options": ["2 times", "4 times", "8 times", "16 times"],
+    "answer": 1
+  },
+  {
+    "q": "The volume of hollow cylinder =",
+    "options": ["π(R² - r²)h", "π(R + r)h", "2π(R - r)h", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A frustum of cone has volume:",
+    "options": ["(1/3)πh(R² + r² + Rr)", "πh(R² + r²)", "1/3 πh(R + r)", "πh(Rr)"],
+    "answer": 0
+  },
+  {
+    "q": "The curved surface area of frustum is:",
+    "options": ["π(R + r)l", "π(R - r)l", "2π(R + r)h", "π(R² - r²)"],
+    "answer": 0
+  },
+  {
+    "q": "Slant height l of frustum = √[h² + (R - r)²]",
+    "options": ["True", "False", "Only for cone", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A solid with no flat faces and no straight edges is:",
+    "options": ["Cube", "Cylinder", "Cone", "Sphere"],
+    "answer": 3
+  },
+  {
+    "q": "The number of edges in a cube is:",
+    "options": ["6", "8", "12", "4"],
+    "answer": 2
+  },
+  {
+    "q": "The number of vertices in a cuboid is:",
+    "options": ["6", "8", "12", "4"],
+    "answer": 1
+  },
+  {
+    "q": "If volume of cube is 64 cm³, side =",
+    "options": ["4 cm", "8 cm", "16 cm", "32 cm"],
+    "answer": 0
+  },
+  {
+    "q": "If surface area of sphere is 144π cm², radius =",
+    "options": ["6 cm", "12 cm", "3 cm", "9 cm"],
+    "answer": 0
+  },
+  {
+    "q": "Volume of sphere with surface area 144π cm² is:",
+    "options": ["216π cm³", "288π cm³", "864π cm³", "36π cm³"],
+    "answer": 2
+  },
+  {
+    "q": "Two spheres have radii in ratio 1:2, their surface areas ratio is:",
+    "options": ["1:2", "1:4", "1:8", "2:1"],
+    "answer": 1
+  },
+  {
+    "q": "Two spheres have radii in ratio 1:2, volumes ratio is:",
+    "options": ["1:2", "1:4", "1:8", "1:16"],
+    "answer": 2
+  },
+  {
+    "q": "Cylinders with same height and radii ratio 3:4, volumes ratio =",
+    "options": ["3:4", "9:16", "27:64", "6:8"],
+    "answer": 1
+  },
+  {
+    "q": "Cones with same height and base radii ratio 2:5, volumes ratio =",
+    "options": ["4:25", "8:125", "2:5", "16:625"],
+    "answer": 0
+  },
+  {
+    "q": "If height of cone is doubled, volume becomes:",
+    "options": ["Same", "Double", "Half", "Quadruple"],
+    "answer": 1
+  },
+  {
+    "q": "If radius of cone is halved, volume becomes:",
+    "options": ["Half", "Quarter", "Double", "Same"],
+    "answer": 1
+  },
+  {
+    "q": "The base of a cylinder is:",
+    "options": ["Rectangle", "Circle", "Triangle", "Square"],
+    "answer": 1
+  },
+  {
+    "q": "A cube has all faces:",
+    "options": ["Rectangular", "Square", "Circular", "Triangular"],
+    "answer": 1
+  },
+  {
+    "q": "A sphere can be obtained by rotating a:",
+    "options": ["Rectangle", "Semicircle", "Triangle", "Square"],
+    "answer": 1
+  },
+  {
+    "q": "A cylinder can be obtained by rotating a:",
+    "options": ["Rectangle", "Circle", "Triangle", "Semicircle"],
+    "answer": 0
+  },
+  {
+    "q": "A cone can be obtained by rotating a:",
+    "options": ["Right triangle", "Rectangle", "Square", "Circle"],
+    "answer": 0
+  },
+  {
+    "q": "The lateral surface of a cylinder unrolled is a:",
+    "options": ["Circle", "Rectangle", "Square", "Triangle"],
+    "answer": 1
+  },
+  {
+    "q": "The lateral surface of a cone unrolled is a:",
+    "options": ["Sector of circle", "Full circle", "Rectangle", "Triangle"],
+    "answer": 0
+  },
+  {
+    "q": "The number of bases in a cone is:",
+    "options": ["0", "1", "2", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "A hemisphere has:",
+    "options": ["One flat face", "No flat face", "Two flat faces", "Infinite"],
+    "answer": 0
+  },
+  {
+    "q": "If volume of cuboid is 240 cm³ and base area 40 cm², height =",
+    "options": ["6 cm", "200 cm", "280 cm", "9.6 cm"],
+    "answer": 0
+  },
+  {
+    "q": "If curved surface area of cylinder is 100π cm² and height 10 cm, radius =",
+    "options": ["5 cm", "10 cm", "2 cm", "50 cm"],
+    "answer": 0
+  },
+  {
+    "q": "The ratio of volumes of two similar cuboids is equal to:",
+    "options": ["Ratio of sides", "Square of ratio of sides", "Cube of ratio of sides", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The ratio of surface areas of two similar cuboids is:",
+    "options": ["Ratio of sides", "Square of ratio of sides", "Cube of ratio of sides", "None"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

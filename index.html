@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StudyHub 9 & 10 | Maths & Science</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0b0f1a;
+      color:#ffffff;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    /* NAVBAR */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 60px;
+      position:sticky;
+      top:0;
+      background:rgba(11,15,26,0.9);
+      backdrop-filter:blur(10px);
+      z-index:100;
+    }
+
+.logo {
+  font-weight: 700;
+  font-size: 25px;
+
+  background: linear-gradient(to right, #4da3ff, #4dffc7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+    nav a{
+      margin-left:25px;
+      font-size:14px;
+      opacity:0.9;
+    }
+
+    nav a:hover{opacity:1}
+
+    /* HERO */
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:60px;
+    }
+
+    .hero-text{
+      max-width:550px;
+    }
+
+    .hero-text h1{
+      font-size:44px;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .hero-text span{
+      color:#4da3ff;
+    }
+
+    .hero-text p{
+      font-size:16px;
+      opacity:0.85;
+      margin-bottom:30px;
+    }
+
+    .hero-buttons a{
+      display:inline-block;
+      padding:14px 26px;
+      border-radius:10px;
+      margin-right:15px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .btn-primary{
+      background:#4da3ff;
+      color:#000;
+      transition: 0.25s ease;
+    }
+
+      .btn-primary:hover {
+      background: #70b5ff;
+      color:#000;
+      scale: 1.1;
+      transition: 0.5s ease;
+    }
+
+    .btn-secondary{
+      border:1px solid #4da3ff;
+      color:#4da3ff;
+      transition: 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      border:1px solid #4da3ff;
+      background: rgba(77, 163, 255, 0.1);
+      color:#4da3ff;
+      scale: 1.1;
+      transition: 0.5s ease;
+    }
+
+    .hero-card{
+      background:linear-gradient(135deg,#11162a,#0e1220);
+      padding:30px;
+      border-radius:18px;
+      width:320px;
+      box-shadow:0 20px 50px rgba(0,0,0,0.4);
+    }   
+
+    .hero-card h3{
+      margin-bottom:15px;
+      font-size:18px;
+      color:#4da3ff;
+    }
+
+    .hero-card ul li{
+      list-style:none;
+      font-size:14px;
+      opacity:0.85;
+      margin-bottom:10px;
+    }
+
+    /* CLASS SECTION */
+    .classes{
+      padding:80px 60px;
+      background:#0e1220;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:28px;
+      margin-bottom:50px;
+    }
+
+    .class-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .class-card{
+      background:#11162a;
+      border-radius:16px;
+      padding:30px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .class-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0px 20px rgba(58, 193, 214,0.4);
+    }
+
+    .class-card h3{
+      font-size:22px;
+      margin-bottom:10px;
+      color:#4da3ff;
+    }
+
+    .class-card p{
+      font-size:14px;
+      opacity:0.8;
+      margin-bottom:20px;
+    }
+
+    .class-card a{
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:8px;
+      background:#4da3ff;
+      color:#000;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    /* FEATURES */
+    .features{
+      padding:80px 60px;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+    }
+
+    .feature{
+      background:#11162a;
+      border-radius:14px;
+      padding:25px;
+    }
+
+    .feature h4{
+      color:#4da3ff;
+      margin-bottom:10px;
+    }
+
+    .feature p{
+      font-size:13px;
+      opacity:0.8;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#0b0f1a;
+      padding:30px;
+      text-align:center;
+      font-size:13px;
+      opacity:0.7;
+    }
+
+    @media(max-width:900px){
+      .hero{flex-direction:column;text-align:center}
+      .hero-card{margin-top:40px}
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-trail"></div>
+
+<header>
+  <div class="logo">Board Buddy</div>
+  <nav>
+    <a href="#classes">Classes</a>
+    <a href="#features">Features</a>
+    <a href="AI Agent.html">Ai Agent</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1>Premium Learning for <span>Class 9 & 10</span><br>Maths & Science</h1>
+    <p>Study with smart PDF notes, MCQ tests, instant marksheets, weekly toppers and an AI doubt solver — all in one clean platform.</p>
+    <div class="hero-buttons">
+      <a href="#classes" class="btn-primary">Start Studying</a>
+      <a href="#features" class="btn-secondary">See Features</a>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <h3>What You Get</h3>
+    <ul>
+      <li>📘 Chapter-wise PDF Notes</li>
+      <li>📝 MCQ Tests with Timer</li>
+      <li>🧾 Instant Marksheet</li>
+      <li>🏆 Weekly Toppers</li>
+      <li>🤖 Doubt Solver</li>
+    </ul>
+  </div>
+</section>
+
+<section class="classes" id="classes">
+  <h2 class="section-title">Choose Your Class</h2>
+
+  <div class="class-grid">
+    <div class="class-card">
+      <h3>Class 9</h3>
+      <p>Strong foundations for Maths & Science with practice-based learning.</p>
+      <a href="class9th.html">Explore Class 9</a>
+    </div>
+
+    <div class="class-card">
+      <h3>Class 10</h3>
+      <p>Board-focused preparation with tests, notes and performance tracking.</p>
+      <a href="class10th.html">Explore Class 10</a>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <h2 class="section-title">Why Students Love Us</h2>
+
+  <div class="feature-grid">
+    <div class="feature">
+      <h4>Smart PDFs</h4>
+      <p>Short, exam-focused notes written in simple language.</p>
+    </div>
+    <div class="feature">
+      <h4>Instant Results</h4>
+      <p>Get marks, percentage and rank immediately after tests.</p>
+    </div>
+    <div class="feature">
+      <h4>Weekly Competition</h4>
+      <p>Compete with others and appear in weekly toppers list.</p>
+    </div>
+    <div class="feature">
+      <h4>Doubt Solver</h4>
+      <p>Ask doubts anytime and get clear subject-wise answers.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Board Buddy (Utkarsh, Manas , Jalgon, Maharashtra)
+All Rights Reserved. 
+This content is protected under Indian Copyright Law.
+For personal educational use only. No reproduction or distribution without permission.
+</footer>
+
+</body>
+</html>

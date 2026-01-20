@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Metals and Non-metals MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Elements that are generally shiny, malleable, ductile and good conductors of heat and electricity are called:",
+    "options": ["Non-metals", "Metalloids", "Metals", "Inert gases"],
+    "answer": 2
+  },
+  {
+    "q": "Elements that are generally dull, brittle, poor conductors of heat and electricity are called:",
+    "options": ["Metals", "Non-metals", "Metalloids", "Noble gases"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is a physical property of metals?",
+    "options": ["Sonorous", "Brittle", "Poor conductor", "Low density"],
+    "answer": 0
+  },
+  {
+    "q": "Metals generally have:",
+    "options": ["Low melting and boiling points", "High melting and boiling points", "No definite melting point", "Very low density"],
+    "answer": 1
+  },
+  {
+    "q": "Non-metals generally have:",
+    "options": ["High density", "Low melting and boiling points", "High tensile strength", "Good conductivity"],
+    "answer": 1
+  },
+  {
+    "q": "Which metal is liquid at room temperature?",
+    "options": ["Sodium", "Mercury", "Iron", "Aluminium"],
+    "answer": 1
+  },
+  {
+    "q": "Which non-metal is liquid at room temperature?",
+    "options": ["Carbon", "Sulphur", "Bromine", "Iodine"],
+    "answer": 2
+  },
+  {
+    "q": "The most abundant metal in the Earth's crust is:",
+    "options": ["Iron", "Aluminium", "Gold", "Copper"],
+    "answer": 1
+  },
+  {
+    "q": "The most abundant non-metal in the Earth's crust is:",
+    "options": ["Carbon", "Oxygen", "Nitrogen", "Sulphur"],
+    "answer": 1
+  },
+  {
+    "q": "Metals usually form:",
+    "options": ["Acidic oxides", "Basic oxides", "Neutral oxides", "Amphoteric oxides"],
+    "answer": 1
+  },
+  {
+    "q": "Non-metals usually form:",
+    "options": ["Basic oxides", "Acidic oxides", "Neutral oxides", "No oxides"],
+    "answer": 1
+  },
+  {
+    "q": "Amphoteric oxides are formed by:",
+    "options": ["Metals only", "Non-metals only", "Some metals like Al, Zn", "Noble gases"],
+    "answer": 2
+  },
+  {
+    "q": "Metals react with oxygen to form:",
+    "options": ["Metal hydroxide", "Metal oxide", "Metal chloride", "Hydrogen gas"],
+    "answer": 1
+  },
+  {
+    "q": "Non-metals react with oxygen to form:",
+    "options": ["Non-metal hydroxide", "Non-metal oxide", "Metal oxide", "Water"],
+    "answer": 1
+  },
+  {
+    "q": "Metals react with water to produce:",
+    "options": ["Hydrogen gas", "Oxygen gas", "Carbon dioxide", "No reaction"],
+    "answer": 0
+  },
+  {
+    "q": "Highly reactive metals like Na, K react with cold water to produce:",
+    "options": ["H₂ and metal oxide", "H₂ and metal hydroxide", "O₂ and metal", "No reaction"],
+    "answer": 1
+  },
+  {
+    "q": "Metals like Mg react with steam to produce:",
+    "options": ["H₂ and metal oxide", "H₂ and metal hydroxide", "O₂ gas", "No reaction"],
+    "answer": 0
+  },
+  {
+    "q": "Metals react with dilute acids to produce:",
+    "options": ["Oxygen", "Hydrogen gas", "Carbon dioxide", "Nitrogen"],
+    "answer": 1
+  },
+  {
+    "q": "The reactivity series arranges metals in:",
+    "options": ["Increasing order of reactivity", "Decreasing order of reactivity", "Alphabetical order", "Atomic mass order"],
+    "answer": 1
+  },
+  {
+    "q": "The most reactive metal is:",
+    "options": ["Gold", "Iron", "Potassium", "Copper"],
+    "answer": 2
+  },
+  {
+    "q": "The least reactive metal is:",
+    "options": ["Sodium", "Gold", "Zinc", "Magnesium"],
+    "answer": 1
+  },
+  {
+    "q": "A more reactive metal displaces a less reactive metal from its:",
+    "options": ["Oxide", "Salt solution", "Water", "Acid"],
+    "answer": 1
+  },
+  {
+    "q": "Ionic compounds are formed by:",
+    "options": ["Metal + Metal", "Non-metal + Non-metal", "Metal + Non-metal", "Metalloid + Metal"],
+    "answer": 2
+  },
+  {
+    "q": "Metals lose electrons to form:",
+    "options": ["Anions", "Cations", "Neutral atoms", "Molecules"],
+    "answer": 1
+  },
+  {
+    "q": "Non-metals gain electrons to form:",
+    "options": ["Cations", "Anions", "Neutral atoms", "Molecules"],
+    "answer": 1
+  },
+  {
+    "q": "Metalloids show properties of:",
+    "options": ["Only metals", "Only non-metals", "Both metals and non-metals", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Which is a metalloid?",
+    "options": ["Sodium", "Silicon", "Sulphur", "Chlorine"],
+    "answer": 1
+  },
+  {
+    "q": "Gold and silver are used for jewellery because they are:",
+    "options": ["Reactive", "Malleable and ductile", "Brittle", "Poor conductors"],
+    "answer": 1
+  },
+  {
+    "q": "Copper is used for electrical wires because it is:",
+    "options": ["Good conductor of electricity", "Poor conductor", "Brittle", "Expensive"],
+    "answer": 0
+  },
+  {
+    "q": "Aluminium is used for making utensils because it is:",
+    "options": ["Good conductor of heat", "Corrodes easily", "Heavy", "Brittle"],
+    "answer": 0
+  },
+  {
+    "q": "Iron is used for making bridges but needs painting to prevent:",
+    "options": ["Corrosion", "Malleability", "Ductility", "Conductivity"],
+    "answer": 0
+  },
+  {
+    "q": "Alloys are homogeneous mixtures of:",
+    "options": ["Metal + Non-metal", "Two or more metals or metal + non-metal", "Non-metals only", "Gases"],
+    "answer": 1
+  },
+  {
+    "q": "Steel is an alloy of:",
+    "options": ["Iron + Carbon", "Iron + Aluminium", "Copper + Zinc", "Iron + Nickel"],
+    "answer": 0
+  },
+  {
+    "q": "Brass is an alloy of:",
+    "options": ["Copper + Zinc", "Copper + Tin", "Iron + Carbon", "Aluminium + Copper"],
+    "answer": 0
+  },
+  {
+    "q": "Bronze is an alloy of:",
+    "options": ["Copper + Tin", "Copper + Zinc", "Iron + Carbon", "Gold + Silver"],
+    "answer": 0
+  },
+  {
+    "q": "Amalgam is an alloy containing:",
+    "options": ["Iron", "Mercury", "Gold", "Aluminium"],
+    "answer": 1
+  },
+  {
+    "q": "Alloys are used because they have:",
+    "options": ["Properties better than pure metals", "Same properties", "Poor conductivity", "High corrosion"],
+    "answer": 0
+  },
+  {
+    "q": "Carbon is a:",
+    "options": ["Metal", "Non-metal", "Metalloid", "Gas"],
+    "answer": 1
+  },
+  {
+    "q": "Diamond is a form of carbon that is:",
+    "options": ["Soft", "Good conductor", "Hardest natural substance", "Brittle"],
+    "answer": 2
+  },
+  {
+    "q": "Graphite is a form of carbon that is:",
+    "options": ["Hard", "Poor conductor", "Good conductor of electricity", "Liquid"],
+    "answer": 2
+  },
+  {
+    "q": "Iodine is a non-metal that has:",
+    "options": ["Lustre", "No lustre", "High melting point", "Ductile"],
+    "answer": 0
+  },
+  {
+    "q": "Sulphur is a:",
+    "options": ["Metal", "Non-metal", "Metalloid", "Alloy"],
+    "answer": 1
+  },
+  {
+    "q": "Metals are generally:",
+    "options": ["Sonorous", "Non-sonorous", "Soft", "Low density"],
+    "answer": 0
+  },
+  {
+    "q": "Non-metals are generally:",
+    "options": ["Malleable", "Ductile", "Non-ductile", "Good conductors"],
+    "answer": 2
+  },
+  {
+    "q": "Which metal is stored in kerosene?",
+    "options": ["Iron", "Sodium", "Gold", "Copper"],
+    "answer": 1
+  },
+  {
+    "q": "Metals like gold and silver occur in:",
+    "options": ["Free state", "Combined state", "Oxide form", "Sulphide form"],
+    "answer": 0
+  },
+  {
+    "q": "Less reactive metals occur in:",
+    "options": ["Free state", "Combined state", "Gas form", "Liquid form"],
+    "answer": 0
+  },
+  {
+    "q": "Reactive metals are extracted from:",
+    "options": ["Free state", "Ores", "Alloys", "Water"],
+    "answer": 1
+  },
+  {
+    "q": "The process of extracting metals from ores is called:",
+    "options": ["Metallurgy", "Alloying", "Corrosion", "Galvanisation"],
+    "answer": 0
+  },
+  {
+    "q": "Roasting is heating ore in:",
+    "options": ["Absence of air", "Presence of air", "Water", "Acid"],
+    "answer": 1
+  },
+  {
+    "q": "Calcination is heating ore in:",
+    "options": ["Presence of air", "Absence of air", "Excess air", "Vacuum"],
+    "answer": 1
+  },
+  {
+    "q": "Corrosion of iron is called:",
+    "options": ["Rusting", "Galvanisation", "Alloying", "Rancidity"],
+    "answer": 0
+  },
+  {
+    "q": "Prevention of corrosion of iron is done by:",
+    "options": ["Painting", "Galvanisation", "Alloying", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Which metal does not corrode in air?",
+    "options": ["Iron", "Gold", "Zinc", "Aluminium"],
+    "answer": 1
+  },
+  {
+    "q": "Aluminium forms a protective layer of:",
+    "options": ["Al₂O₃", "Al(OH)₃", "AlCl₃", "Al₂(SO₄)₃"],
+    "answer": 0
+  },
+  {
+    "q": "Sodium is stored under:",
+    "options": ["Water", "Kerosene", "Air", "Acid"],
+    "answer": 1
+  },
+  {
+    "q": "Phosphorus is stored under:",
+    "options": ["Kerosene", "Water", "Air", "Oil"],
+    "answer": 1
+  },
+  {
+    "q": "Which non-metal is used in water purification?",
+    "options": ["Carbon", "Sulphur", "Chlorine", "Iodine"],
+    "answer": 2
+  },
+  {
+    "q": "Graphite is used in pencils because it:",
+    "options": ["Is hard", "Leaves mark on paper", "Is conductor", "Is shiny"],
+    "answer": 1
+  },
+  {
+    "q": "Diamond is used for cutting glass because it is:",
+    "options": ["Soft", "Hardest substance", "Good conductor", "Shiny"],
+    "answer": 1
+  },
+  {
+    "q": "Which metal is the best conductor of electricity?",
+    "options": ["Copper", "Silver", "Gold", "Aluminium"],
+    "answer": 1
+  },
+  {
+    "q": "Which metal is the poorest conductor of heat?",
+    "options": ["Silver", "Copper", "Lead", "Gold"],
+    "answer": 2
+  },
+  {
+    "q": "Non-metals are:",
+    "options": ["Electropositive", "Electronegative", "Neutral", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Metals are:",
+    "options": ["Electronegative", "Electropositive", "Neutral", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The exception to metals being solid at room temperature is:",
+    "options": ["Sodium", "Mercury", "Potassium", "Caesium"],
+    "answer": 1
+  },
+  {
+    "q": "Gallium and caesium have:",
+    "options": ["High melting points", "Low melting points", "No melting points", "Same melting points"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not a metal?",
+    "options": ["Sodium", "Chlorine", "Magnesium", "Calcium"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not a non-metal?",
+    "options": ["Oxygen", "Nitrogen", "Silicon", "Iron"],
+    "answer": 3
+  },
+  {
+    "q": "The number of valence electrons in metals is generally:",
+    "options": ["1 to 3", "4 to 8", "8", "0"],
+    "answer": 0
+  },
+  {
+    "q": "The number of valence electrons in non-metals is generally:",
+    "options": ["1 to 3", "4 to 8", "1", "8"],
+    "answer": 1
+  },
+  {
+    "q": "Metals form:",
+    "options": ["Covalent bonds", "Ionic bonds", "Metallic bonds", "Hydrogen bonds"],
+    "answer": 2
+  },
+  {
+    "q": "Non-metals form:",
+    "options": ["Ionic bonds", "Covalent bonds", "Metallic bonds", "None"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

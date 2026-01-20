@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Introduction to Trigonometry MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Trigonometry deals with relationships between:",
+    "options": ["Sides only", "Angles only", "Sides and angles of triangle", "None"],
+    "answer": 2
+  },
+  {
+    "q": "In a right-angled triangle, the side opposite to right angle is:",
+    "options": ["Adjacent", "Opposite", "Hypotenuse", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The side opposite to angle θ is called:",
+    "options": ["Hypotenuse", "Adjacent", "Opposite", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The side adjacent to angle θ (not hypotenuse) is:",
+    "options": ["Opposite", "Adjacent", "Hypotenuse", "None"],
+    "answer": 1
+  },
+  {
+    "q": "sin θ =",
+    "options": ["Opposite / Hypotenuse", "Adjacent / Hypotenuse", "Opposite / Adjacent", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cos θ =",
+    "options": ["Adjacent / Hypotenuse", "Opposite / Hypotenuse", "Hypotenuse / Opposite", "None"],
+    "answer": 0
+  },
+  {
+    "q": "tan θ =",
+    "options": ["Opposite / Adjacent", "Adjacent / Opposite", "Hypotenuse / Opposite", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cosec θ =",
+    "options": ["1/sin θ", "1/cos θ", "1/tan θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "sec θ =",
+    "options": ["1/cos θ", "1/sin θ", "1/tan θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cot θ =",
+    "options": ["1/tan θ", "1/sin θ", "1/cos θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The values of trigonometric ratios depend on:",
+    "options": ["Size of triangle", "Angles", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For similar right triangles, trigonometric ratios are:",
+    "options": ["Different", "Same for corresponding angles", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "sin(90° - θ) =",
+    "options": ["sin θ", "cos θ", "tan θ", "None"],
+    "answer": 1
+  },
+  {
+    "q": "cos(90° - θ) =",
+    "options": ["cos θ", "sin θ", "tan θ", "None"],
+    "answer": 1
+  },
+  {
+    "q": "tan(90° - θ) =",
+    "options": ["tan θ", "cot θ", "sin θ", "None"],
+    "answer": 1
+  },
+  {
+    "q": "sin² θ + cos² θ =",
+    "options": ["0", "1", "sin θ", "None"],
+    "answer": 1
+  },
+  {
+    "q": "1 + tan² θ =",
+    "options": ["sin² θ", "cos² θ", "sec² θ", "None"],
+    "answer": 2
+  },
+  {
+    "q": "1 + cot² θ =",
+    "options": ["cosec² θ", "sec² θ", "tan² θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The value of sin 30° is:",
+    "options": ["1/2", "√3/2", "1", "0"],
+    "answer": 0
+  },
+  {
+    "q": "cos 60° =",
+    "options": ["1/2", "√3/2", "1", "0"],
+    "answer": 0
+  },
+  {
+    "q": "tan 45° =",
+    "options": ["1", "0", "√3", "1/√3"],
+    "answer": 0
+  },
+  {
+    "q": "sin 90° =",
+    "options": ["0", "1", "√3/2", "1/2"],
+    "answer": 1
+  },
+  {
+    "q": "cos 0° =",
+    "options": ["0", "1", "1/2", "None"],
+    "answer": 1
+  },
+  {
+    "q": "tan 30° =",
+    "options": ["1/√3", "√3", "1", "0"],
+    "answer": 0
+  },
+  {
+    "q": "tan 60° =",
+    "options": ["√3", "1/√3", "1", "0"],
+    "answer": 0
+  },
+  {
+    "q": "cosec 30° =",
+    "options": ["2", "2/√3", "1", "None"],
+    "answer": 0
+  },
+  {
+    "q": "sec 45° =",
+    "options": ["√2", "2", "1", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cot 60° =",
+    "options": ["1/√3", "√3", "1", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In right triangle, for angle 30°, opposite side is:",
+    "options": ["Half hypotenuse", "Hypotenuse", "Equal adjacent", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In 30-60-90 triangle, sides ratio:",
+    "options": ["1 : √3 : 2", "1 : 2 : √3", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In 45-45-90 triangle, sides ratio:",
+    "options": ["1 : 1 : √2", "1 : √2 : 2", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Trigonometric ratios are defined for:",
+    "options": ["Acute angles in right triangle", "Obtuse", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Introduction to Trigonometry' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Trigonometric ratios of complementary angles are related.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "sin θ = cos(90° - θ)",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The identities sin² θ + cos² θ = 1 etc. are:",
+    "options": ["Pythagorean identities", "Complementary", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "sec² θ - tan² θ =",
+    "options": ["1", "0", "sin θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cosec² θ - cot² θ =",
+    "options": ["1", "0", "tan θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For θ = 0°, sin θ =",
+    "options": ["0", "1", "Undefined", "None"],
+    "answer": 0
+  },
+  {
+    "q": "tan 0° =",
+    "options": ["0", "1", "Undefined", "None"],
+    "answer": 0
+  },
+  {
+    "q": "tan 90° is:",
+    "options": ["0", "1", "Undefined", "None"],
+    "answer": 2
+  },
+  {
+    "q": "sec 0° =",
+    "options": ["1", "0", "Undefined", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cosec 90° =",
+    "options": ["1", "0", "Undefined", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The values are memorised for angles:",
+    "options": ["0°, 30°, 45°, 60°, 90°", "Only 30,60,90", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Trigonometry is used in:",
+    "options": ["Height and distance problems", "Surveying", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter introduces:",
+    "options": ["Basic ratios, identities, table values", "Advanced", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In right triangle ABC right at B, sin A =",
+    "options": ["BC / AC", "AB / AC", "AC / BC", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cos A =",
+    "options": ["AB / AC", "BC / AC", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "tan A =",
+    "options": ["BC / AB", "AB / BC", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The hypotenuse is always:",
+    "options": ["Longest side", "Shortest", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Trigonometric ratios are:",
+    "options": ["Positive in first quadrant", "Vary in others", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter focuses on:",
+    "options": ["Acute angles", "All angles", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "sin θ is never:",
+    "options": ["Greater than 1", "Less than -1", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The range of sin and cos is:",
+    "options": ["[-1,1]", "[0,1]", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "tan θ can be:",
+    "options": ["Any real number", "[-1,1]", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The table values are standard for:",
+    "options": ["0,30,45,60,90", "Only multiples of 30", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "sin 0° =",
+    "options": ["0", "1", "1/2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "cos 90° =",
+    "options": ["0", "1", "1/2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The identity 1 + tan² θ = sec² θ is for:",
+    "options": ["θ ≠ 90°", "All θ", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter prepares for:",
+    "options": ["Applications in height/distance", "Advanced trig", "Both", "None"],
+    "answer": 2
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

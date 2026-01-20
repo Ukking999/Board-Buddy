@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Motion MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The study of motion without considering the cause of motion is called:",
+    "options": ["Dynamics", "Kinematics", "Statics", "Mechanics"],
+    "answer": 1
+  },
+  {
+    "q": "A body is said to be at rest if:",
+    "options": ["It changes position with respect to surroundings", "It does not change position with respect to surroundings", "It is moving with constant velocity", "It is accelerating"],
+    "answer": 1
+  },
+  {
+    "q": "A body is said to be in motion if:",
+    "options": ["It does not change position with time", "It changes position with respect to surroundings", "It has zero velocity", "It is at rest"],
+    "answer": 1
+  },
+  {
+    "q": "Motion is always:",
+    "options": ["Absolute", "Relative", "Uniform", "Accelerated"],
+    "answer": 1
+  },
+  {
+    "q": "The shortest distance between initial and final position is:",
+    "options": ["Displacement", "Distance", "Speed", "Velocity"],
+    "answer": 0
+  },
+  {
+    "q": "Distance is a:",
+    "options": ["Vector quantity", "Scalar quantity", "Tensor", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Displacement is a:",
+    "options": ["Scalar quantity", "Vector quantity", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Speed is a:",
+    "options": ["Vector quantity", "Scalar quantity", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Velocity is a:",
+    "options": ["Scalar quantity", "Vector quantity", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The rate of change of displacement is:",
+    "options": ["Speed", "Velocity", "Acceleration", "Distance"],
+    "answer": 1
+  },
+  {
+    "q": "The rate of change of distance is:",
+    "options": ["Velocity", "Speed", "Acceleration", "Displacement"],
+    "answer": 1
+  },
+  {
+    "q": "Uniform motion means:",
+    "options": ["Constant speed", "Constant velocity", "Zero acceleration", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Non-uniform motion means:",
+    "options": ["Changing speed", "Changing direction", "Acceleration present", "All possible"],
+    "answer": 3
+  },
+  {
+    "q": "The SI unit of speed/velocity is:",
+    "options": ["m/s", "km/h", "cm/s", "m/h"],
+    "answer": 0
+  },
+  {
+    "q": "The SI unit of acceleration is:",
+    "options": ["m/s", "m/s²", "km/h", "m"],
+    "answer": 1
+  },
+  {
+    "q": "Acceleration is the rate of change of:",
+    "options": ["Speed", "Velocity", "Distance", "Displacement"],
+    "answer": 1
+  },
+  {
+    "q": "If velocity increases, acceleration is:",
+    "options": ["Negative", "Positive", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If velocity decreases, acceleration is:",
+    "options": ["Positive", "Negative (retardation)", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Average speed =",
+    "options": ["Total distance / Total time", "Total displacement / Total time", "Initial velocity + Final velocity / 2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Average velocity =",
+    "options": ["Total distance / Total time", "Total displacement / Total time", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For uniform motion, distance-time graph is:",
+    "options": ["Curved", "Straight line", "Horizontal", "Vertical"],
+    "answer": 1
+  },
+  {
+    "q": "For body at rest, distance-time graph is:",
+    "options": ["Straight line with slope", "Horizontal line", "Vertical line", "Curved"],
+    "answer": 1
+  },
+  {
+    "q": "Slope of distance-time graph gives:",
+    "options": ["Acceleration", "Speed", "Velocity", "Displacement"],
+    "answer": 1
+  },
+  {
+    "q": "For uniform velocity, velocity-time graph is:",
+    "options": ["Horizontal line", "Straight line with slope", "Curved", "Vertical"],
+    "answer": 0
+  },
+  {
+    "q": "Slope of velocity-time graph gives:",
+    "options": ["Speed", "Acceleration", "Distance", "Displacement"],
+    "answer": 1
+  },
+  {
+    "q": "Area under velocity-time graph gives:",
+    "options": ["Acceleration", "Speed", "Displacement", "Distance"],
+    "answer": 2
+  },
+  {
+    "q": "The first equation of motion is:",
+    "options": ["v = u + at", "s = ut + ½at²", "v² = u² + 2as", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The second equation of motion is:",
+    "options": ["v = u + at", "s = ut + ½at²", "v² = u² + 2as", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The third equation of motion is:",
+    "options": ["v = u + at", "s = ut + ½at²", "v² = u² + 2as", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Equations of motion are valid for:",
+    "options": ["Uniform acceleration", "Variable acceleration", "Circular motion", "All motion"],
+    "answer": 0
+  },
+  {
+    "q": "Uniform circular motion is:",
+    "options": ["Uniform speed, changing velocity", "Constant velocity", "Zero acceleration", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In uniform circular motion, acceleration is:",
+    "options": ["Zero", "Towards centre (centripetal)", "Tangential", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Distance travelled in uniform motion: s =",
+    "options": ["v t", "u t", "(u + v)/2 × t", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a body starts from rest, u =",
+    "options": ["v", "0", "a t", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If a body comes to rest, v =",
+    "options": ["u", "0", "a t", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Free fall under gravity has acceleration:",
+    "options": ["0", "9.8 m/s²", "Variable", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Value of g is approximately:",
+    "options": ["10 m/s²", "9.8 m/s²", "8 m/s²", "Both a and b"],
+    "answer": 3
+  },
+  {
+    "q": "In free fall, initial velocity u =",
+    "options": ["g t", "0 (if dropped)", "v", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Velocity after t seconds in free fall: v =",
+    "options": ["u + g t", "u - g t", "g t", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Distance fallen in t seconds: h =",
+    "options": ["½ g t²", "g t²", "u t + ½ g t²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A body thrown upwards reaches maximum height where v =",
+    "options": ["Maximum", "0", "u", "g"],
+    "answer": 1
+  },
+  {
+    "q": "Time to reach maximum height =",
+    "options": ["u/g", "2u/g", "v/g", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Total time of flight for projectile thrown upwards =",
+    "options": ["u/g", "2u/g", "v/g", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Rectilinear motion is:",
+    "options": ["Motion in circle", "Motion in straight line", "Curved motion", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Circular motion is:",
+    "options": ["Rectilinear", "Curvilinear", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If acceleration is zero, motion is:",
+    "options": ["Accelerated", "Uniform", "Retarded", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Negative acceleration is also called:",
+    "options": ["Retardation", "Deceleration", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Average speed may be:",
+    "options": ["Equal to average velocity", "Greater than average velocity", "Less than average velocity", "All possible"],
+    "answer": 3
+  },
+  {
+    "q": "In straight line motion with return, average velocity may be:",
+    "options": ["Positive", "Negative", "Zero", "All"],
+    "answer": 3
+  },
+  {
+    "q": "A body covers 10 m in 2 s and 20 m in next 3 s, average velocity =",
+    "options": ["6 m/s", "30/5 = 6 m/s", "10 m/s", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If a body returns to starting point, displacement =",
+    "options": ["Maximum", "Zero", "Distance", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Distance is always:",
+    "options": ["Zero", "Positive", "Negative", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Displacement can be:",
+    "options": ["Positive only", "Negative or zero", "Always positive", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Speed can be:",
+    "options": ["Negative", "Zero or positive", "Only positive", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Velocity can be:",
+    "options": ["Positive only", "Positive, negative or zero", "Only zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Acceleration can be:",
+    "options": ["Positive only", "Positive, negative or zero", "Only positive", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In velocity-time graph, horizontal line means:",
+    "options": ["Uniform acceleration", "Uniform velocity", "Rest", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In velocity-time graph, line with positive slope means:",
+    "options": ["Positive acceleration", "Negative acceleration", "Zero acceleration", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In velocity-time graph, line with negative slope means:",
+    "options": ["Positive acceleration", "Negative acceleration", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Area under speed-time graph gives:",
+    "options": ["Displacement", "Distance", "Acceleration", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For motion with constant acceleration, velocity-time graph is:",
+    "options": ["Curved", "Straight line", "Horizontal", "Vertical"],
+    "answer": 1
+  },
+  {
+    "q": "Distance-time graph for accelerated motion is:",
+    "options": ["Straight line", "Parabola", "Horizontal", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A body moving with uniform speed in a circle has:",
+    "options": ["Constant velocity", "Changing velocity", "Zero acceleration", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In circular motion, direction of velocity is:",
+    "options": ["Towards centre", "Tangential", "Radial", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Centripetal acceleration is directed:",
+    "options": ["Tangential", "Towards centre", "Away from centre", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A scooter covers 100 m in 10 s, speed =",
+    "options": ["10 m/s", "1000 m/s", "1 m/s", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A car accelerates from 20 m/s to 40 m/s in 5 s, acceleration =",
+    "options": ["4 m/s²", "20 m/s²", "8 m/s²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A body falls freely, velocity after 3 s (g=10 m/s²) =",
+    "options": ["30 m/s", "10 m/s", "3 m/s", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Height reached by body thrown up with 20 m/s (g=10 m/s²) =",
+    "options": ["20 m", "40 m", "10 m", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Motion' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Motion in a straight line is called:",
+    "options": ["Rectilinear motion", "Circular motion", "Random motion", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Odometer measures:",
+    "options": ["Speed", "Distance", "Time", "Velocity"],
+    "answer": 1
+  },
+  {
+    "q": "Speedometer measures:",
+    "options": ["Instantaneous speed", "Average speed", "Distance", "Displacement"],
+    "answer": 0
+  },
+  {
+    "q": "If a body covers equal distances in equal intervals of time, motion is:",
+    "options": ["Uniform", "Non-uniform", "Accelerated", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If velocity is constant, acceleration is:",
+    "options": ["Constant", "Zero", "Changing", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In distance-time graph, steeper slope means:",
+    "options": ["Less speed", "Greater speed", "Zero speed", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The equations of motion are derived assuming:",
+    "options": ["Constant acceleration", "Variable acceleration", "Circular path", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For a body thrown upwards, at highest point:",
+    "options": ["v = 0", "a = 0", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In free fall, acceleration is:",
+    "options": ["Upwards", "Downwards (g)", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Weightlessness in free fall is due to:",
+    "options": ["No gravity", "Acceleration equal to g", "No air", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The motion of moon around earth is:",
+    "options": ["Rectilinear", "Uniform circular", "Accelerated only", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A particle moving with constant speed has:",
+    "options": ["Zero acceleration if straight line", "Acceleration if direction changes", "Both possible", "None"],
+    "answer": 2
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

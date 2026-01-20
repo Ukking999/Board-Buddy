@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Our Environment MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The total surroundings of an organism including all living and non-living factors is called:",
+    "options": ["Ecosystem", "Environment", "Habitat", "Biome"],
+    "answer": 1
+  },
+  {
+    "q": "The physical environment consisting of air, water and land is called:",
+    "options": ["Biotic environment", "Abiotic environment", "Ecosystem", "Community"],
+    "answer": 1
+  },
+  {
+    "q": "All the interacting organisms in an area together with the non-living components form:",
+    "options": ["Population", "Community", "Ecosystem", "Biosphere"],
+    "answer": 2
+  },
+  {
+    "q": "Organisms that make their own food are called:",
+    "options": ["Consumers", "Decomposers", "Producers", "Scavengers"],
+    "answer": 2
+  },
+  {
+    "q": "Organisms that directly or indirectly depend on producers for food are called:",
+    "options": ["Producers", "Consumers", "Decomposers", "Autotrophs"],
+    "answer": 1
+  },
+  {
+    "q": "Primary consumers are:",
+    "options": ["Carnivores", "Herbivores", "Omnivores", "Decomposers"],
+    "answer": 1
+  },
+  {
+    "q": "Secondary and tertiary consumers are:",
+    "options": ["Herbivores", "Carnivores", "Producers", "Decomposers"],
+    "answer": 1
+  },
+  {
+    "q": "Organisms that feed on dead and decaying matter are called:",
+    "options": ["Producers", "Consumers", "Decomposers", "Scavengers"],
+    "answer": 2
+  },
+  {
+    "q": "The sequence of organisms through which energy flows in an ecosystem is called:",
+    "options": ["Food chain", "Food web", "Trophic level", "Energy pyramid"],
+    "answer": 0
+  },
+  {
+    "q": "A network of interconnected food chains is called:",
+    "options": ["Food chain", "Food web", "Trophic level", "Pyramid"],
+    "answer": 1
+  },
+  {
+    "q": "Each step in a food chain is called a:",
+    "options": ["Food web", "Trophic level", "Energy level", "Consumer level"],
+    "answer": 1
+  },
+  {
+    "q": "At every trophic level, about what percentage of energy is transferred to the next level?",
+    "options": ["50%", "90%", "10%", "100%"],
+    "answer": 2
+  },
+  {
+    "q": "The flow of energy in an ecosystem is:",
+    "options": ["Bidirectional", "Multidirectional", "Unidirectional", "Cyclic"],
+    "answer": 2
+  },
+  {
+    "q": "Ozone layer is depleted mainly by:",
+    "options": ["Carbon dioxide", "Methane", "Chlorofluorocarbons (CFCs)", "Nitrogen oxides"],
+    "answer": 2
+  },
+  {
+    "q": "The ozone layer protects us from:",
+    "options": ["Infrared rays", "Ultraviolet rays", "Visible light", "X-rays"],
+    "answer": 1
+  },
+  {
+    "q": "Substances that are not broken down by biological processes are called:",
+    "options": ["Biodegradable", "Non-biodegradable", "Recyclable", "Decomposable"],
+    "answer": 1
+  },
+  {
+    "q": "Examples of non-biodegradable wastes are:",
+    "options": ["Paper and food waste", "Plastic and glass", "Leaves and wood", "Vegetable peels"],
+    "answer": 1
+  },
+  {
+    "q": "The 3 R's to save the environment are:",
+    "options": ["Reduce, Reuse, Recycle", "Read, Write, Recycle", "Reduce, Reuse, Refill", "Recover, Reuse, Recycle"],
+    "answer": 0
+  },
+  {
+    "q": "The topmost trophic level in a grassland food chain is occupied by:",
+    "options": ["Grass", "Grasshopper", "Frog", "Hawk"],
+    "answer": 3
+  },
+  {
+    "q": "In a food chain, the maximum concentration of harmful chemicals is found in:",
+    "options": ["Producers", "Primary consumers", "Tertiary consumers", "Decomposers"],
+    "answer": 2
+  },
+  {
+    "q": "The phenomenon of concentration of harmful non-biodegradable chemicals in higher trophic levels is called:",
+    "options": ["Biomagnification", "Bioaccumulation", "Biodegradation", "Eutrophication"],
+    "answer": 0
+  },
+  {
+    "q": "The largest ecosystem on Earth is:",
+    "options": ["Forest", "Grassland", "Ocean", "Desert"],
+    "answer": 2
+  },
+  {
+    "q": "Producers in an aquatic ecosystem are mainly:",
+    "options": ["Zooplankton", "Phytoplankton", "Fishes", "Aquatic plants"],
+    "answer": 1
+  },
+  {
+    "q": "The ultimate source of energy in an ecosystem is:",
+    "options": ["Producers", "Sun", "Consumers", "Decomposers"],
+    "answer": 1
+  },
+  {
+    "q": "Decomposers help in:",
+    "options": ["Recycling of nutrients", "Energy flow", "Food production", "Oxygen production"],
+    "answer": 0
+  },
+  {
+    "q": "The biotic components of an ecosystem include:",
+    "options": ["Air, water, soil", "Plants, animals, microorganisms", "Sunlight, temperature", "Minerals"],
+    "answer": 1
+  },
+  {
+    "q": "The abiotic components of an ecosystem include:",
+    "options": ["Plants and animals", "Light, temperature, water, soil", "Bacteria and fungi", "Producers and consumers"],
+    "answer": 1
+  },
+  {
+    "q": "In a food chain, grass → deer → lion, the deer is a:",
+    "options": ["Producer", "Primary consumer", "Secondary consumer", "Decomposer"],
+    "answer": 1
+  },
+  {
+    "q": "In a food chain, grass → deer → lion, the lion is a:",
+    "options": ["Producer", "Primary consumer", "Secondary consumer", "Tertiary consumer"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a man-made ecosystem?",
+    "options": ["Forest", "Lake", "Aquarium", "Ocean"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following is a natural ecosystem?",
+    "options": ["Crop field", "Garden", "Pond", "Orchard"],
+    "answer": 2
+  },
+  {
+    "q": "The amount of energy decreases at each trophic level because:",
+    "options": ["Energy is destroyed", "Energy is used for metabolism and lost as heat", "Energy is stored", "Energy is recycled"],
+    "answer": 1
+  },
+  {
+    "q": "DDT is an example of:",
+    "options": ["Biodegradable pesticide", "Non-biodegradable pesticide", "Fertilizer", "Herbicide"],
+    "answer": 1
+  },
+  {
+    "q": "The harmful ultraviolet radiations from the sun are absorbed by:",
+    "options": ["Carbon dioxide layer", "Ozone layer", "Oxygen layer", "Nitrogen layer"],
+    "answer": 1
+  },
+  {
+    "q": "The Montreal Protocol was signed to control:",
+    "options": ["Greenhouse gases", "Ozone depleting substances", "Acid rain", "Nuclear waste"],
+    "answer": 1
+  },
+  {
+    "q": "Plastic is non-biodegradable because:",
+    "options": ["It is natural", "Microorganisms cannot decompose it", "It burns easily", "It is cheap"],
+    "answer": 1
+  },
+  {
+    "q": "To reduce environmental pollution, we should:",
+    "options": ["Use more plastic", "Burn waste openly", "Reuse and recycle materials", "Cut more trees"],
+    "answer": 2
+  },
+  {
+    "q": "Which of the following can be recycled?",
+    "options": ["Food waste", "Plastic bags", "Vegetable peels", "Dead leaves"],
+    "answer": 1
+  },
+  {
+    "q": "The number of trophic levels in a food chain is limited because:",
+    "options": ["Energy loss at each level", "Too many producers", "Too many decomposers", "No energy source"],
+    "answer": 0
+  },
+  {
+    "q": "In an ecosystem, the 10% energy transfer law was given by:",
+    "options": ["Lindeman", "Odum", "Elton", "Haeckel"],
+    "answer": 0
+  },
+  {
+    "q": "The term 'ecosystem' was coined by:",
+    "options": ["Lindeman", "Tansley", "Odum", "Haeckel"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not a greenhouse gas?",
+    "options": ["Carbon dioxide", "Methane", "Oxygen", "Nitrous oxide"],
+    "answer": 2
+  },
+  {
+    "q": "Food webs are more realistic than food chains because:",
+    "options": ["They show single path", "Organisms have multiple food sources", "They are linear", "They show energy loss"],
+    "answer": 1
+  },
+  {
+    "q": "The first trophic level in any food chain is always:",
+    "options": ["Herbivores", "Carnivores", "Producers", "Decomposers"],
+    "answer": 2
+  },
+  {
+    "q": "Harmful chemicals like pesticides enter the food chain through:",
+    "options": ["Decomposers", "Producers", "Consumers", "Air"],
+    "answer": 1
+  },
+  {
+    "q": "The accumulation of non-biodegradable pesticides in the body of organisms is called:",
+    "options": ["Bioaccumulation", "Biomagnification", "Biodegradation", "Eutrophication"],
+    "answer": 0
+  },
+  {
+    "q": "Ozone hole was first discovered over:",
+    "options": ["Arctic", "Antarctica", "Asia", "Africa"],
+    "answer": 1
+  },
+  {
+    "q": "CFCs are used in:",
+    "options": ["Refrigerators and aerosols", "Fertilizers", "Pesticides", "Plastics"],
+    "answer": 0
+  },
+  {
+    "q": "Managing waste by reducing, reusing and recycling helps in:",
+    "options": ["Increasing pollution", "Conserving resources", "Wasting energy", "Depleting ozone"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is biodegradable?",
+    "options": ["Plastic", "Glass", "Paper", "Aluminium foil"],
+    "answer": 2
+  },
+  {
+    "q": "The biosphere includes:",
+    "options": ["Only living organisms", "Only non-living components", "All living organisms and their environment", "Only atmosphere"],
+    "answer": 2
+  },
+  {
+    "q": "In a pond ecosystem, the producers are:",
+    "options": ["Fishes", "Insects", "Phytoplankton and aquatic plants", "Frogs"],
+    "answer": 2
+  },
+  {
+    "q": "Energy flow in an ecosystem follows:",
+    "options": ["First law of thermodynamics", "Second law of thermodynamics", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The pyramid of energy is always:",
+    "options": ["Inverted", "Upright", "Variable", "Horizontal"],
+    "answer": 1
+  },
+  {
+    "q": "The pyramid of biomass in a grassland is:",
+    "options": ["Inverted", "Upright", "Spindle shaped", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The pyramid of biomass in a pond ecosystem is usually:",
+    "options": ["Upright", "Inverted", "Horizontal", "Variable"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not an abiotic factor?",
+    "options": ["Temperature", "Water", "Bacteria", "Light"],
+    "answer": 2
+  },
+  {
+    "q": "Scavengers are:",
+    "options": ["Producers", "Primary consumers", "Carnivores that feed on dead animals", "Decomposers"],
+    "answer": 2
+  },
+  {
+    "q": "The role of decomposers in an ecosystem is:",
+    "options": ["To produce food", "To consume food", "To break down dead matter and recycle nutrients", "To store energy"],
+    "answer": 2
+  },
+  {
+    "q": "The 10% law explains:",
+    "options": ["Energy loss between trophic levels", "Biomagnification", "Nutrient cycling", "Food web complexity"],
+    "answer": 0
+  },
+  {
+    "q": "Which gas is responsible for ozone depletion?",
+    "options": ["Oxygen", "Nitrogen", "Chlorine from CFCs", "Carbon monoxide"],
+    "answer": 2
+  },
+  {
+    "q": "To protect the environment, we should prefer:",
+    "options": ["Disposable items", "Plastic carry bags", "Cloth bags", "Polythene bags"],
+    "answer": 2
+  },
+  {
+    "q": "The best way to dispose of biodegradable waste is:",
+    "options": ["Burning", "Dumping in landfill", "Composting", "Throwing in water"],
+    "answer": 2
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

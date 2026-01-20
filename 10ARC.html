@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Areas Related to Circles MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The perimeter of a circle is called:",
+    "options": ["Area", "Circumference", "Radius", "Diameter"],
+    "answer": 1
+  },
+  {
+    "q": "Circumference of a circle is:",
+    "options": ["πd or 2πr", "πr²", "2r", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of a circle is:",
+    "options": ["2πr", "πr²", "πd", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Area of a sector with angle θ (in degrees) is:",
+    "options": ["(θ/360) × πr²", "(θ/180) × πr²", "θ × πr²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Length of arc of sector with angle θ is:",
+    "options": ["(θ/360) × 2πr", "(θ/180) × 2πr", "θ × πr", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of segment is:",
+    "options": ["Area of sector - area of triangle", "Area of circle", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For minor segment (θ < 180°), area =",
+    "options": ["(θ/360)πr² - (1/2)r² sin θ", "Sector + triangle", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For major segment, area =",
+    "options": ["Area of circle - minor segment", "Sector area", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The area of a ring (annulus) between two concentric circles with radii R and r is:",
+    "options": ["π(R² - r²)", "π(R + r)²", "2π(R + r)", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a sector has radius r and angle θ in radians, area =",
+    "options": ["(1/2) r² θ", "r² θ", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Arc length in radians =",
+    "options": ["r θ", "2 r θ", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Areas Related to Circles' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Perimeter of semicircle =",
+    "options": ["πr + 2r", "πr", "2πr", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of semicircle =",
+    "options": ["(1/2) πr²", "πr²", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Perimeter of quadrant =",
+    "options": ["(πr/2) + 2r", "πr/2", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of quadrant =",
+    "options": ["(1/4) πr²", "πr²/2", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a square is circumscribed about a circle (circle inscribed), side =",
+    "options": ["2r", "r", "√2 r", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of square circumscribed about circle =",
+    "options": ["4r²", "2r²", "πr²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If circle circumscribed about square (square inscribed), diagonal =",
+    "options": ["2r", "r", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Side of square =",
+    "options": ["r√2", "2r", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of such square =",
+    "options": ["2 r²", "4 r²", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area enclosed between circle and square depends on configuration.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Problems combine circle with:",
+    "options": ["Sectors, segments, triangles, squares", "Only sector", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example: Area of flower bed = area of sector - triangle.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of path = difference of areas of two circles.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For circular path around garden, area = π(R² - r²)",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter includes:",
+    "options": ["Perimeter and area of circle, sector, segment", "Only full circle", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No new theorems, only area calculations.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Problems are numerical with π or 22/7.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If θ = 90°, sector is:",
+    "options": ["Quadrant", "Semicircle", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If θ = 180°, sector is:",
+    "options": ["Semicircle", "Quadrant", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Minor sector has θ:",
+    "options": ["< 180°", "> 180°", "= 180°", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Major sector has θ:",
+    "options": ["> 180°", "< 180°", "= 180°", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Segment corresponding to minor sector is minor segment.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area of segment formula involves:",
+    "options": ["Sector area minus triangular area", "Direct formula with sin", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The triangular area in segment is:",
+    "options": ["(1/2) r² sin θ", "(1/2) r sin θ", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In radians, area of sector =",
+    "options": ["(1/2) r² θ", "r² θ", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter uses both degrees and radians for formulas.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For problems, usually degrees are used.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example: Sector 60°, r=7 cm, area =",
+    "options": ["(60/360)π49 = (49/6)π cm²", "Other", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Arc length =",
+    "options": ["(60/360) × 2π7 = (7π/3) cm", "Other", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Segment area = sector - triangle = (49/6 π - (√3/4)49)",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter has combination problems like:",
+    "options": ["Circle + equilateral triangle, square, etc.", "Only circle", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Shaded region problems require:",
+    "options": ["Addition/subtraction of areas", "Only one area", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is calculation-based.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Use π = 22/7 or 3.14 as per question.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sometimes leave in terms of π.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter connects mensuration with circles.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No proofs, only formulas and applications.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Important formulas to remember:",
+    "options": ["Circumference, area, sector, segment", "Only area", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is from class 10 Mathematics.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

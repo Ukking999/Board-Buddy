@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Light – Reflection and Refraction MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The phenomenon of bouncing back of light into the same medium after striking a polished surface is called:",
+    "options": ["Refraction", "Reflection", "Dispersion", "Scattering"],
+    "answer": 1
+  },
+  {
+    "q": "Laws of reflection are valid for:",
+    "options": ["Plane mirror only", "Spherical mirror only", "All reflecting surfaces", "Curved surfaces only"],
+    "answer": 2
+  },
+  {
+    "q": "According to the first law of reflection:",
+    "options": ["Angle of incidence = Angle of reflection", "Incident ray, reflected ray and normal are in different planes", "Incident ray is perpendicular to reflected ray", "None of these"],
+    "answer": 0
+  },
+  {
+    "q": "The image formed by a plane mirror is:",
+    "options": ["Real, inverted, same size", "Virtual, erect, same size", "Real, erect, enlarged", "Virtual, inverted, diminished"],
+    "answer": 1
+  },
+  {
+    "q": "Lateral inversion means:",
+    "options": ["Left-right reversal", "Up-down reversal", "Enlargement", "Diminution"],
+    "answer": 0
+  },
+  {
+    "q": "The centre of curvature of a spherical mirror is:",
+    "options": ["Pole", "Focus", "Centre of the reflecting surface", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The focal length of a concave mirror is:",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "The focal length of a convex mirror is:",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": 0
+  },
+  {
+    "q": "Concave mirrors are used in:",
+    "options": ["Rear view mirrors", "Search lights and headlights", "Shaving mirrors only", "Solar cookers only"],
+    "answer": 1
+  },
+  {
+    "q": "Convex mirrors are used as:",
+    "options": ["Rear view mirrors in vehicles", "Headlights", "Shaving mirrors", "Dentist's mirrors"],
+    "answer": 0
+  },
+  {
+    "q": "The mirror formula is:",
+    "options": ["1/f = 1/v + 1/u", "1/f = 1/v - 1/u", "f = v + u", "f = uv/(u+v)"],
+    "answer": 0
+  },
+  {
+    "q": "Magnification m = -v/u is for:",
+    "options": ["Plane mirror only", "Spherical mirrors", "Lenses only", "All mirrors and lenses"],
+    "answer": 1
+  },
+  {
+    "q": "If magnification is negative, the image is:",
+    "options": ["Erect", "Inverted", "Virtual", "Diminished"],
+    "answer": 1
+  },
+  {
+    "q": "The bending of light when it passes from one medium to another is called:",
+    "options": ["Reflection", "Refraction", "Dispersion", "Diffraction"],
+    "answer": 1
+  },
+  {
+    "q": "The refractive index of a medium is:",
+    "options": ["Speed of light in vacuum / Speed in medium", "Speed in medium / Speed in vacuum", "sin i / sin r", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "Snell's law states that:",
+    "options": ["sin i / sin r = constant", "sin i × sin r = constant", "i = r", "i + r = 90°"],
+    "answer": 0
+  },
+  {
+    "q": "When light enters from rarer to denser medium, it bends:",
+    "options": ["Away from normal", "Towards normal", "Along normal", "No bending"],
+    "answer": 1
+  },
+  {
+    "q": "The power of a lens is measured in:",
+    "options": ["Metre", "Dioptre", "Watt", "Joule"],
+    "answer": 1
+  },
+  {
+    "q": "The focal length of a convex lens is:",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": 0
+  },
+  {
+    "q": "The focal length of a concave lens is:",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "A convex lens can form:",
+    "options": ["Only virtual image", "Only real image", "Both real and virtual images", "No image"],
+    "answer": 2
+  },
+  {
+    "q": "A concave lens always forms:",
+    "options": ["Real, inverted image", "Virtual, erect image", "Real, erect image", "Virtual, inverted image"],
+    "answer": 1
+  },
+  {
+    "q": "The lens formula is:",
+    "options": ["1/f = 1/v - 1/u", "1/f = 1/v + 1/u", "1/f = 1/u - 1/v", "f = u + v"],
+    "answer": 0
+  },
+  {
+    "q": "Magnification for lenses is given by:",
+    "options": ["m = v/u", "m = -v/u", "m = h'/h", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "If an object is placed at focus of a convex lens, the image is formed at:",
+    "options": ["Focus", "Infinity", "Centre of curvature", "Same side"],
+    "answer": 1
+  },
+  {
+    "q": "If object is at infinity for a convex lens, image is formed at:",
+    "options": ["Infinity", "Focus", "Centre of curvature", "Beyond centre"],
+    "answer": 1
+  },
+  {
+    "q": "Real image is formed by a convex lens when object is:",
+    "options": ["Between F and lens", "At F", "Beyond F", "At infinity"],
+    "answer": 2
+  },
+  {
+    "q": "Virtual image is formed by a convex lens when object is:",
+    "options": ["Beyond 2F", "At 2F", "Between F and lens", "At infinity"],
+    "answer": 2
+  },
+  {
+    "q": "The image formed by a concave mirror when object is at infinity is:",
+    "options": ["At infinity", "At focus", "At centre of curvature", "Beyond centre"],
+    "answer": 1
+  },
+  {
+    "q": "The image formed by a concave mirror when object is between F and C is:",
+    "options": ["Real, inverted, enlarged", "Virtual, erect, enlarged", "Real, inverted, diminished", "Virtual, erect, diminished"],
+    "answer": 0
+  },
+  {
+    "q": "The image formed by a convex mirror is always:",
+    "options": ["Real, inverted", "Virtual, erect, diminished", "Real, erect", "Virtual, inverted"],
+    "answer": 1
+  },
+  {
+    "q": "The angle of incidence for which angle of refraction is 90° is called:",
+    "options": ["Critical angle", "Normal angle", "Grazing angle", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Total internal reflection occurs when light travels from:",
+    "options": ["Rarer to denser", "Denser to rarer", "Same medium", "Vacuum to air"],
+    "answer": 1
+  },
+  {
+    "q": "Mirage is due to:",
+    "options": ["Dispersion", "Scattering", "Total internal reflection", "Refraction"],
+    "answer": 2
+  },
+  {
+    "q": "Optical fibres work on the principle of:",
+    "options": ["Reflection", "Refraction", "Total internal reflection", "Dispersion"],
+    "answer": 2
+  },
+  {
+    "q": "The refractive index of diamond is:",
+    "options": ["1.33", "1.5", "2.42", "1.000"],
+    "answer": 2
+  },
+  {
+    "q": "The refractive index of water is:",
+    "options": ["1.00", "1.33", "1.5", "2.42"],
+    "answer": 1
+  },
+  {
+    "q": "The refractive index of glass is approximately:",
+    "options": ["1.33", "1.5", "2.42", "1.000"],
+    "answer": 1
+  },
+  {
+    "q": "When a ray of light enters glass from air, its speed:",
+    "options": ["Increases", "Decreases", "Remains same", "Becomes zero"],
+    "answer": 1
+  },
+  {
+    "q": "The pole of a spherical mirror is:",
+    "options": ["Centre of curvature", "Focus", "Centre of the mirror", "Aperture"],
+    "answer": 2
+  },
+  {
+    "q": "The radius of curvature R and focal length f are related as:",
+    "options": ["f = R", "f = 2R", "f = R/2", "f = R/4"],
+    "answer": 2
+  },
+  {
+    "q": "Sign convention for mirrors: object distance u is:",
+    "options": ["Positive", "Negative", "Zero", "Variable"],
+    "answer": 1
+  },
+  {
+    "q": "Sign convention for lenses: object distance u is:",
+    "options": ["Positive", "Negative", "Zero", "Variable"],
+    "answer": 1
+  },
+  {
+    "q": "In new Cartesian sign convention, light travels from:",
+    "options": ["Right to left", "Left to right", "Top to bottom", "Any direction"],
+    "answer": 1
+  },
+  {
+    "q": "The power of a lens of focal length 50 cm is:",
+    "options": ["+2 D", "-2 D", "+0.5 D", "-0.5 D"],
+    "answer": 0
+  },
+  {
+    "q": "The power of a plane mirror is:",
+    "options": ["Zero", "Infinite", "+1 D", "-1 D"],
+    "answer": 0
+  },
+  {
+    "q": "If two thin lenses of power +2 D and -4 D are in contact, the equivalent power is:",
+    "options": ["+6 D", "-6 D", "-2 D", "+2 D"],
+    "answer": 2
+  },
+  {
+    "q": "A real and inverted image of same size is formed by concave mirror when object is at:",
+    "options": ["Focus", "Centre of curvature", "Infinity", "Between F and C"],
+    "answer": 1
+  },
+  {
+    "q": "The image formed by plane mirror is as far behind the mirror as the object is in front. This distance is:",
+    "options": ["Equal to object distance", "Double the object distance", "Half the object distance", "Zero"],
+    "answer": 0
+  },
+  {
+    "q": "Kaleidoscope works on the principle of:",
+    "options": ["Refraction", "Multiple reflection", "Dispersion", "Total internal reflection"],
+    "answer": 1
+  },
+  {
+    "q": "Periscope uses:",
+    "options": ["Two plane mirrors", "One concave mirror", "One convex lens", "Prism"],
+    "answer": 0
+  },
+  {
+    "q": "The apparent depth of a swimming pool appears less due to:",
+    "options": ["Reflection", "Refraction", "Dispersion", "Scattering"],
+    "answer": 1
+  },
+  {
+    "q": "A pencil partially immersed in water appears bent due to:",
+    "options": ["Reflection", "Refraction", "Total internal reflection", "Dispersion"],
+    "answer": 1
+  },
+  {
+    "q": "The twinkling of stars is due to:",
+    "options": ["Atmospheric reflection", "Atmospheric refraction", "Dispersion", "Scattering"],
+    "answer": 1
+  },
+  {
+    "q": "The sun appears flattened at sunrise and sunset due to:",
+    "options": ["Atmospheric refraction", "Dispersion", "Scattering", "Reflection"],
+    "answer": 0
+  },
+  {
+    "q": "The splitting of white light into seven colours is called:",
+    "options": ["Reflection", "Refraction", "Dispersion", "Diffraction"],
+    "answer": 2
+  },
+  {
+    "q": "Rainbow is formed due to:",
+    "options": ["Dispersion only", "Refraction and total internal reflection", "Reflection only", "Scattering"],
+    "answer": 1
+  },
+  {
+    "q": "The least deviated colour in a prism is:",
+    "options": ["Violet", "Red", "Green", "Blue"],
+    "answer": 1
+  },
+  {
+    "q": "The most deviated colour in a prism is:",
+    "options": ["Red", "Violet", "Green", "Yellow"],
+    "answer": 1
+  },
+  {
+    "q": "A convex lens is also called:",
+    "options": ["Diverging lens", "Converging lens", "Plane lens", "Cylindrical lens"],
+    "answer": 1
+  },
+  {
+    "q": "A concave lens is also called:",
+    "options": ["Converging lens", "Diverging lens", "Plane lens", "Spherical lens"],
+    "answer": 1
+  },
+  {
+    "q": "The image formed at 2F by convex lens when object is at 2F is:",
+    "options": ["Real, inverted, same size", "Virtual, erect, enlarged", "Real, inverted, diminished", "Virtual, erect, same size"],
+    "answer": 0
+  },
+  {
+    "q": "Magnification greater than 1 indicates:",
+    "options": ["Diminished image", "Enlarged image", "Same size", "Virtual image"],
+    "answer": 1
+  },
+  {
+    "q": "The aperture of a mirror is:",
+    "options": ["The diameter of the mirror", "The radius of curvature", "The focal length", "The centre of curvature"],
+    "answer": 0
+  },
+  {
+    "q": "Principal focus of a spherical mirror is the point where:",
+    "options": ["All rays converge or appear to diverge", "Normal is drawn", "Pole is located", "Centre of curvature lies"],
+    "answer": 0
+  },
+  {
+    "q": "For a virtual image in mirror, v is:",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": 0
+  },
+  {
+    "q": "For a real image in lens, v is:",
+    "options": ["Positive", "Negative", "Zero", "Infinite"],
+    "answer": 0
+  },
+  {
+    "q": "Critical angle for water-air interface is approximately:",
+    "options": ["42°", "48.6°", "60°", "90°"],
+    "answer": 1
+  },
+  {
+    "q": "The phenomenon responsible for optical fibre communication is:",
+    "options": ["Reflection", "Refraction", "Total internal reflection", "Dispersion"],
+    "answer": 2
+  },
+  {
+    "q": "A virtual and erect image larger than object is formed by:",
+    "options": ["Concave mirror", "Convex mirror", "Convex lens", "Concave lens"],
+    "answer": 0
+  },
+  {
+    "q": "Shaving mirrors are usually:",
+    "options": ["Convex", "Concave", "Plane", "Cylindrical"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

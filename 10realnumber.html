@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Real Numbers MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The fundamental theorem of arithmetic states that every composite number can be expressed as a product of primes in a:",
+    "options": ["Unique way (ignoring order)", "Non-unique way", "Only one way including order", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Prime factorisation is unique according to:",
+    "options": ["Euclid's division lemma", "Fundamental theorem of arithmetic", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid's division lemma states that for integers a and b (b > 0), there exist unique q and r such that:",
+    "options": ["a = b q + r, 0 ≤ r < b", "a = b q + r, r ≥ b", "a = q + r b", "None"],
+    "answer": 0
+  },
+  {
+    "q": "HCF of two numbers is found using:",
+    "options": ["Euclid's division algorithm", "Prime factorisation", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "LCM of two numbers a and b is related to HCF as:",
+    "options": ["a × b = LCM(a,b) × HCF(a,b)", "a + b = LCM + HCF", "a - b = LCM - HCF", "None"],
+    "answer": 0
+  },
+  {
+    "q": "HCF of two prime numbers is:",
+    "options": ["1", "Product", "Sum", "None"],
+    "answer": 0
+  },
+  {
+    "q": "LCM of two prime numbers is:",
+    "options": ["1", "Their product", "Their sum", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The decimal expansion of rational numbers is:",
+    "options": ["Terminating or non-terminating repeating", "Always terminating", "Always non-terminating non-repeating", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The decimal expansion of irrational numbers is:",
+    "options": ["Terminating", "Non-terminating repeating", "Non-terminating non-repeating", "None"],
+    "answer": 2
+  },
+  {
+    "q": "A number is rational if its decimal is:",
+    "options": ["Non-terminating non-repeating", "Terminating or repeating", "Only terminating", "None"],
+    "answer": 1
+  },
+  {
+    "q": "√2 is:",
+    "options": ["Rational", "Irrational", "Integer", "None"],
+    "answer": 1
+  },
+  {
+    "q": "To prove √2 irrational, we use:",
+    "options": ["Method of contradiction", "Direct proof", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If p is prime and p divides a², then p divides:",
+    "options": ["a", "a² only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "HCF of 26 and 91 is:",
+    "options": ["13", "1", "26", "91"],
+    "answer": 0
+  },
+  {
+    "q": "LCM of 26 and 91 is:",
+    "options": ["13", "182", "2366", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The decimal expansion of 1/2 is:",
+    "options": ["0.5 (terminating)", "0.333...", "0.25 repeating", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The decimal expansion of 1/3 is:",
+    "options": ["0.3 terminating", "0.333... repeating", "0.3 repeating", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The decimal expansion of 1/5 is:",
+    "options": ["0.2 terminating", "0.222...", "0.5 repeating", "None"],
+    "answer": 0
+  },
+  {
+    "q": "1/7 has decimal expansion:",
+    "options": ["Terminating", "Non-terminating repeating", "Non-repeating", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If denominator has prime factors other than 2 and 5, decimal is:",
+    "options": ["Terminating", "Non-terminating repeating", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If denominator has only 2 and/or 5 as prime factors, decimal is:",
+    "options": ["Non-terminating", "Terminating", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The rational number 0.3 (bar on 3) is:",
+    "options": ["1/3", "3/10", "1/9", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To prove a number irrational, we assume it is rational and reach:",
+    "options": ["Contradiction", "Same conclusion", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "√3 is:",
+    "options": ["Rational", "Irrational", "Integer", "None"],
+    "answer": 1
+  },
+  {
+    "q": "√4 is:",
+    "options": ["Irrational", "Rational (2)", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "π is:",
+    "options": ["Rational", "Irrational", "Integer", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The sum of rational and irrational is:",
+    "options": ["Always rational", "Always irrational", "Can be rational if irrational part cancels", "None"],
+    "answer": 2
+  },
+  {
+    "q": "√2 + (-√2) =",
+    "options": ["0 (rational)", "√2", "2", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Product of non-zero rational and irrational is:",
+    "options": ["Rational", "Irrational", "Zero", "None"],
+    "answer": 1
+  },
+  {
+    "q": "HCF(96, 404) using Euclid's algorithm is:",
+    "options": ["4", "2", "8", "None"],
+    "answer": 0
+  },
+  {
+    "q": "LCM(96, 404) is:",
+    "options": ["9696", "4848", "2424", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The decimal 0.375 is:",
+    "options": ["3/8", "375/1000", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "1/11 decimal is:",
+    "options": ["0.090909...", "0.09 terminating", "0.11", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Real Numbers' starts with:",
+    "options": ["Euclid's division lemma", "Irrational numbers", "Decimals", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Real numbers include:",
+    "options": ["Rational and irrational", "Only rational", "Only irrational", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Rational numbers are of form:",
+    "options": ["p/q, q ≠ 0", "p/q, q=0", "Integers only", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Irrational numbers cannot be expressed as:",
+    "options": ["p/q", "Decimals", "Roots", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The HCF of two numbers is their:",
+    "options": ["Largest common divisor", "Smallest common divisor", "Product", "None"],
+    "answer": 0
+  },
+  {
+    "q": "LCM is the:",
+    "options": ["Smallest common multiple", "Largest common multiple", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For co-prime numbers, HCF is:",
+    "options": ["1", "The numbers themselves", "Product", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For co-prime numbers, LCM is:",
+    "options": ["1", "Their product", "Sum", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The decimal expansion of 1/8 is:",
+    "options": ["0.125 terminating", "0.125 repeating", "0.142857 repeating", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The decimal expansion of 1/6 is:",
+    "options": ["0.1666... repeating", "0.16 terminating", "0.166 terminating", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To show √5 irrational, assume √5 = p/q and reach contradiction because:",
+    "options": ["5 divides p and q", "p and q have common factor", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The proof of irrationality uses:",
+    "options": ["Fundamental theorem of arithmetic", "Euclid's lemma", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Real numbers on number line are:",
+    "options": ["Dense (between any two, infinite)", "Sparse", "Only rationals", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The set of real numbers is:",
+    "options": ["Countable", "Uncountable", "Finite", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Rational numbers are:",
+    "options": ["Countable", "Uncountable", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Irrational numbers are:",
+    "options": ["Countable", "Uncountable", "Finite", "None"],
+    "answer": 1
+  },
+  {
+    "q": "HCF(135, 225) is:",
+    "options": ["45", "15", "9", "None"],
+    "answer": 0
+  },
+  {
+    "q": "LCM(135, 225) is:",
+    "options": ["675", "135", "225", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The decimal of 1/20 is:",
+    "options": ["0.05 terminating", "0.005 repeating", "0.05 repeating", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The decimal of 1/15 is:",
+    "options": ["Terminating", "Non-terminating repeating", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "To convert repeating decimal to fraction, we use:",
+    "options": ["Algebraic method (x = decimal, multiply by 10^n)", "Division", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "0.333... =",
+    "options": ["1/3", "3/10", "1/9", "None"],
+    "answer": 0
+  },
+  {
+    "q": "0.272727... =",
+    "options": ["27/100", "27/99", "3/11", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The proof that there are infinitely many primes uses:",
+    "options": ["Euclid's method (assume finite, construct new)", "Direct", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter revises:",
+    "options": ["HCF, LCM, decimals, rationals/irrationals", "Only primes", "Only decimals", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Real numbers form:",
+    "options": ["Number line", "Set", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Between two real numbers, there are:",
+    "options": ["No real numbers", "Infinitely many real numbers", "Only rationals", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The set of irrational numbers is:",
+    "options": ["Dense on number line", "Sparse", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

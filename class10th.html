@@ -1,0 +1,121 @@
+<!-- SAVE THIS FILE AS class9.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 10 | Maths & Science</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="SubSelection.css">
+</head>
+<body>
+
+<canvas id="hyperspeed"></canvas>
+
+<header>
+  <div class="logo">Board Buddy</div>
+  <a href="index.html">← Home</a>
+</header>
+
+<section class="container">
+  <h1>Class 10</h1>
+  <p class="subtitle">Choose your subject and start learning with premium resources.</p>
+
+  <div class="subject-grid">
+    <div class="subject-card">
+      <h2>📘 Maths</h2>
+      <p>Chapter-wise PDFs, MCQ tests, instant marksheets and weekly toppers.</p>
+      <div class="actions">
+        <a href="class10thmaths.html" class="btn-notes">PDF Notes</a>
+        <a href="class10thmaths.html" class="btn-mcq">MCQ Tests</a>
+      </div>
+    </div>
+
+    <div class="subject-card">
+      <h2>🔬 Science</h2>
+      <p>Concept-based notes, numericals, MCQs and doubt solving.</p>
+      <div class="actions">
+        <a href="class10thscience.html" class="btn-notes">PDF Notes</a>
+        <a href="class10thscience.html" class="btn-mcq">MCQ Tests</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Board Buddy • Class 10
+</footer>
+
+<script>
+const canvas = document.getElementById("hyperspeed");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+function resize() {
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+// Star settings
+const STAR_COUNT = 600;
+const SPEED = 25;
+
+const stars = [];
+
+for (let i = 0; i < STAR_COUNT; i++) {
+  stars.push({
+    x: Math.random() * w - w / 2,
+    y: Math.random() * h - h / 2,
+    z: Math.random() * w,
+    pz: Math.random() * w
+  });
+}
+
+function animate() {
+  ctx.fillStyle = "#0b0f1a";
+  ctx.fillRect(0, 0, w, h);
+
+  ctx.translate(w / 2, h / 2);
+
+  for (let s of stars) {
+    s.pz = s.z;
+    s.z -= SPEED;
+
+    if (s.z <= 1) {
+      s.z = w;
+      s.pz = w;
+      s.x = Math.random() * w - w / 2;
+      s.y = Math.random() * h - h / 2;
+    }
+
+    const x1 = (s.x / s.z) * w;
+    const y1 = (s.y / s.z) * w;
+
+    const x2 = (s.x / s.pz) * w;
+    const y2 = (s.y / s.pz) * w;
+
+    const alpha = 1 - s.z / w;
+
+    ctx.strokeStyle = `rgba(77,163,255,${alpha})`;
+    ctx.lineWidth = Math.max(1, 3 - s.z / 300);
+
+    ctx.beginPath();
+    ctx.moveTo(x2, y2);
+    ctx.lineTo(x1, y1);
+    ctx.stroke();
+  }
+
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
+
+
+

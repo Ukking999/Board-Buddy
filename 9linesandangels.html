@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Polynomials MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Lineas & Angels MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "An angle is formed by:",
+    "options": ["One ray", "Two rays with a common endpoint", "Three rays", "A straight line"],
+    "answer": 1
+  },
+  {
+    "q": "The common endpoint of the two rays forming an angle is called:",
+    "options": ["Arm", "Vertex", "Base", "Centre"],
+    "answer": 1
+  },
+  {
+    "q": "A straight angle measures:",
+    "options": ["90°", "180°", "Less than 90°", "More than 180°"],
+    "answer": 1
+  },
+  {
+    "q": "An acute angle measures:",
+    "options": ["Exactly 90°", "More than 90° but less than 180°", "Less than 90°", "Exactly 180°"],
+    "answer": 2
+  },
+  {
+    "q": "An obtuse angle measures:",
+    "options": ["Less than 90°", "Exactly 90°", "More than 90° but less than 180°", "180° or more"],
+    "answer": 2
+  },
+  {
+    "q": "A right angle measures:",
+    "options": ["Less than 90°", "Exactly 90°", "More than 90°", "180°"],
+    "answer": 1
+  },
+  {
+    "q": "A reflex angle measures:",
+    "options": ["Less than 90°", "Exactly 180°", "More than 180° but less than 360°", "Exactly 360°"],
+    "answer": 2
+  },
+  {
+    "q": "Two angles that add up to 90° are called:",
+    "options": ["Supplementary angles", "Complementary angles", "Adjacent angles", "Vertical angles"],
+    "answer": 1
+  },
+  {
+    "q": "Two angles that add up to 180° are called:",
+    "options": ["Complementary angles", "Supplementary angles", "Adjacent angles", "Linear pair"],
+    "answer": 1
+  },
+  {
+    "q": "A linear pair of angles is always:",
+    "options": ["Complementary", "Supplementary", "Right angles", "Acute"],
+    "answer": 1
+  },
+  {
+    "q": "When two lines intersect, they form:",
+    "options": ["One pair of vertical angles", "Two pairs of vertical angles", "No vertical angles", "Four right angles"],
+    "answer": 1
+  },
+  {
+    "q": "Vertically opposite angles are:",
+    "options": ["Supplementary", "Complementary", "Equal", "Adjacent"],
+    "answer": 2
+  },
+  {
+    "q": "If two adjacent angles are supplementary, they form a:",
+    "options": ["Right angle", "Straight angle", "Reflex angle", "Acute angle"],
+    "answer": 1
+  },
+  {
+    "q": "Two lines that never meet and are coplanar are called:",
+    "options": ["Intersecting lines", "Perpendicular lines", "Parallel lines", "Transversal"],
+    "answer": 2
+  },
+  {
+    "q": "A line that intersects two or more lines at distinct points is called:",
+    "options": ["Parallel line", "Transversal", "Perpendicular", "Concurrent line"],
+    "answer": 1
+  },
+  {
+    "q": "Corresponding angles are formed when a transversal intersects:",
+    "options": ["One line", "Parallel lines", "Perpendicular lines", "Any two lines"],
+    "answer": 1
+  },
+  {
+    "q": "If two parallel lines are cut by a transversal, then corresponding angles are:",
+    "options": ["Equal", "Supplementary", "Complementary", "Not related"],
+    "answer": 0
+  },
+  {
+    "q": "If two parallel lines are cut by a transversal, alternate interior angles are:",
+    "options": ["Supplementary", "Equal", "Complementary", "Not related"],
+    "answer": 1
+  },
+  {
+    "q": "Consecutive interior angles (co-interior angles) for parallel lines are:",
+    "options": ["Equal", "Supplementary", "Complementary", "Acute"],
+    "answer": 1
+  },
+  {
+    "q": "If a transversal intersects two lines such that alternate interior angles are equal, then the lines are:",
+    "options": ["Perpendicular", "Intersecting", "Parallel", "Skew"],
+    "answer": 2
+  },
+  {
+    "q": "Two lines perpendicular to the same line are:",
+    "options": ["Intersecting", "Parallel to each other", "Perpendicular to each other", "Skew"],
+    "answer": 1
+  },
+  {
+    "q": "The measure of each angle in a linear pair is 130°. The other angle is:",
+    "options": ["50°", "130°", "180°", "90°"],
+    "answer": 0
+  },
+  {
+    "q": "Adjacent angles have:",
+    "options": ["Common vertex and common arm", "No common point", "Common side only", "Common vertex only"],
+    "answer": 0
+  },
+  {
+    "q": "The sum of all angles around a point is:",
+    "options": ["180°", "360°", "90°", "270°"],
+    "answer": 1
+  },
+  {
+    "q": "If one angle of a linear pair is acute, the other must be:",
+    "options": ["Acute", "Right", "Obtuse", "Reflex"],
+    "answer": 2
+  },
+  {
+    "q": "An angle that measures exactly 180° is called:",
+    "options": ["Straight angle", "Reflex angle", "Complete angle", "Right angle"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following is not a type of angle based on measure?",
+    "options": ["Acute", "Obtuse", "Adjacent", "Reflex"],
+    "answer": 2
+  },
+  {
+    "q": "When two lines intersect at right angles, they are:",
+    "options": ["Parallel", "Perpendicular", "Skew", "Concurrent"],
+    "answer": 1
+  },
+  {
+    "q": "The symbol used to denote parallel lines is:",
+    "options": ["⊥", "‖", "=", "∼"],
+    "answer": 1
+  },
+  {
+    "q": "The symbol for perpendicular lines is:",
+    "options": ["‖", "⊥", "=", "∠"],
+    "answer": 1
+  },
+  {
+    "q": "If two lines are parallel, then any pair of corresponding angles formed by a transversal are:",
+    "options": ["Complementary", "Supplementary", "Equal", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Alternate exterior angles are equal when the transversal cuts:",
+    "options": ["Intersecting lines", "Perpendicular lines", "Parallel lines", "Any lines"],
+    "answer": 2
+  },
+  {
+    "q": "If consecutive interior angles are supplementary, the lines are:",
+    "options": ["Perpendicular", "Parallel", "Intersecting at acute angle", "Skew"],
+    "answer": 1
+  },
+  {
+    "q": "Vertically opposite angles are always:",
+    "options": ["Supplementary", "Complementary", "Equal", "Adjacent"],
+    "answer": 2
+  },
+  {
+    "q": "How many pairs of vertically opposite angles are formed when two lines intersect?",
+    "options": ["One", "Two", "Three", "Four"],
+    "answer": 1
+  },
+  {
+    "q": "An angle measuring 45° is:",
+    "options": ["Right", "Acute", "Obtuse", "Reflex"],
+    "answer": 1
+  },
+  {
+    "q": "An angle measuring 135° is:",
+    "options": ["Acute", "Right", "Obtuse", "Straight"],
+    "answer": 2
+  },
+  {
+    "q": "The complement of a 60° angle is:",
+    "options": ["30°", "120°", "60°", "150°"],
+    "answer": 0
+  },
+  {
+    "q": "The supplement of a 120° angle is:",
+    "options": ["60°", "180°", "30°", "240°"],
+    "answer": 0
+  },
+  {
+    "q": "If one angle is 35° and its complement is x, then x =",
+    "options": ["55°", "35°", "90°", "145°"],
+    "answer": 0
+  },
+  {
+    "q": "Two angles are complementary. One is 28°. The other is:",
+    "options": ["62°", "152°", "28°", "90°"],
+    "answer": 0
+  },
+  {
+    "q": "Two angles are supplementary. One is 75°. The other is:",
+    "options": ["105°", "15°", "75°", "90°"],
+    "answer": 0
+  },
+  {
+    "q": "Angles on a straight line add up to:",
+    "options": ["90°", "180°", "360°", "270°"],
+    "answer": 1
+  },
+  {
+    "q": "Which pair of angles is always equal when a transversal crosses parallel lines?",
+    "options": ["Consecutive interior", "Corresponding", "Adjacent", "Vertical"],
+    "answer": 1
+  },
+  {
+    "q": "If a transversal makes a 70° angle with one parallel line, the corresponding angle with the other parallel line is:",
+    "options": ["110°", "70°", "20°", "180°"],
+    "answer": 1
+  },
+  {
+    "q": "Alternate interior angles are on:",
+    "options": ["Same side of transversal", "Opposite sides of transversal and inside the lines", "Outside the lines", "Same side and inside"],
+    "answer": 1
+  },
+  {
+    "q": "Co-interior angles are also known as:",
+    "options": ["Alternate angles", "Consecutive interior angles", "Corresponding angles", "Vertical angles"],
+    "answer": 1
+  },
+  {
+    "q": "If two lines are cut by a transversal and one interior angle is 120°, and lines are parallel, the co-interior angle is:",
+    "options": ["60°", "120°", "180°", "240°"],
+    "answer": 0
+  },
+  {
+    "q": "The number of angles formed when two lines intersect is:",
+    "options": ["2", "4", "6", "8"],
+    "answer": 1
+  },
+  {
+    "q": "An angle of 0° is called:",
+    "options": ["Zero angle", "Null angle", "Not defined", "Reflex"],
+    "answer": 0
+  },
+  {
+    "q": "A complete rotation measures:",
+    "options": ["180°", "270°", "360°", "90°"],
+    "answer": 2
+  },
+  {
+    "q": "Angles greater than 360° are called:",
+    "options": ["Reflex angles", "Coterminal angles", "Not possible", "Complete angles"],
+    "answer": 1
+  },
+  {
+    "q": "If two lines intersect and one angle is 90°, then all angles are:",
+    "options": ["90°", "45°", "180°", "Acute"],
+    "answer": 0
+  },
+  {
+    "q": "Parallel lines have the same:",
+    "options": ["Direction", "Length", "Intersection point", "Perpendicular distance"],
+    "answer": 0
+  },
+  {
+    "q": "The distance between two parallel lines is:",
+    "options": ["Varying", "Constant", "Zero", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "Perpendicular lines form angles of:",
+    "options": ["90°", "180°", "45°", "Any measure"],
+    "answer": 0
+  },
+  {
+    "q": "If a transversal is perpendicular to one of two parallel lines, it is perpendicular to the other also.",
+    "options": ["True", "False", "Sometimes", "Cannot say"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following is a pair of corresponding angles?",
+    "options": ["Angles on the same side of transversal and same relative position", "Opposite angles", "Interior angles", "Exterior only"],
+    "answer": 0
+  },
+  {
+    "q": "When two parallel lines are cut by a transversal, how many pairs of alternate interior angles are formed?",
+    "options": ["1", "2", "3", "4"],
+    "answer": 1
+  },
+  {
+    "q": "An angle measuring 179° is:",
+    "options": ["Acute", "Right", "Obtuse", "Straight"],
+    "answer": 2
+  },
+  {
+    "q": "An angle measuring 91° is:",
+    "options": ["Acute", "Right", "Obtuse", "Reflex"],
+    "answer": 2
+  },
+  {
+    "q": "The complement of a right angle is:",
+    "options": ["90°", "0°", "180°", "45°"],
+    "answer": 1
+  },
+  {
+    "q": "The supplement of a right angle is:",
+    "options": ["90°", "180°", "0°", "270°"],
+    "answer": 0
+  },
+  {
+    "q": "If one angle is 40° and it is part of a linear pair, the adjacent angle is:",
+    "options": ["140°", "50°", "40°", "90°"],
+    "answer": 0
+  },
+  {
+    "q": "Vertically opposite angles formed by intersecting lines measuring 110° and 70° are:",
+    "options": ["110° and 70° each twice", "All 90°", "All 110°", "All 70°"],
+    "answer": 0
+  },
+  {
+    "q": "The arms of an angle are:",
+    "options": ["Rays", "Lines", "Line segments", "Points"],
+    "answer": 0
+  },
+  {
+    "q": "A ray has:",
+    "options": ["One endpoint", "Two endpoints", "No endpoint", "Infinite endpoints"],
+    "answer": 0
+  },
+  {
+    "q": "A line segment has:",
+    "options": ["One endpoint", "Two endpoints", "No endpoint", "Infinite length"],
+    "answer": 1
+  },
+  {
+    "q": "A line has:",
+    "options": ["One endpoint", "Two endpoints", "No endpoints", "Finite length"],
+    "answer": 2
+  },
+  {
+    "q": "Skew lines are lines that are:",
+    "options": ["Parallel", "Intersecting", "Neither parallel nor intersecting and non-coplanar", "Coplanar only"],
+    "answer": 2
+  },
+  {
+    "q": "In plane geometry, all lines are:",
+    "options": ["Skew", "Coplanar", "Parallel", "Intersecting"],
+    "answer": 1
+  },
+  {
+    "q": "The angle between two perpendicular lines is:",
+    "options": ["0°", "90°", "180°", "45°"],
+    "answer": 1
+  },
+  {
+    "q": "If two lines intersect to form equal adjacent angles, the lines are:",
+    "options": ["Parallel", "Perpendicular", "Skew", "Concurrent"],
+    "answer": 1
+  },
+  {
+    "q": "The number of transversals possible for two given lines is:",
+    "options": ["One", "Two", "Infinite", "Zero"],
+    "answer": 2
+  },
+  {
+    "q": "If corresponding angles are not equal, the lines are:",
+    "options": ["Parallel", "Not parallel", "Perpendicular", "Same line"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Polynomials MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Quadrilateral's MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A quadrilateral has:",
+    "options": ["3 sides", "4 sides", "5 sides", "6 sides"],
+    "answer": 1
+  },
+  {
+    "q": "The sum of the interior angles of a quadrilateral is:",
+    "options": ["180°", "270°", "360°", "540°"],
+    "answer": 2
+  },
+  {
+    "q": "A quadrilateral with both pairs of opposite sides parallel is called:",
+    "options": ["Trapezium", "Parallelogram", "Kite", "Rhombus"],
+    "answer": 1
+  },
+  {
+    "q": "A parallelogram with all sides equal is called:",
+    "options": ["Rectangle", "Rhombus", "Square", "Kite"],
+    "answer": 1
+  },
+  {
+    "q": "A parallelogram with all angles 90° is called:",
+    "options": ["Rhombus", "Rectangle", "Square", "Trapezium"],
+    "answer": 1
+  },
+  {
+    "q": "A quadrilateral with exactly one pair of parallel sides is called:",
+    "options": ["Parallelogram", "Trapezium", "Rhombus", "Kite"],
+    "answer": 1
+  },
+  {
+    "q": "A quadrilateral with two pairs of adjacent sides equal is called:",
+    "options": ["Rhombus", "Kite", "Parallelogram", "Rectangle"],
+    "answer": 1
+  },
+  {
+    "q": "A rhombus that has all angles 90° is called:",
+    "options": ["Rectangle", "Square", "Parallelogram", "Trapezium"],
+    "answer": 1
+  },
+  {
+    "q": "In a parallelogram, opposite sides are:",
+    "options": ["Equal and parallel", "Parallel only", "Equal only", "Neither equal nor parallel"],
+    "answer": 0
+  },
+  {
+    "q": "In a parallelogram, opposite angles are:",
+    "options": ["Equal", "Supplementary", "Complementary", "Right angles"],
+    "answer": 0
+  },
+  {
+    "q": "In a parallelogram, consecutive angles are:",
+    "options": ["Equal", "Supplementary", "Complementary", "Right angles"],
+    "answer": 1
+  },
+  {
+    "q": "The diagonals of a parallelogram:",
+    "options": ["Are perpendicular", "Bisect each other", "Are equal", "Are parallel"],
+    "answer": 1
+  },
+  {
+    "q": "The diagonals of a rhombus:",
+    "options": ["Bisect each other", "Are perpendicular", "Bisect the vertex angles", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "The diagonals of a rectangle:",
+    "options": ["Are perpendicular", "Bisect each other", "Are equal and bisect each other", "Are unequal"],
+    "answer": 2
+  },
+  {
+    "q": "The diagonals of a square:",
+    "options": ["Are equal and perpendicular", "Bisect each other at 90°", "Bisect vertex angles", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "In a rectangle, all angles are:",
+    "options": ["Acute", "Obtuse", "Right angles", "Different"],
+    "answer": 2
+  },
+  {
+    "q": "In a trapezium with parallel sides a and b (a > b), the line segment joining midpoints of non-parallel sides is:",
+    "options": ["a", "b", "(a+b)/2", "(a-b)/2"],
+    "answer": 2
+  },
+  {
+    "q": "A quadrilateral whose all sides are equal but angles are not 90° is:",
+    "options": ["Square", "Rectangle", "Rhombus", "Kite"],
+    "answer": 2
+  },
+  {
+    "q": "The diagonals of a kite:",
+    "options": ["Are equal", "Bisect each other", "One diagonal bisects the other", "Are perpendicular"],
+    "answer": 3
+  },
+  {
+    "q": "In a kite, the diagonals are:",
+    "options": ["Both bisected", "One is bisected by the other and they are perpendicular", "Parallel", "Equal"],
+    "answer": 1
+  },
+  {
+    "q": "A square is a special case of:",
+    "options": ["Rhombus only", "Rectangle only", "Both rhombus and rectangle", "Trapezium"],
+    "answer": 2
+  },
+  {
+    "q": "A rectangle is a special case of:",
+    "options": ["Rhombus", "Parallelogram", "Square", "Kite"],
+    "answer": 1
+  },
+  {
+    "q": "A rhombus is a special case of:",
+    "options": ["Rectangle", "Parallelogram", "Square", "Trapezium"],
+    "answer": 1
+  },
+  {
+    "q": "The area of a parallelogram is:",
+    "options": ["Base × Height", "Diagonal × Diagonal", "Side × Side", "(1/2) × Diagonal1 × Diagonal2"],
+    "answer": 0
+  },
+  {
+    "q": "The area of a rhombus is:",
+    "options": ["Base × Height", "(1/2) × Diagonal1 × Diagonal2", "Side²", "Perimeter × Height"],
+    "answer": 1
+  },
+  {
+    "q": "The area of a rectangle is:",
+    "options": ["Length × Breadth", "Diagonal²", "(1/2) × Length × Breadth", "Perimeter/2"],
+    "answer": 0
+  },
+  {
+    "q": "The area of a square is:",
+    "options": ["Side × Side", "Diagonal² / 2", "Both a and b", "Perimeter × Side"],
+    "answer": 2
+  },
+  {
+    "q": "The area of a trapezium is:",
+    "options": ["(Sum of parallel sides)/2 × Height", "Product of parallel sides × Height", "Difference of parallel sides × Height", "Average of all sides × Height"],
+    "answer": 0
+  },
+  {
+    "q": "The perimeter of a quadrilateral is:",
+    "options": ["Sum of all four sides", "Sum of parallel sides", "Product of sides", "Twice sum of parallel sides"],
+    "answer": 0
+  },
+  {
+    "q": "In a parallelogram, if one angle is 70°, then the opposite angle is:",
+    "options": ["70°", "110°", "90°", "140°"],
+    "answer": 0
+  },
+  {
+    "q": "In a parallelogram, if one angle is 70°, then the consecutive angle is:",
+    "options": ["70°", "110°", "90°", "140°"],
+    "answer": 1
+  },
+  {
+    "q": "A quadrilateral with equal diagonals that bisect each other at 90° is:",
+    "options": ["Rectangle", "Rhombus", "Square", "Kite"],
+    "answer": 1
+  },
+  {
+    "q": "If the diagonals of a quadrilateral bisect each other, then it is a:",
+    "options": ["Trapezium", "Kite", "Parallelogram", "Rectangle"],
+    "answer": 2
+  },
+  {
+    "q": "A quadrilateral is a parallelogram if:",
+    "options": ["Diagonals are equal", "One pair of opposite sides parallel and equal", "All angles 90°", "Diagonals perpendicular"],
+    "answer": 1
+  },
+  {
+    "q": "In a rectangle, the diagonals are:",
+    "options": ["Perpendicular", "Equal", "Unequal", "One bisects the other"],
+    "answer": 1
+  },
+  {
+    "q": "In a square, the diagonals are:",
+    "options": ["Equal and perpendicular", "Unequal and parallel", "Equal only", "Perpendicular only"],
+    "answer": 0
+  },
+  {
+    "q": "The mid-point theorem for trapezium states that the line joining midpoints of non-parallel sides is:",
+    "options": ["Parallel to parallel sides and half their sum", "Perpendicular to parallel sides", "Equal to difference", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A quadrilateral with all sides equal and one angle 90° must be:",
+    "options": ["Rhombus", "Square", "Rectangle", "Parallelogram"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is not a parallelogram?",
+    "options": ["Rectangle", "Rhombus", "Square", "Trapezium (with only one pair parallel)"],
+    "answer": 3
+  },
+  {
+    "q": "The diagonals of a kite are:",
+    "options": ["Equal and bisect each other", "Perpendicular and one is axis of symmetry", "Parallel", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In an isosceles trapezium, the non-parallel sides are:",
+    "options": ["Equal", "Unequal", "Parallel", "Perpendicular"],
+    "answer": 0
+  },
+  {
+    "q": "In an isosceles trapezium, the base angles are:",
+    "options": ["Equal", "Supplementary", "Complementary", "Right angles"],
+    "answer": 0
+  },
+  {
+    "q": "The diagonals of an isosceles trapezium are:",
+    "options": ["Equal", "Perpendicular", "Bisect each other", "Unequal"],
+    "answer": 0
+  },
+  {
+    "q": "A quadrilateral with opposite angles equal and consecutive angles supplementary is:",
+    "options": ["Kite", "Trapezium", "Parallelogram", "Rhombus"],
+    "answer": 2
+  },
+  {
+    "q": "The area of a rhombus with diagonals d1 and d2 is:",
+    "options": ["d1 × d2", "(1/2) × d1 × d2", "d1 + d2", "d1² + d2²"],
+    "answer": 1
+  },
+  {
+    "q": "If a quadrilateral has two pairs of equal adjacent sides and diagonals perpendicular, it is:",
+    "options": ["Rhombus", "Kite", "Square", "Rectangle"],
+    "answer": 1
+  },
+  {
+    "q": "The perimeter of a rhombus with side a is:",
+    "options": ["a", "2a", "4a", "a²"],
+    "answer": 2
+  },
+  {
+    "q": "In a parallelogram ABCD, if AB = 5 cm, AD = 6 cm, then perimeter is:",
+    "options": ["11 cm", "22 cm", "30 cm", "12 cm"],
+    "answer": 1
+  },
+  {
+    "q": "A square has:",
+    "options": ["All sides equal and all angles 90°", "Opposite sides equal", "One pair parallel", "Diagonals unequal"],
+    "answer": 0
+  },
+  {
+    "q": "Which quadrilateral has exactly two pairs of equal adjacent sides?",
+    "options": ["Rectangle", "Rhombus", "Kite", "Parallelogram"],
+    "answer": 2
+  },
+  {
+    "q": "The sum of any three angles of a quadrilateral is:",
+    "options": ["180°", "270°", "360°", "Cannot be determined"],
+    "answer": 3
+  },
+  {
+    "q": "A quadrilateral can be divided into two triangles by drawing:",
+    "options": ["One side", "One diagonal", "One median", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If the diagonals of a quadrilateral are perpendicular bisectors of each other, then it is a:",
+    "options": ["Rectangle", "Rhombus", "Square", "Kite"],
+    "answer": 1
+  },
+  {
+    "q": "In a rectangle ABCD, diagonal AC = diagonal BD. This is true because:",
+    "options": ["Opposite sides equal", "All angles 90°", "Diagonals of rectangle are equal", "It is a parallelogram"],
+    "answer": 2
+  },
+  {
+    "q": "A trapezium becomes a parallelogram if:",
+    "options": ["Non-parallel sides equal", "Both pairs of sides parallel", "Diagonals equal", "Angles equal"],
+    "answer": 1
+  },
+  {
+    "q": "The quadrilateral formed by joining midpoints of sides of any quadrilateral is:",
+    "options": ["Rectangle", "Rhombus", "Parallelogram", "Square"],
+    "answer": 2
+  },
+  {
+    "q": "Varignon's theorem states that joining midpoints of any quadrilateral gives:",
+    "options": ["A trapezium", "A parallelogram", "A kite", "A rectangle"],
+    "answer": 1
+  },
+  {
+    "q": "In a parallelogram, the diagonals:",
+    "options": ["Are always equal", "Are always perpendicular", "Bisect each other", "Never intersect"],
+    "answer": 2
+  },
+  {
+    "q": "A quadrilateral with equal opposite angles is:",
+    "options": ["Always a parallelogram", "A parallelogram", "May or may not be", "Never a parallelogram"],
+    "answer": 1
+  },
+  {
+    "q": "The area of a square with diagonal d is:",
+    "options": ["d²", "d²/2", "2d²", "(√2)d²"],
+    "answer": 1
+  },
+  {
+    "q": "In a rhombus, each diagonal bisects:",
+    "options": ["Only opposite angles", "The vertex angles at ends", "No angles", "All angles"],
+    "answer": 1
+  },
+  {
+    "q": "Which quadrilateral has no parallel sides?",
+    "options": ["Parallelogram", "Trapezium", "General kite", "Rectangle"],
+    "answer": 2
+  },
+  {
+    "q": "A cyclic quadrilateral has:",
+    "options": ["Sum of opposite angles 180°", "All angles 90°", "Equal diagonals", "Parallel sides"],
+    "answer": 0
+  },
+  {
+    "q": "Brahmagupta's formula is used for area of:",
+    "options": ["Any quadrilateral", "Cyclic quadrilateral", "Trapezium", "Parallelogram"],
+    "answer": 1
+  },
+  {
+    "q": "A rectangle with equal sides is:",
+    "options": ["Rhombus", "Square", "Parallelogram", "Trapezium"],
+    "answer": 1
+  },
+  {
+    "q": "In a parallelogram ABCD, if ∠A = 80°, then ∠B =",
+    "options": ["80°", "100°", "90°", "120°"],
+    "answer": 1
+  },
+  {
+    "q": "The number of diagonals in a quadrilateral is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 1
+  },
+  {
+    "q": "A quadrilateral with four right angles is:",
+    "options": ["Rectangle", "Rhombus", "Square", "May be rectangle or square"],
+    "answer": 3
+  },
+  {
+    "q": "Which of the following is always true for a square?",
+    "options": ["Diagonals equal", "Diagonals perpendicular", "All sides equal", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "In a trapezium, the parallel sides are called:",
+    "options": ["Legs", "Bases", "Diagonals", "Angles"],
+    "answer": 1
+  },
+  {
+    "q": "The non-parallel sides of a trapezium are called:",
+    "options": ["Bases", "Legs", "Diagonals", "Heights"],
+    "answer": 1
+  },
+  {
+    "q": "A parallelogram with perpendicular diagonals is:",
+    "options": ["Rectangle", "Rhombus", "Square", "Kite"],
+    "answer": 1
+  },
+  {
+    "q": "The area of a kite is:",
+    "options": ["(1/2) × d1 × d2", "Base × Height", "Both a and b", "Side²"],
+    "answer": 2
+  },
+  {
+    "q": "Which quadrilateral can have unequal diagonals?",
+    "options": ["Square", "Rectangle", "Rhombus", "Parallelogram"],
+    "answer": 3
+  },
+  {
+    "q": "A quadrilateral inscribed in a circle is:",
+    "options": ["Cyclic quadrilateral", "Tangential quadrilateral", "Regular quadrilateral", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Triangle MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Two triangles are similar if their corresponding angles are:",
+    "options": ["Equal", "Supplementary", "Complementary", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Two triangles are similar if their corresponding sides are:",
+    "options": ["Equal", "Proportional", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The basic proportionality theorem (Thales' theorem) states that if a line parallel to one side of a triangle intersects the other two sides, then it divides those sides:",
+    "options": ["Equally", "Proportionally", "Unequally", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If DE ∥ BC in △ABC, then by BPT:",
+    "options": ["AD/DB = AE/EC", "AD/AE = DB/EC", "AB/AC = DE/BC", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The converse of BPT is also:",
+    "options": ["False", "True", "Sometimes", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Criteria for similarity of triangles include:",
+    "options": ["AAA, SSS, SAS", "AA, SSS, SAS", "AAA only", "None"],
+    "answer": 1
+  },
+  {
+    "q": "AA similarity criterion: if two angles of one triangle are equal to two angles of another, then triangles are:",
+    "options": ["Congruent", "Similar", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "SSS similarity: if sides are proportional, triangles are:",
+    "options": ["Congruent", "Similar", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "SAS similarity: if two sides proportional and included angle equal, triangles are:",
+    "options": ["Congruent", "Similar", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "AAA is same as:",
+    "options": ["AA (third angle equal automatically)", "SSS", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In similar triangles, corresponding sides are:",
+    "options": ["Proportional", "Equal", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ratio of areas of similar triangles is:",
+    "options": ["Ratio of sides", "Square of ratio of sides", "Cube of ratio", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If sides ratio is 2:3, areas ratio is:",
+    "options": ["2:3", "4:9", "8:27", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A triangle with sides proportional to 3,4,5 is:",
+    "options": ["Right-angled", "Acute", "Obtuse", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pythagoras theorem: In right-angled triangle, hypotenuse² =",
+    "options": ["Sum of other two sides²", "Difference", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Converse of Pythagoras: If a² + b² = c² (c longest), then triangle is:",
+    "options": ["Acute", "Right-angled", "Obtuse", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If a² + b² > c², triangle is:",
+    "options": ["Acute", "Right", "Obtuse", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a² + b² < c², triangle is:",
+    "options": ["Acute", "Right", "Obtuse", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter 'Triangles' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Triangles are similar if:",
+    "options": ["Corresponding angles equal and sides proportional", "Only sides equal", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In △ABC ~ △DEF, corresponding vertices:",
+    "options": ["A→D, B→E, C→F", "Any order", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If △ABC ~ △PQR, then AB/PQ =",
+    "options": ["BC/QR = CA/RP", "Different ratios", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Area ratio if similarity ratio k =",
+    "options": ["k", "k²", "k³", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Perimeter ratio in similar triangles =",
+    "options": ["Similarity ratio", "Square", "Cube", "None"],
+    "answer": 0
+  },
+  {
+    "q": "BPT is applied when:",
+    "options": ["Line parallel to base", "Any line", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a line divides two sides proportionally, it is:",
+    "options": ["Parallel to third side", "Perpendicular", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In right-angled triangle, altitude to hypotenuse creates:",
+    "options": ["Two similar triangles", "Three similar triangles (including original)", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The altitude to hypotenuse is:",
+    "options": ["Geometric mean of two segments", "Arithmetic mean", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Each leg is geometric mean of:",
+    "options": ["Hypotenuse and adjacent segment", "Other leg", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pythagoras theorem is a special case of:",
+    "options": ["Similarity", "Congruence", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In △ABC right-angled at B, altitude BD to AC, then:",
+    "options": ["△ABD ~ △ABC ~ △CBD", "All equal", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "AB² = AD × AC, BC² = CD × AC",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "BD² = AD × CD",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter revises similarity from class 9 and adds:",
+    "options": ["BPT, Pythagoras proofs using similarity", "Only BPT", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Similar figures have:",
+    "options": ["Same shape, not necessarily same size", "Same size", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Congruent figures are:",
+    "options": ["Similar with ratio 1", "Different shape", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "All congruent triangles are similar but converse:",
+    "options": ["True", "Not true", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If two triangles are similar, ratio of areas =",
+    "options": ["(side ratio)²", "side ratio", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If areas ratio 16:25, sides ratio =",
+    "options": ["4:5", "2:5", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To prove triangles similar, use:",
+    "options": ["AA, SSS, SAS criteria", "RHS", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "RHS is for:",
+    "options": ["Congruence", "Similarity", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No RHS for similarity because:",
+    "options": ["Angle may not be equal", "Hypotenuse proportional", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In SAS similarity, included angle must be:",
+    "options": ["Equal", "Proportional", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In SSS, all sides:",
+    "options": ["Equal", "Proportional", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "AA is sufficient because:",
+    "options": ["Third angle equal by angle sum", "Sides equal", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If △ABC ~ △DEF with ratio k, then area ratio =",
+    "options": ["k", "k²", "1/k", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Perimeter ratio =",
+    "options": ["k", "k²", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "BPT proof uses:",
+    "options": ["Similar triangles", "Congruent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Draw parallel line creates similar triangles leading to proportion.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pythagoras theorem proof in class 10 uses:",
+    "options": ["Similarity of triangles", "Area method", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "In right triangle, altitude to hypotenuse creates similarity with original and each other.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter has:",
+    "options": ["Similarity criteria, BPT, Pythagoras", "Only Pythagoras", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Triangles with same angles are:",
+    "options": ["Similar", "Congruent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Equilateral triangles are:",
+    "options": ["Always similar", "Only congruent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "All squares are:",
+    "options": ["Similar", "Congruent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "All circles are:",
+    "options": ["Similar", "Congruent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The ratio of corresponding sides in similar triangles is called:",
+    "options": ["Scale factor", "Similarity ratio", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If scale factor >1, one triangle is:",
+    "options": ["Enlarged", "Reduced", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is important for:",
+    "options": ["Geometry, trigonometry", "Only triangles", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

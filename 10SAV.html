@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Surface Areas and Volumes MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The surface area of a cuboid is:",
+    "options": ["lbh", "2(lb + bh + hl)", "6a²", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The lateral surface area of a cuboid is:",
+    "options": ["2(lb + bh + hl)", "2h(l + b)", "lbh", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The volume of a cuboid is:",
+    "options": ["2(lb + bh + hl)", "lbh", "2h(l + b)", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The total surface area of a cube with side a is:",
+    "options": ["a²", "4a²", "6a²", "8a²"],
+    "answer": 2
+  },
+  {
+    "q": "The lateral surface area of a cube is:",
+    "options": ["a²", "4a²", "6a²", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The volume of a cube is:",
+    "options": ["a²", "a³", "6a²", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The total surface area of a cylinder is:",
+    "options": ["2πrh", "πr²h", "2πr(r + h)", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The curved/lateral surface area of a cylinder is:",
+    "options": ["2πrh", "πr²h", "2πr²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The volume of a cylinder is:",
+    "options": ["πr²h", "2πrh", "2πr(r + h)", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The total surface area of a cone is:",
+    "options": ["πrl", "πr(l + r)", "πrl + πr²", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The curved surface area of a cone is:",
+    "options": ["πrl", "πr²", "πr(l + r)", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The volume of a cone is:",
+    "options": ["(1/3)πr²h", "πr²h", "πrl", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The slant height l of a cone is:",
+    "options": ["√(r² + h²)", "r + h", "r² + h²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The surface area of a sphere is:",
+    "options": ["4πr²", "4/3 πr³", "πr²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The volume of a sphere is:",
+    "options": ["4πr²", "4/3 πr³", "πr²", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The total surface area of a hemisphere is:",
+    "options": ["2πr²", "3πr²", "4πr²", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The curved surface area of a hemisphere is:",
+    "options": ["πr²", "2πr²", "3πr²", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The volume of a hemisphere is:",
+    "options": ["(2/3)πr³", "(4/3)πr³", "(1/3)πr³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The volume of a frustum of a cone is:",
+    "options": ["(1/3)πh(R² + r² + Rr)", "πh(R² + r²)", "(1/3)πh(R + r)", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The curved surface area of a frustum is:",
+    "options": ["π(R + r)l", "π(R - r)l", "2π(R + r)h", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Slant height l of frustum =",
+    "options": ["√[h² + (R - r)²]", "h + (R - r)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If radius doubled, volume of sphere becomes:",
+    "options": ["2 times", "4 times", "8 times", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If side of cube doubled, volume becomes:",
+    "options": ["2 times", "4 times", "8 times", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If radius and height of cylinder doubled, volume becomes:",
+    "options": ["4 times", "8 times", "2 times", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Conversion: 1 litre =",
+    "options": ["1000 cm³", "100 cm³", "10 cm³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "1 m³ =",
+    "options": ["1000 litres", "100 litres", "10 litres", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Volume of combination of solids is:",
+    "options": ["Sum or difference", "Product", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Surface area of combination depends on:",
+    "options": ["Whether surfaces are exposed", "Always sum", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "When cone melted to sphere, volume:",
+    "options": ["Same", "Different", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Surface Areas and Volumes' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Cuboid has:",
+    "options": ["6 rectangular faces", "8 faces", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cube is special cuboid with:",
+    "options": ["All sides equal", "Opposite faces equal", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cylinder has:",
+    "options": ["2 circular bases, 1 curved surface", "1 base", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cone has:",
+    "options": ["1 circular base, 1 curved surface", "2 bases", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sphere has:",
+    "options": ["Only curved surface", "Bases", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Hemisphere has:",
+    "options": ["Curved + flat circular base", "Only curved", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Frustum is:",
+    "options": ["Part of cone between two parallel planes", "Full cone", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If edge of cube 5 cm, volume =",
+    "options": ["125 cm³", "25 cm³", "625 cm³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Surface area =",
+    "options": ["150 cm²", "125 cm²", "100 cm²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cylinder r=7 cm, h=10 cm, volume =",
+    "options": ["1540 cm³", "440 cm³", "700 cm³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Curved surface =",
+    "options": ["440 cm²", "154 cm²", "308 cm²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Total surface =",
+    "options": ["748 cm²", "440 cm²", "308 cm²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cone r=6 cm, h=8 cm, l =",
+    "options": ["10 cm", "14 cm", "48 cm", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Volume =",
+    "options": ["96π cm³", "288π cm³", "192π cm³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Curved surface =",
+    "options": ["60π cm²", "36π cm²", "96π cm²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sphere r=3 cm, surface =",
+    "options": ["36π cm²", "12π cm²", "108π cm³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Volume =",
+    "options": ["36π cm³", "108π cm³", "27π cm³", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Hemisphere r=7 cm, total surface =",
+    "options": ["308π cm²", "147π cm²", "98π cm²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Volume =",
+    "options": ["(343π)/3 cm³", "686π/3 cm³", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Frustum R=10 cm, r=5 cm, h=7 cm, volume =",
+    "options": ["(1/3)π×7×(100+25+50) = 1225π/3 cm³", "Other", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "l = √(49 + 25) = √74 cm",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Curved surface = π(10+5)√74 cm²",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "When solid melted and recast, volume:",
+    "options": ["Same", "Different", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Surface area may change.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cone melted into cylinder of same radius, height =",
+    "options": ["h/3", "3h", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter includes:",
+    "options": ["Cuboid, cube, cylinder, cone, sphere, hemisphere, frustum, combinations", "Only basic", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Problems on conversion of solids.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is calculation intensive.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Use π=22/7 or 3.14 as given.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Units: cm² for area, cm³ for volume.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter revises class 9 mensuration and adds frustum, combinations.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

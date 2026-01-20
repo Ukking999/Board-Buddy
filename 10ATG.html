@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Some Applications of Trigonometry MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The chapter 'Some Applications of Trigonometry' deals with:",
+    "options": ["Basic ratios", "Height and distance problems", "Identities", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The angle of elevation is the angle between:",
+    "options": ["Horizontal and line of sight above", "Horizontal and below", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The angle of depression is the angle between:",
+    "options": ["Horizontal and line of sight above", "Horizontal and line of sight below", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In height and distance problems, we assume:",
+    "options": ["Observer's eye at ground level", "Eye level above ground", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Line of sight is:",
+    "options": ["Line from eye to object", "Horizontal", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To find height of tower, we use:",
+    "options": ["tan θ = height / distance", "sin θ", "cos θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If angle of elevation is θ, distance d, height h =",
+    "options": ["d tan θ", "d sin θ", "d cos θ", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If two observations from same point, angles θ1 and θ2, height =",
+    "options": ["d (tan θ2 - tan θ1)/(1 - tan θ1 tan θ2) or similar", "Simple tan", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Problems involve:",
+    "options": ["Tower, building, tree, pole, etc.", "Only tower", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "From a point on ground, angle of elevation to top of tower is 30°, distance 100 m, height =",
+    "options": ["100/√3 m", "100√3 m", "50 m", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If angle 60°, distance 50 m, height =",
+    "options": ["50√3 m", "50/√3 m", "50 m", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If angle 45°, height =",
+    "options": ["Equal to distance", "Half distance", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "From top of building, angle of depression to a point on ground is θ, distance d, height =",
+    "options": ["d tan θ", "d / tan θ", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Angle of elevation and depression are measured from:",
+    "options": ["Vertical", "Horizontal", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In problems with two angles from different points, we use:",
+    "options": ["tan of difference", "Simple tan", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If observer moves towards object, angle of elevation:",
+    "options": ["Decreases", "Increases", "Same", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If observer moves away, angle of elevation:",
+    "options": ["Increases", "Decreases", "Same", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The chapter is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "Applications include finding:",
+    "options": ["Height of towers, width of rivers, distance of ships", "Only height", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In river width problem, angles from two points on bank.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Shadow problems use:",
+    "options": ["tan θ = height / shadow length", "sin", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "At noon, shadow minimum when sun is:",
+    "options": ["Overhead", "Low", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter uses:",
+    "options": ["tan mostly", "sin, cos", "All ratios", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Draw diagram is important to:",
+    "options": ["Identify right triangle", "Find angles", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Assume variables for unknown.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Form equation using trig ratio.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Solve for unknown.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Common angles used:",
+    "options": ["30°, 45°, 60°", "90°", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Values needed:",
+    "options": ["sin30=1/2, cos60=1/2, tan45=1, etc.", "All ratios", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter is application of:",
+    "options": ["Introduction to trigonometry", "Basic ratios", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "No new ratios introduced.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Focus on real life problems.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example: Height of tower, angle 30° from 100√3 m away =",
+    "options": ["100 m", "200 m", "50 m", "None"],
+    "answer": 0
+  },
+  {
+    "q": "tan30=1/√3 = h / (100√3) → h = 100√3 / √3 = 100 m",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "From two points 30 m apart on ground, angles 30° and 60° to top of tower, height =",
+    "options": ["15√3 m", "30 m", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The problems are solved using:",
+    "options": ["Single right triangle or two", "Multiple", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter prepares for:",
+    "options": ["Heights and distances in exams", "Advanced trig", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Important to draw correct diagram.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Identify opposite, adjacent, hypotenuse correctly.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Choose correct ratio (tan for height/distance).",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In depression problems, angle of depression = angle of elevation from object.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter has no proofs, only applications.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Typical problems: height of tower/building, width of river, distance of ship/cloud.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is short and application-based.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

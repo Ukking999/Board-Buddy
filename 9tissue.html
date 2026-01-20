@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Tissue MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The study of tissues is called:",
+    "options": ["Cytology", "Histology", "Physiology", "Anatomy"],
+    "answer": 1
+  },
+  {
+    "q": "Tissues are groups of cells that have:",
+    "options": ["Different structure and function", "Similar structure and function", "No structure", "Only function"],
+    "answer": 1
+  },
+  {
+    "q": "In plants, growth is restricted to certain regions due to:",
+    "options": ["Meristematic tissue", "Permanent tissue", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Meristematic tissues are responsible for:",
+    "options": ["Growth", "Protection", "Support", "Photosynthesis"],
+    "answer": 0
+  },
+  {
+    "q": "Meristematic cells are:",
+    "options": ["Small, thin-walled, actively dividing", "Large, thick-walled, dead", "Differentiated", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Apical meristem is present at:",
+    "options": ["Root and shoot tips", "Lateral sides", "Base of leaves", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Lateral meristem is responsible for:",
+    "options": ["Increase in length", "Increase in girth", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Intercalary meristem is found:",
+    "options": ["At base of leaves/internodes", "Tips", "Lateral", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Permanent tissues are derived from:",
+    "options": ["Meristematic tissue", "Other permanent tissues", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Permanent tissues have:",
+    "options": ["Limited division", "No division", "Active division", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Simple permanent tissues include:",
+    "options": ["Parenchyma, collenchyma, sclerenchyma", "Xylem, phloem", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Parenchyma is:",
+    "options": ["Living, thin-walled, loosely packed", "Dead, thick-walled", "Living, thick-walled", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Functions of parenchyma include:",
+    "options": ["Storage, photosynthesis, buoyancy", "Support", "Conduction", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Chlorenchyma contains:",
+    "options": ["Chloroplasts", "Vacuoles", "Lignin", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Aerenchyma provides:",
+    "options": ["Buoyancy in aquatic plants", "Support", "Conduction", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Collenchyma is:",
+    "options": ["Living, thickened at corners", "Dead, lignified", "Thin-walled", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Collenchyma provides:",
+    "options": ["Flexible support", "Rigid support", "Conduction", "Storage"],
+    "answer": 0
+  },
+  {
+    "q": "Sclerenchyma is:",
+    "options": ["Dead, thick lignified walls", "Living, thin-walled", "Flexible", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sclerenchyma provides:",
+    "options": ["Mechanical strength", "Flexibility", "Storage", "Photosynthesis"],
+    "answer": 0
+  },
+  {
+    "q": "Complex permanent tissues in plants are:",
+    "options": ["Xylem and phloem", "Parenchyma", "Collenchyma", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Xylem conducts:",
+    "options": ["Water and minerals upwards", "Food downwards", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Components of xylem:",
+    "options": ["Tracheids, vessels, xylem parenchyma, fibres", "Sieve tubes", "Companion cells", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Phloem conducts:",
+    "options": ["Food", "Water", "Minerals", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Components of phloem:",
+    "options": ["Sieve tubes, companion cells, phloem parenchyma, fibres", "Tracheids", "Vessels", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Protective tissue in plants is:",
+    "options": ["Epidermis", "Cork", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Epidermis has:",
+    "options": ["Cuticle", "Stomata", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Cork is:",
+    "options": ["Dead, suberin deposited", "Living", "Thin-walled", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In animals, tissues are classified into four main types:",
+    "options": ["Epithelial, connective, muscular, nervous", "Meristematic, permanent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Epithelial tissue is:",
+    "options": ["Covering/protective", "Supportive", "Contractile", "Conducting impulses"],
+    "answer": 0
+  },
+  {
+    "q": "Squamous epithelium is found in:",
+    "options": ["Lining of blood vessels, alveoli", "Skin", "Intestine", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cuboidal epithelium is found in:",
+    "options": ["Kidney tubules, glands", "Skin", "Muscles", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Columnar epithelium is found in:",
+    "options": ["Intestine, respiratory tract", "Blood vessels", "Bones", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ciliated epithelium helps in:",
+    "options": ["Movement of particles", "Protection", "Support", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Glandular epithelium is for:",
+    "options": ["Secretion", "Absorption", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Connective tissue includes:",
+    "options": ["Blood, bone, cartilage, areolar", "Muscular", "Nervous", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Areolar tissue is found:",
+    "options": ["Beneath skin", "Bones", "Muscles", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Adipose tissue stores:",
+    "options": ["Fat", "Blood", "Minerals", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Blood is a:",
+    "options": ["Connective tissue", "Epithelial", "Muscular", "Nervous"],
+    "answer": 0
+  },
+  {
+    "q": "Blood consists of:",
+    "options": ["Plasma and blood cells", "Only RBC", "Only WBC", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Bone is:",
+    "options": ["Hard connective tissue", "Soft", "Fluid", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cartilage is found in:",
+    "options": ["Ear, nose, trachea", "Bones", "Muscles", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ligaments connect:",
+    "options": ["Bone to bone", "Muscle to bone", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Tendons connect:",
+    "options": ["Muscle to bone", "Bone to bone", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Muscular tissue is for:",
+    "options": ["Movement", "Support", "Protection", "Conduction"],
+    "answer": 0
+  },
+  {
+    "q": "Types of muscular tissue:",
+    "options": ["Skeletal, smooth, cardiac", "Only skeletal", "Only smooth", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Skeletal muscle is:",
+    "options": ["Voluntary, striated", "Involuntary, non-striated", "Involuntary, striated", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Smooth muscle is found in:",
+    "options": ["Intestine, blood vessels", "Limbs", "Heart", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cardiac muscle is found in:",
+    "options": ["Heart", "Limbs", "Intestine", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Nervous tissue is for:",
+    "options": ["Conduction of impulses", "Movement", "Support", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The functional unit of nervous tissue is:",
+    "options": ["Neuron", "Nephron", "Osteon", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Neuron consists of:",
+    "options": ["Cell body, dendrites, axon", "Only axon", "Only dendrites", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Meristematic tissue is:",
+    "options": ["Differentiated", "Undifferentiated, dividing", "Dead", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Permanent tissue cells are:",
+    "options": ["Dividing", "Specialised, limited division", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Xylem and phloem together form:",
+    "options": ["Vascular bundle", "Epidermis", "Cork", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In dicot stems, vascular bundles are:",
+    "options": ["Open", "Closed", "Scattered", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In monocot stems, vascular bundles are:",
+    "options": ["Closed", "Open", "Conjoint", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Striated muscle is also called:",
+    "options": ["Skeletal/voluntary", "Smooth", "Cardiac", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Non-striated muscle is:",
+    "options": ["Smooth/involuntary", "Skeletal", "Cardiac", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cardiac muscle is:",
+    "options": ["Involuntary, striated", "Voluntary", "Non-striated", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The tissue that lines internal organs is:",
+    "options": ["Epithelial", "Connective", "Muscular", "Nervous"],
+    "answer": 0
+  },
+  {
+    "q": "The tissue that transports food in plants is:",
+    "options": ["Xylem", "Phloem", "Parenchyma", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The tissue that transports water in plants is:",
+    "options": ["Phloem", "Xylem", "Sclerenchyma", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The chapter 'Tissues' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Plant tissues are classified into:",
+    "options": ["Meristematic and permanent", "Four types like animals", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Animal tissues are classified into:",
+    "options": ["Meristematic and permanent", "Epithelial, connective, muscular, nervous", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Parenchyma with air spaces is:",
+    "options": ["Aerenchyma", "Chlorenchyma", "Collenchyma", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sclereids are found in:",
+    "options": ["Fruit walls, seed coats", "Leaves", "Stems only", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Fibres are found in:",
+    "options": ["Jute, flax", "Bones", "Blood", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Xylem fibres provide:",
+    "options": ["Support", "Conduction", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Phloem fibres are:",
+    "options": ["Bast fibres", "Wood fibres", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Stratified epithelium is:",
+    "options": ["Multilayered", "Single layer", "Cuboidal", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Keratinised epithelium is in:",
+    "options": ["Skin", "Intestine", "Blood vessels", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Areolar tissue acts as:",
+    "options": ["Packing tissue", "Support", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Adipose tissue is beneath:",
+    "options": ["Skin", "Organs", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Cartilage is:",
+    "options": ["Flexible", "Rigid", "Fluid", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Bone matrix has:",
+    "options": ["Calcium salts", "Blood", "Fat", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Blood plasma is:",
+    "options": ["Liquid part", "Cells", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "RBC carry:",
+    "options": ["Oxygen", "Carbon dioxide", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "WBC fight:",
+    "options": ["Infection", "Bleeding", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Platelets help in:",
+    "options": ["Clotting", "Transport", "Immunity", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Neurons are:",
+    "options": ["Excitable cells", "Non-excitable", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Neuroglia are:",
+    "options": ["Supporting cells", "Conducting", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

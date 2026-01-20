@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Electricity MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The device used to measure electric current in a circuit is:",
+    "options": ["Voltmeter", "Ammeter", "Galvanometer", "Potentiometer"],
+    "answer": 1
+  },
+  {
+    "q": "The device used to measure potential difference is:",
+    "options": ["Ammeter", "Voltmeter", "Galvanometer", "Rheostat"],
+    "answer": 1
+  },
+  {
+    "q": "Electric charge is measured in:",
+    "options": ["Ampere", "Volt", "Coulomb", "Ohm"],
+    "answer": 2
+  },
+  {
+    "q": "Electric current is measured in:",
+    "options": ["Coulomb", "Volt", "Ampere", "Ohm"],
+    "answer": 2
+  },
+  {
+    "q": "Potential difference is measured in:",
+    "options": ["Ampere", "Ohm", "Volt", "Watt"],
+    "answer": 2
+  },
+  {
+    "q": "The SI unit of resistance is:",
+    "options": ["Ampere", "Volt", "Ohm", "Watt"],
+    "answer": 2
+  },
+  {
+    "q": "Ohm's law states that:",
+    "options": ["V = IR", "I = VR", "R = VI", "P = VI"],
+    "answer": 0
+  },
+  {
+    "q": "According to Ohm's law, current is directly proportional to:",
+    "options": ["Resistance", "Potential difference", "Power", "Time"],
+    "answer": 1
+  },
+  {
+    "q": "The resistance of a conductor depends on:",
+    "options": ["Length, area of cross-section, material", "Current only", "Voltage only", "Power only"],
+    "answer": 0
+  },
+  {
+    "q": "Resistance of a wire is directly proportional to its:",
+    "options": ["Area of cross-section", "Length", "Temperature", "Current"],
+    "answer": 1
+  },
+  {
+    "q": "Resistance of a wire is inversely proportional to its:",
+    "options": ["Length", "Area of cross-section", "Material", "Temperature"],
+    "answer": 1
+  },
+  {
+    "q": "Resistivity is measured in:",
+    "options": ["Ohm", "Ohm-metre", "Ohm per metre", "Metre"],
+    "answer": 1
+  },
+  {
+    "q": "When resistors are connected in series, the equivalent resistance is:",
+    "options": ["Sum of individual resistances", "Reciprocal of sum of reciprocals", "Product of resistances", "Average of resistances"],
+    "answer": 0
+  },
+  {
+    "q": "When resistors are connected in parallel, the equivalent resistance is:",
+    "options": ["Sum of resistances", "Less than the smallest resistance", "Greater than the largest resistance", "Equal to one resistance"],
+    "answer": 1
+  },
+  {
+    "q": "In series combination of resistors, the current through each resistor is:",
+    "options": ["Different", "Same", "Zero", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "In parallel combination of resistors, the potential difference across each resistor is:",
+    "options": ["Different", "Same", "Zero", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "The heating effect of electric current is used in:",
+    "options": ["Electric bulb", "Electric motor", "Generator", "Transformer"],
+    "answer": 0
+  },
+  {
+    "q": "Electric power is given by:",
+    "options": ["P = VI", "P = V/I", "P = I/R", "P = V/R"],
+    "answer": 0
+  },
+  {
+    "q": "The SI unit of electric power is:",
+    "options": ["Joule", "Watt", "Volt", "Ampere"],
+    "answer": 1
+  },
+  {
+    "q": "1 kilowatt-hour (kWh) is equal to:",
+    "options": ["3.6 × 10^6 J", "3.6 × 10^5 J", "3600 J", "360 J"],
+    "answer": 0
+  },
+  {
+    "q": "Commercial unit of electrical energy is:",
+    "options": ["Joule", "Watt", "Kilowatt-hour", "Volt"],
+    "answer": 2
+  },
+  {
+    "q": "A fuse is connected in:",
+    "options": ["Parallel with the circuit", "Series with the live wire", "Parallel with the appliance", "Series with the neutral wire"],
+    "answer": 1
+  },
+  {
+    "q": "The material used in fuse wire has:",
+    "options": ["High resistance and high melting point", "Low resistance and low melting point", "High resistance and low melting point", "Low resistance and high melting point"],
+    "answer": 2
+  },
+  {
+    "q": "The rate of flow of electric charge is called:",
+    "options": ["Potential difference", "Electric current", "Resistance", "Power"],
+    "answer": 1
+  },
+  {
+    "q": "Positive charge flows from:",
+    "options": ["Low potential to high potential", "High potential to low potential", "No flow", "Both directions"],
+    "answer": 1
+  },
+  {
+    "q": "Conventional current flows from:",
+    "options": ["Negative to positive terminal", "Positive to negative terminal", "Both directions", "No direction"],
+    "answer": 1
+  },
+  {
+    "q": "Electrons flow from:",
+    "options": ["Positive to negative terminal", "Negative to positive terminal", "Both directions", "No flow"],
+    "answer": 1
+  },
+  {
+    "q": "Good conductors of electricity have:",
+    "options": ["High resistance", "Low resistance", "No resistance", "Infinite resistance"],
+    "answer": 1
+  },
+  {
+    "q": "Insulators have:",
+    "options": ["Low resistance", "High resistance", "No resistance", "Variable resistance"],
+    "answer": 1
+  },
+  {
+    "q": "The resistivity of alloys is:",
+    "options": ["Lower than pure metals", "Higher than pure metals", "Same as pure metals", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "Nichrome is used in heating elements because it has:",
+    "options": ["High resistivity and high melting point", "Low resistivity and low melting point", "High resistivity and low melting point", "Low resistivity and high melting point"],
+    "answer": 0
+  },
+  {
+    "q": "For three resistors R1, R2, R3 in series, equivalent resistance is:",
+    "options": ["R1 + R2 + R3", "1/(1/R1 + 1/R2 + 1/R3)", "R1 × R2 × R3", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For three resistors in parallel, equivalent resistance is:",
+    "options": ["R1 + R2 + R3", "1/(1/R1 + 1/R2 + 1/R3)", "Maximum of the three", "Minimum of the three"],
+    "answer": 1
+  },
+  {
+    "q": "Joule's law of heating states that heat produced is proportional to:",
+    "options": ["I²Rt", "VIt", "V²/R t", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "An electric bulb is rated 220 V and 100 W. When operated on 110 V, power consumed will be:",
+    "options": ["100 W", "75 W", "50 W", "25 W"],
+    "answer": 3
+  },
+  {
+    "q": "The resistance of an ammeter should be:",
+    "options": ["High", "Low", "Infinite", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "The resistance of a voltmeter should be:",
+    "options": ["Low", "High", "Zero", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "Ammeter is connected in:",
+    "options": ["Parallel", "Series", "Either", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Voltmeter is connected in:",
+    "options": ["Series", "Parallel", "Either", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Electric energy is measured in:",
+    "options": ["Watt", "Joule", "Kilowatt-hour", "Ampere-hour"],
+    "answer": 2
+  },
+  {
+    "q": "Overloading is caused due to:",
+    "options": ["Too many appliances connected", "High voltage", "Low resistance", "Fuse failure"],
+    "answer": 0
+  },
+  {
+    "q": "Short-circuiting occurs when:",
+    "options": ["Live and neutral wires touch", "Fuse melts", "High resistance", "Low current"],
+    "answer": 0
+  },
+  {
+    "q": "The colour of live wire in household circuit is:",
+    "options": ["Red", "Black", "Green", "Yellow"],
+    "answer": 0
+  },
+  {
+    "q": "The colour of neutral wire is:",
+    "options": ["Red", "Black", "Green", "Blue"],
+    "answer": 1
+  },
+  {
+    "q": "The colour of earth wire is:",
+    "options": ["Red", "Black", "Green", "Blue"],
+    "answer": 2
+  },
+  {
+    "q": "If two resistors of 2Ω each are connected in series, equivalent resistance is:",
+    "options": ["1Ω", "2Ω", "4Ω", "0.5Ω"],
+    "answer": 2
+  },
+  {
+    "q": "If two resistors of 2Ω each are connected in parallel, equivalent resistance is:",
+    "options": ["4Ω", "2Ω", "1Ω", "0.5Ω"],
+    "answer": 2
+  },
+  {
+    "q": "The power rating of an appliance indicates:",
+    "options": ["Maximum safe current", "Maximum safe voltage", "Maximum safe power", "Resistance"],
+    "answer": 2
+  },
+  {
+    "q": "An electric iron consumes energy at the rate of 880 W when heating is at maximum rate. The voltage is 220 V. The current is:",
+    "options": ["2 A", "4 A", "6 A", "8 A"],
+    "answer": 1
+  },
+  {
+    "q": "The filament of an electric bulb is made of:",
+    "options": ["Copper", "Iron", "Tungsten", "Nichrome"],
+    "answer": 2
+  },
+  {
+    "q": "The resistance of a conductor increases with:",
+    "options": ["Increase in length", "Decrease in area", "Increase in temperature", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "1 ohm is equal to:",
+    "options": ["1 volt / 1 ampere", "1 ampere / 1 volt", "1 volt × 1 ampere", "1 watt / 1 volt"],
+    "answer": 0
+  },
+  {
+    "q": "The work done in moving a unit charge from one point to another is:",
+    "options": ["Current", "Resistance", "Potential difference", "Power"],
+    "answer": 2
+  },
+  {
+    "q": "Drift velocity of electrons is responsible for:",
+    "options": ["Electric current", "Heating", "Lighting", "Magnetism"],
+    "answer": 0
+  },
+  {
+    "q": "The current in a circuit is 0.5 A when potential difference is 2 V. The resistance is:",
+    "options": ["1 Ω", "2 Ω", "4 Ω", "0.25 Ω"],
+    "answer": 2
+  },
+  {
+    "q": "Two bulbs of 100 W and 60 W are connected in series to mains. Which bulb will glow brighter?",
+    "options": ["100 W", "60 W", "Both equally", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Two bulbs of 100 W and 60 W are connected in parallel to mains. Which bulb will glow brighter?",
+    "options": ["100 W", "60 W", "Both equally", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The heat produced in a resistor is maximum when current is:",
+    "options": ["Maximum", "Minimum", "Zero", "Infinite"],
+    "answer": 0
+  },
+  {
+    "q": "An electric kettle rated 1000 W works for 3 hours daily. Energy consumed per day is:",
+    "options": ["1 unit", "2 units", "3 units", "4 units"],
+    "answer": 2
+  },
+  {
+    "q": "The cost of electricity is ₹5 per unit. If a bulb of 100 W is used for 10 hours, the cost is:",
+    "options": ["₹5", "₹10", "₹2.5", "₹1"],
+    "answer": 0
+  },
+  {
+    "q": "In a series circuit, if one bulb fails, others:",
+    "options": ["Continue to glow", "Stop glowing", "Glow brighter", "Glow dimmer"],
+    "answer": 1
+  },
+  {
+    "q": "In a parallel circuit, if one bulb fails, others:",
+    "options": ["Stop glowing", "Continue to glow", "Glow brighter", "Glow dimmer"],
+    "answer": 1
+  },
+  {
+    "q": "The resistivity of copper is:",
+    "options": ["High", "Low", "Zero", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "Superconductors have resistivity:",
+    "options": ["Very high", "Zero", "Low", "Moderate"],
+    "answer": 1
+  },
+  {
+    "q": "The direction of electric current is taken as opposite to the direction of flow of:",
+    "options": ["Protons", "Neutrons", "Electrons", "Positrons"],
+    "answer": 2
+  },
+  {
+    "q": "A galvanometer can be converted into an ammeter by connecting:",
+    "options": ["High resistance in series", "Low resistance in parallel", "High resistance in parallel", "Low resistance in series"],
+    "answer": 1
+  },
+  {
+    "q": "A galvanometer can be converted into a voltmeter by connecting:",
+    "options": ["Low resistance in parallel", "High resistance in series", "Low resistance in series", "High resistance in parallel"],
+    "answer": 1
+  },
+  {
+    "q": "The potential difference across a conductor is 10 V when current is 2 A. Power dissipated is:",
+    "options": ["5 W", "10 W", "20 W", "40 W"],
+    "answer": 2
+  },
+  {
+    "q": "An electric heater draws 5 A current from 220 V supply. Power of heater is:",
+    "options": ["44 W", "220 W", "1100 W", "4400 W"],
+    "answer": 2
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Magnetic Effects of Electric Current MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The scientist who discovered the magnetic effect of electric current is:",
+    "options": ["Ampere", "Oersted", "Faraday", "Fleming"],
+    "answer": 1
+  },
+  {
+    "q": "A current-carrying conductor produces:",
+    "options": ["Electric field only", "Magnetic field only", "Both electric and magnetic fields", "No field"],
+    "answer": 2
+  },
+  {
+    "q": "The space around a magnet where its effect can be experienced is called:",
+    "options": ["Electric field", "Magnetic field", "Gravitational field", "Nuclear field"],
+    "answer": 1
+  },
+  {
+    "q": "Magnetic field lines emerge from:",
+    "options": ["North pole to South pole outside", "South pole to North pole outside", "North pole only", "South pole only"],
+    "answer": 0
+  },
+  {
+    "q": "Inside a magnet, magnetic field lines go from:",
+    "options": ["North to South", "South to North", "East to West", "No direction"],
+    "answer": 1
+  },
+  {
+    "q": "Magnetic field lines are:",
+    "options": ["Open curves", "Closed curves", "Straight lines", "Circular only"],
+    "answer": 1
+  },
+  {
+    "q": "No two magnetic field lines can:",
+    "options": ["Intersect", "Be parallel", "Be curved", "Be straight"],
+    "answer": 0
+  },
+  {
+    "q": "The direction of magnetic field due to a straight current-carrying conductor is given by:",
+    "options": ["Fleming's left-hand rule", "Fleming's right-hand rule", "Right-hand thumb rule", "Left-hand thumb rule"],
+    "answer": 2
+  },
+  {
+    "q": "The magnetic field inside a long solenoid is:",
+    "options": ["Zero", "Non-uniform", "Uniform", "Varies along length"],
+    "answer": 2
+  },
+  {
+    "q": "The magnetic field due to a current-carrying circular loop is maximum at:",
+    "options": ["Outside the loop", "On the circumference", "At the centre", "Far away"],
+    "answer": 2
+  },
+  {
+    "q": "A soft iron core is placed inside a solenoid to:",
+    "options": ["Decrease magnetic field", "Increase magnetic field", "Make it permanent", "Reduce current"],
+    "answer": 1
+  },
+  {
+    "q": "A current-carrying solenoid with soft iron core behaves like:",
+    "options": ["A bar magnet", "A horseshoe magnet", "No magnet", "Electromagnet only"],
+    "answer": 0
+  },
+  {
+    "q": "The device that works on magnetic effect of current is:",
+    "options": ["Electric bulb", "Electric heater", "Electric bell", "Electric fan"],
+    "answer": 2
+  },
+  {
+    "q": "The force on a current-carrying conductor in a magnetic field is maximum when the angle between current and field is:",
+    "options": ["0°", "90°", "180°", "45°"],
+    "answer": 1
+  },
+  {
+    "q": "Fleming's left-hand rule gives the direction of:",
+    "options": ["Magnetic field", "Current", "Force on conductor", "Induced emf"],
+    "answer": 2
+  },
+  {
+    "q": "Fleming's right-hand rule is used for:",
+    "options": ["Force on conductor", "Induced current", "Magnetic field direction", "Current direction"],
+    "answer": 1
+  },
+  {
+    "q": "An electric motor converts:",
+    "options": ["Electrical energy to mechanical energy", "Mechanical energy to electrical energy", "Chemical energy to electrical energy", "Heat energy to mechanical energy"],
+    "answer": 0
+  },
+  {
+    "q": "The essential component of an electric motor is:",
+    "options": ["Commutator", "Battery", "Bulb", "Switch"],
+    "answer": 0
+  },
+  {
+    "q": "In a DC motor, the split ring commutator reverses the direction of current every:",
+    "options": ["Full rotation", "Half rotation", "Quarter rotation", "No reversal"],
+    "answer": 1
+  },
+  {
+    "q": "Electromagnetic induction was discovered by:",
+    "options": ["Oersted", "Ampere", "Faraday", "Fleming"],
+    "answer": 2
+  },
+  {
+    "q": "The phenomenon of inducing emf by changing magnetic field is called:",
+    "options": ["Magnetic effect", "Electromagnetic induction", "Electrostatic induction", "Mutual induction"],
+    "answer": 1
+  },
+  {
+    "q": "An electric generator converts:",
+    "options": ["Electrical energy to mechanical energy", "Mechanical energy to electrical energy", "Heat to electrical", "Chemical to electrical"],
+    "answer": 1
+  },
+  {
+    "q": "In an AC generator, the current changes direction every:",
+    "options": ["Half rotation", "Full rotation", "Quarter rotation", "No change"],
+    "answer": 0
+  },
+  {
+    "q": "In a DC generator, the commutator produces:",
+    "options": ["Alternating current", "Direct current", "Pulsating current", "No current"],
+    "answer": 1
+  },
+  {
+    "q": "The domestic electric circuits are connected in:",
+    "options": ["Series", "Parallel", "Mixed", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Magnetic field is measured in:",
+    "options": ["Tesla", "Gauss", "Both a and b", "Ampere"],
+    "answer": 2
+  },
+  {
+    "q": "The SI unit of magnetic field is:",
+    "options": ["Gauss", "Tesla", "Oersted", "Weber"],
+    "answer": 1
+  },
+  {
+    "q": "The strength of magnetic field due to a solenoid depends on:",
+    "options": ["Number of turns", "Current", "Core material", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "The magnetic field lines around a straight conductor are:",
+    "options": ["Straight", "Circular", "Elliptical", "Parabolic"],
+    "answer": 1
+  },
+  {
+    "q": "The direction of force on a positive charge moving in a magnetic field is given by:",
+    "options": ["Fleming's left-hand rule", "Fleming's right-hand rule", "Right-hand thumb rule", "Palm rule"],
+    "answer": 0
+  },
+  {
+    "q": "A charged particle moving parallel to magnetic field experiences:",
+    "options": ["Maximum force", "No force", "Minimum force", "Variable force"],
+    "answer": 1
+  },
+  {
+    "q": "The armature in a motor is placed between:",
+    "options": ["Two magnets", "One magnet", "No magnet", "Electromagnet only"],
+    "answer": 0
+  },
+  {
+    "q": "Commercial motors use:",
+    "options": ["Permanent magnets", "Electromagnets", "Bar magnets", "Horseshoe magnets"],
+    "answer": 1
+  },
+  {
+    "q": "The induced emf depends on:",
+    "options": ["Rate of change of magnetic flux", "Strength of magnet", "Area of coil", "All of the above"],
+    "answer": 0
+  },
+  {
+    "q": "Faraday's law states that induced emf is proportional to:",
+    "options": ["Rate of change of current", "Rate of change of flux", "Resistance", "Conductance"],
+    "answer": 1
+  },
+  {
+    "q": "Lenz's law is based on conservation of:",
+    "options": ["Charge", "Energy", "Momentum", "Mass"],
+    "answer": 1
+  },
+  {
+    "q": "The current produced in a generator is:",
+    "options": ["Direct current only", "Alternating current only", "Both depending on commutator", "Pulsating"],
+    "answer": 2
+  },
+  {
+    "q": "In India, the frequency of AC supply is:",
+    "options": ["50 Hz", "60 Hz", "100 Hz", "25 Hz"],
+    "answer": 0
+  },
+  {
+    "q": "The live wire in domestic wiring has:",
+    "options": ["Red insulation", "Black insulation", "Green insulation", "No insulation"],
+    "answer": 0
+  },
+  {
+    "q": "The neutral wire has:",
+    "options": ["Red insulation", "Black insulation", "Green insulation", "Yellow insulation"],
+    "answer": 1
+  },
+  {
+    "q": "The earth wire has:",
+    "options": ["Red insulation", "Black insulation", "Green insulation", "Yellow insulation"],
+    "answer": 2
+  },
+  {
+    "q": "A fuse is used for:",
+    "options": ["Increasing current", "Decreasing voltage", "Protection against overloading", "Earthing"],
+    "answer": 2
+  },
+  {
+    "q": "Short circuit occurs when:",
+    "options": ["Live and neutral wires touch", "Live and earth touch", "Neutral and earth touch", "All wires touch"],
+    "answer": 0
+  },
+  {
+    "q": "Overloading occurs due to:",
+    "options": ["Too many appliances on single socket", "Low voltage", "High resistance", "Fuse failure"],
+    "answer": 0
+  },
+  {
+    "q": "The magnetic field at the centre of a current-carrying loop is:",
+    "options": ["Parallel to plane", "Perpendicular to plane", "Zero", "Along radius"],
+    "answer": 1
+  },
+  {
+    "q": "The device that reverses current direction in motor is:",
+    "options": ["Brushes", "Commutator", "Armature", "Axle"],
+    "answer": 1
+  },
+  {
+    "q": "Electromagnetic induction is used in:",
+    "options": ["Electric motor", "Electric generator", "Electric bell", "Fuse"],
+    "answer": 1
+  },
+  {
+    "q": "The coil in a motor is called:",
+    "options": ["Field coil", "Armature coil", "Primary coil", "Secondary coil"],
+    "answer": 1
+  },
+  {
+    "q": "In a generator, slip rings are used for:",
+    "options": ["DC output", "AC output", "Brushing", "Commutation"],
+    "answer": 1
+  },
+  {
+    "q": "The direction of induced current is such that it:",
+    "options": ["Opposes the change causing it", "Supports the change", "Is random", "Is zero"],
+    "answer": 0
+  },
+  {
+    "q": "A solenoid carrying current behaves like a:",
+    "options": ["Bar magnet", "Circular loop", "Straight wire", "No magnet"],
+    "answer": 0
+  },
+  {
+    "q": "The magnetic field due to a solenoid can be increased by:",
+    "options": ["Increasing current", "Increasing turns", "Inserting soft iron core", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "The force acting on a current-carrying conductor in magnetic field is used in:",
+    "options": ["Generator", "Motor", "Transformer", "Fuse"],
+    "answer": 1
+  },
+  {
+    "q": "Galvanometer is converted into ammeter by connecting:",
+    "options": ["Low resistance in series", "Low resistance in parallel", "High resistance in series", "High resistance in parallel"],
+    "answer": 1
+  },
+  {
+    "q": "The magnetic field lines form closed loops because:",
+    "options": ["Magnetic monopoles do not exist", "Field is strong", "Current is steady", "Conductor is straight"],
+    "answer": 0
+  },
+  {
+    "q": "In an electric bell, the electromagnet:",
+    "options": ["Attracts the armature", "Repels the armature", "Does nothing", "Heats up"],
+    "answer": 0
+  },
+  {
+    "q": "The frequency of AC in most countries is:",
+    "options": ["50 Hz", "60 Hz", "Both possible", "100 Hz"],
+    "answer": 2
+  },
+  {
+    "q": "The voltage of domestic supply in India is:",
+    "options": ["220 V", "110 V", "440 V", "120 V"],
+    "answer": 0
+  },
+  {
+    "q": "The core of an electromagnet is made of:",
+    "options": ["Copper", "Aluminium", "Soft iron", "Steel"],
+    "answer": 2
+  },
+  {
+    "q": "A permanent magnet has:",
+    "options": ["Temporary magnetism", "Permanent magnetism", "No magnetism", "Variable magnetism"],
+    "answer": 1
+  },
+  {
+    "q": "The magnetic field is strongest where field lines are:",
+    "options": ["Far apart", "Close together", "Parallel", "Straight"],
+    "answer": 1
+  },
+  {
+    "q": "The neutral point is where:",
+    "options": ["Net magnetic field is zero", "Field is maximum", "Current is zero", "Voltage is zero"],
+    "answer": 0
+  },
+  {
+    "q": "In a moving coil galvanometer, the coil is suspended in:",
+    "options": ["Radial magnetic field", "Uniform field", "Non-uniform field", "No field"],
+    "answer": 0
+  },
+  {
+    "q": "The current induced when a magnet is moved towards a coil is:",
+    "options": ["Clockwise", "Anticlockwise", "Depends on pole", "No current"],
+    "answer": 2
+  },
+  {
+    "q": "Transformers work on:",
+    "options": ["DC only", "AC only", "Both AC and DC", "Pulsed DC"],
+    "answer": 1
+  },
+  {
+    "q": "Electric motors are used in:",
+    "options": ["Fans", "Washing machines", "Refrigerators", "All of the above"],
+    "answer": 3
+  },
+  {
+    "q": "The brushes in a motor are made of:",
+    "options": ["Copper", "Carbon", "Iron", "Aluminium"],
+    "answer": 1
+  },
+  {
+    "q": "The induced current is maximum when the coil is:",
+    "options": ["Parallel to field", "Perpendicular to field change", "Stationary", "Far away"],
+    "answer": 1
+  },
+  {
+    "q": "Earth's magnetic field protects us from:",
+    "options": ["Solar radiation", "Cosmic rays", "Charged particles from sun", "All of the above"],
+    "answer": 2
+  },
+  {
+    "q": "The north pole of a magnet points towards:",
+    "options": ["Geographic north", "Geographic south", "Magnetic south", "Magnetic equator"],
+    "answer": 1
+  },
+  {
+    "q": "Magnetic keepers are used to:",
+    "options": ["Increase magnetism", "Preserve magnetism of magnets", "Demagnetise", "Align poles"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

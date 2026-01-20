@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Acids, Bases and Salts MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Substances that taste sour are generally:",
+    "options": ["Acids", "Bases", "Salts", "Neutral"],
+    "answer": 0
+  },
+  {
+    "q": "Substances that taste bitter and feel soapy are generally:",
+    "options": ["Acids", "Bases", "Salts", "Neutral"],
+    "answer": 1
+  },
+  {
+    "q": "Litmus turns red in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Salt solution"],
+    "answer": 0
+  },
+  {
+    "q": "Litmus turns blue in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Distilled water"],
+    "answer": 1
+  },
+  {
+    "q": "Phenolphthalein is colourless in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Both acid and neutral"],
+    "answer": 3
+  },
+  {
+    "q": "Phenolphthalein turns pink in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Salt solution"],
+    "answer": 1
+  },
+  {
+    "q": "Methyl orange turns red in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Both basic and neutral"],
+    "answer": 0
+  },
+  {
+    "q": "Methyl orange turns yellow in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Both basic and neutral"],
+    "answer": 3
+  },
+  {
+    "q": "Natural indicators include:",
+    "options": ["Litmus", "Turmeric", "Red cabbage extract", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Turmeric turns red in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Salt solution"],
+    "answer": 1
+  },
+  {
+    "q": "Acids contain ionisable:",
+    "options": ["OH⁻ ions", "H⁺ ions", "Na⁺ ions", "Cl⁻ ions"],
+    "answer": 1
+  },
+  {
+    "q": "Bases contain ionisable:",
+    "options": ["H⁺ ions", "OH⁻ ions", "H₃O⁺ ions", "Na⁺ ions"],
+    "answer": 1
+  },
+  {
+    "q": "The pH of a neutral solution is:",
+    "options": ["0", "7", "14", "Between 7 and 14"],
+    "answer": 1
+  },
+  {
+    "q": "pH less than 7 indicates:",
+    "options": ["Neutral solution", "Basic solution", "Acidic solution", "Salt solution"],
+    "answer": 2
+  },
+  {
+    "q": "pH greater than 7 indicates:",
+    "options": ["Acidic solution", "Neutral solution", "Basic solution", "Strong acid"],
+    "answer": 2
+  },
+  {
+    "q": "The pH of dilute hydrochloric acid is approximately:",
+    "options": ["1", "7", "13", "10"],
+    "answer": 0
+  },
+  {
+    "q": "The pH of sodium hydroxide solution is approximately:",
+    "options": ["1", "7", "13", "5"],
+    "answer": 2
+  },
+  {
+    "q": "The pH scale ranges from:",
+    "options": ["0 to 7", "1 to 14", "0 to 14", "7 to 14"],
+    "answer": 2
+  },
+  {
+    "q": "Strong acids have:",
+    "options": ["High pH", "Low pH", "pH = 7", "pH > 7"],
+    "answer": 1
+  },
+  {
+    "q": "Weak bases have pH:",
+    "options": ["Close to 7", "Close to 0", "Exactly 14", "Exactly 7"],
+    "answer": 0
+  },
+  {
+    "q": "The reaction between an acid and a base is called:",
+    "options": ["Displacement", "Decomposition", "Neutralisation", "Combination"],
+    "answer": 2
+  },
+  {
+    "q": "Neutralisation produces:",
+    "options": ["Acid and base", "Salt and water", "Salt only", "Water only"],
+    "answer": 1
+  },
+  {
+    "q": "HCl + NaOH →",
+    "options": ["NaCl + H₂O", "NaCl + O₂", "H₂ + NaCl", "NaOH + Cl₂"],
+    "answer": 0
+  },
+  {
+    "q": "Salts are formed by the reaction of:",
+    "options": ["Acid and acid", "Base and base", "Acid and base", "Metal and non-metal"],
+    "answer": 2
+  },
+  {
+    "q": "Common salt (NaCl) is a:",
+    "options": ["Normal salt", "Acidic salt", "Basic salt", "Double salt"],
+    "answer": 0
+  },
+  {
+    "q": "Baking soda (NaHCO₃) is a:",
+    "options": ["Normal salt", "Acidic salt", "Basic salt", "Hydrated salt"],
+    "answer": 1
+  },
+  {
+    "q": "Washing soda is:",
+    "options": ["Na₂CO₃", "NaHCO₃", "NaCl", "CaSO₄·½H₂O"],
+    "answer": 0
+  },
+  {
+    "q": "Plaster of Paris is:",
+    "options": ["CaSO₄·2H₂O", "CaSO₄·½H₂O", "CaSO₄", "CaCO₃"],
+    "answer": 1
+  },
+  {
+    "q": "On heating, Plaster of Paris converts to:",
+    "options": ["Gypsum", "Anhydrous CaSO₄", "Lime", "Bleaching powder"],
+    "answer": 0
+  },
+  {
+    "q": "Gypsum is:",
+    "options": ["CaSO₄·½H₂O", "CaSO₄·2H₂O", "CaSO₄", "CaO"],
+    "answer": 1
+  },
+  {
+    "q": "Bleaching powder is:",
+    "options": ["CaOCl₂", "CaCl₂", "CaO", "Ca(OH)₂"],
+    "answer": 0
+  },
+  {
+    "q": "The chemical name of baking soda is:",
+    "options": ["Sodium bicarbonate", "Sodium carbonate", "Calcium sulphate", "Sodium chloride"],
+    "answer": 0
+  },
+  {
+    "q": "Water of crystallisation is present in:",
+    "options": ["Washing soda", "Baking soda", "Common salt", "Both a and b"],
+    "answer": 0
+  },
+  {
+    "q": "Acids react with metals to produce:",
+    "options": ["Oxygen gas", "Hydrogen gas", "Carbon dioxide", "Nitrogen"],
+    "answer": 1
+  },
+  {
+    "q": "Acids react with metal carbonates to produce:",
+    "options": ["H₂ gas", "CO₂ gas", "O₂ gas", "No gas"],
+    "answer": 1
+  },
+  {
+    "q": "Bases react with metals like zinc or aluminium to produce:",
+    "options": ["H₂ gas", "O₂ gas", "CO₂ gas", "No reaction"],
+    "answer": 0
+  },
+  {
+    "q": "Dilute acids turn blue litmus:",
+    "options": ["Blue", "Red", "No change", "Pink"],
+    "answer": 1
+  },
+  {
+    "q": "Concentrated sulphuric acid is a:",
+    "options": ["Weak acid", "Strong acid", "Base", "Salt"],
+    "answer": 1
+  },
+  {
+    "q": "Citric acid is present in:",
+    "options": ["Vinegar", "Lemon", "Milk", "Ant sting"],
+    "answer": 1
+  },
+  {
+    "q": "Formic acid is present in:",
+    "options": ["Ant sting", "Lemon", "Vinegar", "Curd"],
+    "answer": 0
+  },
+  {
+    "q": "Lactic acid is present in:",
+    "options": ["Curd", "Lemon", "Vinegar", "Tomato"],
+    "answer": 0
+  },
+  {
+    "q": "Acetic acid is present in:",
+    "options": ["Vinegar", "Lemon", "Curd", "Orange"],
+    "answer": 0
+  },
+  {
+    "q": "Oxalic acid is found in:",
+    "options": ["Tomato", "Spinach", "Lemon", "Vinegar"],
+    "answer": 1
+  },
+  {
+    "q": "The indicator used in acid-base titration is often:",
+    "options": ["Litmus", "Phenolphthalein", "Turmeric", "Red cabbage"],
+    "answer": 1
+  },
+  {
+    "q": "Sodium hydroxide is commonly known as:",
+    "options": ["Caustic soda", "Caustic potash", "Baking soda", "Washing soda"],
+    "answer": 0
+  },
+  {
+    "q": "Potassium hydroxide is known as:",
+    "options": ["Caustic soda", "Caustic potash", "Slaked lime", "Quick lime"],
+    "answer": 1
+  },
+  {
+    "q": "Calcium hydroxide is:",
+    "options": ["Quick lime", "Slaked lime", "Lime water", "Milk of lime"],
+    "answer": 1
+  },
+  {
+    "q": "The salt formed by strong acid and weak base is:",
+    "options": ["Neutral", "Acidic", "Basic", "Amphoteric"],
+    "answer": 1
+  },
+  {
+    "q": "The salt formed by weak acid and strong base is:",
+    "options": ["Acidic", "Neutral", "Basic", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Ammonium chloride solution is:",
+    "options": ["Basic", "Neutral", "Acidic", "Amphoteric"],
+    "answer": 2
+  },
+  {
+    "q": "Sodium carbonate solution is:",
+    "options": ["Acidic", "Neutral", "Basic", "None"],
+    "answer": 2
+  },
+  {
+    "q": "pH of human blood is approximately:",
+    "options": ["7.0", "7.4", "6.8", "8.0"],
+    "answer": 1
+  },
+  {
+    "q": "Tooth decay starts when pH of mouth falls below:",
+    "options": ["7.0", "5.5", "4.5", "6.0"],
+    "answer": 1
+  },
+  {
+    "q": "Antacids contain:",
+    "options": ["Acids", "Bases", "Salts", "Water"],
+    "answer": 1
+  },
+  {
+    "q": "Milk of magnesia is:",
+    "options": ["Mg(OH)₂", "Ca(OH)₂", "NaOH", "KOH"],
+    "answer": 0
+  },
+  {
+    "q": "Factory wastes are neutralised before disposal using:",
+    "options": ["Acids", "Bases", "Salts", "Water"],
+    "answer": 1
+  },
+  {
+    "q": "Soil becomes acidic due to excessive use of:",
+    "options": ["Organic manure", "Fertilisers", "Lime", "Compost"],
+    "answer": 1
+  },
+  {
+    "q": "To treat acidic soil, farmers add:",
+    "options": ["Slaked lime", "Acids", "More fertilisers", "Salt"],
+    "answer": 0
+  },
+  {
+    "q": "Bee sting contains:",
+    "options": ["Formic acid", "Acetic acid", "Basic substance", "Neutral substance"],
+    "answer": 0
+  },
+  {
+    "q": "Wasp sting contains:",
+    "options": ["Acid", "Base", "Salt", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For bee sting, mild base like baking soda is applied because it:",
+    "options": ["Neutralises acid", "Increases acidity", "Produces heat", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For wasp sting, mild acid like vinegar is applied because it:",
+    "options": ["Neutralises base", "Increases basicity", "Produces salt", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Hydrated salts contain:",
+    "options": ["Water of crystallisation", "Anhydrous water", "Free water", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Blue vitriol is:",
+    "options": ["CuSO₄·5H₂O", "FeSO₄·7H₂O", "Na₂CO₃·10H₂O", "CaSO₄·2H₂O"],
+    "answer": 0
+  },
+  {
+    "q": "Washing soda crystals are:",
+    "options": ["Na₂CO₃·10H₂O", "Na₂CO₃·H₂O", "Na₂CO₃", "NaHCO₃"],
+    "answer": 0
+  },
+  {
+    "q": "Baking soda on heating gives:",
+    "options": ["Na₂CO₃ + H₂O + CO₂", "NaOH + CO₂", "Na₂O + CO₂", "NaCl + H₂O"],
+    "answer": 0
+  },
+  {
+    "q": "Bleaching powder on reaction with water gives:",
+    "options": ["Cl₂", "O₂", "HCl", "CaO"],
+    "answer": 0
+  },
+  {
+    "q": "Uses of bleaching powder include:",
+    "options": ["Bleaching", "Disinfectant", "Oxidising agent", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Plaster of Paris hardens on mixing with water due to formation of:",
+    "options": ["Gypsum", "Anhydrous CaSO₄", "Lime", "CaO"],
+    "answer": 0
+  },
+  {
+    "q": "Universal indicator shows:",
+    "options": ["Red in acid, blue in base", "Different colours for different pH", "Pink in base", "Yellow in neutral"],
+    "answer": 1
+  },
+  {
+    "q": "Olfactory indicators are:",
+    "options": ["Litmus", "Onion and vanilla", "Phenolphthalein", "Methyl orange"],
+    "answer": 1
+  },
+  {
+    "q": "Onion smell is lost in:",
+    "options": ["Acidic solution", "Basic solution", "Neutral solution", "Both acid and base"],
+    "answer": 1
+  },
+  {
+    "q": "The strength of acid or base depends on:",
+    "options": ["Degree of ionisation", "Concentration", "Both", "Temperature only"],
+    "answer": 0
+  },
+  {
+    "q": "Dilute acid means:",
+    "options": ["Weak acid", "Low concentration of acid", "Strong acid", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Concentrated acid means:",
+    "options": ["Strong acid", "High concentration of acid", "Weak acid", "Neutral"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

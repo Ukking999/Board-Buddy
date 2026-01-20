@@ -1,0 +1,432 @@
+/* =========================
+   GOOGLE FONTS
+========================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   ROOT COLORS & VARIABLES
+========================= */
+:root{
+    --bg-main:#0a0d12;
+    --bg-card:#12161d;
+    --bg-card-hover:#181d26;
+    --primary:#5c9eff;
+    --primary-dark:#3a78e0;
+    --secondary:#00e0b8;
+    --text-main:#f0f4f8;
+    --text-muted:#a8b2c2;
+    --danger:#ff6b6b;
+    --success:#4dffb8;
+    --border:#252c38;
+    --glass-bg: rgba(18, 22, 29, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --shadow-sm: 0 4px 12px rgba(0,0,0,0.4);
+    --shadow-md: 0 12px 32px rgba(0,0,0,0.5);
+    --shadow-glow: 0 0 20px rgba(92,158,255,0.3);
+}
+
+/* =========================
+   GLOBAL RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg-main);
+    color:var(--text-main);
+    line-height:1.6;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(92,158,255,0.15) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(0,224,184,0.15) 0%, transparent 20%);
+}
+
+/* =========================
+   SCROLLBAR (PREMIUM)
+========================= */
+::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track{
+    background:#0b0e14;
+    border-radius:10px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg,var(--primary),var(--secondary));
+    border-radius:10px;
+    border:2px solid var(--bg-main);
+}
+::-webkit-scrollbar-thumb:hover{
+    background:linear-gradient(180deg,var(--primary-dark),var(--secondary));
+    box-shadow: var(--shadow-glow);
+}
+
+/* For Firefox */
+html{
+    scrollbar-color: var(--primary) #0b0e14;
+    scrollbar-width: thin;
+}
+
+/* =========================
+   NAVBAR (GLASSMORPHISM)
+========================= */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--glass-bg);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border-bottom:1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+.nav-links a{
+    margin-left:30px;
+    text-decoration:none;
+    color:var(--text-main);
+    font-weight:500;
+    position:relative;
+    transition:0.4s ease;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    bottom:-6px;
+    left:0;
+    width:0;
+    height:2px;
+    background:linear-gradient(90deg,var(--primary),var(--secondary));
+    transition:width 0.4s ease;
+}
+
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+    padding:120px 20px;
+    text-align:center;
+    background:
+        radial-gradient(circle at top,var(--primary),transparent 50%),
+        var(--bg-main);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at center, rgba(92,158,255,0.1), transparent 70%);
+    pointer-events:none;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:20px;
+    animation:fadeUp 1s ease;
+}
+
+.hero span{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:var(--text-muted);
+    font-size:18px;
+    animation:fadeUp 1.2s ease;
+}
+
+/* =========================
+   BUTTONS (PREMIUM GRADIENT + GLOW)
+========================= */
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 32px;
+    border-radius:50px;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:all 0.4s ease;
+    box-shadow:0 8px 20px rgba(92,158,255,0.3);
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg,transparent,var(--secondary),transparent);
+    transform:translateX(-100%);
+    transition:transform 0.6s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(92,158,255,0.45), var(--shadow-glow);
+}
+
+.btn:hover::before{
+    transform:translateX(100%);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+.section{
+    padding:90px 40px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:50px;
+    position:relative;
+}
+
+.section-title span{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+}
+
+/* =========================
+   CARDS (GLASSMORPHISM + PREMIUM HOVER)
+========================= */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:var(--glass-bg);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:30px;
+    transition:all 0.5s cubic-bezier(0.25,0.8,0.25,1);
+    border:1px solid var(--glass-border);
+    box-shadow:var(--shadow-sm);
+    position:relative;
+    overflow:hidden;
+}
+
+.card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg, rgba(92,158,255,0.05), rgba(0,224,184,0.05));
+    opacity:0;
+    transition:opacity 0.5s;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.04);
+    box-shadow:var(--shadow-md), var(--shadow-glow);
+    background:var(--bg-card-hover);
+    border-color:var(--primary);
+}
+
+.card:hover::before{
+    opacity:1;
+}
+
+.card h3{
+    margin-bottom:15px;
+    font-size:20px;
+}
+
+.card p{
+    color:var(--text-muted);
+    font-size:15px;
+}
+
+.card a{
+    display:inline-block;
+    margin-top:20px;
+    color:var(--secondary);
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+    transition:0.3s;
+}
+
+.card a::after{
+    content:'→';
+    margin-left:8px;
+    transition:transform 0.3s;
+}
+
+.card a:hover{
+    color:var(--primary);
+}
+
+.card a:hover::after{
+    transform:translateX(6px);
+}
+
+/* =========================
+   PDF / DOWNLOAD BOX (GLASS)
+========================= */
+.download-box{
+    background:var(--glass-bg);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:25px;
+    border:1px solid var(--glass-border);
+    transition:0.4s;
+}
+
+.download-box:hover{
+    box-shadow:var(--shadow-md);
+    transform:translateY(-4px);
+}
+
+.download-box span{
+    color:var(--text-muted);
+}
+
+.download-box a{
+    padding:10px 22px;
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    border-radius:30px;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.download-box a:hover{
+    box-shadow:0 8px 20px rgba(92,158,255,0.4);
+}
+
+/* =========================
+   TABLE (MODERN DARK)
+========================= */
+table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    background:var(--bg-card);
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+}
+
+th,td{
+    padding:16px;
+    text-align:center;
+    border-bottom:1px solid var(--border);
+}
+
+th{
+    background:linear-gradient(135deg,#1a2028,#141a23);
+    font-weight:600;
+}
+
+tr:last-child td{
+    border-bottom:none;
+}
+
+tr:hover{
+    background:rgba(92,158,255,0.08);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid var(--border);
+    color:var(--text-muted);
+    font-size:15px;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.fade-up{
+    animation:fadeUp 1s ease forwards;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+    .navbar{
+        padding:16px 20px;
+        flex-direction:column;
+        gap:15px;
+    }
+    .nav-links a{
+        margin:0 15px;
+    }
+    .hero h1{
+        font-size:36px;
+    }
+    .hero p{
+        font-size:16px;
+    }
+    .section{
+        padding:70px 20px;
+    }
+    .grid{
+        grid-template-columns:1fr;
+    }
+}

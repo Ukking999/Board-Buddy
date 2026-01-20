@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Pair of Linear Equations in Two Variables MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A pair of linear equations in two variables is of the form:",
+    "options": ["a1x + b1y + c1 = 0 and a2x + b2y + c2 = 0", "ax² + by + c = 0", "ax + by = c only", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The solution of a pair of linear equations represents:",
+    "options": ["Point of intersection of two lines", "No intersection", "Coincident lines", "All possible"],
+    "answer": 0
+  },
+  {
+    "q": "If a1/a2 ≠ b1/b2 ≠ c1/c2, the lines are:",
+    "options": ["Parallel", "Intersecting at one point", "Coincident", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a1/a2 = b1/b2 = c1/c2, the lines are:",
+    "options": ["Parallel", "Intersecting", "Coincident (infinite solutions)", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If a1/a2 = b1/b2 ≠ c1/c2, the lines are:",
+    "options": ["Parallel (no solution)", "Intersecting", "Coincident", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The system with unique solution is:",
+    "options": ["Consistent", "Inconsistent", "Dependent", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The system with no solution is:",
+    "options": ["Consistent", "Inconsistent", "Dependent", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The system with infinite solutions is:",
+    "options": ["Consistent and dependent", "Inconsistent", "Independent", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Graphical method: intersecting lines represent:",
+    "options": ["Unique solution", "No solution", "Infinite solutions", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Graphical method: parallel lines represent:",
+    "options": ["Unique solution", "No solution", "Infinite solutions", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Graphical method: coincident lines represent:",
+    "options": ["Unique solution", "No solution", "Infinite solutions", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Algebraic methods to solve pair of equations include:",
+    "options": ["Substitution, elimination, cross-multiplication", "Graphical only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In substitution method, we:",
+    "options": ["Express one variable in terms of other and substitute", "Eliminate one variable", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In elimination method, we:",
+    "options": ["Make coefficients equal and add/subtract", "Substitute", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cross-multiplication method is used for:",
+    "options": ["a1x + b1y + c1 = 0 and a2x + b2y + c2 = 0", "Non-linear", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The formula in cross-multiplication: x =",
+    "options": ["(b1 c2 - b2 c1)/(a1 b2 - a2 b1)", "(b2 c1 - b1 c2)/(a1 b2 - a2 b1)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "y =",
+    "options": ["(c1 a2 - c2 a1)/(a1 b2 - a2 b1)", "(a1 c2 - a2 c1)/(a1 b2 - a2 b1)", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If denominator a1 b2 - a2 b1 = 0 and numerators also 0, then:",
+    "options": ["Unique solution", "No solution", "Infinite solutions", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If denominator = 0 but one numerator ≠ 0, then:",
+    "options": ["Unique", "No solution", "Infinite", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Equations reducible to linear form are solved by:",
+    "options": ["Substitution", "Making new variables", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Example: 1/(x+1) + 1/(y-1) = 5, substitute u = x+1, v = y-1",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Word problems on pair of equations include:",
+    "options": ["Numbers, ages, speed, mixture", "Only numbers", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If sum of two numbers is 25 and difference is 5, numbers are:",
+    "options": ["15, 10", "20, 5", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Pair of Linear Equations in Two Variables' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "The general pair is:",
+    "options": ["a1x + b1y = c1, a2x + b2y = c2", "With +c or -c", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Consistent system has:",
+    "options": ["At least one solution", "No solution", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inconsistent system has:",
+    "options": ["No solution", "One solution", "Infinite", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Dependent system is:",
+    "options": ["Consistent with infinite solutions", "Inconsistent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "To check consistency graphically:",
+    "options": ["See intersection", "No intersection", "Coincident", "All"],
+    "answer": 3
+  },
+  {
+    "q": "Algebraically, compare ratios:",
+    "options": ["a1/a2, b1/b2, c1/c2", "Only a1/a2", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a1/a2 ≠ b1/b2, then:",
+    "options": ["Unique solution", "No solution", "Infinite", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Substitution method steps:",
+    "options": ["Solve one for one variable, substitute in other", "Eliminate", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Elimination is preferred when:",
+    "options": ["Coefficients easy to make equal", "Substitution hard", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Cross-multiplication is quick for:",
+    "options": ["Standard form equations", "Non-standard", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For equations like x + y = 5, 2x + 3y = 12, solution is:",
+    "options": ["x=3, y=2", "x=2, y=3", "x=1, y=4", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For 2x + 3y = 7, 4x + 6y = 14, system is:",
+    "options": ["Unique", "No solution", "Infinite", "None"],
+    "answer": 2
+  },
+  {
+    "q": "For 2x + 3y = 7, 4x + 6y = 15, system is:",
+    "options": ["Unique", "No solution", "Infinite", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For x + 2y = 3, 3x + 6y = 9, system is:",
+    "options": ["Unique", "No solution", "Infinite", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If equations are 2/x + 3/y = 5, 4/x + 6/y = 10, substitute:",
+    "options": ["1/x = a, 1/y = b", "x = a, y = b", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "After substitution, it becomes:",
+    "options": ["2a + 3b = 5, 4a + 6b = 10 (infinite)", "Unique", "No solution", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Word problem: Two numbers sum 20, difference 4, equations:",
+    "options": ["x + y = 20, x - y = 4", "2x = 24", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Solution: numbers 12 and 8",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Father's age is thrice son's age, after 5 years twice, let son = x, father = 3x, equation:",
+    "options": ["3x + 5 = 2(x + 5)", "3x = 2x + 5", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Solution: x = 5, ages 5 and 15 now",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Boat speed in still water u, stream v, downstream u+v, upstream u-v",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cost of articles, mixture problems use:",
+    "options": ["Pair of equations", "Single equation", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter introduces:",
+    "options": ["Graphical and algebraic methods", "Only graphical", "Only algebraic", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Graph of linear equation ax + by + c = 0 is:",
+    "options": ["Straight line", "Parabola", "Curve", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Two lines intersect at:",
+    "options": ["Most one point", "Two points", "Infinite", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Parallel lines never:",
+    "options": ["Intersect", "Coincide", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Coincident lines have:",
+    "options": ["Infinite intersection points", "One point", "No point", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The condition for unique solution is:",
+    "options": ["a1/a2 ≠ b1/b2", "Equal ratios", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For no solution:",
+    "options": ["a1/a2 = b1/b2 ≠ c1/c2", "All equal", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For infinite solutions:",
+    "options": ["a1/a2 = b1/b2 = c1/c2", "Different", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The graphical representation helps to:",
+    "options": ["Visualise solutions", "Only algebraic", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In substitution, solve for easier variable first.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In elimination, multiply to make coefficients equal.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cross-multiplication gives:",
+    "options": ["x and y directly", "Only x", "Only y", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Reducible equations are like:",
+    "options": ["Fractions, cross terms", "Standard", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter has applications in:",
+    "options": ["Real life problems", "Only theory", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pair of equations can represent:",
+    "options": ["Lines in plane", "Curves", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The number of solutions depends on:",
+    "options": ["Relative position of lines", "Coefficients", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter is important for:",
+    "options": ["Higher maths", "Applications", "Both", "None"],
+    "answer": 2
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

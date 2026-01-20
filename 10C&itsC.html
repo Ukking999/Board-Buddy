@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Carbon and its Compounds MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Carbon always forms:",
+    "options": ["Ionic bonds", "Covalent bonds", "Metallic bonds", "Hydrogen bonds"],
+    "answer": 1
+  },
+  {
+    "q": "The ability of carbon to form long chains with itself is called:",
+    "options": ["Tetravalency", "Catenation", "Isomerism", "Allotropy"],
+    "answer": 1
+  },
+  {
+    "q": "Carbon has valence of:",
+    "options": ["2", "3", "4", "6"],
+    "answer": 2
+  },
+  {
+    "q": "The property due to which carbon forms many compounds is:",
+    "options": ["Tetravalency and catenation", "Only tetravalency", "Only catenation", "Allotropy"],
+    "answer": 0
+  },
+  {
+    "q": "Allotropes of carbon include:",
+    "options": ["Diamond and graphite", "Diamond and fullerene", "Graphite and coke", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Diamond is:",
+    "options": ["Soft and good conductor", "Hard and insulator", "Soft and conductor", "Hard and conductor"],
+    "answer": 1
+  },
+  {
+    "q": "Graphite is:",
+    "options": ["Hard and insulator", "Soft and good conductor of electricity", "Hard and conductor", "Soft and insulator"],
+    "answer": 1
+  },
+  {
+    "q": "Fullerene is an allotrope of carbon with:",
+    "options": ["60 carbon atoms", "70 carbon atoms", "50 carbon atoms", "100 carbon atoms"],
+    "answer": 0
+  },
+  {
+    "q": "Hydrocarbons are compounds containing:",
+    "options": ["Carbon and oxygen", "Carbon and hydrogen", "Hydrogen and oxygen", "Carbon, hydrogen and oxygen"],
+    "answer": 1
+  },
+  {
+    "q": "Saturated hydrocarbons have:",
+    "options": ["Only single bonds", "At least one double bond", "At least one triple bond", "Aromatic rings"],
+    "answer": 0
+  },
+  {
+    "q": "Unsaturated hydrocarbons have:",
+    "options": ["Only single bonds", "Double or triple bonds", "Only triple bonds", "No carbon-carbon bonds"],
+    "answer": 1
+  },
+  {
+    "q": "Alkanes have general formula:",
+    "options": ["CₙH₂ₙ₊₂", "CₙH₂ₙ", "CₙH₂ₙ₋₂", "CₙH₂ₙ₊₁"],
+    "answer": 0
+  },
+  {
+    "q": "Alkenes have general formula:",
+    "options": ["CₙH₂ₙ₊₂", "CₙH₂ₙ", "CₙH₂ₙ₋₂", "CₙHₙ"],
+    "answer": 1
+  },
+  {
+    "q": "Alkynes have general formula:",
+    "options": ["CₙH₂ₙ₊₂", "CₙH₂ₙ", "CₙH₂ₙ₋₂", "CₙH₂ₙ₊₁"],
+    "answer": 2
+  },
+  {
+    "q": "The first member of alkane series is:",
+    "options": ["Ethane", "Methane", "Propane", "Butane"],
+    "answer": 1
+  },
+  {
+    "q": "The first member of alkene series is:",
+    "options": ["Methane", "Ethene", "Propene", "Ethane"],
+    "answer": 1
+  },
+  {
+    "q": "The first member of alkyne series is:",
+    "options": ["Ethyne", "Propyne", "Methane", "Ethene"],
+    "answer": 0
+  },
+  {
+    "q": "Homologous series have:",
+    "options": ["Same functional group and differ by CH₂", "Different functional groups", "Same molecular formula", "No relation"],
+    "answer": 0
+  },
+  {
+    "q": "Functional group of alcohol is:",
+    "options": ["-COOH", "-CHO", "-OH", "-CO-"],
+    "answer": 2
+  },
+  {
+    "q": "Functional group of carboxylic acid is:",
+    "options": ["-OH", "-COOH", "-CHO", "-X"],
+    "answer": 1
+  },
+  {
+    "q": "Functional group of aldehyde is:",
+    "options": ["-COOH", "-CHO", "-OH", "-NH₂"],
+    "answer": 1
+  },
+  {
+    "q": "Functional group of ketone is:",
+    "options": ["-CO-", "-CHO", "-COOH", "-OH"],
+    "answer": 0
+  },
+  {
+    "q": "IUPAC name of CH₃CH₂OH is:",
+    "options": ["Methanol", "Ethanol", "Propanol", "Ethanone"],
+    "answer": 1
+  },
+  {
+    "q": "IUPAC name of HCOOH is:",
+    "options": ["Methanoic acid", "Ethanoic acid", "Propanoic acid", "Formic acid (common)"],
+    "answer": 0
+  },
+  {
+    "q": "IUPAC name of CH₃COOH is:",
+    "options": ["Methanoic acid", "Ethanoic acid", "Acetic acid (common)", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "Ethanol is used in:",
+    "options": ["Medicines", "Alcoholic drinks", "Antiseptics", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Ethanoic acid reacts with sodium bicarbonate to produce:",
+    "options": ["H₂ gas", "CO₂ gas", "O₂ gas", "No gas"],
+    "answer": 1
+  },
+  {
+    "q": "Esters are formed by reaction of:",
+    "options": ["Acid + Alcohol", "Acid + Base", "Alcohol + Aldehyde", "Ketone + Alcohol"],
+    "answer": 0
+  },
+  {
+    "q": "Esters have:",
+    "options": ["Sour smell", "Fruity smell", "Pungent smell", "No smell"],
+    "answer": 1
+  },
+  {
+    "q": "Soaps are:",
+    "options": ["Sodium or potassium salts of carboxylic acids", "Esters", "Alcohols", "Aldehydes"],
+    "answer": 0
+  },
+  {
+    "q": "Detergents are:",
+    "options": ["Sodium salts of sulphonic acids", "Esters of fatty acids", "Alcohols", "Ketones"],
+    "answer": 0
+  },
+  {
+    "q": "Soaps do not work well in hard water because:",
+    "options": ["They form scum with Ca and Mg ions", "They are acidic", "They react with soap", "They are basic"],
+    "answer": 0
+  },
+  {
+    "q": "Detergents work in hard water because:",
+    "options": ["They do not form scum", "They are more basic", "They form precipitate", "They are acidic"],
+    "answer": 0
+  },
+  {
+    "q": "Micelles are formed by:",
+    "options": ["Soap molecules in water", "Detergent in oil", "Acid in water", "Alcohol in water"],
+    "answer": 0
+  },
+  {
+    "q": "The hydrophilic end of soap is:",
+    "options": ["Carboxylate ion", "Hydrocarbon chain", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The hydrophobic end of soap is:",
+    "options": ["Carboxylate ion", "Long hydrocarbon chain", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Covalent compounds generally have:",
+    "options": ["High melting points", "Low melting and boiling points", "Conduct electricity", "Ionic bonds"],
+    "answer": 1
+  },
+  {
+    "q": "Carbon compounds are generally:",
+    "options": ["Good conductors", "Poor conductors of electricity", "Ionic", "Highly reactive"],
+    "answer": 1
+  },
+  {
+    "q": "Carbon forms large number of compounds due to:",
+    "options": ["Tetravalency only", "Catenation only", "Both tetravalency and catenation", "Allotropy"],
+    "answer": 2
+  },
+  {
+    "q": "Isomerism is shown by:",
+    "options": ["Methane", "Ethane", "Propane", "Butane"],
+    "answer": 3
+  },
+  {
+    "q": "The number of isomers of C₄H₁₀ is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 1
+  },
+  {
+    "q": "Ethanol on oxidation with alkaline KMnO₄ gives:",
+    "options": ["Ethanal", "Ethanoic acid", "Ethene", "Methane"],
+    "answer": 1
+  },
+  {
+    "q": "Ethanoic acid reacts with ethanol in presence of conc. H₂SO₄ to form:",
+    "options": ["Ester", "Aldehyde", "Ketone", "Alkene"],
+    "answer": 0
+  },
+  {
+    "q": "The reaction of ethanol with sodium produces:",
+    "options": ["Hydrogen gas", "Oxygen gas", "Carbon dioxide", "No reaction"],
+    "answer": 0
+  },
+  {
+    "q": "Denatured alcohol is:",
+    "options": ["Pure ethanol", "Ethanol with added methanol or dye", "Methanol", "Propanol"],
+    "answer": 1
+  },
+  {
+    "q": "Glacial acetic acid is:",
+    "options": ["Dilute acetic acid", "Pure anhydrous acetic acid", "Vinegar", "Ester"],
+    "answer": 1
+  },
+  {
+    "q": "The functional group in ethers is:",
+    "options": ["-O-", "-OH", "-COOH", "-CHO"],
+    "answer": 0
+  },
+  {
+    "q": "The common name of CH₃OH is:",
+    "options": ["Ethanol", "Methanol", "Propanol", "Butanol"],
+    "answer": 1
+  },
+  {
+    "q": "The gas used for welding is:",
+    "options": ["Ethene", "Ethyne", "Methane", "Propane"],
+    "answer": 1
+  },
+  {
+    "q": "Ethyne is commonly known as:",
+    "options": ["Methane", "Acetylene", "Ethene", "Propene"],
+    "answer": 1
+  },
+  {
+    "q": "Addition reaction is characteristic of:",
+    "options": ["Alkanes", "Unsaturated hydrocarbons", "Alcohols", "Acids"],
+    "answer": 1
+  },
+  {
+    "q": "Substitution reaction is characteristic of:",
+    "options": ["Alkenes", "Alkynes", "Alkanes", "Aromatic compounds"],
+    "answer": 2
+  },
+  {
+    "q": "Ethene decolourises:",
+    "options": ["Bromine water", "Litmus", "Phenolphthalein", "Methyl orange"],
+    "answer": 0
+  },
+  {
+    "q": "Alkanes burn in air to produce:",
+    "options": ["CO₂ and H₂O", "CO and H₂O", "C and H₂O", "CO₂ only"],
+    "answer": 0
+  },
+  {
+    "q": "Incomplete combustion of carbon compounds produces:",
+    "options": ["CO₂", "CO", "C", "H₂"],
+    "answer": 1
+  },
+  {
+    "q": "The black substance deposited on burner during incomplete combustion is:",
+    "options": ["Carbon dioxide", "Carbon monoxide", "Soot (carbon)", "Water"],
+    "answer": 2
+  },
+  {
+    "q": "The flame of complete combustion is:",
+    "options": ["Yellow", "Blue", "Black", "Red"],
+    "answer": 1
+  },
+  {
+    "q": "Oxidation of ethanol gives:",
+    "options": ["Ethene", "Ethanal then ethanoic acid", "Ethyne", "Methane"],
+    "answer": 1
+  },
+  {
+    "q": "Ethanoic acid turns blue litmus:",
+    "options": ["Blue", "Red", "No change", "Pink"],
+    "answer": 1
+  },
+  {
+    "q": "Soap forms:",
+    "options": ["Lather in soft water", "Scum in hard water", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Detergents are preferred in hard water because:",
+    "options": ["They form scum", "They do not form scum", "They are cheaper", "They smell better"],
+    "answer": 1
+  },
+  {
+    "q": "The cleansing action of soap is due to:",
+    "options": ["Micelle formation", "Emulsification", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Carbon has:",
+    "options": ["4 valence electrons", "8 valence electrons", "2 valence electrons", "6 valence electrons"],
+    "answer": 0
+  },
+  {
+    "q": "Diamond has:",
+    "options": ["Tetrahedral structure", "Layer structure", "Linear structure", "Planar structure"],
+    "answer": 0
+  },
+  {
+    "q": "Graphite has:",
+    "options": ["Layered structure", "Tetrahedral", "Cubic", "Spherical"],
+    "answer": 0
+  },
+  {
+    "q": "Fullerene is shaped like:",
+    "options": ["Football (C60)", "Tube", "Layer", "Diamond"],
+    "answer": 0
+  },
+  {
+    "q": "The bond in carbon compounds is:",
+    "options": ["Ionic", "Covalent", "Coordinate", "Metallic"],
+    "answer": 1
+  },
+  {
+    "q": "Carbon compounds are:",
+    "options": ["Flammable", "Non-flammable", "Explosive", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The number of single bonds in methane is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 3
+  },
+  {
+    "q": "The IUPAC name of formaldehyde is:",
+    "options": ["Methanal", "Ethanal", "Propanone", "Methanone"],
+    "answer": 0
+  },
+  {
+    "q": "The IUPAC name of acetone is:",
+    "options": ["Propanone", "Propanol", "Ethanol", "Methanal"],
+    "answer": 0
+  },
+  {
+    "q": "Ethanol is oxidised to ethanoic acid by:",
+    "options": ["Acidified K₂Cr₂O₇", "Alkaline KMnO₄", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Ethanoic acid reacts with bases to form:",
+    "options": ["Salt and water", "Ester", "Alcohol", "Alkene"],
+    "answer": 0
+  },
+  {
+    "q": "The ester formed from ethanol and ethanoic acid is:",
+    "options": ["Ethyl ethanoate", "Methyl ethanoate", "Ethyl methanoate", "Methyl acetate"],
+    "answer": 0
+  },
+  {
+    "q": "Saponification is:",
+    "options": ["Ester + Base → Alcohol + Acid salt", "Acid + Alcohol → Ester", "Soap making", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "Soaps are biodegradable while detergents are:",
+    "options": ["Also biodegradable", "Non-biodegradable", "More biodegradable", "None"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

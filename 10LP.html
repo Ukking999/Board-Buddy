@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Science - Life Processes MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The process by which living organisms obtain energy from food is called:",
+    "options": ["Excretion", "Respiration", "Transportation", "Nutrition"],
+    "answer": 1
+  },
+  {
+    "q": "Life processes are the basic functions performed by living organisms to:",
+    "options": ["Grow only", "Reproduce only", "Maintain their body (survival)", "Move only"],
+    "answer": 2
+  },
+  {
+    "q": "The energy currency of the cell is:",
+    "options": ["Glucose", "ATP", "Oxygen", "NADP"],
+    "answer": 1
+  },
+  {
+    "q": "Autotrophic nutrition is seen in:",
+    "options": ["Animals", "Fungi", "Green plants", "Humans"],
+    "answer": 2
+  },
+  {
+    "q": "Heterotrophic nutrition is seen in:",
+    "options": ["Green plants", "Animals", "Algae", "All plants"],
+    "answer": 1
+  },
+  {
+    "q": "The process of photosynthesis takes place in:",
+    "options": ["Mitochondria", "Chloroplast", "Ribosome", "Nucleus"],
+    "answer": 1
+  },
+  {
+    "q": "The raw materials for photosynthesis are:",
+    "options": ["CO₂ and O₂", "CO₂ and H₂O", "Glucose and O₂", "O₂ and H₂O"],
+    "answer": 1
+  },
+  {
+    "q": "The end products of photosynthesis are:",
+    "options": ["CO₂ and H₂O", "Glucose and O₂", "Starch and CO₂", "Glucose and H₂O"],
+    "answer": 1
+  },
+  {
+    "q": "The green pigment essential for photosynthesis is:",
+    "options": ["Haemoglobin", "Chlorophyll", "Melanin", "Xanthophyll"],
+    "answer": 1
+  },
+  {
+    "q": "Stomata are present on:",
+    "options": ["Stem", "Root", "Leaves", "Flowers"],
+    "answer": 2
+  },
+  {
+    "q": "The gas released during photosynthesis is:",
+    "options": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+    "answer": 1
+  },
+  {
+    "q": "Holozoic nutrition is seen in:",
+    "options": ["Amoeba", "Green plants", "Mushroom", "Algae"],
+    "answer": 0
+  },
+  {
+    "q": "Parasitic nutrition is seen in:",
+    "options": ["Cuscuta (Amarbel)", "Lichen", "Yeast", "Mushroom"],
+    "answer": 0
+  },
+  {
+    "q": "Saprophytic nutrition is seen in:",
+    "options": ["Fungi like mushroom", "Insects", "Green plants", "Amoeba"],
+    "answer": 0
+  },
+  {
+    "q": "Digestion in humans is:",
+    "options": ["Intracellular", "Extracellular", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The enzyme present in saliva is:",
+    "options": ["Pepsin", "Trypsin", "Amylase", "Lipase"],
+    "answer": 2
+  },
+  {
+    "q": "The longest part of the alimentary canal is:",
+    "options": ["Stomach", "Small intestine", "Large intestine", "Oesophagus"],
+    "answer": 1
+  },
+  {
+    "q": "Villi are present in:",
+    "options": ["Stomach", "Small intestine", "Large intestine", "Oesophagus"],
+    "answer": 1
+  },
+  {
+    "q": "The main site of absorption of digested food is:",
+    "options": ["Stomach", "Small intestine", "Large intestine", "Mouth"],
+    "answer": 1
+  },
+  {
+    "q": "Respiration that occurs in the presence of oxygen is called:",
+    "options": ["Anaerobic respiration", "Aerobic respiration", "Fermentation", "Photosynthesis"],
+    "answer": 1
+  },
+  {
+    "q": "Respiration that occurs in the absence of oxygen is called:",
+    "options": ["Aerobic respiration", "Anaerobic respiration", "Photosynthesis", "Transpiration"],
+    "answer": 1
+  },
+  {
+    "q": "The end products of aerobic respiration are:",
+    "options": ["CO₂ and H₂O", "Lactic acid", "Alcohol and CO₂", "CO₂ only"],
+    "answer": 0
+  },
+  {
+    "q": "Anaerobic respiration in muscle cells produces:",
+    "options": ["CO₂ and H₂O", "Lactic acid", "Alcohol and CO₂", "Glucose"],
+    "answer": 1
+  },
+  {
+    "q": "Anaerobic respiration in yeast produces:",
+    "options": ["Lactic acid", "Alcohol and CO₂", "CO₂ and H₂O", "Oxygen"],
+    "answer": 1
+  },
+  {
+    "q": "The organelle called the powerhouse of the cell is:",
+    "options": ["Nucleus", "Mitochondria", "Chloroplast", "Ribosome"],
+    "answer": 1
+  },
+  {
+    "q": "Breathing rate increases during:",
+    "options": ["Rest", "Exercise", "Sleep", "Meditation"],
+    "answer": 1
+  },
+  {
+    "q": "The respiratory organ in humans is:",
+    "options": ["Skin", "Gills", "Lungs", "Trachea"],
+    "answer": 2
+  },
+  {
+    "q": "Alveoli are present in:",
+    "options": ["Trachea", "Bronchi", "Lungs", "Nose"],
+    "answer": 2
+  },
+  {
+    "q": "The gas exchanged during respiration in humans is:",
+    "options": ["O₂ inhaled, CO₂ exhaled", "CO₂ inhaled, O₂ exhaled", "N₂ inhaled and exhaled", "Only O₂"],
+    "answer": 0
+  },
+  {
+    "q": "Haemoglobin is present in:",
+    "options": ["WBC", "Platelets", "RBC", "Plasma"],
+    "answer": 2
+  },
+  {
+    "q": "Transportation in humans is carried out by:",
+    "options": ["Blood", "Xylem", "Phloem", "Stomata"],
+    "answer": 0
+  },
+  {
+    "q": "The pumping organ in humans is:",
+    "options": ["Lungs", "Kidney", "Heart", "Liver"],
+    "answer": 2
+  },
+  {
+    "q": "Arteries carry blood:",
+    "options": ["Towards heart", "Away from heart", "Deoxygenated", "Only in lungs"],
+    "answer": 1
+  },
+  {
+    "q": "Veins carry blood:",
+    "options": ["Away from heart", "Towards heart", "Oxygenated", "Only in lungs"],
+    "answer": 1
+  },
+  {
+    "q": "Double circulation is seen in:",
+    "options": ["Fish", "Amphibians", "Humans", "Insects"],
+    "answer": 2
+  },
+  {
+    "q": "The fluid part of blood is:",
+    "options": ["RBC", "WBC", "Platelets", "Plasma"],
+    "answer": 3
+  },
+  {
+    "q": "Lymph is:",
+    "options": ["Colourless fluid with WBC", "Red fluid", "Plasma only", "Platelets only"],
+    "answer": 0
+  },
+  {
+    "q": "Transportation in plants is done by:",
+    "options": ["Blood", "Xylem and phloem", "Heart", "Lungs"],
+    "answer": 1
+  },
+  {
+    "q": "Xylem transports:",
+    "options": ["Food", "Water and minerals", "Oxygen", "Hormones"],
+    "answer": 1
+  },
+  {
+    "q": "Phloem transports:",
+    "options": ["Water", "Food", "Minerals", "Air"],
+    "answer": 1
+  },
+  {
+    "q": "Transpiration helps in:",
+    "options": ["Cooling of plant and upward movement of water", "Photosynthesis only", "Respiration", "Excretion"],
+    "answer": 0
+  },
+  {
+    "q": "Excretion in humans is carried out by:",
+    "options": ["Lungs", "Kidneys", "Skin", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "The main excretory organ in humans is:",
+    "options": ["Lungs", "Skin", "Kidney", "Liver"],
+    "answer": 2
+  },
+  {
+    "q": "The structural and functional unit of kidney is:",
+    "options": ["Neuron", "Nephron", "Alveolus", "Villus"],
+    "answer": 1
+  },
+  {
+    "q": "The main waste product excreted by kidneys is:",
+    "options": ["Urea", "Uric acid", "Ammonia", "Carbon dioxide"],
+    "answer": 0
+  },
+  {
+    "q": "In Amoeba, excretion occurs through:",
+    "options": ["Kidney", "General body surface", "Nephron", "Lungs"],
+    "answer": 1
+  },
+  {
+    "q": "In plants, excess water is removed by:",
+    "options": ["Transpiration", "Respiration", "Photosynthesis", "Guttation"],
+    "answer": 0
+  },
+  {
+    "q": "The process of removal of wastes from the body is called:",
+    "options": ["Nutrition", "Respiration", "Excretion", "Transportation"],
+    "answer": 2
+  },
+  {
+    "q": "The breakdown of glucose in cytoplasm to pyruvate is called:",
+    "options": ["Aerobic respiration", "Anaerobic respiration", "Glycolysis", "Krebs cycle"],
+    "answer": 2
+  },
+  {
+    "q": "The site of complete aerobic respiration is:",
+    "options": ["Cytoplasm", "Mitochondria", "Nucleus", "Chloroplast"],
+    "answer": 1
+  },
+  {
+    "q": "In humans, inhalation occurs when:",
+    "options": ["Diaphragm contracts and flattens", "Diaphragm relaxes", "Ribs move down", "Lungs contract"],
+    "answer": 0
+  },
+  {
+    "q": "The blood vessel that carries oxygenated blood from lungs to heart is:",
+    "options": ["Pulmonary artery", "Pulmonary vein", "Aorta", "Vena cava"],
+    "answer": 1
+  },
+  {
+    "q": "The blood vessel that carries deoxygenated blood from heart to lungs is:",
+    "options": ["Pulmonary vein", "Pulmonary artery", "Aorta", "Vena cava"],
+    "answer": 1
+  },
+  {
+    "q": "The largest artery in human body is:",
+    "options": ["Pulmonary artery", "Aorta", "Coronary artery", "Renal artery"],
+    "answer": 1
+  },
+  {
+    "q": "Platelets help in:",
+    "options": ["Transport of oxygen", "Blood clotting", "Fighting diseases", "Carrying nutrients"],
+    "answer": 1
+  },
+  {
+    "q": "White blood cells help in:",
+    "options": ["Oxygen transport", "Fighting infections", "Clotting", "Nutrient transport"],
+    "answer": 1
+  },
+  {
+    "q": "The heart has:",
+    "options": ["2 chambers", "3 chambers", "4 chambers", "1 chamber"],
+    "answer": 2
+  },
+  {
+    "q": "The process by which plants lose water vapour is:",
+    "options": ["Transpiration", "Evaporation", "Guttation", "Excretion"],
+    "answer": 0
+  },
+  {
+    "q": "Artificial kidney is:",
+    "options": ["Dialysis machine", "Transplant", "Nephron", "Urinary bladder"],
+    "answer": 0
+  },
+  {
+    "q": "The urine formed in kidneys passes through:",
+    "options": ["Ureter → Bladder → Urethra", "Urethra → Bladder → Ureter", "Bladder → Ureter → Urethra", "Ureter → Urethra → Bladder"],
+    "answer": 0
+  },
+  {
+    "q": "The process of diffusion of water across a semi-permeable membrane is:",
+    "options": ["Osmosis", "Transpiration", "Diffusion", "Active transport"],
+    "answer": 0
+  },
+  {
+    "q": "ATP is produced during:",
+    "options": ["Photosynthesis only", "Respiration", "Both photosynthesis and respiration", "Nutrition"],
+    "answer": 1
+  },
+  {
+    "q": "The enzyme that converts starch to maltose in saliva is:",
+    "options": ["Ptyalin (salivary amylase)", "Pepsin", "Trypsin", "Lipase"],
+    "answer": 0
+  },
+  {
+    "q": "Bile is produced by:",
+    "options": ["Pancreas", "Liver", "Stomach", "Small intestine"],
+    "answer": 1
+  },
+  {
+    "q": "Bile helps in:",
+    "options": ["Digestion of proteins", "Emulsification of fats", "Digestion of carbohydrates", "Absorption"],
+    "answer": 1
+  },
+  {
+    "q": "The length of small intestine in humans is approximately:",
+    "options": ["3 m", "6 m", "9 m", "1 m"],
+    "answer": 1
+  },
+  {
+    "q": "The respiratory pigment in humans is:",
+    "options": ["Chlorophyll", "Haemoglobin", "Haemocyanin", "Myoglobin"],
+    "answer": 1
+  },
+  {
+    "q": "The normal breathing rate in humans at rest is:",
+    "options": ["12-20 times per minute", "30-40 times", "5-10 times", "50-60 times"],
+    "answer": 0
+  },
+  {
+    "q": "The waste product removed by lungs is:",
+    "options": ["Urea", "Carbon dioxide", "Uric acid", "Ammonia"],
+    "answer": 1
+  },
+  {
+    "q": "The waste product removed by skin is:",
+    "options": ["Urea in sweat", "Carbon dioxide", "Bile", "Faeces"],
+    "answer": 0
+  },
+  {
+    "q": "In plants, gaseous exchange occurs through:",
+    "options": ["Stomata, lenticels and general surface", "Roots only", "Leaves only", "Stem only"],
+    "answer": 0
+  },
+  {
+    "q": "Root pressure helps in:",
+    "options": ["Transpiration", "Upward movement of water", "Photosynthesis", "Respiration"],
+    "answer": 1
+  },
+  {
+    "q": "The main force for upward movement of water in tall trees is:",
+    "options": ["Root pressure", "Transpiration pull", "Capillary action", "Gravity"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

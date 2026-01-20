@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Circles MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A circle is the set of all points in a plane that are:",
+    "options": ["At different distances from centre", "Equidistant from a fixed point (centre)", "On a straight line", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The fixed point is called:",
+    "options": ["Radius", "Centre", "Chord", "Diameter"],
+    "answer": 1
+  },
+  {
+    "q": "The distance from centre to any point on circle is:",
+    "options": ["Diameter", "Radius", "Chord", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A chord passing through centre is:",
+    "options": ["Radius", "Diameter", "Secant", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A line segment joining two points on circle is:",
+    "options": ["Radius", "Chord", "Diameter", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A line intersecting circle at two points is:",
+    "options": ["Tangent", "Secant", "Chord", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A line touching circle at exactly one point is:",
+    "options": ["Secant", "Tangent", "Chord", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The tangent at any point is:",
+    "options": ["Parallel to radius", "Perpendicular to radius at point of contact", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The theorem: Tangent is perpendicular to radius.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "From an external point, number of tangents to circle is:",
+    "options": ["1", "2", "Infinite", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The two tangents from external point are:",
+    "options": ["Unequal", "Equal in length", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The line from centre to external point:",
+    "options": ["Bisects angle between tangents", "Is perpendicular to one tangent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The lengths of tangents from external point are:",
+    "options": ["Equal", "Different", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem: Equal chords are equidistant from centre.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Converse: Chords equidistant from centre are:",
+    "options": ["Unequal", "Equal", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The perpendicular from centre to chord:",
+    "options": ["Bisects the chord", "Does not bisect", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Converse: Line from centre bisecting chord is:",
+    "options": ["Parallel", "Perpendicular", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Angle in semicircle is:",
+    "options": ["90°", "180°", "60°", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem: Angle subtended by diameter at circumference is:",
+    "options": ["90°", "180°", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Angles in same segment are:",
+    "options": ["Equal", "Supplementary", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Angle subtended by arc at centre is:",
+    "options": ["Half the angle at circumference", "Double the angle at circumference", "Equal", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Alternate segment theorem: Angle between tangent and chord equals:",
+    "options": ["Angle in same segment", "Angle in alternate segment", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The chapter 'Circles' is from class:",
+    "options": ["9", "10", "11", "12"],
+    "answer": 1
+  },
+  {
+    "q": "There is one and only one circle passing through:",
+    "options": ["Two points", "Three non-collinear points", "Four points", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Equal chords subtend:",
+    "options": ["Unequal angles at centre", "Equal angles at centre", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Converse: Chords subtending equal angles at centre are:",
+    "options": ["Unequal", "Equal", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The tangent theorem proofs use:",
+    "options": ["Congruent triangles", "Similar triangles", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For tangent perpendicular to radius: triangle is:",
+    "options": ["Right-angled at point of contact", "Equilateral", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For equal tangents: triangles formed are:",
+    "options": ["Congruent", "Similar", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For angle in semicircle: triangle is:",
+    "options": ["Right-angled", "Isosceles", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For angles in same segment: inscribed angles subtended by same arc.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Central angle is:",
+    "options": ["At centre", "At circumference", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inscribed angle is:",
+    "options": ["At centre", "At circumference", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Inscribed angle = half central angle for same arc.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Alternate segment theorem applies to:",
+    "options": ["Tangent and chord", "Two chords", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The angle between tangent and chord = angle in:",
+    "options": ["Same segment", "Alternate segment", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Cyclic quadrilateral has:",
+    "options": ["All vertices on circle", "Opposite angles sum 180°", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter covers theorems related to:",
+    "options": ["Tangent, chord, arcs", "Only tangent", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No theorem on secant in class 10.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Tangent-secant theorem is in higher classes.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter has:",
+    "options": ["9 theorems", "10 theorems", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem 1: Tangent perpendicular to radius.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem 2: Two tangents from external point equal.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem 3: Angle in semicircle 90°.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem on equal chords and distance from centre.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem on perpendicular from centre bisecting chord.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem on angles in same segment equal.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Theorem on central angle double inscribed angle.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Alternate segment theorem.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is:",
+    "options": ["Theorem heavy", "Calculation heavy", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Proofs use:",
+    "options": ["Congruence, isosceles triangles", "Similarity", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "No numerical problems, only theorem proofs.",
+    "options": ["True", "False", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter connects:",
+    "options": ["Euclid geometry with circles", "Trigonometry", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Heron's Formula MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body {background:#0b0f1a; color:#fff; font-family:'Poppins',sans-serif; padding:20px;}
+h1 {text-align:center; margin-bottom:20px;}
+.quiz-container {max-width:800px; margin:0 auto; background:#11162a; padding:30px; border-radius:16px;}
+.question {margin-bottom:15px; font-weight:600;}
+.options label {display:block; margin:5px 0; padding:8px 12px; background:#222; border-radius:8px; cursor:pointer; transition:0.3s;}
+.options label:hover {background:#4da3ff; color:#000;}
+button {margin-top:20px; padding:10px 20px; border:none; border-radius:8px; background:#4da3ff; color:#000; font-weight:600; cursor:pointer; transition:0.3s;}
+button:hover {opacity:0.85;}
+.result {margin-top:20px; font-size:18px; text-align:center; font-weight:600;}
+</style>
+</head>
+<body>
+
+<h1>Class 9 Maths - Heron's Formula MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Heron's formula is used to find the area of a:",
+    "options": ["Circle", "Rectangle", "Triangle", "Square"],
+    "answer": 2
+  },
+  {
+    "q": "Heron's formula uses the ___ of the triangle to calculate the area.",
+    "options": ["Height and base", "Three sides", "Angles", "Diagonals"],
+    "answer": 1
+  },
+  {
+    "q": "In Heron's formula, 's' represents:",
+    "options": ["Sum of sides", "Semi-perimeter", "Perimeter", "Area"],
+    "answer": 1
+  },
+  {
+    "q": "The semi-perimeter s is calculated as:",
+    "options": ["(a + b + c)", "(a + b + c)/2", "a + b - c", "abc"],
+    "answer": 1
+  },
+  {
+    "q": "Heron's formula for area is:",
+    "options": ["√[s(s+a)(s-b)(s-c)]", "√[s(s-a)(s-b)(s-c)]", "s(s-a)(s-b)(s-c)", "√[s(s-a+b+c)]"],
+    "answer": 1
+  },
+  {
+    "q": "For a triangle with sides 3, 4, 5 cm, the semi-perimeter s is:",
+    "options": ["6 cm", "12 cm", "7 cm", "5 cm"],
+    "answer": 0
+  },
+  {
+    "q": "Using Heron's formula, area of triangle with sides 3, 4, 5 cm is:",
+    "options": ["6 cm²", "12 cm²", "7 cm²", "15 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "For an equilateral triangle with side a, semi-perimeter s =",
+    "options": ["a", "2a", "3a/2", "a/2"],
+    "answer": 2
+  },
+  {
+    "q": "Area of equilateral triangle with side a using Heron's formula is:",
+    "options": ["(√3/4)a²", "(√3/2)a²", "a²", "(1/2)a²"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula works for:",
+    "options": ["Only right-angled triangles", "Only equilateral triangles", "All types of triangles", "Only isosceles triangles"],
+    "answer": 2
+  },
+  {
+    "q": "For sides 5, 12, 13 cm, s =",
+    "options": ["15", "30", "13", "17"],
+    "answer": 0
+  },
+  {
+    "q": "Area of triangle with sides 5, 12, 13 cm using Heron's formula is:",
+    "options": ["30 cm²", "60 cm²", "15 cm²", "78 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "If sides are 6, 8, 10 cm, this triangle is:",
+    "options": ["Scalene", "Right-angled", "Obtuse", "Acute"],
+    "answer": 1
+  },
+  {
+    "q": "Semi-perimeter for sides 6, 8, 10 cm is:",
+    "options": ["12", "24", "14", "10"],
+    "answer": 0
+  },
+  {
+    "q": "Area by Heron's formula for sides 6, 8, 10 cm is:",
+    "options": ["24 cm²", "48 cm²", "30 cm²", "20 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 7, 8, 9 cm, s =",
+    "options": ["12", "24", "15", "16"],
+    "answer": 0
+  },
+  {
+    "q": "Area of triangle with sides 7, 8, 9 cm (approx) using Heron's formula is:",
+    "options": ["26.83 cm²", "27.71 cm²", "24 cm²", "30 cm²"],
+    "answer": 1
+  },
+  {
+    "q": "If s = 10 cm, and sides a=8, b=7, c=5, then area =",
+    "options": ["√[10(2)(3)(5)]", "√[10(8)(7)(5)]", "√[10(10-8)(10-7)(10-5)]", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Value of √[10×2×3×5] is:",
+    "options": ["√300 = 10√3 ≈17.32", "√150 ≈12.25", "√600 ≈24.49", "30"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula is particularly useful when:",
+    "options": ["Height is known", "Base is known", "All three sides are known but height is not", "Angles are known"],
+    "answer": 2
+  },
+  {
+    "q": "For a triangle with sides 13, 14, 15 cm, s =",
+    "options": ["21", "42", "20", "22"],
+    "answer": 0
+  },
+  {
+    "q": "Area for sides 13, 14, 15 cm is:",
+    "options": ["84 cm²", "42 cm²", "21 cm²", "168 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "Which set of sides cannot form a triangle?",
+    "options": ["5, 12, 13", "3, 4, 5", "1, 1, 3", "7, 8, 9"],
+    "answer": 2
+  },
+  {
+    "q": "If sides are 10, 10, 12 cm, s =",
+    "options": ["16", "32", "11", "22"],
+    "answer": 0
+  },
+  {
+    "q": "Area for isosceles triangle with sides 10, 10, 12 cm is:",
+    "options": ["48 cm²", "24√7 cm²", "60 cm²", "20√3 cm²"],
+    "answer": 1
+  },
+  {
+    "q": "Heron's formula was discovered by:",
+    "options": ["Pythagoras", "Euclid", "Heron of Alexandria", "Archimedes"],
+    "answer": 2
+  },
+  {
+    "q": "For a right-angled triangle with legs a, b and hypotenuse c, area by Heron's formula equals:",
+    "options": ["(1/2)ab", "abc/4", "Both same", "Different"],
+    "answer": 2
+  },
+  {
+    "q": "In Heron's formula, if s = a, then area =",
+    "options": ["Positive", "Zero", "Maximum", "Negative"],
+    "answer": 1
+  },
+  {
+    "q": "If one side is very long compared to others, area approaches:",
+    "options": ["Zero", "Maximum", "Infinity", "Base × height"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 5, 5, 6 cm, s =",
+    "options": ["8", "16", "5", "11"],
+    "answer": 0
+  },
+  {
+    "q": "Area for sides 5, 5, 6 cm is:",
+    "options": ["√(8×3×3×2) = 12 cm²", "15 cm²", "10 cm²", "20 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "The expression under the square root in Heron's formula must be:",
+    "options": ["Negative", "Zero", "Positive", "Fraction"],
+    "answer": 2
+  },
+  {
+    "q": "If s-a, s-b, or s-c is negative, then:",
+    "options": ["Triangle possible", "Triangle not possible", "Area zero", "Area maximum"],
+    "answer": 1
+  },
+  {
+    "q": "For sides 9, 10, 17 cm, s =",
+    "options": ["18", "36", "17", "13"],
+    "answer": 0
+  },
+  {
+    "q": "s - 17 =",
+    "options": ["1", "18-17=1", "36-17=19", "0"],
+    "answer": 3
+  },
+  {
+    "q": "Area for sides 9, 10, 17 cm is:",
+    "options": ["Positive", "Zero", "Negative", "Undefined"],
+    "answer": 1
+  },
+  {
+    "q": "This shows that 9, 10, 17 do not form a triangle because:",
+    "options": ["9 + 10 = 19 > 17", "9 + 10 = 19 ≠ 17", "9 + 10 < 17? No, 19 > 17", "Actually 9+10=19>17, wait no issue, but wait calculation"],
+    "answer": 1
+  },
+  {
+    "q": "Correct: 9 + 10 = 19 > 17, so triangle possible, area calculation gives positive.",
+    "options": ["True", "False", "s-a negative", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Wait, earlier mistake: 9+10+17=36, s=18, s-17=1, s-10=8, s-9=9, area √(18×1×8×9)=√1296=36 cm²",
+    "options": ["Yes", "No", "Zero", "Negative"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 20, 20, 20 cm, area by Heron =",
+    "options": ["100√3 cm²", "300 cm²", "(√3/4)×400 = 100√3 cm²", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Heron's formula is derived from:",
+    "options": ["Pythagoras theorem", "Cosine rule and area formula", "Direct measurement", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For sides a, a, a (equilateral), s-a =",
+    "options": ["a/2", "3a/2 - a = a/2", "0", "a"],
+    "answer": 1
+  },
+  {
+    "q": "Then area = √[ (3a/2) (a/2)^3 ] = √[ (3a/2)(a³/8) ] = (√3/4)a²",
+    "options": ["True", "False", "Approximate", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula can be used for:",
+    "options": ["SSS triangles", "SAS triangles", "ASA triangles", "Only right triangles"],
+    "answer": 0
+  },
+  {
+    "q": "The expression s(s-a)(s-b)(s-c) is always:",
+    "options": ["Positive for valid triangle", "Negative", "Zero", "Fraction"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 4, 5, 6 cm, s =",
+    "options": ["7.5", "15", "9", "5"],
+    "answer": 0
+  },
+  {
+    "q": "Area = √[7.5(7.5-6)(7.5-5)(7.5-4)] = √[7.5×1.5×2.5×3.5]",
+    "options": ["≈9.92 cm²", "10 cm²", "15 cm²", "7.5 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "Exact value: 7.5×1.5=11.25, 2.5×3.5=8.75, 11.25×8.75=98.4375, √98.4375 ≈9.92 cm²",
+    "options": ["True", "False", "Exact 10", "None"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 5, 5, 8 cm, s =",
+    "options": ["9", "18", "8", "10"],
+    "answer": 0
+  },
+  {
+    "q": "Area = √[9(9-8)(9-5)(9-5)] = √[9×1×4×4] = √144 =",
+    "options": ["12 cm²", "9 cm²", "16 cm²", "10 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 2, 3, 4 cm, s =",
+    "options": ["4.5", "9", "3", "5"],
+    "answer": 0
+  },
+  {
+    "q": "Area = √[4.5(4.5-4)(4.5-3)(4.5-2)] = √[4.5×0.5×1.5×2.5]",
+    "options": ["≈2.90 cm²", "3 cm²", "0", "4 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula is named after Heron of:",
+    "options": ["Athens", "Alexandria", "Sparta", "Rome"],
+    "answer": 1
+  },
+  {
+    "q": "Heron's formula is also known as:",
+    "options": ["Pythagoras formula", "Hero's formula", "Archimedes formula", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For a degenerate triangle (points collinear), area by Heron is:",
+    "options": ["Positive", "Zero", "Negative", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "Example: sides 3, 4, 7 → s=7, s-c=0, area=0",
+    "options": ["True", "False", "Positive", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula can be used to verify:",
+    "options": ["Triangle inequality", "Pythagoras theorem", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If area by Heron is real and positive, then:",
+    "options": ["Triangle exists", "Triangle does not exist", "Right-angled", "Equilateral"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 10, 17, 21 cm, this is a:",
+    "options": ["Right-angled triangle (10²+17²=100+289=389≠441)", "Not right", "10-17-21 not Pythagorean", "Check area"],
+    "answer": 3
+  },
+  {
+    "q": "s=24, area=√[24(14)(7)(3)]=√[24×14×7×3]=√7056=84 cm²",
+    "options": ["True", "False", "Zero", "Negative"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula is useful in:",
+    "options": ["Coordinate geometry", "When sides are given", "Trigonometry", "All"],
+    "answer": 1
+  },
+  {
+    "q": "The unit of area from Heron's formula is:",
+    "options": ["Same as side unit", "Square of side unit", "Cube", "None"],
+    "answer": 1
+  },
+  {
+    "q": "For sides in cm, area is in:",
+    "options": ["cm", "cm²", "cm³", "m²"],
+    "answer": 1
+  },
+  {
+    "q": "Heron's formula does not require:",
+    "options": ["Sides", "Height", "Angles", "All required sides only"],
+    "answer": 1
+  },
+  {
+    "q": "Compared to (1/2)base×height, Heron's is used when:",
+    "options": ["Height known", "Height unknown", "Base known", "Angle known"],
+    "answer": 1
+  },
+  {
+    "q": "For sides 1, 1, 1 cm, area =",
+    "options": ["(√3/4) cm²", "1 cm²", "0.5 cm²", "√3 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "For sides 50, 50, 60 cm, area is larger than for smaller sides.",
+    "options": ["True", "False", "Same", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula is exact for:",
+    "options": ["All valid triangles", "Only integer sides", "Only rational sides", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In competition math, Heron's is used for:",
+    "options": ["Area without height", "Proving congruence", "Similarity", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The formula is attributed to Heron around:",
+    "options": ["1st century AD", "300 BC", "500 AD", "Modern"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula can be rewritten using:",
+    "options": ["Cosine rule", "Sine rule", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "One derivation uses area = (1/2)ab sin C and cosine rule.",
+    "options": ["True", "False", "Only sine", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Heron's formula is in NCERT Class:",
+    "options": ["9", "10", "8", "7"],
+    "answer": 0
+  },
+  {
+    "q": "In Class 9, it is introduced in chapter:",
+    "options": ["Triangles", "Heron's Formula", "Quadrilaterals", "Circles"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

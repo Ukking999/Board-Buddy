@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 10 Maths - Number Systems MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 10 Maths - Probability MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Probability is a measure of:",
+    "options": ["Certainty of an event", "Likelihood of an event", "Impossibility of an event", "Number of outcomes"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of an impossible event is:",
+    "options": ["1", "0", "0.5", "Greater than 1"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of a sure (certain) event is:",
+    "options": ["0", "1", "0.5", "Between 0 and 1"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of any event lies between:",
+    "options": ["0 and 1 (inclusive)", "-1 and 1", "0 and ∞", "1 and 2"],
+    "answer": 0
+  },
+  {
+    "q": "In a single throw of a fair die, the probability of getting an even number is:",
+    "options": ["1/6", "1/3", "1/2", "2/3"],
+    "answer": 2
+  },
+  {
+    "q": "When a fair coin is tossed, the probability of getting a head is:",
+    "options": ["0", "1/2", "1", "1/4"],
+    "answer": 1
+  },
+  {
+    "q": "An experiment in probability is also called:",
+    "options": ["Trial", "Outcome", "Event", "Sample space"],
+    "answer": 0
+  },
+  {
+    "q": "All possible outcomes of an experiment form the:",
+    "options": ["Event", "Trial", "Sample space", "Probability"],
+    "answer": 2
+  },
+  {
+    "q": "The number of outcomes when a coin is tossed twice is:",
+    "options": ["2", "3", "4", "6"],
+    "answer": 2
+  },
+  {
+    "q": "In throwing a fair die, the number of possible outcomes is:",
+    "options": ["3", "6", "12", "1"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of getting a number less than 5 on a fair die is:",
+    "options": ["1/6", "2/3", "4/6", "5/6"],
+    "answer": 2
+  },
+  {
+    "q": "When two coins are tossed, the probability of getting exactly one head is:",
+    "options": ["1/4", "1/2", "3/4", "1"],
+    "answer": 1
+  },
+  {
+    "q": "A bag contains 5 red and 3 blue balls. The probability of drawing a red ball is:",
+    "options": ["3/8", "5/8", "3/5", "5/3"],
+    "answer": 1
+  },
+  {
+    "q": "The sum of probabilities of all possible outcomes in an experiment is:",
+    "options": ["0", "1", "Greater than 1", "Less than 1"],
+    "answer": 1
+  },
+  {
+    "q": "In a deck of 52 cards, the probability of drawing a king is:",
+    "options": ["1/13", "4/13", "1/52", "4/52"],
+    "answer": 0
+  },
+  {
+    "q": "The probability of getting a prime number when a die is rolled is:",
+    "options": ["1/2", "1/3", "2/3", "1/6"],
+    "answer": 0
+  },
+  {
+    "q": "If P(A) = 0.4, then P(not A) =",
+    "options": ["0.4", "0.6", "1", "0"],
+    "answer": 1
+  },
+  {
+    "q": "An event with probability 1 is called:",
+    "options": ["Impossible event", "Certain event", "Equally likely event", "Random event"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of getting a number greater than 6 on a die is:",
+    "options": ["0", "1/6", "1", "5/6"],
+    "answer": 0
+  },
+  {
+    "q": "In tossing three coins, the total number of possible outcomes is:",
+    "options": ["3", "6", "8", "9"],
+    "answer": 2
+  },
+  {
+    "q": "A bag has 4 green and 6 black marbles. Probability of not getting green is:",
+    "options": ["4/10", "6/10", "4/6", "6/4"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of drawing a red ace from a standard deck is:",
+    "options": ["1/52", "2/52", "4/52", "1/13"],
+    "answer": 1
+  },
+  {
+    "q": "When two dice are rolled, the total number of outcomes is:",
+    "options": ["6", "12", "36", "72"],
+    "answer": 2
+  },
+  {
+    "q": "The probability of getting a sum of 7 when two dice are rolled is:",
+    "options": ["1/6", "5/36", "6/36", "7/36"],
+    "answer": 2
+  },
+  {
+    "q": "An outcome with equal chance is called:",
+    "options": ["Equally likely", "Mutually exclusive", "Independent", "Complementary"],
+    "answer": 0
+  },
+  {
+    "q": "If P(A) = 3/4, then P(A') =",
+    "options": ["3/4", "1/4", "4/3", "1"],
+    "answer": 1
+  },
+  {
+    "q": "In a fair experiment, each outcome is:",
+    "options": ["Certain", "Impossible", "Equally likely", "Random"],
+    "answer": 2
+  },
+  {
+    "q": "The probability of getting at least one head in two coin tosses is:",
+    "options": ["1/4", "1/2", "3/4", "1"],
+    "answer": 2
+  },
+  {
+    "q": "A pack of cards has 26 red and 26 black cards. Probability of drawing a black card is:",
+    "options": ["1/4", "1/2", "1/26", "26/52"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of an event that occurs in every trial is:",
+    "options": ["0", "1", "0.5", "Undefined"],
+    "answer": 1
+  },
+  {
+    "q": "When a die is rolled, probability of getting an odd number is:",
+    "options": ["1/2", "1/3", "2/3", "3/6"],
+    "answer": 0
+  },
+  {
+    "q": "Total number of face cards in a deck is:",
+    "options": ["12", "16", "4", "52"],
+    "answer": 0
+  },
+  {
+    "q": "Probability of drawing a face card from a deck is:",
+    "options": ["12/52", "4/52", "1/52", "12/13"],
+    "answer": 0
+  },
+  {
+    "q": "The sample space for spinning a spinner numbered 1 to 4 is:",
+    "options": ["{1}", "{1,2}", "{1,2,3}", "{1,2,3,4}"],
+    "answer": 3
+  },
+  {
+    "q": "If a card is drawn from a deck, probability of getting a spade is:",
+    "options": ["1/4", "13/52", "Both a and b", "1/13"],
+    "answer": 2
+  },
+  {
+    "q": "The probability of getting a multiple of 3 on a die is:",
+    "options": ["1/3", "2/3", "1/2", "1/6"],
+    "answer": 0
+  },
+  {
+    "q": "In a bag with 7 white and 3 black balls, P(black) =",
+    "options": ["3/10", "7/10", "3/7", "7/3"],
+    "answer": 0
+  },
+  {
+    "q": "The probability of drawing a queen of hearts is:",
+    "options": ["1/52", "4/52", "1/13", "1/4"],
+    "answer": 0
+  },
+  {
+    "q": "When two coins are tossed, probability of no head is:",
+    "options": ["1/4", "1/2", "3/4", "0"],
+    "answer": 0
+  },
+  {
+    "q": "Probability of getting 1 or 6 on a die is:",
+    "options": ["1/6", "1/3", "1/2", "2/3"],
+    "answer": 1
+  },
+  {
+    "q": "In rolling two dice, probability of getting sum 12 is:",
+    "options": ["1/36", "2/36", "3/36", "6/36"],
+    "answer": 0
+  },
+  {
+    "q": "The number of hearts in a deck is:",
+    "options": ["13", "26", "4", "12"],
+    "answer": 0
+  },
+  {
+    "q": "Probability of getting a number divisible by 2 on a die is:",
+    "options": ["1/2", "1/3", "2/3", "1/6"],
+    "answer": 0
+  },
+  {
+    "q": "If P(A) = 0, then event A is:",
+    "options": ["Certain", "Impossible", "Likely", "Equally likely"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of getting a tail when a coin is biased towards heads is:",
+    "options": ["1", "0", "Less than 1/2", "Cannot be determined without data"],
+    "answer": 3
+  },
+  {
+    "q": "Total outcomes when a coin is tossed 3 times:",
+    "options": ["3", "6", "8", "12"],
+    "answer": 2
+  },
+  {
+    "q": "Probability of getting exactly two heads in three coin tosses is:",
+    "options": ["3/8", "1/2", "1/8", "5/8"],
+    "answer": 0
+  },
+  {
+    "q": "In a deck, number of diamonds is:",
+    "options": ["13", "12", "26", "4"],
+    "answer": 0
+  },
+  {
+    "q": "Probability of drawing a diamond or a king is:",
+    "options": ["16/52", "13/52", "17/52", "4/52"],
+    "answer": 0
+  },
+  {
+    "q": "The probability of an event cannot be:",
+    "options": ["0", "1", "0.5", "-0.5"],
+    "answer": 3
+  },
+  {
+    "q": "In a fair coin toss, P(head or tail) =",
+    "options": ["1/2", "1", "0", "2"],
+    "answer": 1
+  },
+  {
+    "q": "The sample space for drawing a card is:",
+    "options": ["52 outcomes", "13 outcomes", "4 outcomes", "26 outcomes"],
+    "answer": 0
+  },
+  {
+    "q": "Probability of getting a composite number on a die is:",
+    "options": ["1/3", "2/3", "1/2", "4/6"],
+    "answer": 1
+  },
+  {
+    "q": "If there are 10 marbles: 7 red, 3 blue, P(not red) =",
+    "options": ["7/10", "3/10", "10/3", "3/7"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of getting sum less than 5 in two dice is:",
+    "options": ["6/36", "10/36", "4/36", "15/36"],
+    "answer": 0
+  },
+  {
+    "q": "In tossing a coin, the events head and tail are:",
+    "options": ["Mutually exclusive and exhaustive", "Independent", "Complementary only", "Equally likely only"],
+    "answer": 0
+  },
+  {
+    "q": "The probability of drawing two aces in succession without replacement from a deck is:",
+    "options": ["4/52 × 3/51", "4/52 × 4/51", "1/13 × 1/13", "12/52"],
+    "answer": 0
+  },
+  {
+    "q": "Empirical probability is based on:",
+    "options": ["Theory", "Experiment", "Assumption", "Sample space"],
+    "answer": 1
+  },
+  {
+    "q": "Theoretical probability is calculated as:",
+    "options": ["Number of favourable / Total possible", "Number of trials / Favourable", "Total / Favourable", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If a spinner has equal sections 1,2,3,4, P(odd number) =",
+    "options": ["1/4", "1/2", "3/4", "2/4"],
+    "answer": 1
+  },
+  {
+    "q": "The probability of getting a number greater than 4 on a die is:",
+    "options": ["1/3", "2/6", "1/6", "5/6"],
+    "answer": 1
+  },
+  {
+    "q": "In a standard deck, probability of drawing a jack or queen is:",
+    "options": ["8/52", "4/52", "2/52", "12/52"],
+    "answer": 0
+  },
+  {
+    "q": "The probability of an event happening at least once in two trials can be found using:",
+    "options": ["Complement", "Addition", "Multiplication", "Division"],
+    "answer": 0
+  },
+  {
+    "q": "If P(A) = 0.7, then odds in favour of A are:",
+    "options": ["7:3", "3:7", "7:10", "10:7"],
+    "answer": 0
+  },
+  {
+    "q": "The probability of getting a head in a biased coin is 0.6, then P(tail) =",
+    "options": ["0.6", "0.4", "1", "0"],
+    "answer": 1
+  },
+  {
+    "q": "In rolling a die, probability of getting 7 is:",
+    "options": ["0", "1/6", "1", "1/7"],
+    "answer": 0
+  },
+  {
+    "q": "The number of kings of red suit in a deck is:",
+    "options": ["1", "2", "4", "13"],
+    "answer": 1
+  },
+  {
+    "q": "Probability of drawing a red king is:",
+    "options": ["2/52", "1/52", "4/52", "13/52"],
+    "answer": 0
+  },
+  {
+    "q": "If an event has probability 0.25, it is:",
+    "options": ["Certain", "Likely", "Unlikely", "Impossible"],
+    "answer": 2
+  },
+  {
+    "q": "The probability of getting a sum of 2 or 12 in two dice is:",
+    "options": ["1/36 + 1/36 = 2/36", "2/36", "1/36", "0"],
+    "answer": 0
+  },
+  {
+    "q": "In a lottery with 100 tickets, probability of winning with one ticket is:",
+    "options": ["1/100", "100/1", "99/100", "1"],
+    "answer": 0
+  },
+  {
+    "q": "The probability of not getting a 6 in a die roll is:",
+    "options": ["1/6", "5/6", "6/6", "0"],
+    "answer": 1
+  },
+  {
+    "q": "Random experiment means:",
+    "options": ["Outcome is known", "Outcome is unknown in advance", "No outcome", "Only one outcome"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

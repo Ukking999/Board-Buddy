@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Sound MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Sound is a form of:",
+    "options": ["Energy", "Force", "Matter", "Light"],
+    "answer": 0
+  },
+  {
+    "q": "Sound is produced due to:",
+    "options": ["Vibration of bodies", "Heating", "Friction only", "Light"],
+    "answer": 0
+  },
+  {
+    "q": "Sound travels in the form of:",
+    "options": ["Transverse waves", "Longitudinal waves", "Electromagnetic waves", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Sound requires a medium to travel. It is a:",
+    "options": ["Mechanical wave", "Electromagnetic wave", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sound cannot travel through:",
+    "options": ["Air", "Water", "Vacuum", "Solids"],
+    "answer": 2
+  },
+  {
+    "q": "The speed of sound is maximum in:",
+    "options": ["Gases", "Liquids", "Solids", "Vacuum"],
+    "answer": 2
+  },
+  {
+    "q": "The speed of sound in air at room temperature is approximately:",
+    "options": ["330 m/s", "340 m/s", "350 m/s", "300 m/s"],
+    "answer": 1
+  },
+  {
+    "q": "In solids, sound travels fastest because particles are:",
+    "options": ["Far apart", "Closely packed", "Loosely packed", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The sensation of sound is produced in the:",
+    "options": ["Ear", "Eye", "Nose", "Skin"],
+    "answer": 0
+  },
+  {
+    "q": "Sound waves consist of:",
+    "options": ["Compressions and rarefactions", "Crests and troughs only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In longitudinal waves, particles vibrate:",
+    "options": ["Perpendicular to wave direction", "Parallel to wave direction", "Circularly", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In transverse waves, particles vibrate:",
+    "options": ["Parallel to wave direction", "Perpendicular to wave direction", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The distance between two consecutive compressions or rarefactions is:",
+    "options": ["Amplitude", "Wavelength", "Frequency", "Time period"],
+    "answer": 1
+  },
+  {
+    "q": "The maximum displacement of particles from mean position is:",
+    "options": ["Wavelength", "Amplitude", "Frequency", "Time period"],
+    "answer": 1
+  },
+  {
+    "q": "The number of vibrations per second is:",
+    "options": ["Time period", "Amplitude", "Frequency", "Wavelength"],
+    "answer": 2
+  },
+  {
+    "q": "The SI unit of frequency is:",
+    "options": ["Second", "Metre", "Hertz", "Newton"],
+    "answer": 2
+  },
+  {
+    "q": "Time period T =",
+    "options": ["1/f", "f", "λ/v", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The pitch of sound depends on:",
+    "options": ["Amplitude", "Frequency", "Speed", "Wavelength"],
+    "answer": 1
+  },
+  {
+    "q": "Higher frequency means:",
+    "options": ["Lower pitch", "Higher pitch", "Louder sound", "Softer sound"],
+    "answer": 1
+  },
+  {
+    "q": "Loudness of sound depends on:",
+    "options": ["Frequency", "Amplitude", "Speed", "Medium"],
+    "answer": 1
+  },
+  {
+    "q": "Greater amplitude means:",
+    "options": ["Higher pitch", "Louder sound", "Lower pitch", "Softer sound"],
+    "answer": 1
+  },
+  {
+    "q": "The audible range of human ear is:",
+    "options": ["20 Hz to 20,000 Hz", "Below 20 Hz", "Above 20,000 Hz", "10 Hz to 10,000 Hz"],
+    "answer": 0
+  },
+  {
+    "q": "Sounds below 20 Hz are called:",
+    "options": ["Ultrasonic", "Infrasonic", "Audible", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Sounds above 20,000 Hz are called:",
+    "options": ["Infrasonic", "Ultrasonic", "Audible", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Ultrasonic sounds are used in:",
+    "options": ["SONAR", "Music", "Hearing", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Infrasonic sounds are produced by:",
+    "options": ["Earthquakes", "Musical instruments", "Whistles", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The reflection of sound is called:",
+    "options": ["Refraction", "Diffraction", "Echo", "Reverberation"],
+    "answer": 2
+  },
+  {
+    "q": "To hear a distinct echo, the minimum distance from reflecting surface should be:",
+    "options": ["17 m (approx)", "34 m", "10 m", "50 m"],
+    "answer": 0
+  },
+  {
+    "q": "The persistence of sound in a hall due to repeated reflections is:",
+    "options": ["Echo", "Reverberation", "Resonance", "None"],
+    "answer": 1
+  },
+  {
+    "q": "SONAR stands for:",
+    "options": ["Sound Navigation and Ranging", "Sound Navigation and Reflection", "Sound Operation and Navigation", "None"],
+    "answer": 0
+  },
+  {
+    "q": "SONAR is used to measure:",
+    "options": ["Depth of sea", "Speed of sound", "Frequency", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ultrasound is used in:",
+    "options": ["Medical imaging (sonography)", "Cleaning", "Detecting cracks", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "The speed of sound increases with:",
+    "options": ["Decrease in temperature", "Increase in temperature", "No change", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In water, speed of sound is:",
+    "options": ["Less than in air", "Greater than in air", "Same as air", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In steel, speed of sound is about:",
+    "options": ["330 m/s", "1500 m/s", "5000 m/s", "340 m/s"],
+    "answer": 2
+  },
+  {
+    "q": "Sound travels slowest in:",
+    "options": ["Solids", "Liquids", "Gases", "Vacuum"],
+    "answer": 2
+  },
+  {
+    "q": "The human ear can hear sounds up to:",
+    "options": ["20 Hz", "20,000 Hz", "Both limits", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Bats use ___ sounds to navigate.",
+    "options": ["Infrasonic", "Ultrasonic", "Audible", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Dolphins use ___ for communication and navigation.",
+    "options": ["Infrasonic", "Ultrasonic", "Audible", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The time taken by echo to return is used in SONAR to find:",
+    "options": ["Speed", "Distance", "Frequency", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Distance =",
+    "options": ["Speed × time / 2", "Speed × time", "Speed / time", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Multiple reflections of sound are used in:",
+    "options": ["Megaphone", "Stethoscope", "Soundboards", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Megaphone works on:",
+    "options": ["Reflection of sound", "Refraction", "Diffraction", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Hearing aids use:",
+    "options": ["Reflection", "Refraction", "Amplification", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Musical instruments produce sound due to:",
+    "options": ["Vibration", "Heating", "Friction", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The quality or timbre of sound depends on:",
+    "options": ["Waveform", "Frequency", "Amplitude", "Speed"],
+    "answer": 0
+  },
+  {
+    "q": "Noise is:",
+    "options": ["Pleasant sound", "Unpleasant sound", "Musical sound", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Noise pollution can cause:",
+    "options": ["Hearing loss", "Stress", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter 'Sound' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Sound waves are:",
+    "options": ["Electromagnetic", "Mechanical", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Light can travel through vacuum but sound:",
+    "options": ["Can", "Cannot", "Sometimes", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Compression is region of:",
+    "options": ["High pressure", "Low pressure", "No pressure", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Rarefaction is region of:",
+    "options": ["High pressure", "Low pressure", "No pressure", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Wavelength λ =",
+    "options": ["v / f", "v f", "f / v", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Loudness is measured in:",
+    "options": ["Hertz", "Decibel (dB)", "Metre", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Intensity of sound is proportional to:",
+    "options": ["Amplitude", "Square of amplitude", "Frequency", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The speed of sound depends on:",
+    "options": ["Medium", "Temperature", "Both", "Amplitude"],
+    "answer": 2
+  },
+  {
+    "q": "In cold air, speed of sound is:",
+    "options": ["Higher", "Lower", "Same", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The echo is heard when time gap is at least:",
+    "options": ["0.1 s", "1 s", "0.01 s", "10 s"],
+    "answer": 0
+  },
+  {
+    "q": "Reverberation is reduced by using:",
+    "options": ["Sound absorbing materials", "Reflectors", "Amplifiers", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ceilings of auditoriums are curved to:",
+    "options": ["Spread sound evenly", "Absorb sound", "Increase loudness", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Stethoscope works on:",
+    "options": ["Multiple reflection", "Refraction", "Diffraction", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Horn-shaped instruments direct sound by:",
+    "options": ["Reflection", "Diffraction", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sound is produced by:",
+    "options": ["Vibrating bodies", "Stationary bodies", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The voice of women is generally:",
+    "options": ["Low pitch", "High pitch", "Same as men", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The voice of men is generally:",
+    "options": ["High pitch", "Low pitch", "Same as women", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The frequency of a tuning fork depends on:",
+    "options": ["Length and thickness", "Material", "Both", "Amplitude"],
+    "answer": 2
+  },
+  {
+    "q": "Ultrasound has frequency:",
+    "options": ["> 20,000 Hz", "< 20 Hz", "20 Hz to 20,000 Hz", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Infrasound has frequency:",
+    "options": ["< 20 Hz", "> 20,000 Hz", "Audible range", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Animals like elephants use ___ sounds.",
+    "options": ["Ultrasonic", "Infrasonic", "Audible", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The human ear has three parts:",
+    "options": ["Outer, middle, inner", "Only outer", "Only inner", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sound is a:",
+    "options": ["Transverse wave", "Longitudinal wave", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The chapter introduces:",
+    "options": ["Production, propagation, characteristics of sound", "Only loudness", "Only echo", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>
