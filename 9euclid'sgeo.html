@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Polynomials MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Euclid's Geometry MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "Euclid's 'Elements' is a treatise on:",
+    "options": ["Algebra", "Geometry", "Trigonometry", "Calculus"],
+    "answer": 1
+  },
+  {
+    "q": "How many books (chapters) are there in Euclid's Elements?",
+    "options": ["10", "13", "15", "12"],
+    "answer": 1
+  },
+  {
+    "q": "A point has:",
+    "options": ["Length and breadth", "No dimensions", "Only length", "Breadth only"],
+    "answer": 1
+  },
+  {
+    "q": "A line has:",
+    "options": ["Length only", "Length and breadth", "Breadth only", "No dimensions"],
+    "answer": 0
+  },
+  {
+    "q": "A surface has:",
+    "options": ["Length only", "Length and breadth", "Breadth only", "No dimensions"],
+    "answer": 1
+  },
+  {
+    "q": "The boundaries of a surface are:",
+    "options": ["Points", "Lines", "Surfaces", "Planes"],
+    "answer": 1
+  },
+  {
+    "q": "The edges of a solid are:",
+    "options": ["Points", "Lines", "Surfaces", "Planes"],
+    "answer": 1
+  },
+  {
+    "q": "A straight line is one that lies evenly with the points on itself. This is:",
+    "options": ["A postulate", "An axiom", "A definition", "A theorem"],
+    "answer": 2
+  },
+  {
+    "q": "Euclid's first postulate states that:",
+    "options": ["A straight line can be drawn from any point to any point", "All right angles are equal", "Whole is greater than part", "Things equal to same thing are equal"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid's second postulate is:",
+    "options": ["A terminated line can be produced indefinitely", "All right angles are equal", "A circle can be drawn with any centre and radius", "Whole is greater than part"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid's third postulate is:",
+    "options": ["A circle can be drawn with any centre and any radius", "All right angles are equal to one another", "A straight line can be drawn between two points", "Parallel lines never meet"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid's fourth postulate is:",
+    "options": ["All right angles are equal to one another", "A circle can be drawn with any centre", "Things equal to same are equal", "Parallel lines do not meet"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid's fifth postulate is also known as:",
+    "options": ["Postulate of equality", "Parallel postulate", "Circle postulate", "Line extension postulate"],
+    "answer": 1
+  },
+  {
+    "q": "The parallel postulate states that if a straight line falling on two straight lines makes interior angles on the same side less than two right angles, then:",
+    "options": ["The two lines are parallel", "The two lines meet on that side", "The two lines are perpendicular", "A circle can be drawn"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is a common notion (axiom) of Euclid?",
+    "options": ["Things which are equal to the same thing are equal to one another", "A line can be extended indefinitely", "A circle has a centre", "Parallel lines do not meet"],
+    "answer": 0
+  },
+  {
+    "q": "Which of the following is NOT one of Euclid's postulates?",
+    "options": ["A straight line may be drawn from any point to any other point", "All right angles are equal", "Things equal to the same are equal to each other", "A terminated line can be produced indefinitely"],
+    "answer": 2
+  },
+  {
+    "q": "Two distinct lines cannot have more than ___ point(s) in common.",
+    "options": ["Zero", "One", "Two", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "According to Euclid, two circles can intersect at most at:",
+    "options": ["One point", "Two points", "Three points", "Infinite points"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid belongs to which country?",
+    "options": ["Greece", "Egypt", "India", "Italy"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid is often called the:",
+    "options": ["Father of Algebra", "Father of Geometry", "Father of Trigonometry", "Father of Calculus"],
+    "answer": 1
+  },
+  {
+    "q": "The famous theorem 'In a right-angled triangle, the square on the hypotenuse is equal to the sum of the squares on the other two sides' is:",
+    "options": ["Euclid's first theorem", "Pythagoras' theorem (proved in Elements)", "Thales' theorem", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Which book of Elements contains the proof of the Pythagorean theorem?",
+    "options": ["Book I", "Book II", "Book III", "Book IV"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid defined a point as:",
+    "options": ["That which has length but no breadth", "That which has no part", "A terminated line", "A surface boundary"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid assumed that all right angles are:",
+    "options": ["Different", "Equal to one another", "Greater than acute angles", "Less than obtuse angles"],
+    "answer": 1
+  },
+  {
+    "q": "The whole is greater than the part. This is:",
+    "options": ["A postulate", "A definition", "A common notion", "A theorem"],
+    "answer": 2
+  },
+  {
+    "q": "If equals are added to equals, the wholes are equal. This is:",
+    "options": ["Postulate", "Common notion", "Definition", "Theorem"],
+    "answer": 1
+  },
+  {
+    "q": "If equals are subtracted from equals, the remainders are equal. This is:",
+    "options": ["Postulate", "Common notion", "Definition", "Theorem"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid's parallel postulate is equivalent to:",
+    "options": ["Through a point not on a line, exactly one parallel can be drawn", "Two lines are parallel if they do not meet", "Angles in alternate segments are equal", "None"],
+    "answer": 0
+  },
+  {
+    "q": "How many common notions (axioms) did Euclid state?",
+    "options": ["4", "5", "6", "7"],
+    "answer": 1
+  },
+  {
+    "q": "How many postulates did Euclid state?",
+    "options": ["4", "5", "6", "7"],
+    "answer": 1
+  },
+  {
+    "q": "The statement 'A circle may be described with any centre and any radius' is Euclid's:",
+    "options": ["First postulate", "Second postulate", "Third postulate", "Fourth postulate"],
+    "answer": 2
+  },
+  {
+    "q": "The only postulate that is not accepted without proof in modern geometry is:",
+    "options": ["First", "Second", "Third", "Fifth"],
+    "answer": 3
+  },
+  {
+    "q": "Non-Euclidean geometry arises by rejecting or modifying:",
+    "options": ["First postulate", "Parallel postulate", "Right angle postulate", "Circle postulate"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid proved that the base angles of an isosceles triangle are:",
+    "options": ["Equal", "Unequal", "Right angles", "Obtuse"],
+    "answer": 0
+  },
+  {
+    "q": "The first proposition in Book I of Elements is:",
+    "options": ["To construct an equilateral triangle on a given line", "To bisect a line", "Pythagoras theorem", "To draw a perpendicular"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid's Elements begins with:",
+    "options": ["Theorems", "Definitions", "Postulates", "Axioms"],
+    "answer": 1
+  },
+  {
+    "q": "A terminated line segment is also called:",
+    "options": ["Ray", "Line", "Finite line", "Straight line"],
+    "answer": 2
+  },
+  {
+    "q": "Euclid stated that a line is:",
+    "options": ["Breadthless length", "Length with breadth", "A surface", "A point"],
+    "answer": 0
+  },
+  {
+    "q": "The extremities of a line segment are:",
+    "options": ["Lines", "Points", "Surfaces", "Circles"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is a definition in Euclid's Elements?",
+    "options": ["A point is that which has no part", "All right angles are equal", "A line can be extended", "Whole is greater than part"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid proved that there are:",
+    "options": ["Finitely many primes", "Infinitely many primes", "No primes", "Only even primes"],
+    "answer": 1
+  },
+  {
+    "q": "The proof of infinitude of primes is in which book?",
+    "options": ["Book VII", "Book VIII", "Book IX", "Book X"],
+    "answer": 2
+  },
+  {
+    "q": "Euclid's geometry is primarily:",
+    "options": ["Plane geometry", "Solid geometry", "Spherical geometry", "Hyperbolic geometry"],
+    "answer": 0
+  },
+  {
+    "q": "The angle formed by two intersecting lines is called:",
+    "options": ["Vertical angle", "Plane angle", "Rectilineal angle", "Curved angle"],
+    "answer": 2
+  },
+  {
+    "q": "When a straight line standing on another makes equal adjacent angles, each is called:",
+    "options": ["Acute", "Obtuse", "Right angle", "Reflex"],
+    "answer": 2
+  },
+  {
+    "q": "An angle greater than one right angle but less than two is called:",
+    "options": ["Acute", "Obtuse", "Straight", "Reflex"],
+    "answer": 1
+  },
+  {
+    "q": "A figure bounded by straight lines is called:",
+    "options": ["Circle", "Polygon", "Curve", "Solid"],
+    "answer": 1
+  },
+  {
+    "q": "A triangle with all sides equal is:",
+    "options": ["Scalene", "Isosceles", "Equilateral", "Right-angled"],
+    "answer": 2
+  },
+  {
+    "q": "A triangle with a right angle is called:",
+    "options": ["Acute triangle", "Obtuse triangle", "Right-angled triangle", "Equilateral"],
+    "answer": 2
+  },
+  {
+    "q": "The Pythagorean theorem is proposition number ___ in Book I.",
+    "options": ["46", "47", "48", "49"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid's Elements covers topics like:",
+    "options": ["Only geometry", "Geometry and number theory", "Only algebra", "Trigonometry"],
+    "answer": 1
+  },
+  {
+    "q": "Parallel straight lines are those which:",
+    "options": ["Intersect at one point", "Do not meet and are coplanar", "Meet at infinity", "Are perpendicular"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid's definition of parallel lines does not directly use the word 'parallel' in postulates but is implied through:",
+    "options": ["First postulate", "Fourth postulate", "Fifth postulate", "Third postulate"],
+    "answer": 2
+  },
+  {
+    "q": "The sum of angles in a triangle is equal to:",
+    "options": ["One right angle", "Two right angles", "Three right angles", "Four right angles"],
+    "answer": 1
+  },
+  {
+    "q": "Exterior angle of a triangle is equal to:",
+    "options": ["Sum of two interior opposite angles", "One interior angle", "Difference of angles", "90 degrees"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid lived around:",
+    "options": ["300 BC", "500 BC", "100 AD", "200 BC"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid taught at:",
+    "options": ["Athens", "Alexandria", "Rome", "Sparta"],
+    "answer": 1
+  },
+  {
+    "q": "The famous quote 'There is no royal road to geometry' was said by Euclid to:",
+    "options": ["Ptolemy I", "Alexander", "Aristotle", "Plato"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid's Elements influenced mathematics for over:",
+    "options": ["500 years", "1000 years", "2000 years", "100 years"],
+    "answer": 2
+  },
+  {
+    "q": "Book X of Elements deals with:",
+    "options": ["Incommensurable magnitudes", "Primes", "Circles", "Polygons"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid used the method of:",
+    "options": ["Induction", "Deduction", "Experiment", "Calculation"],
+    "answer": 1
+  },
+  {
+    "q": "The converse of Pythagoras theorem was also proved by:",
+    "options": ["Thales", "Euclid", "Pythagoras", "Archimedes"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid showed that the diagonal of a square is:",
+    "options": ["Commensurable with side", "Incommensurable with side", "Equal to side", "Half the side"],
+    "answer": 1
+  },
+  {
+    "q": "√2 is irrational was proved by:",
+    "options": ["Pythagoras", "Euclid", "Hippasus", "Thales"],
+    "answer": 1
+  },
+  {
+    "q": "The number of definitions in Book I of Elements is:",
+    "options": ["15", "23", "28", "35"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid's geometry assumes:",
+    "options": ["Curved space", "Flat space", "Spherical space", "Hyperbolic space"],
+    "answer": 1
+  },
+  {
+    "q": "Which of the following is true according to Euclid?",
+    "options": ["Parallel lines meet at infinity", "Through a point, infinitely many parallels can be drawn", "Exactly one parallel through a point not on line", "No parallel lines"],
+    "answer": 2
+  },
+  {
+    "q": "The proposition 'Angles in the same segment are equal' is from:",
+    "options": ["Book I", "Book II", "Book III", "Book IV"],
+    "answer": 2
+  },
+  {
+    "q": "Euclid constructed a regular pentagon in:",
+    "options": ["Book I", "Book II", "Book III", "Book IV"],
+    "answer": 3
+  },
+  {
+    "q": "The golden ratio appears in Euclid's construction of:",
+    "options": ["Equilateral triangle", "Regular pentagon", "Square", "Circle"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid's proof of Pythagoras uses:",
+    "options": ["Similar triangles", "Area rearrangement", "Both", "Trigonometry"],
+    "answer": 2
+  },
+  {
+    "q": "The number of propositions in Book I is:",
+    "options": ["48", "47", "46", "50"],
+    "answer": 0
+  },
+  {
+    "q": "Euclid's Elements was originally written in:",
+    "options": ["Latin", "Greek", "English", "Arabic"],
+    "answer": 1
+  },
+  {
+    "q": "The Arabic translations of Elements helped preserve it during:",
+    "options": ["Renaissance", "Middle Ages", "Industrial Revolution", "Modern era"],
+    "answer": 1
+  },
+  {
+    "q": "Euclid's work is an example of:",
+    "options": ["Empirical science", "Axiomatic system", "Experimental geometry", "Coordinate geometry"],
+    "answer": 1
+  },
+  {
+    "q": "The statement 'Two straight lines cannot enclose a space' implies:",
+    "options": ["Lines are infinite", "Unique line through two points", "Lines have breadth", "Lines are curved"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

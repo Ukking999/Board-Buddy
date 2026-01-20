@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Maths - Circles MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Maths - Circles MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "A circle is the set of all points in a plane that are:",
+    "options": ["At a fixed distance from a fixed point", "Equidistant from two fixed points", "Forming a straight line", "Inside a square"],
+    "answer": 0
+  },
+  {
+    "q": "The fixed point in the centre of a circle is called:",
+    "options": ["Radius", "Centre", "Diameter", "Chord"],
+    "answer": 1
+  },
+  {
+    "q": "The fixed distance from the centre to any point on the circle is called:",
+    "options": ["Diameter", "Radius", "Chord", "Arc"],
+    "answer": 1
+  },
+  {
+    "q": "A line segment passing through the centre and joining two points on the circle is called:",
+    "options": ["Radius", "Chord", "Diameter", "Tangent"],
+    "answer": 2
+  },
+  {
+    "q": "The longest chord of a circle is:",
+    "options": ["Radius", "Diameter", "Any chord", "Semicircle"],
+    "answer": 1
+  },
+  {
+    "q": "A chord that is not a diameter is:",
+    "options": ["Equal to radius", "Longer than radius", "Shorter than diameter", "Perpendicular to radius"],
+    "answer": 2
+  },
+  {
+    "q": "The perimeter of a circle is called:",
+    "options": ["Area", "Circumference", "Diameter", "Radius"],
+    "answer": 1
+  },
+  {
+    "q": "The circumference of a circle is given by:",
+    "options": ["πr²", "2πr", "πd", "Both b and c"],
+    "answer": 3
+  },
+  {
+    "q": "The area of a circle is given by:",
+    "options": ["2πr", "πr²", "πd", "πd²/4"],
+    "answer": 1
+  },
+  {
+    "q": "The value of π is approximately:",
+    "options": ["22/7 or 3.14", "3", "4", "2"],
+    "answer": 0
+  },
+  {
+    "q": "A line segment joining any two points on the circle is:",
+    "options": ["Radius", "Diameter", "Chord", "Tangent"],
+    "answer": 2
+  },
+  {
+    "q": "An arc is a:",
+    "options": ["Straight line", "Portion of the circumference", "Full circle", "Diameter"],
+    "answer": 1
+  },
+  {
+    "q": "A semicircle is an arc measuring:",
+    "options": ["90°", "180°", "360°", "270°"],
+    "answer": 1
+  },
+  {
+    "q": "The region bounded by a chord and the arc is called:",
+    "options": ["Sector", "Segment", "Semicircle", "Quadrant"],
+    "answer": 1
+  },
+  {
+    "q": "The region bounded by two radii and the arc is called:",
+    "options": ["Segment", "Sector", "Chord", "Tangent"],
+    "answer": 1
+  },
+  {
+    "q": "A minor arc is one that measures:",
+    "options": ["Greater than 180°", "Less than or equal to 180°", "Exactly 180°", "360°"],
+    "answer": 1
+  },
+  {
+    "q": "A major arc measures:",
+    "options": ["Less than 180°", "Greater than 180°", "Exactly 180°", "90°"],
+    "answer": 1
+  },
+  {
+    "q": "A line that touches the circle at exactly one point is called:",
+    "options": ["Secant", "Chord", "Tangent", "Radius"],
+    "answer": 2
+  },
+  {
+    "q": "A tangent to a circle is:",
+    "options": ["Parallel to radius", "Perpendicular to the radius at point of contact", "Equal to diameter", "Passes through centre"],
+    "answer": 1
+  },
+  {
+    "q": "A line that intersects the circle at two points is called:",
+    "options": ["Tangent", "Secant", "Radius", "Chord"],
+    "answer": 1
+  },
+  {
+    "q": "The angle subtended by a diameter in a semicircle is:",
+    "options": ["90°", "180°", "45°", "60°"],
+    "answer": 0
+  },
+  {
+    "q": "Equal chords of a circle subtend:",
+    "options": ["Unequal angles at centre", "Equal angles at centre", "No angles", "Right angles"],
+    "answer": 1
+  },
+  {
+    "q": "The perpendicular from the centre to a chord:",
+    "options": ["Bisects the chord", "Is equal to radius", "Is parallel to chord", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The converse of the above is also true: the line from centre bisecting a chord is:",
+    "options": ["Parallel to chord", "Perpendicular to chord", "Equal to chord", "Tangent"],
+    "answer": 1
+  },
+  {
+    "q": "Chords equidistant from the centre are:",
+    "options": ["Unequal", "Equal in length", "Perpendicular", "Parallel"],
+    "answer": 1
+  },
+  {
+    "q": "There is one and only one circle passing through:",
+    "options": ["Two points", "Three non-collinear points", "Four points", "Any points"],
+    "answer": 1
+  },
+  {
+    "q": "The angle in a semicircle is:",
+    "options": ["Acute", "Obtuse", "Right angle", "Reflex"],
+    "answer": 2
+  },
+  {
+    "q": "Angles in the same segment are:",
+    "options": ["Supplementary", "Equal", "Complementary", "Unequal"],
+    "answer": 1
+  },
+  {
+    "q": "The angle subtended by an arc at the centre is:",
+    "options": ["Half the angle at circumference", "Double the angle at circumference", "Equal to angle at circumference", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Alternate segment theorem states that the angle between tangent and chord is equal to:",
+    "options": ["Angle in same segment", "Angle in alternate segment", "Angle at centre", "90°"],
+    "answer": 1
+  },
+  {
+    "q": "Two tangents drawn from an external point to a circle are:",
+    "options": ["Unequal", "Equal in length", "Perpendicular", "Parallel"],
+    "answer": 1
+  },
+  {
+    "q": "The lengths of tangents from an external point to the points of contact are:",
+    "options": ["Different", "Equal", "Half the radius", "Double the radius"],
+    "answer": 1
+  },
+  {
+    "q": "The line joining the external point to the centre:",
+    "options": ["Is perpendicular to tangent", "Bisects the angle between tangents", "Both a and b", "None"],
+    "answer": 2
+  },
+  {
+    "q": "If two circles touch each other externally, the distance between centres is:",
+    "options": ["r1 - r2", "r1 + r2", "r1 × r2", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "If two circles touch internally, distance between centres is:",
+    "options": ["r1 + r2", "|r1 - r2|", "r1 × r2", "Zero"],
+    "answer": 1
+  },
+  {
+    "q": "If two circles intersect at two points, the line joining centres is:",
+    "options": ["Common chord", "Perpendicular bisector of common chord", "Tangent", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The common chord of two intersecting circles is:",
+    "options": ["Perpendicular to line of centres", "Parallel to line of centres", "Equal to radius", "None"],
+    "answer": 0
+  },
+  {
+    "q": "A cyclic quadrilateral has:",
+    "options": ["All vertices on a circle", "Opposite angles 90°", "Equal sides", "Parallel sides"],
+    "answer": 0
+  },
+  {
+    "q": "In a cyclic quadrilateral, opposite angles sum to:",
+    "options": ["90°", "180°", "360°", "270°"],
+    "answer": 1
+  },
+  {
+    "q": "The area of a sector with central angle θ (in degrees) is:",
+    "options": ["(θ/360) × πr²", "(θ/180) × πr²", "θ × πr²", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The length of an arc with central angle θ (in degrees) is:",
+    "options": ["(θ/360) × 2πr", "(θ/180) × 2πr", "θ × πr", "2πr"],
+    "answer": 0
+  },
+  {
+    "q": "The area of a segment is:",
+    "options": ["Area of sector minus area of triangle", "Area of circle", "Area of semicircle", "None"],
+    "answer": 0
+  },
+  {
+    "q": "If radius is doubled, circumference becomes:",
+    "options": ["Same", "Double", "Triple", "Quadruple"],
+    "answer": 1
+  },
+  {
+    "q": "If radius is doubled, area becomes:",
+    "options": ["Double", "Triple", "Quadruple", "Eight times"],
+    "answer": 2
+  },
+  {
+    "q": "The diameter is:",
+    "options": ["Equal to radius", "Twice the radius", "Half the radius", "Thrice the radius"],
+    "answer": 1
+  },
+  {
+    "q": "A radius is perpendicular to the tangent at the point of contact.",
+    "options": ["True", "False", "Sometimes", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The number of tangents from an external point to a circle is:",
+    "options": ["One", "Two", "Three", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "The number of common tangents to two non-intersecting circles (separate) is:",
+    "options": ["2", "3", "4", "1"],
+    "answer": 2
+  },
+  {
+    "q": "Concentric circles have:",
+    "options": ["Same centre, different radii", "Different centres, same radius", "Same radius and centre", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The inscribed angle is:",
+    "options": ["Double the central angle", "Half the central angle", "Equal to central angle", "None"],
+    "answer": 1
+  },
+  {
+    "q": "If a chord subtends 60° at centre, angle at circumference in same segment is:",
+    "options": ["60°", "30°", "120°", "90°"],
+    "answer": 1
+  },
+  {
+    "q": "The tangent at any point of a circle is perpendicular to the radius through the point of contact.",
+    "options": ["True", "False", "Only for diameter", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Equal chords are equidistant from the centre.",
+    "options": ["True", "False", "Only in same circle", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The distance from centre to a chord of length l in circle of radius r is:",
+    "options": ["√(r² - (l/2)²)", "r - l", "r + l", "l/2"],
+    "answer": 0
+  },
+  {
+    "q": "A triangle inscribed in a circle with one side as diameter is:",
+    "options": ["Acute", "Right-angled", "Obtuse", "Equilateral"],
+    "answer": 1
+  },
+  {
+    "q": "The angle between a tangent and a radius is:",
+    "options": ["0°", "90°", "180°", "45°"],
+    "answer": 1
+  },
+  {
+    "q": "If two tangents are drawn from external point, the line from centre to external point bisects:",
+    "options": ["The chord", "The angle between tangents", "The arc", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The area enclosed by two concentric circles is called:",
+    "options": ["Sector", "Annulus", "Segment", "Ring"],
+    "answer": 1
+  },
+  {
+    "q": "The area of annulus between radii r1 and r2 (r1 > r2) is:",
+    "options": ["π(r1² - r2²)", "π(r1 + r2)", "2π(r1 + r2)", "πr1 r2"],
+    "answer": 0
+  },
+  {
+    "q": "A regular polygon inscribed in a circle has:",
+    "options": ["All vertices on circle", "Centre different", "Sides unequal", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ptolemy's theorem is for:",
+    "options": ["Triangle", "Cyclic quadrilateral", "Parallelogram", "Trapezium"],
+    "answer": 1
+  },
+  {
+    "q": "The central angle for a minor arc is:",
+    "options": ["Greater than 180°", "Less than or equal to 180°", "Exactly 180°", "360°"],
+    "answer": 1
+  },
+  {
+    "q": "A sector with central angle 90° is called:",
+    "options": ["Semicircle", "Quadrant", "Segment", "Minor sector"],
+    "answer": 1
+  },
+  {
+    "q": "The number of circles passing through two distinct points is:",
+    "options": ["One", "Two", "Infinite", "Zero"],
+    "answer": 2
+  },
+  {
+    "q": "If a circle has radius 7 cm, circumference is:",
+    "options": ["22 cm", "44 cm", "14 cm", "49 cm"],
+    "answer": 1
+  },
+  {
+    "q": "Area of circle with radius 7 cm is:",
+    "options": ["154 cm²", "44 cm²", "22 cm²", "308 cm²"],
+    "answer": 0
+  },
+  {
+    "q": "If diameter is 10 cm, radius is:",
+    "options": ["5 cm", "20 cm", "10 cm", "15 cm"],
+    "answer": 0
+  },
+  {
+    "q": "The chord subtending maximum angle at centre is:",
+    "options": ["Any chord", "Diameter", "Radius", "Minor chord"],
+    "answer": 1
+  },
+  {
+    "q": "Angles in alternate segment are:",
+    "options": ["Equal", "Supplementary", "Complementary", "Unequal"],
+    "answer": 0
+  },
+  {
+    "q": "The tangent-secant theorem relates:",
+    "options": ["Lengths of tangent and secant segments", "Angles", "Areas", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Power of a point theorem applies to:",
+    "options": ["Only tangents", "Tangents and secants from external point", "Only chords", "Radii"],
+    "answer": 1
+  },
+  {
+    "q": "For two tangents from external point, power of point is:",
+    "options": ["Tangent length squared", "Secant segments product", "Both equal", "None"],
+    "answer": 2
+  },
+  {
+    "q": "A circle divides the plane into:",
+    "options": ["Two regions", "Three regions", "Four regions", "Infinite"],
+    "answer": 1
+  },
+  {
+    "q": "The interior of the circle is called:",
+    "options": ["Disc", "Circumference", "Arc", "Chord"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

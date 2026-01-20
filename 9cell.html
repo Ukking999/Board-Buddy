@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<h1>Class 9 Science - Fundamental Unit of Life MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The fundamental unit of life is:",
+    "options": ["Tissue", "Organ", "Cell", "Organelle"],
+    "answer": 2
+  },
+  {
+    "q": "The cell theory was proposed by:",
+    "options": ["Schleiden and Schwann", "Robert Hooke", "Leeuwenhoek", "Virchow"],
+    "answer": 0
+  },
+  {
+    "q": "Who discovered the cell first?",
+    "options": ["Schleiden", "Schwann", "Robert Hooke", "Virchow"],
+    "answer": 2
+  },
+  {
+    "q": "Robert Hooke observed cells in:",
+    "options": ["Living tissue", "Dead cork", "Onion peel", "Blood"],
+    "answer": 1
+  },
+  {
+    "q": "The term 'protoplasm' was given by:",
+    "options": ["Purkinje", "Schleiden", "Hooke", "Schwann"],
+    "answer": 0
+  },
+  {
+    "q": "All living organisms are made up of cells. This is part of:",
+    "options": ["Cell theory", "Evolution theory", "Germ theory", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The cell is the structural and functional unit of life. This is part of:",
+    "options": ["Cell theory", "Atomic theory", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "All cells arise from pre-existing cells. This was added by:",
+    "options": ["Schleiden", "Schwann", "Virchow", "Hooke"],
+    "answer": 2
+  },
+  {
+    "q": "Cells are of two main types:",
+    "options": ["Prokaryotic and eukaryotic", "Plant and animal", "Large and small", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Prokaryotic cells lack:",
+    "options": ["Cell wall", "Nucleus (well-defined)", "Plasma membrane", "Cytoplasm"],
+    "answer": 1
+  },
+  {
+    "q": "Eukaryotic cells have:",
+    "options": ["Nuclear membrane", "No nucleus", "Nucleoid", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example of prokaryotic cell:",
+    "options": ["Amoeba", "Bacteria", "Onion cell", "Human cell"],
+    "answer": 1
+  },
+  {
+    "q": "Example of eukaryotic cell:",
+    "options": ["Bacteria", "Blue-green algae", "Onion cell", "Mycoplasma"],
+    "answer": 2
+  },
+  {
+    "q": "The plasma membrane is:",
+    "options": ["Rigid", "Semi-permeable/selectively permeable", "Impermeable", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The plasma membrane is made up of:",
+    "options": ["Lipids only", "Proteins only", "Lipids and proteins", "Carbohydrates"],
+    "answer": 2
+  },
+  {
+    "q": "The fluid mosaic model of plasma membrane was given by:",
+    "options": ["Singer and Nicolson", "Robertson", "Hooke", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The movement of water molecules through plasma membrane is:",
+    "options": ["Diffusion", "Osmosis", "Active transport", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Osmosis is the movement of water from:",
+    "options": ["Higher concentration to lower", "Lower concentration to higher", "Hypotonic to hypertonic", "Hypertonic to hypotonic"],
+    "answer": 3
+  },
+  {
+    "q": "A solution with higher solute concentration is:",
+    "options": ["Hypotonic", "Hypertonic", "Isotonic", "None"],
+    "answer": 1
+  },
+  {
+    "q": "A solution with lower solute concentration is:",
+    "options": ["Hypertonic", "Hypotonic", "Isotonic", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In hypotonic solution, plant cell:",
+    "options": ["Shrinks", "Becomes turgid", "Plasmolysed", "None"],
+    "answer": 1
+  },
+  {
+    "q": "In hypertonic solution, plant cell undergoes:",
+    "options": ["Turgidity", "Plasmolysis", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The cell wall is present in:",
+    "options": ["Animal cells", "Plant cells", "Both", "Prokaryotes only"],
+    "answer": 1
+  },
+  {
+    "q": "Cell wall is made up of:",
+    "options": ["Cellulose", "Chitin", "Peptidoglycan", "Lipids"],
+    "answer": 0
+  },
+  {
+    "q": "The control centre of the cell is:",
+    "options": ["Nucleus", "Cytoplasm", "Mitochondria", "Ribosomes"],
+    "answer": 0
+  },
+  {
+    "q": "The nucleus contains:",
+    "options": ["Chromatin", "Nucleolus", "Nuclear membrane", "All of these"],
+    "answer": 3
+  },
+  {
+    "q": "Chromatin condenses into chromosomes during:",
+    "options": ["Cell division", "Resting phase", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Chromosomes contain:",
+    "options": ["DNA and proteins", "RNA only", "Lipids", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Genes are segments of:",
+    "options": ["RNA", "DNA", "Proteins", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The nucleolus is involved in:",
+    "options": ["Protein synthesis", "Ribosome synthesis", "DNA replication", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The jelly-like substance between nucleus and plasma membrane is:",
+    "options": ["Protoplasm", "Cytoplasm", "Nucleoplasm", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Organelles are present in:",
+    "options": ["Prokaryotes", "Eukaryotes", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The powerhouse of the cell is:",
+    "options": ["Nucleus", "Mitochondria", "Ribosomes", "Golgi apparatus"],
+    "answer": 1
+  },
+  {
+    "q": "Mitochondria are involved in:",
+    "options": ["Cellular respiration", "Protein synthesis", "Packaging", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Mitochondria have their own:",
+    "options": ["DNA and ribosomes", "Cell wall", "Nucleus", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Plastids are present in:",
+    "options": ["Animal cells", "Plant cells", "Both", "Prokaryotes"],
+    "answer": 1
+  },
+  {
+    "q": "Chloroplasts contain:",
+    "options": ["Chlorophyll", "Carotene", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Photosynthesis occurs in:",
+    "options": ["Mitochondria", "Chloroplasts", "Nucleus", "Ribosomes"],
+    "answer": 1
+  },
+  {
+    "q": "Leucoplasts store:",
+    "options": ["Starch, oil, proteins", "Pigments", "Chlorophyll", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Chromoplasts impart:",
+    "options": ["Green colour", "Other colours (yellow, red)", "No colour", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Vacuoles are large in:",
+    "options": ["Animal cells", "Plant cells", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Vacuoles help in:",
+    "options": ["Storage", "Turgidity", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Lysosomes are called:",
+    "options": ["Suicidal bags", "Powerhouse", "Storage sacs", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Lysosomes contain:",
+    "options": ["Digestive enzymes", "Respiratory enzymes", "Photosynthetic pigments", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Endoplasmic reticulum is of two types:",
+    "options": ["Rough and smooth", "Only rough", "Only smooth", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Rough ER has:",
+    "options": ["Ribosomes", "No ribosomes", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Rough ER is involved in:",
+    "options": ["Protein synthesis", "Lipid synthesis", "Detoxification", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Smooth ER is involved in:",
+    "options": ["Lipid synthesis", "Protein synthesis", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Golgi apparatus is involved in:",
+    "options": ["Packaging and secretion", "Respiration", "Photosynthesis", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ribosomes are sites of:",
+    "options": ["Protein synthesis", "Lipid synthesis", "DNA replication", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ribosomes are found:",
+    "options": ["Free in cytoplasm", "On rough ER", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Centrosome is present in:",
+    "options": ["Plant cells", "Animal cells", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Centrosome helps in:",
+    "options": ["Cell division (spindle formation)", "Photosynthesis", "Respiration", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The cell discovered by Robert Hooke was:",
+    "options": ["Living", "Dead", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The smallest cell is:",
+    "options": ["Mycoplasma", "Ostrich egg", "PPLO", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "The largest cell is:",
+    "options": ["Ostrich egg", "Human egg", "Nerve cell", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The longest cell in human body is:",
+    "options": ["Nerve cell", "Muscle cell", "Blood cell", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Shape of cells is related to:",
+    "options": ["Function", "Size", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Amoeba changes shape due to:",
+    "options": ["Pseudopodia", "Flagella", "Cilia", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Prokaryotes include:",
+    "options": ["Bacteria, blue-green algae", "Fungi", "Protists", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Eukaryotes include:",
+    "options": ["Plants, animals, fungi, protists", "Bacteria", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The term 'cell' was coined by:",
+    "options": ["Hooke", "Schleiden", "Schwann", "Virchow"],
+    "answer": 0
+  },
+  {
+    "q": "Onion peel cells are:",
+    "options": ["Plant cells", "Animal cells", "Prokaryotic", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Human cheek cells are:",
+    "options": ["Animal cells", "Plant cells", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Diffusion is:",
+    "options": ["Movement from high to low concentration", "Requires energy", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Osmosis requires:",
+    "options": ["Semi-permeable membrane", "Any membrane", "No membrane", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Endocytosis is:",
+    "options": ["Taking in solid/liquid", "Releasing substances", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Exocytosis is:",
+    "options": ["Releasing substances", "Taking in", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'The Fundamental Unit of Life' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="MCQsTheme.css">
+</head>
+<body>
+
+<canvas id="hyperspeed"></canvas>
+
+<h1>Class 9 Science - Atoms & Molecules MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The smallest particle of an element that can take part in a chemical reaction is:",
+    "options": ["Molecule", "Ion", "Atom", "Electron"],
+    "answer": 2
+  },
+  {
+    "q": "Atoms of the same element having the same atomic number but different mass numbers are called:",
+    "options": ["Isotopes", "Isobars", "Isotones", "Ions"],
+    "answer": 0
+  },
+  {
+    "q": "Atoms of different elements having the same mass number but different atomic numbers are called:",
+    "options": ["Isotopes", "Isobars", "Isotones", "Isomers"],
+    "answer": 1
+  },
+  {
+    "q": "The atomicity of ozone (O₃) is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 2
+  },
+  {
+    "q": "The atomicity of phosphorus (P₄) is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 3
+  },
+  {
+    "q": "Noble gases like helium exist as:",
+    "options": ["Monoatomic", "Diatomic", "Triatomic", "Polyatomic"],
+    "answer": 0
+  },
+  {
+    "q": "Oxygen (O₂) is:",
+    "options": ["Monoatomic", "Diatomic", "Triatomic", "Tetraatomic"],
+    "answer": 1
+  },
+  {
+    "q": "A molecule is the smallest particle of a substance that:",
+    "options": ["Can exist independently and retain properties", "Cannot exist independently", "Has only one atom", "Is charged"],
+    "answer": 0
+  },
+  {
+    "q": "An ion is:",
+    "options": ["Neutral atom", "Charged particle", "Molecule", "Element"],
+    "answer": 1
+  },
+  {
+    "q": "A positively charged ion is called:",
+    "options": ["Anion", "Cation", "Molecule", "Atom"],
+    "answer": 1
+  },
+  {
+    "q": "A negatively charged ion is called:",
+    "options": ["Cation", "Anion", "Neutral ion", "Proton"],
+    "answer": 1
+  },
+  {
+    "q": "The valency of sodium (Na⁺) is:",
+    "options": ["0", "1", "2", "3"],
+    "answer": 1
+  },
+  {
+    "q": "The valency of chloride (Cl⁻) is:",
+    "options": ["0", "1", "2", "-1"],
+    "answer": 1
+  },
+  {
+    "q": "The chemical formula of sodium chloride is:",
+    "options": ["NaCl₂", "NaCl", "Na₂Cl", "NaCl₃"],
+    "answer": 1
+  },
+  {
+    "q": "The chemical formula of magnesium oxide is:",
+    "options": ["MgO", "Mg₂O", "MgO₂", "Mg₂O₃"],
+    "answer": 0
+  },
+  {
+    "q": "The molecular formula of water is:",
+    "options": ["HO", "H₂O", "H₂O₂", "OH"],
+    "answer": 1
+  },
+  {
+    "q": "The formula of carbon dioxide is:",
+    "options": ["CO", "CO₂", "C₂O", "CO₃"],
+    "answer": 1
+  },
+  {
+    "q": "The formula of calcium carbonate is:",
+    "options": ["CaCO₃", "Ca₂CO₃", "Ca(CO₃)₂", "CaCO"],
+    "answer": 0
+  },
+  {
+    "q": "The molecular mass of H₂SO₄ is:",
+    "options": ["98 u", "90 u", "82 u", "100 u"],
+    "answer": 0
+  },
+  {
+    "q": "The atomic mass of carbon is:",
+    "options": ["12 u", "14 u", "16 u", "6 u"],
+    "answer": 0
+  },
+  {
+    "q": "The atomic mass of oxygen is:",
+    "options": ["8 u", "16 u", "32 u", "14 u"],
+    "answer": 1
+  },
+  {
+    "q": "One mole of any substance contains:",
+    "options": ["6.022 × 10²³ particles", "6.022 × 10²² particles", "6 × 10²³ particles", "1 particle"],
+    "answer": 0
+  },
+  {
+    "q": "Avogadro's number is:",
+    "options": ["6.022 × 10²³", "6.022 × 10²²", "6.023 × 10²³", "6 × 10²³"],
+    "answer": 0
+  },
+  {
+    "q": "The mass of one mole of a substance is called:",
+    "options": ["Atomic mass", "Molecular mass", "Molar mass", "Gram atom"],
+    "answer": 2
+  },
+  {
+    "q": "The molar mass of water (H₂O) is:",
+    "options": ["16 g/mol", "18 g/mol", "20 g/mol", "2 g/mol"],
+    "answer": 1
+  },
+  {
+    "q": "The number of moles =",
+    "options": ["Mass / Molar mass", "Molar mass / Mass", "Mass × Molar mass", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Number of particles =",
+    "options": ["Moles × Avogadro number", "Moles / Avogadro number", "Mass × Avogadro number", "None"],
+    "answer": 0
+  },
+  {
+    "q": "In 18 g of water, number of moles is:",
+    "options": ["1 mole", "2 moles", "18 moles", "0.5 mole"],
+    "answer": 0
+  },
+  {
+    "q": "In 1 mole of CO₂, number of molecules is:",
+    "options": ["44", "6.022 × 10²³", "12", "22.4 L"],
+    "answer": 1
+  },
+  {
+    "q": "The volume occupied by 1 mole of any gas at STP is:",
+    "options": ["22.4 L", "11.2 L", "44.8 L", "1 L"],
+    "answer": 0
+  },
+  {
+    "q": "STP stands for:",
+    "options": ["Standard Temperature and Pressure", "Standard Temperature and Volume", "Standard Time and Pressure", "None"],
+    "answer": 0
+  },
+  {
+    "q": "At STP, temperature is:",
+    "options": ["0°C or 273 K", "25°C", "100°C", "273°C"],
+    "answer": 0
+  },
+  {
+    "q": "At STP, pressure is:",
+    "options": ["1 atm or 760 mm Hg", "0 atm", "2 atm", "100 atm"],
+    "answer": 0
+  },
+  {
+    "q": "Law of conservation of mass was given by:",
+    "options": ["Dalton", "Lavoisier", "Avogadro", "Berzelius"],
+    "answer": 1
+  },
+  {
+    "q": "Law of constant proportions was given by:",
+    "options": ["Dalton", "Proust", "Lavoisier", "Gay-Lussac"],
+    "answer": 1
+  },
+  {
+    "q": "Law of multiple proportions was given by:",
+    "options": ["Dalton", "Proust", "Lavoisier", "Berzelius"],
+    "answer": 0
+  },
+  {
+    "q": "Dalton's atomic theory was proposed in:",
+    "options": ["1808", "1908", "1708", "2008"],
+    "answer": 0
+  },
+  {
+    "q": "According to Dalton, atoms are:",
+    "options": ["Divisible", "Indivisible", "Destroyable", "Variable mass"],
+    "answer": 1
+  },
+  {
+    "q": "Postulate of Dalton: Atoms of same element are:",
+    "options": ["Different", "Identical in mass and properties", "Different mass", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Postulate of Dalton: Atoms combine in:",
+    "options": ["Any ratio", "Fixed ratio of whole numbers", "Fractional ratio", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The formula of aluminium sulphate is:",
+    "options": ["AlSO₄", "Al₂(SO₄)₃", "Al(SO₄)₃", "Al₂SO₄"],
+    "answer": 1
+  },
+  {
+    "q": "The formula of ammonium phosphate is:",
+    "options": ["(NH₄)₃PO₄", "NH₄PO₄", "NH₄(PO₄)₃", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Molecular mass is expressed in:",
+    "options": ["Grams", "Atomic mass units (u)", "Moles", "Litres"],
+    "answer": 1
+  },
+  {
+    "q": "Molar mass is expressed in:",
+    "options": ["u", "g/mol", "mol", "L/mol"],
+    "answer": 1
+  },
+  {
+    "q": "In 32 g of oxygen gas (O₂), number of moles is:",
+    "options": ["1", "2", "32", "16"],
+    "answer": 0
+  },
+  {
+    "q": "In 44 g of CO₂, number of moles is:",
+    "options": ["1", "44", "2", "0.5"],
+    "answer": 0
+  },
+  {
+    "q": "Number of atoms in 1 mole of helium is:",
+    "options": ["6.022 × 10²³", "2 × 6.022 × 10²³", "3 × 6.022 × 10²³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Number of molecules in 1 mole of O₂ is:",
+    "options": ["6.022 × 10²³", "2 × 6.022 × 10²³", "32 × 6.022 × 10²³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Number of atoms in 18 g of H₂O is:",
+    "options": ["6.022 × 10²³", "2 × 6.022 × 10²³", "3 × 6.022 × 10²³", "18 × 6.022 × 10²³"],
+    "answer": 2
+  },
+  {
+    "q": "The mass of 1 mole of electrons is approximately:",
+    "options": ["1 g", "0.55 mg", "1 mg", "0.1 g"],
+    "answer": 1
+  },
+  {
+    "q": "Gram atomic mass of hydrogen is:",
+    "options": ["1 g", "2 g", "16 g", "12 g"],
+    "answer": 0
+  },
+  {
+    "q": "Gram molecular mass of oxygen (O₂) is:",
+    "options": ["16 g", "32 g", "8 g", "1 g"],
+    "answer": 1
+  },
+  {
+    "q": "The symbol for iron is:",
+    "options": ["I", "Ir", "Fe", "In"],
+    "answer": 2
+  },
+  {
+    "q": "The symbol for gold is:",
+    "options": ["Au", "Ag", "Go", "Gd"],
+    "answer": 0
+  },
+  {
+    "q": "The symbol for potassium is:",
+    "options": ["P", "Po", "K", "Pt"],
+    "answer": 2
+  },
+  {
+    "q": "The valency of oxygen in most compounds is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 1
+  },
+  {
+    "q": "The valency of nitrogen in ammonia (NH₃) is:",
+    "options": ["3", "5", "2", "1"],
+    "answer": 0
+  },
+  {
+    "q": "Polyatomic ion example is:",
+    "options": ["Na⁺", "Cl⁻", "SO₄²⁻", "H⁺"],
+    "answer": 2
+  },
+  {
+    "q": "The formula of sodium sulphate is:",
+    "options": ["NaSO₄", "Na₂SO₄", "Na(SO₄)₂", "Na₂(SO₄)₂"],
+    "answer": 1
+  },
+  {
+    "q": "The formula of calcium hydroxide is:",
+    "options": ["CaOH", "Ca(OH)₂", "Ca₂OH", "CaOH₂"],
+    "answer": 1
+  },
+  {
+    "q": "Molecular mass of glucose (C₆H₁₂O₆) is:",
+    "options": ["180 u", "182 u", "360 u", "24 u"],
+    "answer": 0
+  },
+  {
+    "q": "In 9 g of water, number of moles is:",
+    "options": ["0.5", "1", "9", "18"],
+    "answer": 0
+  },
+  {
+    "q": "In 2 moles of CO₂, mass is:",
+    "options": ["22 g", "44 g", "88 g", "11 g"],
+    "answer": 2
+  },
+  {
+    "q": "Volume of 64 g of O₂ at STP is:",
+    "options": ["22.4 L", "44.8 L", "11.2 L", "64 L"],
+    "answer": 1
+  },
+  {
+    "q": "Number of molecules in 32 g of methane (CH₄) is:",
+    "options": ["6.022 × 10²³", "2 × 6.022 × 10²³", "12.044 × 10²³", "None"],
+    "answer": 1
+  },
+  {
+    "q": "The law which states that mass is neither created nor destroyed in a chemical reaction is:",
+    "options": ["Multiple proportions", "Constant proportions", "Conservation of mass", "Definite proportions"],
+    "answer": 2
+  },
+  {
+    "q": "In CO and CO₂, ratio of oxygen combining with fixed carbon is:",
+    "options": ["1:1", "1:2", "2:1", "1:4"],
+    "answer": 1
+  },
+  {
+    "q": "Isotopes of hydrogen are:",
+    "options": ["Protium, Deuterium, Tritium", "H¹, H², H³", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Chlorine has isotopes Cl-35 and Cl-37, average atomic mass is:",
+    "options": ["35.5 u", "36 u", "37 u", "72 u"],
+    "answer": 0
+  },
+  {
+    "q": "Carbon-12 is the standard for atomic mass with:",
+    "options": ["12 u", "1 u", "6 u", "14 u"],
+    "answer": 0
+  },
+  {
+    "q": "The atomic mass unit (u) is:",
+    "options": ["1/12th mass of C-12 atom", "Mass of proton", "Mass of electron", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The number 6.022 × 10²³ is called:",
+    "options": ["Mole number", "Avogadro constant", "Gas constant", "None"],
+    "answer": 1
+  },
+  {
+    "q": "1 mole of any substance has mass equal to:",
+    "options": ["Molecular mass in grams", "Atomic mass in grams", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The formula unit mass of NaCl is:",
+    "options": ["58.5 u", "23 u", "35.5 u", "11 u"],
+    "answer": 0
+  },
+  {
+    "q": "In 1 mole of NaCl, number of formula units is:",
+    "options": ["6.022 × 10²³", "58.5 × 10²³", "2 × 6.022 × 10²³", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter 'Atoms and Molecules' is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Dalton used symbol for hydrogen as:",
+    "options": ["H", "Circle with dot", "O", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Modern symbols are given by:",
+    "options": ["Dalton", "Berzelius", "Lavoisier", "Avogadro"],
+    "answer": 1
+  },
+  {
+    "q": "The formula of hydrochloric acid is:",
+    "options": ["HCl", "H₂Cl", "ClH", "HCl₂"],
+    "answer": 0
+  },
+  {
+    "q": "The formula of nitric acid is:",
+    "options": ["HNO₃", "HNO₂", "HNO", "HN₃"],
+    "answer": 0
+  },
+  {
+    "q": "The valency of carbonate ion is:",
+    "options": ["1", "2", "3", "4"],
+    "answer": 1
+  },
+  {
+    "q": "The formula of zinc phosphate is:",
+    "options": ["ZnPO₄", "Zn₃(PO₄)₂", "Zn₂PO₄", "Zn(PO₄)₂"],
+    "answer": 1
+  },
+  {
+    "q": "In 4 g of helium, number of moles is:",
+    "options": ["1", "4", "0.25", "2"],
+    "answer": 0
+  },
+  {
+    "q": "Volume of 11.2 L of gas at STP contains:",
+    "options": ["0.5 mole", "1 mole", "2 moles", "0.25 mole"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>
