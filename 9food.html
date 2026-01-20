@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class 9 Science - Matter..... MCQ</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body {background:#0b0f1a; color:#fff; font-family:'Poppins',sans-serif; padding:20px;}
+h1 {text-align:center; margin-bottom:20px;}
+.quiz-container {max-width:800px; margin:0 auto; background:#11162a; padding:30px; border-radius:16px;}
+.question {margin-bottom:15px; font-weight:600;}
+.options label {display:block; margin:5px 0; padding:8px 12px; background:#222; border-radius:8px; cursor:pointer; transition:0.3s;}
+.options label:hover {background:#4da3ff; color:#000;}
+button {margin-top:20px; padding:10px 20px; border:none; border-radius:8px; background:#4da3ff; color:#000; font-weight:600; cursor:pointer; transition:0.3s;}
+button:hover {opacity:0.85;}
+.result {margin-top:20px; font-size:18px; text-align:center; font-weight:600;}
+</style>
+</head>
+<body>
+
+<h1>Class 9 Science - Improvement In Food Resources MCQ</h1>
+<div class="quiz-container" id="quiz-container"></div>
+<button id="submit-btn">Submit</button>
+<div class="result" id="result"></div>
+
+<script>
+// Number Systems MCQs
+const questions = [
+  {
+    "q": "The chapter 'Improvement in Food Resources' deals with:",
+    "options": ["Animal husbandry only", "Crop production only", "Both crop production and animal husbandry", "Fisheries only"],
+    "answer": 2
+  },
+  {
+    "q": "Improvement in food resources is needed to:",
+    "options": ["Increase food production", "Meet growing demand", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Sources of food are:",
+    "options": ["Plants only", "Animals only", "Plants and animals", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Nutrients supplied by air and water are:",
+    "options": ["Carbon, oxygen, hydrogen", "Nitrogen, phosphorus", "Potassium, calcium", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Macronutrients required in large quantities are:",
+    "options": ["N, P, K", "Fe, Mn, Zn", "Ca, Mg, S", "Both a and c"],
+    "answer": 3
+  },
+  {
+    "q": "Micronutrients required in small quantities are:",
+    "options": ["N, P, K", "Fe, Mn, Zn, Cu, B, Mo, Cl", "Ca, Mg", "None"],
+    "answer": 1
+  },
+  {
+    "q": "Manure is:",
+    "options": ["Organic, slow release", "Inorganic, fast release", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Fertilisers are:",
+    "options": ["Inorganic, nutrient specific", "Organic", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Excess use of fertilisers leads to:",
+    "options": ["Soil pollution", "Water pollution", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Irrigation is supply of water to crops at:",
+    "options": ["Regular intervals", "Only once", "No interval", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sources of irrigation include:",
+    "options": ["Wells, canals, tanks, rivers", "Rain only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cropping patterns include:",
+    "options": ["Mixed cropping, intercropping, crop rotation", "Single crop only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Mixed cropping is growing:",
+    "options": ["Two or more crops simultaneously", "One after another", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Example of mixed cropping:",
+    "options": ["Wheat + gram", "Rice + wheat", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Intercropping is growing:",
+    "options": ["Two crops in definite pattern", "Randomly", "One crop", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Crop rotation helps in:",
+    "options": ["Maintaining soil fertility", "Preventing pests", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Weeds are unwanted:",
+    "options": ["Plants", "Animals", "Insects", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Weedicides are:",
+    "options": ["Chemicals to kill weeds", "Insecticides", "Fungicides", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pests are controlled by:",
+    "options": ["Insecticides", "Weedicides", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Kharif crops are sown in:",
+    "options": ["Rainy season (June-July)", "Winter (Oct-Nov)", "Summer", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Rabi crops are sown in:",
+    "options": ["Winter (Oct-Nov)", "Rainy season", "Summer", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Examples of Kharif crops:",
+    "options": ["Rice, maize, cotton", "Wheat, gram", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Examples of Rabi crops:",
+    "options": ["Wheat, gram, mustard", "Rice, soybean", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Crop improvement involves:",
+    "options": ["Higher yield, improved quality, biotic/abiotic resistance", "Only yield", "Only quality", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Hybridisation is:",
+    "options": ["Crossing different varieties", "Same variety", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Genetically modified crops have:",
+    "options": ["Introduced genes for desired traits", "No change", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Animal husbandry is:",
+    "options": ["Rearing of animals for food/products", "Crop farming", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Cattle husbandry is for:",
+    "options": ["Milk and draught", "Meat only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Milch animals are:",
+    "options": ["Milk producing (cows, buffaloes)", "Draught", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Draught animals are for:",
+    "options": ["Farm labour", "Milk", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Poultry farming is for:",
+    "options": ["Eggs and meat", "Milk", "Wool", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Broilers are for:",
+    "options": ["Meat", "Eggs", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Layers are for:",
+    "options": ["Egg production", "Meat", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Fish production includes:",
+    "options": ["Marine and inland fisheries", "Capture and culture", "Both", "None"],
+    "answer": 3
+  },
+  {
+    "q": "Capture fishery is:",
+    "options": ["Catching from natural resources", "Rearing in ponds", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Culture fishery/aquaculture is:",
+    "options": ["Rearing in water bodies", "Catching wild", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Composite fish culture involves:",
+    "options": ["Different species in same pond", "Single species", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Bee-keeping/apiculture is for:",
+    "options": ["Honey and wax", "Milk", "Eggs", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Sustainable agriculture aims at:",
+    "options": ["Meeting needs without compromising future", "Maximum yield only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Nutrient management includes:",
+    "options": ["Manure, fertilisers, organic farming", "Only fertilisers", "Only manure", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Organic farming uses:",
+    "options": ["Natural manure, bioagents", "Chemical fertilisers", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Irrigation systems include:",
+    "options": ["Drip, sprinkler", "Flood only", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Drip irrigation saves:",
+    "options": ["Water", "Fertiliser", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Storage of grains prevents loss from:",
+    "options": ["Pests, moisture", "Only pests", "Only moisture", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Green revolution increased:",
+    "options": ["Food grain production", "Milk production", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "White revolution is for:",
+    "options": ["Milk production", "Food grains", "Eggs", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Blue revolution is for:",
+    "options": ["Fish production", "Milk", "Grains", "None"],
+    "answer": 0
+  },
+  {
+    "q": "HYV seeds stand for:",
+    "options": ["High Yielding Variety", "Hybrid Yield Variety", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Photoperiodism in plants affects:",
+    "options": ["Flowering", "Growth", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Long day plants flower when day length is:",
+    "options": ["Longer than critical", "Shorter", "Same", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Short day plants flower when day length is:",
+    "options": ["Shorter than critical", "Longer", "Same", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The chapter is from class:",
+    "options": ["8", "9", "10", "11"],
+    "answer": 1
+  },
+  {
+    "q": "Food resources improvement aims at:",
+    "options": ["Food security", "Nutrition", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Sustainable practices include:",
+    "options": ["Crop rotation, mixed cropping", "Excess fertilisers", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Integrated farming includes:",
+    "options": ["Crops + livestock", "Only crops", "Only animals", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Biocontrol uses:",
+    "options": ["Natural enemies", "Chemicals", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Ladybird beetle controls:",
+    "options": ["Aphids", "Weeds", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Dragonfly controls:",
+    "options": ["Mosquitoes", "Aphids", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Inland fisheries include:",
+    "options": ["Freshwater", "Marine", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Marine fisheries include:",
+    "options": ["Sea water", "Freshwater", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Catla, Rohu, Mrigal are used in:",
+    "options": ["Composite culture", "Single culture", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "They feed at different:",
+    "options": ["Depths/zones", "Same zone", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Honey bees include species like:",
+    "options": ["Apis mellifera", "Local varieties", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Honey has:",
+    "options": ["Medicinal value", "Food value", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "Bee wax is used in:",
+    "options": ["Cosmetics, polishes", "Food", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Pasturage affects:",
+    "options": ["Quality of honey", "Quantity", "Both", "None"],
+    "answer": 2
+  },
+  {
+    "q": "The chapter emphasises:",
+    "options": ["Sustainable improvement", "Maximum chemicals", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Food security depends on:",
+    "options": ["Production, storage, distribution", "Only production", "Only storage", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Buffer stock is maintained for:",
+    "options": ["Emergencies", "Daily use", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Public distribution system ensures:",
+    "options": ["Food to poor", "High prices", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Malnutrition leads to:",
+    "options": ["Diseases", "Good health", "Both", "None"],
+    "answer": 0
+  },
+  {
+    "q": "Balanced diet includes:",
+    "options": ["All nutrients in right proportion", "Only carbohydrates", "Only proteins", "None"],
+    "answer": 0
+  },
+  {
+    "q": "The ultimate aim is:",
+    "options": ["Food for all", "Profit", "Both", "None"],
+    "answer": 0
+  }
+];
+
+// Render questions
+const quizContainer = document.getElementById('quiz-container');
+questions.forEach((item, index)=>{
+  const qDiv = document.createElement('div');
+  qDiv.innerHTML = `<div class="question">${index+1}. ${item.q}</div>
+    <div class="options">
+      ${item.options.map((opt,i)=>`<label><input type="radio" name="q${index}" value="${i}"> ${opt}</label>`).join('')}
+    </div>`;
+  quizContainer.appendChild(qDiv);
+});
+
+// Submit & calculate score
+document.getElementById('submit-btn').addEventListener('click', ()=>{
+  let score = 0;
+  questions.forEach((item, index)=>{
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    if(selected && parseInt(selected.value) === item.answer) score++;
+  });
+  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+});
+</script>
+
+</body>
+</html>
