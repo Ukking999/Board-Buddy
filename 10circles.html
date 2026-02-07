@@ -310,14 +310,37 @@ questions.forEach((item, index)=>{
 // Submit & calculate score
 document.getElementById('submit-btn').addEventListener('click', ()=>{
   let score = 0;
+
   questions.forEach((item, index)=>{
+    const options = document.querySelectorAll(`input[name="q${index}"]`);
+
+    options.forEach(opt => {
+      opt.disabled = true; // lock after submit
+      const label = opt.parentElement;
+
+      // remove old classes if any
+      label.classList.remove('correct','wrong');
+
+      if (parseInt(opt.value) === item.answer) {
+        label.classList.add('correct'); // ✔️
+      }
+
+      if (opt.checked && parseInt(opt.value) !== item.answer) {
+        label.classList.add('wrong'); // ❌
+      }
+    });
+
     const selected = document.querySelector(`input[name="q${index}"]:checked`);
     if(selected && parseInt(selected.value) === item.answer) score++;
   });
-  document.getElementById('result').innerText = `You scored ${score} out of ${questions.length}`;
+
+  document.getElementById('result').innerText =
+    `You scored ${score} out of ${questions.length}`;
+
 });
 </script>
 
 </body>
 </html>
+
 
