@@ -14,3 +14,29 @@ button:hover {opacity:0.85;}
     z-index: -1;
     background: #0b0f1a;
   }
+.correct {
+  color: #0f9d58;
+  font-weight: 600;
+}
+
+.wrong {
+  color: #d93025;
+  font-weight: 600;
+}
+
+.correct::after {
+  content: " ✔️";
+  font-size: 16px;
+}
+
+.wrong::after {
+  content: " ❌";
+  font-size: 16px;
+}
+
+.options label {
+  display: block;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
